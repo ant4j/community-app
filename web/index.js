@@ -18,7 +18,7 @@ $(document).ready(function () {
 			.text(commtyArr[index].name)
 			.click((event) => {
 				$("#commty-list .list-group-item.active").removeClass("active")
-				event.target.classList.add("active")
+				$(event.target).addClass("active")
 			})
 			.appendTo("#commty-list")
 		}

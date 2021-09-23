@@ -1,0 +1,22 @@
+[
+  {
+    "apihost": "https://apigcp.nimbella.io",
+    "namespace": "antoniof-ipp3ffev08i",
+    "packageVersions": {},
+    "actionVersions": {
+      "hello": {
+        "version": "0.0.2",
+        "digest": "09227d9d313f0f6f4c0e88f61cfcfcc3f9bf3d3eedce080548cd6268f750b58e"
+      }
+    },
+    "webHashes": {
+      "web/home.html": "47721407a912534b502c18ca87fe50982654140cca1a8121a41b58e6cb1a0b94",
+      "web/home.js": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "web/index.html": "b7e08f8ad02590cf443cdadb0bb0bcd9e5190557d5dd3a162ee99476a4210b17",
+      "web/index.js": "d6e627d6689086f0e17b460d4a7c3ff4b0659e42c2bf32c12b382a35b47b98fc",
+      "web/style.css": "9819b319367f755396c35e31ae67b2415f2b9f467e6dcbfc93dd4f0b7897afa2",
+      "web/user.html": "be9f8d5c0b3933a76b0c4575da01c355cb8fe52660563a3d9bcee60d596b1c6f",
+      "web/user.js": "aeb8af138c6c8e503be2756e3e20c88efe960d4e173fc4330820a6743e6e94b0"
+    }
+  }
+]
