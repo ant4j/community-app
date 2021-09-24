@@ -10,13 +10,13 @@
       }
     },
     "webHashes": {
-      "web/home.html": "47721407a912534b502c18ca87fe50982654140cca1a8121a41b58e6cb1a0b94",
-      "web/home.js": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "web/index.html": "b7e08f8ad02590cf443cdadb0bb0bcd9e5190557d5dd3a162ee99476a4210b17",
-      "web/index.js": "d6e627d6689086f0e17b460d4a7c3ff4b0659e42c2bf32c12b382a35b47b98fc",
-      "web/style.css": "9819b319367f755396c35e31ae67b2415f2b9f467e6dcbfc93dd4f0b7897afa2",
-      "web/user.html": "be9f8d5c0b3933a76b0c4575da01c355cb8fe52660563a3d9bcee60d596b1c6f",
-      "web/user.js": "aeb8af138c6c8e503be2756e3e20c88efe960d4e173fc4330820a6743e6e94b0"
+      "web/collection.html": "796edbea239201661f6cf0ae84d0e1ffaebf20313b0a0b0ae3303e7bbc7995c0",
+      "web/collection.js": "f94d2330a9482def4dcc93cc33462a6d45c244947831127e592a02aaf4280f9b",
+      "web/home.html": "a48c9687602c6d51e216cab26257a68bfbeedb10f0811540c2881b601ef04af9",
+      "web/home.js": "19c6a404428e807ae3527e1f2995067912793d405ab2e61dacd5ff40927d2dd6",
+      "web/index.html": "f7a772ac07561581e3f4098863c1070cf98eea6cec813772e685222d8f6f59b9",
+      "web/index.js": "b5100b99504efec8e5efcd0084a2a5944cd8e9c0e5c3aa04d8a08b9f7a9f3d30",
+      "web/style.css": "9819b319367f755396c35e31ae67b2415f2b9f467e6dcbfc93dd4f0b7897afa2"
     }
   }
 ]
