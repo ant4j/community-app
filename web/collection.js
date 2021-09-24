@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $("#collection-back-btn").click(() => {
-        location.href = "collections.html"
+        location.href = "home.html"
     })
 
     $("#collection-subjects-list-label").text(sessionStorage.getItem("collection-name"))

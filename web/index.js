@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	$("#commty-btn-enter").click(() => {
-		location.href = "user.html"
+		location.href = "home.html"
 	})
 
 	let commtyArr = 

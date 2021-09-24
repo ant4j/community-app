@@ -39,19 +39,22 @@
       </div>
 
       <div class="mb-3">
-        <div class="d-grid gap-2">
-          <button class="btn btn-primary" type="button" id="commty-btn-suggestions">Cronologia Proposte</button>
+        <label for="collections-list" class="form-label">Elenco Raccolte</label>
+        <div class="list-group" aria-describedby="collections-list-help" id="collections-list">
+          <button type="button" class="list-group-item list-group-item-action">...</button>
         </div>
+        <div class="form-text" id="collections-list-help">Seleziona una Raccolta.</div>
       </div>
 
       <div class="mb-3">
         <div class="d-grid gap-2">
-          <button class="btn btn-primary" type="button" id="commty-btn-collections">Elenco Raccolte</button>
+          <button class="btn btn-primary" type="button" id="collection-btn-create">Crea una Nuova Raccolta</button>
         </div>
       </div>
 
       <div class="mb-3">
         <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-primary" id="commty-btn-history">Cronologia</button>
           <button type="button" class="btn btn-outline-primary">Esci</button>
         </div>
       </div>
