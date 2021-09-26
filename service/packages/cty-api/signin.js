@@ -9,8 +9,8 @@ function main(args) {
     let res = {};
 
     if (communityId == "1" &&
-        watchword == "ciccio" &&
-        username == "cic") {
+        watchword == "prova" &&
+        username == "mar") {
         res.status = status[1];
         // TODO va restituito anche idUtente/nomeUtente e idCommunity/nomeCommunity
     } else {
