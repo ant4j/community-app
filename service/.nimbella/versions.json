@@ -3,22 +3,22 @@
     "apihost": "https://apigcp.nimbella.io",
     "namespace": "antoniof-ipp3ffev08i",
     "packageVersions": {
-      "commty-service": {
-        "version": "0.0.4",
+      "cty-api": {
+        "version": "0.0.1",
         "digest": "4d099e73cd992ffb0c0272357a437834da090c21c96fb82000410ebadc467c48"
       }
     },
     "actionVersions": {
-      "commty-service/getCommunities": {
-        "version": "0.0.2",
+      "cty-api/getCommunities": {
+        "version": "0.0.1",
         "digest": "96e2b718c565317b74b98945936822ed2840fb47a647ad2fe64bdf59321b1c73"
       },
-      "commty-service/getContents": {
-        "version": "0.0.10",
+      "cty-api/getContents": {
+        "version": "0.0.1",
         "digest": "4b466e86a43fa9463631f48bea22fc22348e1b9c08cc58b42431d365114614d6"
       },
-      "commty-service/signin": {
-        "version": "0.0.3",
+      "cty-api/signin": {
+        "version": "0.0.1",
         "digest": "6c03beb3a9a6529bd195553931e6756e040d2fe4b49a014a182ab5ed14dac117"
       }
     },

@@ -1,5 +1,0 @@
-{
-    "getCommunities": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/commty-service/getCommunities",
-    "getContents": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/commty-service/getContents",
-    "signin": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/commty-service/signin"
-}
