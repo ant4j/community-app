@@ -1,5 +1,6 @@
 <script>
-    import { push, pop, replace } from "svelte-spa-router";
+    import { push, replace } from "svelte-spa-router";
+    import BackBtn from "../components/BackBtn.svelte";
 
     let disabled = "disabled";
     let fileToScan;
@@ -35,9 +36,7 @@
 </script>
 
 <div class="mb-3 text-center">
-    <button type="button" class="btn btn-outline-primary" on:click={() => pop()}
-        >indietro</button
-    >
+    <BackBtn />
 </div>
 
 <div class="mb-3">
@@ -71,7 +70,12 @@
         class="form-label"
         aria-describedby="content-text-help">Testo</label
     >
-    <textarea class="form-control" rows="10" bind:value={scannedText} id="content-text" />
+    <textarea
+        class="form-control"
+        rows="10"
+        bind:value={scannedText}
+        id="content-text"
+    />
     <div class="form-text" id="content-text-help">
         Se hai acquisito da una foto puoi correggere qualcosina, se necessario.
     </div>

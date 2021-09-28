@@ -1,7 +1,8 @@
 <script>
     import { onMount } from "svelte";
     import srvEndpoints from "../service-endpoints.json";
-    import { push, pop, replace } from "svelte-spa-router";
+    import { push, replace } from "svelte-spa-router";
+    import BackBtn from "../components/BackBtn.svelte";
 
     export let params = {};
 
@@ -19,9 +20,7 @@
 </script>
 
 <div class="mb-3 text-center">
-    <button type="button" class="btn btn-outline-primary" on:click={() => pop()}
-        >indietro</button
-    >
+    <BackBtn />
 </div>
 
 <div class="mb-3">
