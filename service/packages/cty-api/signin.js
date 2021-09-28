@@ -4,13 +4,16 @@ function main(args) {
     let watchword = args.watchword || "none";
     let username = args.username || "none";
 
-    let status = [{ "code": "0", "description": "error" }, { "code": "1", "description": "success" }]
+    let status = [
+        { "code": "0", "description": "error" },
+        { "code": "1", "description": "success" }
+    ]
 
     let res = {};
 
     if (communityId == "1" &&
         watchword == "prova" &&
-        username == "mar") {
+        username == "pro") {
         res.status = status[1];
         // TODO va restituito anche idUtente/nomeUtente e idCommunity/nomeCommunity
     } else {

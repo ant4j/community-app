@@ -6,8 +6,8 @@ function main(args) {
 
   return {
     "body": [
-      { id: "1", name: "Albachiara" },
-      { id: "2", name: "Laura non c'è" }
+      { id: "1", name: "Cantico 1" },
+      { id: "2", name: "Cantico 2" }
     ]
   }
 }
