@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import srvEndpoints from "../service-endpoints.json";
+    import endpoint from "../endpoint.json";
     import { push, replace } from "svelte-spa-router";
     import BackBtn from "../components/BackBtn.svelte";
 
@@ -11,7 +11,7 @@
     onMount(() => retrieveContents(params.idCollection));
 
     function retrieveContents(idCollection) {
-        fetch(srvEndpoints.getContents + "?idCollection=" + idCollection)
+        fetch(endpoint.service.getContents + "?idCollection=" + idCollection)
             .then((r) => r.json())
             .then((d) => {
                 contentArr = d;

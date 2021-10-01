@@ -1,6 +1,0 @@
-{
-    "getCommunities": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/cty-api/getCommunities",
-    "getContents": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/cty-api/getContents",
-    "signin": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/cty-api/signin",
-    "endpointMock": "http://localhost:3000"
-}

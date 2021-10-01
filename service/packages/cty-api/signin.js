@@ -1,27 +1,27 @@
-function main(args) {
+exports.main = async function main(args) {
 
-    let communityId = args.communityId || "none";
-    let watchword = args.watchword || "none";
-    let username = args.username || "none";
+    let db = require("@nimbella/sdk").redis()
 
-    let status = [
-        { "code": "0", "description": "error" },
-        { "code": "1", "description": "success" }
-    ]
+    let status = {
+        "success": { "code": "1", "description": "success" },
+        "already_exists": { "code": "0", "description": "already exists" },
+        "not_exists": { "code": "-1", "description": "not exists" }
+    }
 
-    let res = {};
+    let res = { "status": status.not_exists }
 
-    if (communityId == "1" &&
-        watchword == "prova" &&
-        username == "pro") {
-        res.status = status[1];
-        // TODO va restituito anche idUtente/nomeUtente e idCommunity/nomeCommunity
-    } else {
-        res.status = status[0];
+    let commKeys = await db.keysAsync("comm:" + args.commId + ":*")
+
+    if (commKeys.length > 0) {
+        let comm = JSON.parse(await db.getAsync(commKeys[0]))
+        console.log("comm: " + comm)
+        if (args.watchword == comm.watchword) {
+            db.sadd("users:" + args.commId, args.username)
+            res = { "status": status.success }
+        }
     }
 
     return {
         "body": res
     }
 }
-exports.main = main

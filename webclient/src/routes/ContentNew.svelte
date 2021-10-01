@@ -1,33 +1,36 @@
 <script>
     import { push, replace } from "svelte-spa-router";
+    import endpoint from "../endpoint.json";
     import BackBtn from "../components/BackBtn.svelte";
 
     let disabled = "disabled";
     let fileToScan;
     let scannedText;
+    let contentTitle;
 
     function onFileSelected(e) {
         fileToScan = e.target.files[0];
         disabled = "";
     }
 
+    // "apikey": "5a64d478-9c89-43d8-88e3-c65de9999580"
     function scanText() {
         let formData = new FormData();
         formData.append("file", fileToScan);
-
-        // "apikey": "5a64d478-9c89-43d8-88e3-c65de9999580"
-        fetch("https://api.ocr.space/parse/image", {
+        fetch(endpoint.external_service.ocr.url, {
             method: "post",
             headers: {
-                apikey: "helloworld",
+                apikey: endpoint.external_service.ocr.apikey,
             },
             body: formData,
         })
             .then((res) => res.json())
             .then((data) => {
                 scannedText = data.ParsedResults[0].ParsedText;
-                console.log("text: " + scannedText);
+                contentTitle = scannedText.split("\n")[0];
             });
+        // scannedText = "Il titolo\n\nciaociaoc\nciaociao\nciaociao\n\nciaociaociaoc\nciao";
+        // contentTitle = scannedText.split("\n")[0];
     }
 
     function saveToCollection() {
@@ -64,15 +67,23 @@
     </div>
 </div>
 
+<hr />
+
 <div class="mb-3">
-    <label
-        for="content-text"
-        class="form-label"
-        aria-describedby="content-text-help">Testo</label
-    >
+    <input
+        type="text"
+        class="form-control"
+        placeholder="Titolo"
+        bind:value={contentTitle}
+    />
+</div>
+
+<div class="mb-3">
     <textarea
         class="form-control"
         rows="10"
+        aria-describedby="content-text-help"
+        placeholder="Testo.."
         bind:value={scannedText}
         id="content-text"
     />

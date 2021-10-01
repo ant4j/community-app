@@ -1,0 +1,15 @@
+{
+    "service": {
+        "getCommunities": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/cty-api/getCommunities",
+        "getContents": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/cty-api/getContents",
+        "signin": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/cty-api/signin",
+        "addCommunity": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/cty-api/addCommunity"
+    },
+    "external_service": {
+        "ocr": {
+            "url": "https://api.ocr.space/parse/image",
+            "apikey": "helloworld"
+        }
+    },
+    "mock": "http://localhost:3000"
+}
