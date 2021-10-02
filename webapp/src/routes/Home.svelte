@@ -3,7 +3,7 @@
 
 	let collArr = [
 		{ id: "1", name: "Cantici", type: "c" },
-		{ id: "2", name: "Letture", type: "l" }
+		{ id: "2", name: "Letture", type: "l" },
 	];
 </script>
 
@@ -25,8 +25,7 @@
 				<button
 					class="btn btn-primary"
 					type="button"
-					on:click={() => push("/content")}
-					id="commty-btn-participate">Partecipa</button
+					on:click={() => push("/content")}>Partecipa</button
 				>
 			</div>
 		</div>
@@ -34,8 +33,8 @@
 </div>
 
 <div class="mb-3">
-	<label for="colls-list" class="form-label">Elenco Raccolte</label>
-	<div class="list-group" aria-describedby="colls-list-help" id="colls-list">
+	<label for="coll-list" class="form-label">Elenco Raccolte</label>
+	<div class="list-group" aria-describedby="coll-list-help" id="coll-list">
 		{#each collArr as collEl}
 			<button
 				type="button"
@@ -45,12 +44,12 @@
 			>
 		{/each}
 	</div>
-	<div class="form-text" id="colls-list-help">Seleziona una Raccolta.</div>
+	<div class="form-text" id="coll-list-help">Seleziona una Raccolta.</div>
 </div>
 
 <div class="mb-3">
 	<div class="d-grid gap-2">
-		<button class="btn btn-primary" type="button" id="collection-btn-create"
+		<button class="btn btn-primary" type="button"
 			>Crea una Nuova Raccolta</button
 		>
 	</div>
@@ -58,10 +57,7 @@
 
 <div class="mb-3">
 	<div class="btn-group" role="group">
-		<button
-			type="button"
-			class="btn btn-outline-primary"
-			id="commty-btn-history">Cronologia</button
+		<button type="button" class="btn btn-outline-primary">Cronologia</button
 		>
 		<button
 			type="button"

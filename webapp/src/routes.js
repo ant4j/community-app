@@ -8,7 +8,7 @@ import NotFound from "./routes/NotFound.svelte";
 export default {
     "/": Signin,
     "/home": Home,
-    "/collection/:idCollection": Collection,
+    "/collection/:idColl": Collection,
     "/content": Content,
     "/content-new": ContentNew,
     // The catch-all route must always be last

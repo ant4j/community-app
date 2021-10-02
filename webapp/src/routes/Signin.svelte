@@ -106,7 +106,7 @@
 <hr />
 
 <div class="mb-3">
-  <label for="comm-username" class="form-label"
+  <label for="username" class="form-label"
     >Il tuo Nome utente nella Community</label
   >
   <input
@@ -114,11 +114,11 @@
     class="form-control"
     maxlength="3"
     placeholder="Nome utente"
-    aria-describedby="comm-username-help"
+    aria-describedby="username-help"
     bind:value={signinData.username}
-    id="comm-username"
+    id="username"
   />
-  <div class="form-text" id="comm-username-help">
+  <div class="form-text" id="username-help">
     Prime 2 lettere del tuo nome + prima lettera del tuo cognome.
     <br />
     Es.: Mario Rossi = mar.
@@ -127,11 +127,8 @@
 
 <div class="mb-3">
   <div class="d-grid gap-2">
-    <button
-      type="button"
-      class="btn btn-primary"
-      on:click={() => signin()}
-      id="comm-btn-enter">Entra</button
+    <button type="button" class="btn btn-primary" on:click={() => signin()}
+      >Entra</button
     >
   </div>
 </div>
@@ -163,8 +160,7 @@
     <button
       type="button"
       class="btn btn-primary"
-      on:click={() => createCommunity()}
-      id="comm-btn-create">Crea</button
+      on:click={() => createCommunity()}>Crea</button
     >
   </div>
 </div>

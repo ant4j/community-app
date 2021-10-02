@@ -1,8 +1,8 @@
 function main(args) {
 
-  let idCollection = args.idCollection
+  let idColl = args.idColl
 
-  console.log(idCollection)
+  console.log(idColl)
 
   return {
     "body": [

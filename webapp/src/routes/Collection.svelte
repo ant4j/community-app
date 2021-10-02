@@ -8,10 +8,10 @@
 
     let contentArr = [];
 
-    onMount(() => retrieveContents(params.idCollection));
+    onMount(() => retrieveContents(params.idColl));
 
-    function retrieveContents(idCollection) {
-        fetch(endpoint.service.getContents + "?idCollection=" + idCollection)
+    function retrieveContents(idColl) {
+        fetch(endpoint.service.getContents + "?idColl=" + idColl)
             .then((r) => r.json())
             .then((d) => {
                 contentArr = d;
@@ -24,7 +24,7 @@
 </div>
 
 <div class="mb-3">
-    <label for="content-list" class="form-label" id="content-list-label" />
+    <label for="content-list" class="form-label" />
     <div class="list-group" id="content-list">
         {#each contentArr as contentEl}
             <button
@@ -41,7 +41,6 @@
         <button
             class="btn btn-primary"
             type="button"
-            id="content-btn-create"
             on:click={() => push("/content-new")}>Aggiungi Nuovo</button
         >
     </div>

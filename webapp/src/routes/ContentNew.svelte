@@ -85,7 +85,6 @@
         aria-describedby="content-text-help"
         placeholder="Testo.."
         bind:value={scannedText}
-        id="content-text"
     />
     <div class="form-text" id="content-text-help">
         Se hai acquisito da una foto puoi correggere qualcosina, se necessario.
