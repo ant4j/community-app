@@ -3,8 +3,7 @@
 
 	let collArr = [
 		{ id: "1", name: "Cantici", type: "c" },
-		{ id: "2", name: "Letture", type: "l" },
-		{ id: "3", name: "Battute", type: "l" },
+		{ id: "2", name: "Letture", type: "l" }
 	];
 </script>
 
