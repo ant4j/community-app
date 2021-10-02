@@ -1,5 +1,4 @@
 <script>
-	import { push, replace } from "svelte-spa-router";
 	import BackBtn from "../components/BackBtn.svelte";
 </script>
 

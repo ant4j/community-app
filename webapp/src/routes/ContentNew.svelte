@@ -1,5 +1,4 @@
 <script>
-	import { push, replace } from "svelte-spa-router";
 	import endpoint from "../endpoint.json";
 	import BackBtn from "../components/BackBtn.svelte";
 
@@ -13,25 +12,23 @@
 		disabled = "";
 	}
 
-	// "apikey": "5a64d478-9c89-43d8-88e3-c65de9999580"
-	function scanText() {
+	async function scanText() {
 		let formData = new FormData();
 		formData.append("file", fileToScan);
-		fetch(endpoint.external_service.ocr.url, {
+		let res = await fetch(endpoint.external_service.ocr.url, {
 			method: "post",
 			headers: {
 				apikey: endpoint.external_service.ocr.apikey,
 			},
 			body: formData,
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				scannedText = data.ParsedResults[0].ParsedText;
-				contentTitle = scannedText.split("\n")[0];
-			});
+		});
+		let json = await res.json();
+		scannedText = json.ParsedResults[0].ParsedText;
+		contentTitle = scannedText.split("\n")[0];
 	}
 
 	function saveToCollection() {
+		// TODO
 		console.log("che cosa vado a salvare: " + scannedText);
 	}
 </script>
@@ -79,13 +76,14 @@
 <div class="mb-3">
 	<textarea
 		class="form-control"
-		rows="10"
+		rows="8"
 		aria-describedby="content-text-help"
 		placeholder="Testo.."
 		bind:value={scannedText}
 	/>
 	<div class="form-text" id="content-text-help">
-		Se hai acquisito da una foto puoi correggere qualcosina, se necessario.
+		Puoi anche inserire manualmente Titolo e Testo. Se invece hai acquisito
+		da una foto puoi correggere qualcosina, se necessario.
 	</div>
 </div>
 

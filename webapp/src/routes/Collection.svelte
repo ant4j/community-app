@@ -10,12 +10,12 @@
 
 	onMount(() => retrieveContents(params.idColl));
 
-	function retrieveContents(idColl) {
-		fetch(endpoint.service.getContents + "?idColl=" + idColl)
-			.then((r) => r.json())
-			.then((d) => {
-				contentArr = d;
-			});
+	async function retrieveContents(idColl) {
+		let res = await fetch(
+			endpoint.service.getContents + "?idColl=" + idColl
+		);
+		let json = await res.json();
+		contentArr = json;
 	}
 </script>
 
