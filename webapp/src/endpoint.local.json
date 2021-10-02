@@ -1,0 +1,14 @@
+{
+	"service": {
+		"getCommunities": "http://localhost:3000/getCommunities",
+		"getContents": "http://localhost:3000/getContents",
+		"signin": "http://localhost:3000/signin",
+		"addCommunity": "http://localhost:3000/addCommunity"
+	},
+	"external_service": {
+		"ocr": {
+			"url": "https://api.ocr.space/parse/image",
+			"apikey": "helloworld"
+		}
+	}
+}
