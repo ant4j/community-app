@@ -8,10 +8,19 @@
 	let signinData = {};
 	let commToCreate = {};
 
+	let commName;
+
 	onMount(() => retrieveCommunities());
 
 	async function retrieveCommunities() {
-		console.log("COOKIES: " + Cookies.get("signin-comm-id") + ", " + Cookies.get("signin-username"));
+		console.log(
+			"COOKIES: " +
+				Cookies.get("signin-comm-id") +
+				", " +
+				Cookies.get("signin-comm-name") +
+				", " +
+				Cookies.get("signin-username")
+		);
 
 		let res = await fetch(endpoint.service.getCommunities);
 		let json = await res.json();
@@ -19,6 +28,7 @@
 		commArr = json;
 		if (commArr.length > 0) {
 			signinData.commId = commArr[0].id;
+			commName = commArr[0].name;
 		}
 	}
 
@@ -33,8 +43,16 @@
 		console.log("signin, json: " + JSON.stringify(json));
 		if (json.status.code == "1") {
 			Cookies.set("signin-comm-id", signinData.commId);
+			Cookies.set("signin-comm-name", commName);
 			Cookies.set("signin-username", json.username);
-			console.log("COOKIES: " + Cookies.get("signin-comm-id") + ", " + Cookies.get("signin-username"));
+			console.log(
+				"COOKIES: " +
+					Cookies.get("signin-comm-id") +
+					", " +
+					Cookies.get("signin-comm-name") +
+					", " +
+					Cookies.get("signin-username")
+			);
 			push("/home");
 		} else {
 			alert("errore");
@@ -53,6 +71,7 @@
 		if (json.status.code == "1") {
 			commArr.push(json.data);
 			signinData.commId = commArr[0].id;
+			commName = commArr[0].name;
 		} else {
 			alert("Community gia' esistente");
 		}
@@ -72,8 +91,10 @@
 					type="button"
 					class="list-group-item list-group-item-action"
 					class:active={signinData.commId === commEl.id}
-					on:click={() => (signinData.commId = commEl.id)}
-					>{commEl.name}</button
+					on:click={() => {
+						signinData.commId = commEl.id;
+						commName = commEl.name;
+					}}>{commEl.name}</button
 				>
 			{/each}
 		{/if}

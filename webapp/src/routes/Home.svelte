@@ -20,13 +20,23 @@
 
 	function exit() {
 		Cookies.remove("signin-comm-id");
+		Cookies.remove("signin-comm-name");
 		Cookies.remove("signin-username");
 		pop();
 	}
 </script>
 
 <div class="mb-3">
-	Provvisoriamente: Benvenuto {Cookies.get("signin-username")}!
+	<p>
+		Sei dentro la community
+		<span class="fw-bolder">
+			{Cookies.get("signin-comm-name")}
+		</span>
+		col nome utente
+		<span class="fw-bolder">
+			{Cookies.get("signin-username")}
+		</span>
+	</p>
 </div>
 
 <div class="mb-3">
@@ -55,7 +65,7 @@
 </div>
 
 <div class="mb-3">
-	<label for="coll-list" class="form-label">Elenco Raccolte</label>
+	<label for="coll-list" class="form-label">Elenco raccolte</label>
 	<div class="list-group" aria-describedby="coll-list-help" id="coll-list">
 		{#each collArr as collEl}
 			<button

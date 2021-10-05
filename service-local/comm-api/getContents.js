@@ -6,8 +6,8 @@ exports.main = async function main(args) {
 
 	return {
 		"body": [
-			{ id: "1", name: "Cantico 1" },
-			{ id: "2", name: "Cantico 2" }
+			{ id: "1", name: "Contenuto 1" },
+			{ id: "2", name: "Contenuto 2" }
 		]
 	}
 }

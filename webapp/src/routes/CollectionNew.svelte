@@ -47,8 +47,8 @@
 		bind:value={collData.type}
 		id="coll-type"
 	>
-		<option value="0" selected>Cantico</option>
-		<option value="1">Lettura</option>
+		<option value="0" selected>Canti</option>
+		<option value="1">Letture</option>
 	</select>
 </div>
 
