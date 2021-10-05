@@ -8,11 +8,11 @@
 
 	let contentArr = [];
 
-	onMount(() => retrieveContents(params.idColl));
+	onMount(() => retrieveContents(params.collId));
 
-	async function retrieveContents(idColl) {
+	async function retrieveContents(collId) {
 		let res = await fetch(
-			endpoint.service.getContents + "?idColl=" + idColl
+			endpoint.service.getContents + "?collId=" + collId
 		);
 		let json = await res.json();
 		contentArr = json;

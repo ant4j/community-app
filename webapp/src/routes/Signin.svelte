@@ -2,6 +2,7 @@
 	import { onMount } from "svelte";
 	import endpoint from "../endpoint.json";
 	import { push, pop, replace } from "svelte-spa-router";
+	import Cookies from "js-cookie";
 
 	let commArr = [];
 	let signinData = {};
@@ -10,6 +11,8 @@
 	onMount(() => retrieveCommunities());
 
 	async function retrieveCommunities() {
+		console.log("COOKIES: " + Cookies.get("signin-comm-id") + ", " + Cookies.get("signin-username"));
+
 		let res = await fetch(endpoint.service.getCommunities);
 		let json = await res.json();
 		console.log("retrieveCommunities, json: " + JSON.stringify(json));
@@ -29,7 +32,9 @@
 		let json = await res.json();
 		console.log("signin, json: " + JSON.stringify(json));
 		if (json.status.code == "1") {
-			// TODO settare il cookie con idUtente/nomeUtente e idCommunity/nomeCommunity
+			Cookies.set("signin-comm-id", signinData.commId);
+			Cookies.set("signin-username", json.username);
+			console.log("COOKIES: " + Cookies.get("signin-comm-id") + ", " + Cookies.get("signin-username"));
 			push("/home");
 		} else {
 			alert("errore");
@@ -95,7 +100,7 @@
 	</div>
 </div>
 
-<hr />
+<!-- <hr />
 
 <div class="mb-3">
 	<label for="username" class="form-label"
@@ -115,7 +120,7 @@
 		<br />
 		Es.: Mario Rossi = mar.
 	</div>
-</div>
+</div> -->
 
 <div class="mb-3">
 	<div class="d-grid gap-2">

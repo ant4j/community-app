@@ -36,7 +36,14 @@ let getCommunities = require("./comm-api/getCommunities.js")
 let getContents = require("./comm-api/getContents.js")
 let signin = require("./comm-api/signin.js")
 
+let getCollections = require("./comm-api/getCollections.js")
+let addCollection = require("./comm-api/addCollection.js")
+
+
 exposePost("/addCommunity", addCommunity.main)
 exposeGet("/getCommunities", getCommunities.main)
 exposeGet("/getContents", getContents.main)
 exposePost("/signin", signin.main)
+
+exposeGet("/getCollections", getCollections.main)
+exposePost("/addCollection", addCollection.main)

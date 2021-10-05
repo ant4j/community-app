@@ -82,8 +82,8 @@
 		bind:value={scannedText}
 	/>
 	<div class="form-text" id="content-text-help">
-		Puoi anche inserire manualmente Titolo e Testo. Se invece hai acquisito
-		da una foto puoi correggere qualcosina, se necessario.
+		Se hai acquisito da una foto puoi correggere qualcosina, se necessario.
+		Oppure puoi anche inserire il titolo e tutto il testo manualmente.
 	</div>
 </div>
 

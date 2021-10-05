@@ -1,11 +1,33 @@
 <script>
+	import { onMount } from "svelte";
+	import endpoint from "../endpoint.json";
 	import { push, pop, replace } from "svelte-spa-router";
+	import Cookies from "js-cookie";
 
-	let collArr = [
-		{ id: "1", name: "Cantici", type: "c" },
-		{ id: "2", name: "Letture", type: "l" },
-	];
+	let collArr = [];
+
+	onMount(() => retrieveCollections());
+
+	async function retrieveCollections() {
+		let res = await fetch(
+			endpoint.service.getCollections +
+				"?commId=" +
+				Cookies.get("signin-comm-id")
+		);
+		let json = await res.json();
+		collArr = json;
+	}
+
+	function exit() {
+		Cookies.remove("signin-comm-id");
+		Cookies.remove("signin-username");
+		pop();
+	}
 </script>
+
+<div class="mb-3">
+	Provvisoriamente: Benvenuto {Cookies.get("signin-username")}!
+</div>
 
 <div class="mb-3">
 	<div class="card">
@@ -49,7 +71,10 @@
 
 <div class="mb-3">
 	<div class="d-grid gap-2">
-		<button class="btn btn-primary" type="button"
+		<button
+			class="btn btn-primary"
+			type="button"
+			on:click={() => push("/collection-new")}
 			>Crea una Nuova Raccolta</button
 		>
 	</div>
@@ -62,7 +87,7 @@
 		<button
 			type="button"
 			class="btn btn-outline-primary"
-			on:click={() => pop()}>Esci</button
+			on:click={() => exit()}>Esci</button
 		>
 	</div>
 </div>

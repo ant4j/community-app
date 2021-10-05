@@ -7,10 +7,11 @@ exports.main = async function main(args) {
 		"already_exists": { "code": "0", "description": "already exists" },
 		"not_exists": { "code": "-1", "description": "not exists" }
 	}
-
+	
+	let res = { "status": status.already_exists }
+	
 	let commKeys = await db.keysAsync("comm:*:" + args.name)
 
-	let res = { "status": status.already_exists }
 
 	if (!commKeys.length) {
 		db.incr("comm_id_seq")

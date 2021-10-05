@@ -1,8 +1,8 @@
 exports.main = async function main(args) {
 
-	let idColl = args.idColl
+	let collId = args.collId
 
-	console.log("idColl: " + idColl)
+	console.log("collId: " + collId)
 
 	return {
 		"body": [

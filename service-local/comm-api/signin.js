@@ -16,8 +16,15 @@ exports.main = async function main(args) {
 		let comm = JSON.parse(await db.getAsync(commKeys[0]))
 		console.log("comm: " + JSON.stringify(comm))
 		if (args.watchword == comm.watchword) {
-			db.sadd("users:" + args.commId, args.username)
-			res = { "status": status.success }
+			db.incr("user_id_seq")
+
+			let userId = await db.getAsync("user_id_seq")
+			
+			let username = "user" + userId
+			
+			db.setAsync("user:" + args.commId + ":" + username, username)
+			
+			res = { "status": status.success, "username": username }
 		}
 	}
 
