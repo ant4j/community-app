@@ -39,6 +39,7 @@ let signin = require("./comm-api/signin.js")
 let getCollections = require("./comm-api/getCollections.js")
 let addCollection = require("./comm-api/addCollection.js")
 let addContent = require("./comm-api/addContent.js")
+let getContent = require("./comm-api/getContent.js")
 
 
 exposePost("/addCommunity", addCommunity.main)
@@ -49,3 +50,4 @@ exposePost("/signin", signin.main)
 exposeGet("/getCollections", getCollections.main)
 exposePost("/addCollection", addCollection.main)
 exposePost("/addContent", addContent.main)
+exposeGet("/getContent", getContent.main)

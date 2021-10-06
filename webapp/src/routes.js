@@ -11,8 +11,8 @@ export default {
 	"/home": Home,
 	"/collection/:collId": Collection,
 	"/collection-new": CollectionNew,
-	"/content": Content,
 	"/content-new/:collId": ContentNew,
+	"/content/:collId/:contId": Content,
 	// The catch-all route must always be last
 	"*": NotFound
 };

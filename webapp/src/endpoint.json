@@ -1,13 +1,14 @@
 {
 	"service": {
-		"getCommunities": "http://localhost:3000/getCommunities",
-		"getContents": "http://localhost:3000/getContents",
-		"signin": "http://localhost:3000/signin",
-		"addCommunity": "http://localhost:3000/addCommunity",
+		"getCommunities": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/getCommunities",
+		"getContents": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/getContents",
+		"signin": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/signin",
+		"addCommunity": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/addCommunity",
 
-		"addCollection": "http://localhost:3000/addCollection",
-		"getCollections": "http://localhost:3000/getCollections",
-		"addContent": "http://localhost:3000/addContent"
+		"addCollection": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/addCollection",
+		"getCollections": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/getCollections",
+		"addContent": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/addContent",
+		"getContent": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/getContent"
 	},
 	"external_service": {
 		"ocr": {

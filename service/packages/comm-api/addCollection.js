@@ -8,21 +8,19 @@ exports.main = async function main(args) {
 		"not_exists": { "code": "-1", "description": "not exists" }
 	}
 
-	let contKeys = await db.keysAsync("cont:*:*:*" + args.title)
+	let collKeys = await db.keysAsync("coll:*:*:*" + args.name)
 
 	let res = { "status": status.already_exists }
 
-	if (!contKeys.length) {
-		db.incr("cont_id_seq")
+	if (!collKeys.length) {
+		db.incr("coll_id_seq")
 
-		let contId = await db.getAsync("cont_id_seq")
+		let collId = await db.getAsync("coll_id_seq")
 
-		let key = "cont:" + args.collId + ":" + contId + ":" + args.title
-		let value = JSON.stringify({ "id": contId, "title": args.title })
+		let key = "coll:" + args.commId + ":" + collId + ":" + args.name
+		let value = JSON.stringify({ "id": collId, "name": args.name, "type": args.type })
 
 		await db.setAsync(key, value)
-
-		await db.setAsync("cont_text:" + args.collId + ":" + contId, args.text)
 
 		res = { "status": status.success }
 	}

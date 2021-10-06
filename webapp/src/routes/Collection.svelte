@@ -11,9 +11,7 @@
 	onMount(() => retrieveContents());
 
 	async function retrieveContents() {
-		console.log(
-			"retrieveContents, params.collId: " + params.collId
-		);
+		console.log("retrieveContents, params.collId: " + params.collId);
 		let res = await fetch(
 			endpoint.service.getContents + "?collId=" + params.collId
 		);
@@ -33,7 +31,9 @@
 			<button
 				type="button"
 				class="list-group-item list-group-item-action"
-				on:click={() => push("/content")}>{contentEl.title}</button
+				on:click={() =>
+					push("/content/" + params.collId + "/" + contentEl.id)}
+				>{contentEl.title}</button
 			>
 		{/each}
 	</div>
@@ -44,7 +44,8 @@
 		<button
 			class="btn btn-primary"
 			type="button"
-			on:click={() => push("/content-new/" + params.collId)}>Aggiungi Nuovo</button
+			on:click={() => push("/content-new/" + params.collId)}
+			>Aggiungi Nuovo</button
 		>
 	</div>
 </div>
