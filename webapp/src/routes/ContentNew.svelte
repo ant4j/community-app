@@ -1,11 +1,14 @@
 <script>
 	import endpoint from "../endpoint.json";
+	import { pop } from "svelte-spa-router";
 	import BackBtn from "../components/BackBtn.svelte";
+
+	export let params = {};
 
 	let disabled = "disabled";
 	let fileToScan;
-	let scannedText;
-	let contentTitle;
+
+	let contentToCreate = {"collId": params.collId};
 
 	function onFileSelected(e) {
 		fileToScan = e.target.files[0];
@@ -23,13 +26,27 @@
 			body: formData,
 		});
 		let json = await res.json();
-		scannedText = json.ParsedResults[0].ParsedText;
-		contentTitle = scannedText.split("\n")[0];
+		contentToCreate.text = json.ParsedResults[0].ParsedText;
+		contentToCreate.title = contentToCreate.text.split("\n")[0];
 	}
 
-	function saveToCollection() {
-		// TODO
-		console.log("che cosa vado a salvare: " + scannedText);
+	async function createContent() {
+		console.log(
+			"createContent, contentToCreate: " + JSON.stringify(contentToCreate)
+		);
+
+		let res = await fetch(endpoint.service.addContent, {
+			method: "post",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(contentToCreate),
+		});
+		let json = await res.json();
+		console.log("createContent, json: " + JSON.stringify(json));
+		if (json.status.code == "1") {
+			pop();
+		} else if (json.status.code == "0") {
+			alert("Il content esiste gia'");
+		}
 	}
 </script>
 
@@ -69,7 +86,7 @@
 		type="text"
 		class="form-control"
 		placeholder="Titolo"
-		bind:value={contentTitle}
+		bind:value={contentToCreate.title}
 	/>
 </div>
 
@@ -79,7 +96,7 @@
 		rows="8"
 		aria-describedby="content-text-help"
 		placeholder="Testo.."
-		bind:value={scannedText}
+		bind:value={contentToCreate.text}
 	/>
 	<div class="form-text" id="content-text-help">
 		Se hai acquisito da una foto puoi correggere qualcosina, se necessario.
@@ -92,7 +109,7 @@
 		<button
 			class="btn btn-primary"
 			type="button"
-			on:click={() => saveToCollection()}>Salva nella raccolta</button
+			on:click={() => createContent()}>Aggiungi alla raccolta</button
 		>
 	</div>
 </div>

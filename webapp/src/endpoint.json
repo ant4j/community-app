@@ -6,7 +6,8 @@
 		"addCommunity": "http://localhost:3000/addCommunity",
 
 		"addCollection": "http://localhost:3000/addCollection",
-		"getCollections": "http://localhost:3000/getCollections"
+		"getCollections": "http://localhost:3000/getCollections",
+		"addContent": "http://localhost:3000/addContent"
 	},
 	"external_service": {
 		"ocr": {

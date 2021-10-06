@@ -12,7 +12,7 @@ export default {
 	"/collection/:collId": Collection,
 	"/collection-new": CollectionNew,
 	"/content": Content,
-	"/content-new": ContentNew,
+	"/content-new/:collId": ContentNew,
 	// The catch-all route must always be last
 	"*": NotFound
 };

@@ -8,11 +8,14 @@
 
 	let contentArr = [];
 
-	onMount(() => retrieveContents(params.collId));
+	onMount(() => retrieveContents());
 
-	async function retrieveContents(collId) {
+	async function retrieveContents() {
+		console.log(
+			"retrieveContents, params.collId: " + params.collId
+		);
 		let res = await fetch(
-			endpoint.service.getContents + "?collId=" + collId
+			endpoint.service.getContents + "?collId=" + params.collId
 		);
 		let json = await res.json();
 		contentArr = json;
@@ -30,7 +33,7 @@
 			<button
 				type="button"
 				class="list-group-item list-group-item-action"
-				on:click={() => push("/content")}>{contentEl.name}</button
+				on:click={() => push("/content")}>{contentEl.title}</button
 			>
 		{/each}
 	</div>
@@ -41,7 +44,7 @@
 		<button
 			class="btn btn-primary"
 			type="button"
-			on:click={() => push("/content-new")}>Aggiungi Nuovo</button
+			on:click={() => push("/content-new/" + params.collId)}>Aggiungi Nuovo</button
 		>
 	</div>
 </div>

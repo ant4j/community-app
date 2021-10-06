@@ -8,7 +8,7 @@ exports.main = async function main(args) {
 		"not_exists": { "code": "-1", "description": "not exists" }
 	}
 
-	let collKeys = await db.keysAsync("coll:*:*:" + args.name)
+	let collKeys = await db.keysAsync("coll:*:*:*" + args.name)
 
 	let res = { "status": status.already_exists }
 

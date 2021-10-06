@@ -10,7 +10,7 @@ exports.main = async function main(args) {
 	
 	let res = { "status": status.already_exists }
 	
-	let commKeys = await db.keysAsync("comm:*:" + args.name)
+	let commKeys = await db.keysAsync("comm:*:*" + args.name)
 
 
 	if (!commKeys.length) {
