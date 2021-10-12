@@ -1,7 +1,7 @@
 .nimbella/
 node_modules/
 build/
-service-local/comm-api/
+local/comm-api/
 
 .DS_Store
 CNAME
