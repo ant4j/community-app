@@ -1,0 +1,19 @@
+{
+	"service": {
+		"getCommunities": "/api/comm-api/getCommunities",
+		"getContents": "/api/comm-api/getContents",
+		"signin": "/api/comm-api/signin",
+		"addCommunity": "/api/comm-api/addCommunity",
+
+		"addCollection": "/api/comm-api/addCollection",
+		"getCollections": "/api/comm-api/getCollections",
+		"addContent": "/api/comm-api/addContent",
+		"getContent": "/api/comm-api/getContent"
+	},
+	"external_service": {
+		"ocr": {
+			"url": "https://api.ocr.space/parse/image",
+			"apikey": "helloworld"
+		}
+	}
+}
