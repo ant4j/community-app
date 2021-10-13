@@ -5,8 +5,12 @@
 	import Cookies from "js-cookie";
 
 	let collArr = [];
+	let proposal = {};
 
-	onMount(() => retrieveCollections());
+	onMount(() => {
+		retrieveCollections();
+		retrieveLastProposal();
+	});
 
 	async function retrieveCollections() {
 		let res = await fetch(
@@ -18,11 +22,27 @@
 		collArr = json;
 	}
 
+	async function retrieveLastProposal() {
+		let res = await fetch(
+			endpoint.service.getLastProposal +
+				"?commId=" +
+				Cookies.get("signin-comm-id")
+		);
+		let json = await res.json();
+		console.log("retrieveLastProposal, json: " + JSON.stringify(json));
+
+		if (json.status.code == "1") {
+			proposal = json.data;
+		} else {
+			proposal = {};
+		}
+	}
+
 	function exit() {
 		Cookies.remove("signin-comm-id");
 		Cookies.remove("signin-comm-name");
 		Cookies.remove("signin-username");
-		pop();
+		push("/");
 	}
 </script>
 
@@ -41,26 +61,47 @@
 
 <div class="mb-3">
 	<div class="card">
-		<div class="card-header">
-			Proposta del momento
-			<div class="text-muted text-small">23 Settembre 2021 13:52</div>
-		</div>
-		<div class="card-body">
-			<p class="card-title">
-				<span class="fw-bolder">mar</span> propone:
-			</p>
-			<p class="card-text text-center fs-5">
-				<i class="bi bi-megaphone" />
-				<span class="fst-italic">"Cantiamo titolo_canto"</span>
-			</p>
-			<div class="d-grid gap-2">
-				<button
-					class="btn btn-primary"
-					type="button"
-					on:click={() => push("/content")}>Partecipa</button
-				>
+		{#if Object.keys(proposal).length}
+			<div class="card-header">
+				Proposta del momento
+				<div class="text-muted text-small">23 Settembre 2021 13:52</div>
 			</div>
-		</div>
+			<div class="card-body">
+				<p class="card-title">
+					<span class="fw-bolder">{proposal.username}</span> propone:
+				</p>
+				<p class="card-text text-center fs-5">
+					<i class="bi bi-megaphone" />
+					"{#if proposal.collectionType == "0"}
+						Cantiamo
+					{:else}
+						Leggiamo
+					{/if}
+					<span class="fst-italic">{proposal.contentTitle}</span> !"
+				</p>
+				<div class="d-grid gap-2">
+					<button
+						class="btn btn-primary"
+						type="button"
+						on:click={() =>
+							push(
+								"/content/" +
+									proposal.collId +
+									"/" +
+									proposal.contId
+							)}>Partecipa</button
+					>
+				</div>
+			</div>
+		{:else}
+			<div class="card-header">
+				Proposta del momento
+				<div class="text-muted text-small">&nbsp;</div>
+			</div>
+			<div class="card-body">
+				<p class="card-title text-center">Nessuna proposta :(</p>
+			</div>
+		{/if}
 	</div>
 </div>
 

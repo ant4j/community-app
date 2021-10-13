@@ -8,7 +8,9 @@
 		"addCollection": "/api/comm-api/addCollection",
 		"getCollections": "/api/comm-api/getCollections",
 		"addContent": "/api/comm-api/addContent",
-		"getContent": "/api/comm-api/getContent"
+		"getContent": "/api/comm-api/getContent",
+		"proposeContent": "/api/comm-api/proposeContent",
+		"getLastProposal": "/api/comm-api/getLastProposal"
 	},
 	"external_service": {
 		"ocr": {

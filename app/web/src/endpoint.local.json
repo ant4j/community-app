@@ -8,7 +8,9 @@
 		"addCollection": "http://localhost:3000/addCollection",
 		"getCollections": "http://localhost:3000/getCollections",
 		"addContent": "http://localhost:3000/addContent",
-		"getContent": "http://localhost:3000/getContent"
+		"getContent": "http://localhost:3000/getContent",
+		"proposeContent": "http://localhost:3000/proposeContent",
+		"getLastProposal": "http://localhost:3000/getLastProposal"
 	},
 	"external_service": {
 		"ocr": {
