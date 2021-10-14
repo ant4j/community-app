@@ -18,7 +18,7 @@
 		console.log("createCollection, json: " + JSON.stringify(json));
 		if (json.status.code == "1") {
 			push("/home");
-		} else if(json.status.code == "0") {
+		} else if (json.status.code == "0") {
 			alert("La collection esiste gia'");
 		}
 	}
@@ -57,7 +57,8 @@
 		<button
 			class="btn btn-primary"
 			type="button"
-			on:click={() => createCollection()}>Crea raccolta</button
+			on:click={() => createCollection()}
+			>Crea raccolta <i class="bi bi-stars" /></button
 		>
 	</div>
 </div>

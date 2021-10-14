@@ -8,7 +8,7 @@
 	let disabled = "disabled";
 	let fileToScan;
 
-	let contentToCreate = {"collId": params.collId};
+	let contentToCreate = { collId: params.collId };
 
 	function onFileSelected(e) {
 		fileToScan = e.target.files[0];
@@ -74,7 +74,8 @@
 		<button
 			class="btn btn-primary {disabled}"
 			type="button"
-			on:click={() => scanText()}>Acquisisci</button
+			on:click={() => scanText()}
+			>Acquisisci <i class="bi bi-lightning" /></button
 		>
 	</div>
 </div>
@@ -109,7 +110,8 @@
 		<button
 			class="btn btn-primary"
 			type="button"
-			on:click={() => createContent()}>Aggiungi alla raccolta</button
+			on:click={() => createContent()}
+			>Aggiungi alla raccolta <i class="bi bi-stars" /></button
 		>
 	</div>
 </div>

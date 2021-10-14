@@ -146,7 +146,7 @@
 <div class="mb-3">
 	<div class="d-grid gap-2">
 		<button type="button" class="btn btn-primary" on:click={() => signin()}
-			>Entra</button
+			>Entra <i class="bi bi-door-open" /></button
 		>
 	</div>
 </div>
@@ -178,7 +178,8 @@
 		<button
 			type="button"
 			class="btn btn-primary"
-			on:click={() => createCommunity()}>Crea</button
+			on:click={() => createCommunity()}
+			>Crea Community <i class="bi bi-people-fill" /></button
 		>
 	</div>
 </div>

@@ -48,14 +48,14 @@
 
 <div class="mb-3">
 	<p>
-		Sei dentro la community
+		Benvenuto nella community
 		<span class="fw-bolder">
 			{Cookies.get("signin-comm-name")}
 		</span>
 		col nome utente
 		<span class="fw-bolder">
 			{Cookies.get("signin-username")}
-		</span>
+		</span>.
 	</p>
 </div>
 
@@ -72,24 +72,28 @@
 				</p>
 				<p class="card-text text-center fs-5">
 					<i class="bi bi-megaphone" />
-					"{#if proposal.collectionType == "0"}
+					&laquo; {#if proposal.collectionType == "0"}
 						Cantiamo
 					{:else}
 						Leggiamo
 					{/if}
-					<span class="fst-italic">{proposal.contentTitle}</span> !"
+					<span class="fst-italic"
+						>&ldquo;{proposal.contentTitle}&rdquo;</span
+					> ! &raquo;
 				</p>
 				<div class="d-grid gap-2">
+					<!-- TODO centralizzare il context=0 nel endpoint.json che diventera' config.json -->
 					<button
 						class="btn btn-primary"
 						type="button"
 						on:click={() =>
 							push(
-								"/content/" +
+								"/content/1/" +
 									proposal.collId +
 									"/" +
 									proposal.contId
-							)}>Partecipa</button
+							)}
+						>Partecipa <i class="bi bi-emoji-laughing" /></button
 					>
 				</div>
 			</div>
@@ -99,7 +103,9 @@
 				<div class="text-muted text-small">&nbsp;</div>
 			</div>
 			<div class="card-body">
-				<p class="card-title text-center">Nessuna proposta :(</p>
+				<p class="card-title text-center">
+					Nessuna proposta <i class="bi bi-emoji-frown" />
+				</p>
 			</div>
 		{/if}
 	</div>
@@ -126,7 +132,7 @@
 			class="btn btn-primary"
 			type="button"
 			on:click={() => push("/collection-new")}
-			>Crea una Nuova Raccolta</button
+			>Crea una Nuova Raccolta <i class="bi bi-folder-plus" /></button
 		>
 	</div>
 </div>

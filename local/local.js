@@ -6,7 +6,7 @@ let serviceLocal = express()
 serviceLocal.use(cors(), express.json())
 
 serviceLocal.listen(port, () => {
-	console.log(`service-local listening at http://localhost:${port}`)
+	console.log(`local listening at http://localhost:${port}`)
 })
 
 function exposeGet(path, func) {

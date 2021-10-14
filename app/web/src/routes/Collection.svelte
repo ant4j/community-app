@@ -27,12 +27,13 @@
 <div class="mb-3">
 	<label for="content-list" class="form-label" />
 	<div class="list-group" id="content-list">
+		<!-- TODO centralizzare il context=0 nel endpoint.json che diventera' config.json -->
 		{#each contentArr as contentEl}
 			<button
 				type="button"
 				class="list-group-item list-group-item-action"
 				on:click={() =>
-					push("/content/" + params.collId + "/" + contentEl.id)}
+					push("/content/0/" + params.collId + "/" + contentEl.id)}
 				>{contentEl.title}</button
 			>
 		{/each}
@@ -45,7 +46,7 @@
 			class="btn btn-primary"
 			type="button"
 			on:click={() => push("/content-new/" + params.collId)}
-			>Aggiungi Nuovo</button
+			>Aggiungi Nuovo <i class="bi bi-file-earmark-plus" /></button
 		>
 	</div>
 </div>

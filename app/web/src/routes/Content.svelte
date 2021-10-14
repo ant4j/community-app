@@ -32,7 +32,12 @@
 	}
 
 	async function proposeContent() {
-		let proposalData = JSON.stringify({ username: Cookies.get("signin-username"), commId: Cookies.get("signin-comm-id"), collId: params.collId, contId: params.contId });
+		let proposalData = JSON.stringify({
+			username: Cookies.get("signin-username"),
+			commId: Cookies.get("signin-comm-id"),
+			collId: params.collId,
+			contId: params.contId,
+		});
 		console.log("proposeContent, proposalData: " + proposalData);
 		let res = await fetch(endpoint.service.proposeContent, {
 			method: "post",
@@ -45,9 +50,20 @@
 	}
 </script>
 
-<div class="mb-3 text-center">
-	<BackBtn />
-</div>
+{#if params.context == "1"}
+	<div class="mb-3 text-center">
+		<p class="take-part-msg">
+			<i class="bi bi-hourglass-split" />
+			Partecipazione in corso
+			<i class="bi bi-hourglass-split" />
+		</p>
+	</div>
+	<hr />
+{:else}
+	<div class="mb-3 text-center">
+		<BackBtn />
+	</div>
+{/if}
 
 <div class="mb-3 text-center">
 	{#each textLines as textLine}
@@ -55,13 +71,34 @@
 	{/each}
 </div>
 
-<div class="mb-3">
-	<div class="d-grid gap-2">
-		<button
-			class="btn btn-primary"
-			type="button"
-			on:click={() => proposeContent()}
-			><i class="bi bi-megaphone" /> Proponi</button
-		>
+{#if params.context == "1"}
+	<div class="mb-3">
+		<div class="d-grid gap-2">
+			<button
+				class="btn btn-danger"
+				type="button"
+				on:click={() => push("/home")}
+				>Abbiamo finito! <i class="bi bi-alarm" /></button
+			>
+		</div>
 	</div>
-</div>
+{:else}
+	<div class="mb-3">
+		<div class="d-grid gap-2">
+			<button
+				class="btn btn-primary"
+				type="button"
+				on:click={() => proposeContent()}
+				>Proponi <i class="bi bi-megaphone" /></button
+			>
+		</div>
+	</div>
+{/if}
+
+<style>
+	.take-part-msg {
+		border-radius: 15px;
+		color: #595959;
+		background: #e6e600;
+	}
+</style>
