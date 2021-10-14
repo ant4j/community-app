@@ -151,35 +151,36 @@
 	</div>
 </div>
 
-<hr />
-
-<!-- TODO da nascondere se il numero massimo di community che si possono creare e' stato raggiunto -->
-<div class="mb-3">
-	<label for="" class="form-label">Crea una Community</label>
-	<input
-		type="text"
-		class="form-control"
-		placeholder="Nome Community"
-		bind:value={commToCreate.name}
-	/>
-</div>
-
-<div class="mb-3">
-	<input
-		type="text"
-		class="form-control"
-		placeholder="Parola d'ordine"
-		bind:value={commToCreate.watchword}
-	/>
-</div>
-
-<div class="mb-3">
-	<div class="d-grid gap-2">
-		<button
-			type="button"
-			class="btn btn-primary"
-			on:click={() => createCommunity()}
-			>Crea Community <i class="bi bi-people-fill" /></button
-		>
+{#if commArr.length == 0}
+	<hr />
+	<!-- TODO da nascondere se il numero massimo di community che si possono creare e' stato raggiunto -->
+	<div class="mb-3">
+		<label for="" class="form-label">Crea una Community</label>
+		<input
+			type="text"
+			class="form-control"
+			placeholder="Nome Community"
+			bind:value={commToCreate.name}
+		/>
 	</div>
-</div>
+
+	<div class="mb-3">
+		<input
+			type="text"
+			class="form-control"
+			placeholder="Parola d'ordine"
+			bind:value={commToCreate.watchword}
+		/>
+	</div>
+
+	<div class="mb-3">
+		<div class="d-grid gap-2">
+			<button
+				type="button"
+				class="btn btn-primary"
+				on:click={() => createCommunity()}
+				>Crea Community <i class="bi bi-people-fill" /></button
+			>
+		</div>
+	</div>
+{/if}

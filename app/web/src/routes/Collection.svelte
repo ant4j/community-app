@@ -25,6 +25,10 @@
 </div>
 
 <div class="mb-3">
+	<h5>Elenco contenuti della raccolta (da mettere titolo della raccolta)</h5>
+</div>
+
+<div class="mb-3">
 	<label for="content-list" class="form-label" />
 	<div class="list-group" id="content-list">
 		<!-- TODO centralizzare il context=0 nel endpoint.json che diventera' config.json -->
@@ -46,7 +50,7 @@
 			class="btn btn-primary"
 			type="button"
 			on:click={() => push("/content-new/" + params.collId)}
-			>Aggiungi Nuovo <i class="bi bi-file-earmark-plus" /></button
+			>Aggiungi nuovo contenuto <i class="bi bi-file-earmark-plus" /></button
 		>
 	</div>
 </div>

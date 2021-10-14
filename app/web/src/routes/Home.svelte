@@ -104,7 +104,7 @@
 			</div>
 			<div class="card-body">
 				<p class="card-title text-center">
-					Nessuna proposta <i class="bi bi-emoji-frown" />
+					Nessuna proposta. <i class="bi bi-emoji-frown" />
 				</p>
 			</div>
 		{/if}
