@@ -29,7 +29,7 @@
 	<BackBtn />
 </div>
 
-<div class="mb-3 text-center">
+<div class="mb-3">
 	<h5>{collectionName}</h5>
 </div>
 

@@ -185,6 +185,8 @@
 	</div>
 {/if}
 
-<button type="button" class="btn btn-link text-decoration-none" on:click={() => push("/bedrock")}>
-	Leggi lo Statuto di CommunityApp
-</button>
+<div class="mb-3">
+	<button type="button" class="btn btn-link btn-sm text-decoration-none" on:click={() => push("/bedrock")}>
+		Leggi lo Statuto di CommunityApp
+	</button>
+</div>
