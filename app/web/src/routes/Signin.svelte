@@ -8,7 +8,7 @@
 	let signinData = {};
 	let commToCreate = {};
 
-	let commName;
+	let commName = "";
 
 	onMount(() => retrieveCommunities());
 
@@ -53,7 +53,7 @@
 					", " +
 					Cookies.get("signin-username")
 			);
-			push("/home");
+			push("/");
 		} else {
 			alert("errore");
 			console.log("errore");
@@ -184,3 +184,7 @@
 		</div>
 	</div>
 {/if}
+
+<button type="button" class="btn btn-link text-decoration-none" on:click={() => push("/bedrock")}>
+	Leggi lo Statuto di CommunityApp
+</button>

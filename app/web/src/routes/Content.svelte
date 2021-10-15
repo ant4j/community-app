@@ -48,13 +48,13 @@
 		});
 		let json = await res.json();
 		console.log("proposeContent, json: " + JSON.stringify(json));
-		push("/home");
+		push("/");
 	}
 </script>
 
 {#if params.context == "1"}
 	<div class="mb-3 text-center">
-		<div class="card bg-light text-black-50 participation-msg-card">
+		<div class="card bg-light text-muted participation-msg-card">
 			<div class="card-body">
 				Partecipazione in corso
 				<i class="bi bi-hourglass-split" />
@@ -83,7 +83,7 @@
 			<button
 				class="btn btn-primary"
 				type="button"
-				on:click={() => push("/home")}
+				on:click={() => push("/")}
 				>Abbiamo finito! <i class="bi bi-alarm" /></button
 			>
 		</div>

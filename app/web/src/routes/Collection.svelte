@@ -6,6 +6,7 @@
 
 	export let params = {};
 
+	let collectionName = "";
 	let contentArr = [];
 
 	onMount(() => retrieveContents());
@@ -16,7 +17,11 @@
 			endpoint.service.getContents + "?collId=" + params.collId
 		);
 		let json = await res.json();
-		contentArr = json;
+
+		console.log("retrieveContents, json: " + JSON.stringify(json));
+
+		collectionName = json.collName;
+		contentArr = json.data;
 	}
 </script>
 
@@ -24,13 +29,17 @@
 	<BackBtn />
 </div>
 
-<div class="mb-3">
-	<h5>Elenco contenuti della raccolta (da mettere titolo della raccolta)</h5>
+<div class="mb-3 text-center">
+	<h5>{collectionName}</h5>
 </div>
 
 <div class="mb-3">
 	<label for="content-list" class="form-label" />
-	<div class="list-group" id="content-list">
+	<div
+		class="list-group"
+		aria-describedby="content-list-help"
+		id="content-list"
+	>
 		<!-- TODO centralizzare il context=0 nel endpoint.json che diventera' config.json -->
 		{#each contentArr as contentEl}
 			<button
@@ -42,6 +51,9 @@
 			>
 		{/each}
 	</div>
+	<div class="form-text" id="content-list-help">
+		Seleziona un contenuto per visualizzarlo.
+	</div>
 </div>
 
 <div class="mb-3">
@@ -50,7 +62,9 @@
 			class="btn btn-primary"
 			type="button"
 			on:click={() => push("/content-new/" + params.collId)}
-			>Aggiungi nuovo contenuto <i class="bi bi-file-earmark-plus" /></button
+			>Aggiungi nuovo contenuto <i
+				class="bi bi-file-earmark-plus"
+			/></button
 		>
 	</div>
 </div>

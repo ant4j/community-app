@@ -30,7 +30,10 @@
 <main>
 	<div class="container">
 		<div class="mb-3">
-			<h1>CommunityApp</h1>
+			<div class="w-75 p-1 app-logo text-center">
+				<h1 class="fw-bolder">CommunityApp</h1>
+				<div class="text-small">Salmo 133 &#8231; Let's Stay Together!</div>
+			</div>
 		</div>
 		<Router {routes} />
 	</div>
@@ -45,5 +48,12 @@
 
 	:global(.text-small) {
 		font-size: 11px;
+	}
+
+	.app-logo {
+		color: #ffff;
+		background: #0d6efd;
+		border-radius: 6px 40px;
+		/* padding: 4px; */
 	}
 </style>

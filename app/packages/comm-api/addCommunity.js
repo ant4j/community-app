@@ -5,7 +5,8 @@ exports.main = async function main(args) {
 	let status = {
 		"success": { "code": "1", "description": "success" },
 		"already_exists": { "code": "0", "description": "already exists" },
-		"not_exists": { "code": "-1", "description": "not exists" }
+		"not_exists": { "code": "-1", "description": "not exists" },
+		"no_data": { "code": "-2", "description": "no data" }
 	}
 	
 	let res = { "status": status.already_exists }

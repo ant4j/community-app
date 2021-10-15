@@ -18,6 +18,8 @@
 	async function scanText() {
 		let formData = new FormData();
 		formData.append("file", fileToScan);
+		formData.append("language", "ita");
+		formData.append("OCREngine", 2);
 		let res = await fetch(endpoint.external_service.ocr.url, {
 			method: "post",
 			headers: {

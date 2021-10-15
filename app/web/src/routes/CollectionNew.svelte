@@ -17,7 +17,7 @@
 		let json = await res.json();
 		console.log("createCollection, json: " + JSON.stringify(json));
 		if (json.status.code == "1") {
-			push("/home");
+			push("/");
 		} else if (json.status.code == "0") {
 			alert("La collection esiste gia'");
 		}
