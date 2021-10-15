@@ -1,3 +1,4 @@
+../develop-api.sh
 sudo systemctl start docker
 docker kill redis
 docker run --name redis --rm -p 6379:6379 -d redis --requirepass password
