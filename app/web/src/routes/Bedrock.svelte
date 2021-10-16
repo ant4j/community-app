@@ -29,7 +29,7 @@
 				<span class="text-muted text-small">3</span> È come la rugiada
 				dell'Hermon,<br />
 				che scende sui monti di Sion, per-<br />
-				chè è là che l'Eterno ha comandato<br />
+				ché è là che l'Eterno ha comandato<br />
 				la benedizione, la vita in eterno.<br />
 			</p>
 		</div>
