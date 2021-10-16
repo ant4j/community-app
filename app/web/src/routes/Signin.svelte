@@ -10,16 +10,20 @@
 
 	let commName = "";
 
-	onMount(() => retrieveCommunities());
+	onMount(() => init());
+
+	function init() {
+		retrieveCommunities();
+	}
 
 	async function retrieveCommunities() {
 		console.log(
 			"COOKIES: " +
-				Cookies.get("signin-comm-id") +
+				Cookies.get("signin-comm-id-133-1") +
 				", " +
-				Cookies.get("signin-comm-name") +
+				Cookies.get("signin-comm-name-133-1") +
 				", " +
-				Cookies.get("signin-username")
+				Cookies.get("signin-username-133-1")
 		);
 
 		let res = await fetch(endpoint.service.getCommunities);
@@ -42,17 +46,22 @@
 		let json = await res.json();
 		console.log("signin, json: " + JSON.stringify(json));
 		if (json.status.code == "1") {
-			Cookies.set("signin-comm-id", signinData.commId);
-			Cookies.set("signin-comm-name", commName);
-			Cookies.set("signin-username", json.username);
+			
+			const inHalfADay = 0.5;
+
+			Cookies.set("signin-comm-id-133-1", signinData.commId, {expires: inHalfADay});
+			Cookies.set("signin-comm-name-133-1", commName, {expires: inHalfADay});
+			Cookies.set("signin-username-133-1", json.username, {expires: inHalfADay});
+			
 			console.log(
 				"COOKIES: " +
-					Cookies.get("signin-comm-id") +
+					Cookies.get("signin-comm-id-133-1") +
 					", " +
-					Cookies.get("signin-comm-name") +
+					Cookies.get("signin-comm-name-133-1") +
 					", " +
-					Cookies.get("signin-username")
+					Cookies.get("signin-username-133-1")
 			);
+			
 			push("/");
 		} else {
 			alert("errore");
@@ -186,7 +195,11 @@
 {/if}
 
 <div class="mb-3">
-	<button type="button" class="btn btn-link btn-sm text-decoration-none" on:click={() => push("/bedrock")}>
+	<button
+		type="button"
+		class="btn btn-link btn-sm text-decoration-none"
+		on:click={() => push("/bedrock")}
+	>
 		Leggi lo Statuto di CommunityApp
 	</button>
 </div>

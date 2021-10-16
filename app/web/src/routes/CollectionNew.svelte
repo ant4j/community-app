@@ -3,8 +3,18 @@
 	import { push, pop, replace } from "svelte-spa-router";
 	import BackBtn from "../components/BackBtn.svelte";
 	import Cookies from "js-cookie";
+	import { onMount } from "svelte";
+	import Utils from "../utils";
 
-	let collData = { commId: Cookies.get("signin-comm-id") };
+	let collData = { commId: Cookies.get("signin-comm-id-133-1") };
+
+	onMount(() => init());
+
+	function init() {
+		if (!Utils.isSignedIn()) {
+			replace("/signin");
+		}
+	}
 
 	async function createCollection() {
 		console.log("createCollection, collData: " + JSON.stringify(collData));
@@ -24,41 +34,43 @@
 	}
 </script>
 
-<div class="mb-3 text-center">
-	<BackBtn />
-</div>
-
-<div class="mb-3">
-	<label for="coll-name" class="form-label">Nome raccolta</label>
-	<input
-		type="text"
-		class="form-control"
-		placeholder="Nome raccolta"
-		bind:value={collData.name}
-		id="coll-name"
-	/>
-</div>
-
-<div class="mb-3">
-	<label for="coll-type" class="form-label">Tipo raccolta</label>
-	<select
-		class="form-select"
-		aria-label="Tipo raccolta"
-		bind:value={collData.type}
-		id="coll-type"
-	>
-		<option value="0" selected>Canti</option>
-		<option value="1">Letture</option>
-	</select>
-</div>
-
-<div class="mb-3">
-	<div class="d-grid gap-2">
-		<button
-			class="btn btn-primary"
-			type="button"
-			on:click={() => createCollection()}
-			>Crea raccolta <i class="bi bi-stars" /></button
-		>
+{#if Utils.isSignedIn()}
+	<div class="mb-3 text-center">
+		<BackBtn />
 	</div>
-</div>
+
+	<div class="mb-3">
+		<label for="coll-name" class="form-label">Nome raccolta</label>
+		<input
+			type="text"
+			class="form-control"
+			placeholder="Nome raccolta"
+			bind:value={collData.name}
+			id="coll-name"
+		/>
+	</div>
+
+	<div class="mb-3">
+		<label for="coll-type" class="form-label">Tipo raccolta</label>
+		<select
+			class="form-select"
+			aria-label="Tipo raccolta"
+			bind:value={collData.type}
+			id="coll-type"
+		>
+			<option value="0" selected>Canti</option>
+			<option value="1">Letture</option>
+		</select>
+	</div>
+
+	<div class="mb-3">
+		<div class="d-grid gap-2">
+			<button
+				class="btn btn-primary"
+				type="button"
+				on:click={() => createCollection()}
+				>Crea raccolta <i class="bi bi-stars" /></button
+			>
+		</div>
+	</div>
+{/if}

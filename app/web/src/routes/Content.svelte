@@ -4,13 +4,22 @@
 	import BackBtn from "../components/BackBtn.svelte";
 	import Cookies from "js-cookie";
 	import { push, pop, replace } from "svelte-spa-router";
+	import Utils from "../utils";
 
 	export let params = {};
 
 	let title = "";
 	let textLines = [];
 
-	onMount(() => retrieveContent());
+	onMount(() => init());
+
+	function init() {
+		if (Utils.isSignedIn()) {
+			retrieveContent();
+		} else {
+			replace("/signin");
+		}
+	}
 
 	async function retrieveContent() {
 		console.log(
@@ -35,8 +44,8 @@
 
 	async function proposeContent() {
 		let proposalData = JSON.stringify({
-			username: Cookies.get("signin-username"),
-			commId: Cookies.get("signin-comm-id"),
+			username: Cookies.get("signin-username-133-1"),
+			commId: Cookies.get("signin-comm-id-133-1"),
 			collId: params.collId,
 			contId: params.contId,
 		});
@@ -52,51 +61,56 @@
 	}
 </script>
 
-{#if params.context == "1"}
-	<div class="mb-3 text-center">
-		<div class="card bg-light text-muted participation-msg-card">
-			<div class="card-body">
-				Partecipazione in corso
-				<i class="bi bi-hourglass-split" />
+{#if Utils.isSignedIn()}
+	{#if params.context == "1"}
+		<div class="mb-3 text-center">
+			<BackBtn />
+		</div>
+		<div class="mb-3 text-center">
+			<div class="card bg-light text-muted participation-msg-card">
+				<div class="card-body">
+					Partecipazione in corso
+					<i class="bi bi-hourglass-split" />
+				</div>
 			</div>
 		</div>
-	</div>
-{:else}
+	{:else}
+		<div class="mb-3 text-center">
+			<BackBtn showHomeBtn=true />
+		</div>
+	{/if}
+
 	<div class="mb-3 text-center">
-		<BackBtn />
+		<h5 class="fw-bolder">{title}</h5>
 	</div>
-{/if}
 
-<div class="mb-3 text-center">
-	<h5 class="fw-bolder">{title}</h5>
-</div>
+	<div class="mb-3 text-center">
+		{#each textLines as textLine}
+			<div>{textLine}</div>
+		{/each}
+	</div>
 
-<div class="mb-3 text-center">
-	{#each textLines as textLine}
-		<div>{textLine}</div>
-	{/each}
-</div>
-
-{#if params.context == "1"}
-	<div class="mb-3">
-		<div class="d-grid gap-2">
-			<button
-				class="btn btn-primary"
-				type="button"
-				on:click={() => push("/")}
-				>Abbiamo finito! <i class="bi bi-alarm" /></button
-			>
+	{#if params.context == "1"}
+		<div class="mb-3">
+			<div class="d-grid gap-2">
+				<button
+					class="btn btn-primary"
+					type="button"
+					on:click={() => push("/")}
+					>Abbiamo finito! <i class="bi bi-alarm" /></button
+				>
+			</div>
 		</div>
-	</div>
-{:else}
-	<div class="mb-3">
-		<div class="d-grid gap-2">
-			<button
-				class="btn btn-primary"
-				type="button"
-				on:click={() => proposeContent()}
-				>Proponi <i class="bi bi-megaphone" /></button
-			>
+	{:else}
+		<div class="mb-3">
+			<div class="d-grid gap-2">
+				<button
+					class="btn btn-primary"
+					type="button"
+					on:click={() => proposeContent()}
+					>Proponi <i class="bi bi-megaphone" /></button
+				>
+			</div>
 		</div>
-	</div>
+	{/if}
 {/if}

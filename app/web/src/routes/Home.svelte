@@ -3,16 +3,21 @@
 	import endpoint from "../endpoint.json";
 	import { push, pop, replace } from "svelte-spa-router";
 	import Cookies from "js-cookie";
+	import Utils from "../utils";
 
 	let collArr = [];
 	let proposal = {};
-	let isSignedIn = false;
 
-	onMount(() => initHome());
+	onMount(() => init());
 
-	function initHome() {
-		isSignedInCheck();
-		if (isSignedIn) {
+	function init() {
+		// delete old invalid cookie names until all users are up to date
+		console.log("Home.svelte init(), delete old invalid cookie names until all users are up to date");
+		Cookies.remove("signin-comm-id");
+		Cookies.remove("signin-comm-name");
+		Cookies.remove("signin-username");
+
+		if (Utils.isSignedIn()) {
 			retrieveCollections();
 			retrieveLastProposal();
 		} else {
@@ -20,19 +25,11 @@
 		}
 	}
 
-	function isSignedInCheck() {
-		let signinCommId = Cookies.get("signin-comm-id");
-		if (signinCommId !== undefined) {
-			isSignedIn = true;
-		}
-		console.log("isSignedIn: " + isSignedIn);
-	}
-
 	async function retrieveCollections() {
 		let res = await fetch(
 			endpoint.service.getCollections +
 				"?commId=" +
-				Cookies.get("signin-comm-id")
+				Cookies.get("signin-comm-id-133-1")
 		);
 		let json = await res.json();
 		collArr = json;
@@ -42,7 +39,7 @@
 		let res = await fetch(
 			endpoint.service.getLastProposal +
 				"?commId=" +
-				Cookies.get("signin-comm-id")
+				Cookies.get("signin-comm-id-133-1")
 		);
 		let json = await res.json();
 		console.log("retrieveLastProposal, json: " + JSON.stringify(json));
@@ -55,27 +52,26 @@
 	}
 
 	function exit() {
-		Cookies.remove("signin-comm-id");
-		Cookies.remove("signin-comm-name");
-		Cookies.remove("signin-username");
-		isSignedIn = false;
+		Cookies.remove("signin-comm-id-133-1");
+		Cookies.remove("signin-comm-name-133-1");
+		Cookies.remove("signin-username-133-1");
 		push("/signin");
 	}
 </script>
 
-{#if isSignedIn}
+{#if Utils.isSignedIn()}
 	<div class="mb-3">
 		<div>
 			<i class="bi bi-emoji-sunglasses" />
 			Benvenuto nella community
 			<span class="fw-bolder">
-				{Cookies.get("signin-comm-name")}
+				{Cookies.get("signin-comm-name-133-1")}
 			</span>
 		</div>
 		<div>
 			<i class="bi bi-person-circle" /> Il tuo nome utente è
 			<span class="fw-bolder">
-				{Cookies.get("signin-username")}
+				{Cookies.get("signin-username-133-1")}
 			</span>
 		</div>
 	</div>
