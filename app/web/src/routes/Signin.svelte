@@ -46,13 +46,18 @@
 		let json = await res.json();
 		console.log("signin, json: " + JSON.stringify(json));
 		if (json.status.code == "1") {
-			
 			const inHalfADay = 0.5;
 
-			Cookies.set("signin-comm-id-133-1", signinData.commId, {expires: inHalfADay});
-			Cookies.set("signin-comm-name-133-1", commName, {expires: inHalfADay});
-			Cookies.set("signin-username-133-1", json.username, {expires: inHalfADay});
-			
+			Cookies.set("signin-comm-id-133-1", signinData.commId, {
+				expires: inHalfADay,
+			});
+			Cookies.set("signin-comm-name-133-1", commName, {
+				expires: inHalfADay,
+			});
+			Cookies.set("signin-username-133-1", json.username, {
+				expires: inHalfADay,
+			});
+
 			console.log(
 				"COOKIES: " +
 					Cookies.get("signin-comm-id-133-1") +
@@ -61,7 +66,7 @@
 					", " +
 					Cookies.get("signin-username-133-1")
 			);
-			
+
 			push("/");
 		} else {
 			alert("errore");
@@ -200,6 +205,6 @@
 		class="btn btn-link btn-sm text-decoration-none"
 		on:click={() => push("/bedrock")}
 	>
-		Leggi lo Statuto di CommunityApp
+		Fondamento di CommunityApp
 	</button>
 </div>

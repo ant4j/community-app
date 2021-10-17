@@ -8,11 +8,23 @@
 </div>
 
 <div class="mb-3">
-	<h5>Statuto di CommunityApp</h5>
+	<h5>Fondamento di CommunityApp</h5>
 </div>
-<div class="card">
-	<div class="card-body">
-		<div class="mb-3">
+
+<div class="mb-3">
+	<p>
+		Questa app si fonda sulla <span class="fst-italic"
+			>Parola di Dio in Salmo 133</span
+		>.<br /> Da qui nasce il suo motto
+		<span class="fst-italic"
+			>Psalm 133 &#8231; It&rsquo;s Good Together!</span
+		>.
+	</p>
+</div>
+
+<div class="mb-3">
+	<div class="card">
+		<div class="card-body">
 			<div class="fw-bolder">SALMO 133</div>
 			<div class="fw-bolder">Eccellenza dell'unità</div>
 			<div><em>Canto dei pellegrinaggi. Di Davide.</em></div>
@@ -34,27 +46,4 @@
 			</p>
 		</div>
 	</div>
-</div>
-
-<br />
-
-<div class="mb-3">
-	<p>Allora, cosa ne pensi?</p>
-</div>
-
-<div class="mb-3">
-	<button
-		type="button"
-		class="btn btn-danger btn-insecure"
-		on:click={() =>
-			location.replace(
-				"https://www.messinaantincendio.com/shop/447-home_default/cartello-adesivo-sibolo-pesce-morto-e-albero-secco-mis-300x300.jpg"
-			)}>Non saprei.. <i class="bi bi-tsunami" /></button
-	>
-	<button
-		type="button"
-		class="btn btn-success btn-confident"
-		on:click={() => push("/signin")}
-		>Sono d'accordo! <i class="bi bi-trophy" /></button
-	>
 </div>

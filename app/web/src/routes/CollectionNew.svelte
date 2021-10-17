@@ -40,6 +40,10 @@
 	</div>
 
 	<div class="mb-3">
+		<h5>Crea una Nuova Raccolta</h5>
+	</div>
+
+	<div class="mb-3">
 		<label for="coll-name" class="form-label">Nome raccolta</label>
 		<input
 			type="text"

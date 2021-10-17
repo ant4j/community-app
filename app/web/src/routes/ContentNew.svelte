@@ -64,7 +64,11 @@
 
 {#if Utils.isSignedIn()}
 	<div class="mb-3 text-center">
-		<BackBtn showHomeBtn=true />
+		<BackBtn showHomeBtn="true" />
+	</div>
+
+	<div class="mb-3">
+		<h5>Aggiungi un nuovo contenuto</h5>
 	</div>
 
 	<div class="mb-3">
