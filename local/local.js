@@ -43,6 +43,7 @@ let getContent = require("./comm-api/getContent.js")
 let proposeContent = require("./comm-api/proposeContent.js")
 let getLastProposal = require("./comm-api/getLastProposal.js")
 
+let signinAdmin = require("./comm-api/signinAdmin.js")
 
 exposePost("/addCommunity", addCommunity.main)
 exposeGet("/getCommunities", getCommunities.main)
@@ -55,3 +56,5 @@ exposePost("/addContent", addContent.main)
 exposeGet("/getContent", getContent.main)
 exposePost("/proposeContent", proposeContent.main)
 exposeGet("/getLastProposal", getLastProposal.main)
+
+exposePost("/signinAdmin", signinAdmin.main)

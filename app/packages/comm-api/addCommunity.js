@@ -11,7 +11,7 @@ exports.main = async function main(args) {
 	
 	let res = { "status": status.already_exists }
 	
-	let commKeys = await db.keysAsync("comm:*:*" + args.name)
+	let commKeys = await db.keysAsync("comm:*:*:" + args.name)
 
 
 	if (!commKeys.length) {
@@ -19,7 +19,7 @@ exports.main = async function main(args) {
 
 		let commId = await db.getAsync("comm_id_seq")
 
-		let key = "comm:" + commId + ":" + args.name
+		let key = "comm:" + commId + ":" + args.adminId + ":" + args.name
 		let value = JSON.stringify({ "id": commId, "name": args.name, "watchword": args.watchword })
 
 		await db.setAsync(key, value)

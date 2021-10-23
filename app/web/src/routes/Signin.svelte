@@ -6,7 +6,6 @@
 
 	let commArr = [];
 	let signinData = {};
-	let commToCreate = {};
 
 	let commName = "";
 
@@ -71,23 +70,6 @@
 		} else {
 			alert("errore");
 			console.log("errore");
-		}
-	}
-
-	async function createCommunity() {
-		let res = await fetch(endpoint.service.addCommunity, {
-			method: "post",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(commToCreate),
-		});
-		let json = await res.json();
-		console.log("createCommunity, json: " + JSON.stringify(json));
-		if (json.status.code == "1") {
-			commArr.push(json.data);
-			signinData.commId = commArr[0].id;
-			commName = commArr[0].name;
-		} else {
-			alert("Community gia' esistente");
 		}
 	}
 </script>
@@ -165,40 +147,6 @@
 	</div>
 </div>
 
-{#if commArr.length == 0}
-	<hr />
-	<!-- TODO da nascondere se il numero massimo di community che si possono creare e' stato raggiunto -->
-	<div class="mb-3">
-		<label for="" class="form-label">Crea una Community</label>
-		<input
-			type="text"
-			class="form-control"
-			placeholder="Nome Community"
-			bind:value={commToCreate.name}
-		/>
-	</div>
-
-	<div class="mb-3">
-		<input
-			type="text"
-			class="form-control"
-			placeholder="Parola d'ordine"
-			bind:value={commToCreate.watchword}
-		/>
-	</div>
-
-	<div class="mb-3">
-		<div class="d-grid gap-2">
-			<button
-				type="button"
-				class="btn btn-primary"
-				on:click={() => createCommunity()}
-				>Crea Community <i class="bi bi-people-fill" /></button
-			>
-		</div>
-	</div>
-{/if}
-
 <div class="mb-3">
 	<button
 		type="button"
@@ -208,3 +156,13 @@
 		Fondamento di CommunityApp
 	</button>
 </div>
+
+<!-- <div class="mb-3">
+	<button
+		type="button"
+		class="btn btn-link btn-sm text-decoration-none"
+		on:click={() => push("/admin-signin")}
+	>
+		Area Amministratore
+	</button>
+</div> -->

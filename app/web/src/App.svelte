@@ -32,7 +32,9 @@
 		<div class="mb-3">
 			<div class="w-75 p-1 app-logo text-center">
 				<h1 class="fw-bolder">CommunityApp</h1>
-				<div class="text-small">Psalm 133 &#8231; It&rsquo;s Good Together!</div>
+				<div class="text-small">
+					Psalm 133 &#8231; It&rsquo;s Good Together!
+				</div>
 			</div>
 		</div>
 		<Router {routes} />

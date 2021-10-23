@@ -73,7 +73,7 @@
 				class="btn btn-primary"
 				type="button"
 				on:click={() => push("/content-new/" + params.collId)}
-				>Aggiungi un nuovo contenuto <i
+				>Aggiungi un Nuovo Contenuto <i
 					class="bi bi-file-earmark-plus"
 				/></button
 			>

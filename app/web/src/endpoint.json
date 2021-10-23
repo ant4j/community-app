@@ -4,13 +4,13 @@
 		"getContents": "/api/comm-api/getContents",
 		"signin": "/api/comm-api/signin",
 		"addCommunity": "/api/comm-api/addCommunity",
-
 		"addCollection": "/api/comm-api/addCollection",
 		"getCollections": "/api/comm-api/getCollections",
 		"addContent": "/api/comm-api/addContent",
 		"getContent": "/api/comm-api/getContent",
 		"proposeContent": "/api/comm-api/proposeContent",
-		"getLastProposal": "/api/comm-api/getLastProposal"
+		"getLastProposal": "/api/comm-api/getLastProposal",
+		"signinAdmin": "/api/comm-api/signinAdmin"
 	},
 	"external_service": {
 		"ocr": {

@@ -15,7 +15,7 @@
 	<p>
 		CommunityApp si fonda sulla <span class="fst-italic"
 			>Parola di Dio in Salmo 133</span
-		>. Da qui nasce il suo motto
+		>. Da qui nasce il suo slogan
 		<span class="fst-italic"
 			>Psalm 133 &#8231; It&rsquo;s Good Together!</span
 		>.

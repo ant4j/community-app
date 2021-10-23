@@ -68,7 +68,7 @@
 	</div>
 
 	<div class="mb-3">
-		<h5>Aggiungi un nuovo contenuto</h5>
+		<h5>Aggiungi un Nuovo Contenuto</h5>
 	</div>
 
 	<div class="mb-3">

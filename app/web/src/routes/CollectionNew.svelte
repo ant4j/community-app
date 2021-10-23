@@ -73,7 +73,7 @@
 				class="btn btn-primary"
 				type="button"
 				on:click={() => createCollection()}
-				>Crea raccolta <i class="bi bi-stars" /></button
+				>Crea Raccolta <i class="bi bi-stars" /></button
 			>
 		</div>
 	</div>

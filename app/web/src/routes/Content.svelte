@@ -9,7 +9,7 @@
 	export let params = {};
 
 	let title = "";
-	let textLines = [];
+	let text = "";
 
 	onMount(() => init());
 
@@ -38,8 +38,7 @@
 		let json = await res.json();
 
 		title = json.title;
-		let text = json.text;
-		textLines = text.split("\n");
+		text = json.text;
 	}
 
 	async function proposeContent() {
@@ -76,18 +75,18 @@
 		</div>
 	{:else}
 		<div class="mb-3 text-center">
-			<BackBtn showHomeBtn=true />
+			<BackBtn showHomeBtn="true" />
 		</div>
 	{/if}
 
-	<div class="mb-3 text-center">
+	<div class="mb-3">
 		<h5 class="fw-bolder">{title}</h5>
 	</div>
 
-	<div class="mb-3 text-center">
-		{#each textLines as textLine}
-			<div>{textLine}</div>
-		{/each}
+	<div class="mb-3">
+		<div class="content-text">
+			{text}
+		</div>
 	</div>
 
 	{#if params.context == "1"}
@@ -114,3 +113,9 @@
 		</div>
 	{/if}
 {/if}
+
+<style>
+	.content-text {
+		white-space: pre;
+	}
+</style>

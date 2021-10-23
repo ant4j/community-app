@@ -62,7 +62,7 @@
 	<div class="mb-3">
 		<div>
 			<i class="bi bi-emoji-sunglasses" />
-			Benvenuto nella community
+			Benvenuta/o nella community
 			<span class="fw-bolder">
 				{Cookies.get("signin-comm-name-133-1")}
 			</span>.

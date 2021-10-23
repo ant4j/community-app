@@ -9,7 +9,7 @@ exports.main = async function main(args) {
 		"no_data": { "code": "-2", "description": "no data" }
 	}
 
-	let contKeys = await db.keysAsync("cont:*:*:*" + args.title)
+	let contKeys = await db.keysAsync("cont:*:*:" + args.title)
 
 	let res = { "status": status.already_exists }
 
