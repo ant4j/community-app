@@ -42,11 +42,11 @@
 </main>
 
 <style>
-	:global(.list-group) {
+	/* :global(.list-group) {
 		max-height: 200px;
 		overflow: scroll;
 		-webkit-overflow-scrolling: touch;
-	}
+	} */
 
 	:global(.text-small) {
 		font-size: 11px;
@@ -56,6 +56,5 @@
 		color: #ffff;
 		background: #0d6efd;
 		border-radius: 6px 40px;
-		/* padding: 4px; */
 	}
 </style>

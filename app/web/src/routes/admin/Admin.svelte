@@ -1,5 +1,5 @@
 <script>
-	import BackBtn from "../../components/BackBtn.svelte";
+	import BackComp from "../../components/BackComp.svelte";
 	import endpoint from "../../endpoint.json";
 	import { push, pop, replace } from "svelte-spa-router";
 	import Cookies from "js-cookie";
@@ -25,7 +25,7 @@
 				expires: inHalfADay,
 			});
 
-			push("/admin-dashboard");
+			push("/dashboard");
 		} else {
 			alert("errore");
 			console.log("errore");
@@ -34,7 +34,7 @@
 </script>
 
 <div class="mb-3 text-center">
-	<BackBtn path="/signin" />
+	<BackComp path="/signin" />
 </div>
 
 <div class="mb-3">

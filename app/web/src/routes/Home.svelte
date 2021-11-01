@@ -151,7 +151,7 @@
 		</div>
 	</div>
 
-	<div class="mb-3">
+	<!-- <div class="mb-3">
 		<div class="d-grid gap-2">
 			<button
 				class="btn btn-primary"
@@ -160,7 +160,7 @@
 				>Crea una Nuova Raccolta <i class="bi bi-folder-plus" /></button
 			>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="mb-3">
 		<div class="btn-group" role="group">

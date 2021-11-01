@@ -1,7 +1,7 @@
 <script>
 	import endpoint from "../endpoint.json";
 	import { push, pop, replace } from "svelte-spa-router";
-	import BackBtn from "../components/BackBtn.svelte";
+	import BackComp from "../components/BackComp.svelte";
 	import Cookies from "js-cookie";
 	import { onMount } from "svelte";
 	import Utils from "../utils";
@@ -36,7 +36,7 @@
 
 {#if Utils.isSignedIn()}
 	<div class="mb-3 text-center">
-		<BackBtn />
+		<BackComp />
 	</div>
 
 	<div class="mb-3">

@@ -117,28 +117,6 @@
 	</div>
 </div>
 
-<!-- <hr />
-
-<div class="mb-3">
-	<label for="username" class="form-label"
-		>Il tuo Nome utente nella Community</label
-	>
-	<input
-		type="text"
-		class="form-control"
-		maxlength="3"
-		placeholder="Nome utente"
-		aria-describedby="username-help"
-		bind:value={signinData.username}
-		id="username"
-	/>
-	<div class="form-text" id="username-help">
-		Prime 2 lettere del tuo nome + prima lettera del tuo cognome.
-		<br />
-		Es.: Mario Rossi = mar.
-	</div>
-</div> -->
-
 <div class="mb-3">
 	<div class="d-grid gap-2">
 		<button type="button" class="btn btn-primary" on:click={() => signin()}
@@ -156,13 +134,3 @@
 		Fondamento di CommunityApp
 	</button>
 </div>
-
-<!-- <div class="mb-3">
-	<button
-		type="button"
-		class="btn btn-link btn-sm text-decoration-none"
-		on:click={() => push("/admin-signin")}
-	>
-		Area Amministratore
-	</button>
-</div> -->

@@ -1,7 +1,7 @@
 <script>
 	import endpoint from "../endpoint.json";
 	import { pop } from "svelte-spa-router";
-	import BackBtn from "../components/BackBtn.svelte";
+	import BackComp from "../components/BackComp.svelte";
 	import { onMount } from "svelte";
 	import Utils from "../utils";
 
@@ -64,7 +64,7 @@
 
 {#if Utils.isSignedIn()}
 	<div class="mb-3 text-center">
-		<BackBtn showHomeBtn="true" />
+		<BackComp showHomeBtn="true" />
 	</div>
 
 	<div class="mb-3">

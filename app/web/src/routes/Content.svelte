@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	import endpoint from "../endpoint.json";
-	import BackBtn from "../components/BackBtn.svelte";
+	import BackComp from "../components/BackComp.svelte";
 	import Cookies from "js-cookie";
 	import { push, pop, replace } from "svelte-spa-router";
 	import Utils from "../utils";
@@ -63,7 +63,7 @@
 {#if Utils.isSignedIn()}
 	{#if params.context == "1"}
 		<div class="mb-3 text-center">
-			<BackBtn />
+			<BackComp />
 		</div>
 		<div class="mb-3 text-center">
 			<div class="card bg-light text-muted participation-msg-card">
@@ -75,7 +75,7 @@
 		</div>
 	{:else}
 		<div class="mb-3 text-center">
-			<BackBtn showHomeBtn="true" />
+			<BackComp showHomeBtn="true" />
 		</div>
 	{/if}
 
