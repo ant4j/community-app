@@ -1,18 +1,21 @@
 <script>
 	import { onMount } from "svelte";
 	import endpoint from "../endpoint.json";
-	import { push, pop, replace } from "svelte-spa-router";
+	import { push, replace } from "svelte-spa-router";
 	import Cookies from "js-cookie";
-	import Utils from "../utils";
+	import { isSignedIn, removeOldCookies } from "../utils";
 
 	let collArr = [];
 	let proposal = {};
 
+	let isSignedInCheck = false;
+
 	onMount(() => init());
 
 	function init() {
-		Utils.removeOldCookies();
-		if (Utils.isSignedIn()) {
+		removeOldCookies();
+		isSignedInCheck = isSignedIn();
+		if (isSignedInCheck) {
 			retrieveCollections();
 			retrieveLastProposal();
 		} else {
@@ -54,7 +57,7 @@
 	}
 </script>
 
-{#if Utils.isSignedIn()}
+{#if isSignedInCheck}
 	<div class="mb-3">
 		<h5><i class="bi bi-house" /> Home</h5>
 	</div>
@@ -151,7 +154,7 @@
 		</div>
 	</div>
 
-	<!-- <div class="mb-3">
+	<div class="mb-3">
 		<div class="d-grid gap-2">
 			<button
 				class="btn btn-primary"
@@ -160,7 +163,7 @@
 				>Crea una Nuova Raccolta <i class="bi bi-folder-plus" /></button
 			>
 		</div>
-	</div> -->
+	</div>
 
 	<div class="mb-3">
 		<div class="btn-group" role="group">

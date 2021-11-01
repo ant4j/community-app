@@ -1,5 +1,4 @@
 <script>
-	import { push, pop, replace } from "svelte-spa-router";
 	import BackComp from "../components/BackComp.svelte";
 </script>
 

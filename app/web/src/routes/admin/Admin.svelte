@@ -1,7 +1,6 @@
 <script>
-	import BackComp from "../../components/BackComp.svelte";
 	import endpoint from "../../endpoint.json";
-	import { push, pop, replace } from "svelte-spa-router";
+	import { push } from "svelte-spa-router";
 	import Cookies from "js-cookie";
 
 	let credentials = {};
@@ -33,9 +32,9 @@
 	}
 </script>
 
-<div class="mb-3 text-center">
-	<BackComp path="/signin" />
-</div>
+<svelte:head>
+	<title>CommunityApp Admin</title>
+</svelte:head>
 
 <div class="mb-3">
 	<h5>Accesso Area Amministratore</h5>
@@ -51,7 +50,7 @@
 		bind:value={credentials.username}
 		id="admin-username"
 	/>
-	<div class="form-text" id="admin-username-help">Nome Utente.</div>
+	<div class="form-text" id="admin-username-help" />
 </div>
 
 <div class="mb-3">
@@ -64,7 +63,7 @@
 		bind:value={credentials.password}
 		id="admin-password"
 	/>
-	<div class="form-text" id="admin-password-help">Password.</div>
+	<div class="form-text" id="admin-password-help" />
 </div>
 
 <div class="mb-3">

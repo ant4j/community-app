@@ -1,18 +1,28 @@
-const Cookies = require("js-cookie");
+import Cookies from "js-cookie";
 
-exports.isSignedIn = () => {
-	let signinCommId = Cookies.get("signin-comm-id-133-1");
-	console.log("signinCommId=" + signinCommId);
-	if (signinCommId !== undefined) {
-		console.log("Utils.isSignedIn=true");
-		return true;
+export const Mode = Object.freeze({ USER: 1, ADMIN: 2 });
+
+export function isSignedIn(mode) {
+	let isSignedIn = false;
+	switch (mode) {
+		case Mode.ADMIN:
+			if (Cookies.get("admin-id-133-1") !== undefined) {
+				isSignedIn = true;
+			}
+			break;
+		case Mode.USER:
+		default:
+			if (Cookies.get("signin-comm-id-133-1") !== undefined) {
+				isSignedIn = true;
+			}
+			break;
 	}
-	console.log("Utils.isSignedIn=false");
-	return false
+	console.log("Utils.isSignedIn=" + isSignedIn);
+	return isSignedIn
 }
 
 // deletes old invalid cookies until all users are up to date
-exports.removeOldCookies = () => {
+export function removeOldCookies() {
 	console.log(
 		"deletes old invalid cookies until all users are up to date"
 	);

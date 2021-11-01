@@ -1,17 +1,20 @@
 <script>
 	import endpoint from "../endpoint.json";
-	import { push, pop, replace } from "svelte-spa-router";
+	import { push, replace } from "svelte-spa-router";
 	import BackComp from "../components/BackComp.svelte";
 	import Cookies from "js-cookie";
 	import { onMount } from "svelte";
-	import Utils from "../utils";
+	import { isSignedIn } from "../utils";
 
 	let collData = { commId: Cookies.get("signin-comm-id-133-1") };
+
+	let isSignedInCheck = false;
 
 	onMount(() => init());
 
 	function init() {
-		if (!Utils.isSignedIn()) {
+		isSignedInCheck = isSignedIn();
+		if (!isSignedInCheck) {
 			replace("/signin");
 		}
 	}
@@ -34,7 +37,7 @@
 	}
 </script>
 
-{#if Utils.isSignedIn()}
+{#if isSignedInCheck}
 	<div class="mb-3 text-center">
 		<BackComp />
 	</div>

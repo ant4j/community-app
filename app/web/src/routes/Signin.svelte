@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	import endpoint from "../endpoint.json";
-	import { push, pop, replace } from "svelte-spa-router";
+	import { push } from "svelte-spa-router";
 	import Cookies from "js-cookie";
 
 	let commArr = [];

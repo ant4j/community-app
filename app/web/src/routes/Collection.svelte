@@ -3,7 +3,7 @@
 	import endpoint from "../endpoint.json";
 	import { push, replace } from "svelte-spa-router";
 	import BackComp from "../components/BackComp.svelte";
-	import Utils from "../utils";
+	import { isSignedIn } from "../utils";
 	import { writable, derived } from "svelte/store";
 
 	export let params = {};
@@ -20,10 +20,13 @@
 
 	$: term.set(termContentSearchText);
 
+	let isSignedInCheck = false;
+
 	onMount(() => init());
 
 	function init() {
-		if (Utils.isSignedIn()) {
+		isSignedInCheck = isSignedIn();
+		if (isSignedInCheck) {
 			retrieveContents();
 		} else {
 			replace("/signin");
@@ -45,7 +48,7 @@
 	}
 </script>
 
-{#if Utils.isSignedIn()}
+{#if isSignedInCheck}
 	<div class="mb-3 text-center">
 		<BackComp />
 	</div>

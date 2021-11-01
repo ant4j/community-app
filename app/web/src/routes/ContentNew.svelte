@@ -1,9 +1,9 @@
 <script>
 	import endpoint from "../endpoint.json";
-	import { pop } from "svelte-spa-router";
+	import { pop, replace } from "svelte-spa-router";
 	import BackComp from "../components/BackComp.svelte";
 	import { onMount } from "svelte";
-	import Utils from "../utils";
+	import { isSignedIn } from "../utils";
 
 	export let params = {};
 
@@ -12,10 +12,13 @@
 
 	let contentToCreate = { collId: params.collId };
 
+	let isSignedInCheck = false;
+
 	onMount(() => init());
 
 	function init() {
-		if (!Utils.isSignedIn()) {
+		isSignedInCheck = isSignedIn();
+		if (!isSignedInCheck) {
 			replace("/signin");
 		}
 	}
@@ -62,7 +65,7 @@
 	}
 </script>
 
-{#if Utils.isSignedIn()}
+{#if isSignedInCheck}
 	<div class="mb-3 text-center">
 		<BackComp showHomeBtn="true" />
 	</div>
