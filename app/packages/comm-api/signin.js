@@ -11,20 +11,22 @@ exports.main = async function main(args) {
 
 	let res = { "status": status.not_exists }
 
-	let commKeys = await db.keysAsync("comm:" + args.commId + ":*")
+	let key = "comm_auth:" + args.commId
 
-	if (commKeys.length > 0) {
-		let comm = JSON.parse(await db.getAsync(commKeys[0]))
-		console.log("comm: " + JSON.stringify(comm))
-		if (args.watchword == comm.watchword) {
+	let existsKey = await db.existsAsync(key)
+
+	if (existsKey == 1) {
+		let watchword = await db.getAsync(key)
+		console.log("watchword: " + JSON.stringify(watchword))
+		if (args.watchword == watchword) {
 			db.incr("user_id_seq")
 
 			let userId = await db.getAsync("user_id_seq")
-			
+
 			let username = "user" + userId
-			
+
 			db.setAsync("user:" + args.commId + ":" + username, username)
-			
+
 			res = { "status": status.success, "username": username }
 		}
 	}

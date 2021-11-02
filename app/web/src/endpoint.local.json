@@ -10,7 +10,8 @@
 		"getContent": "http://localhost:3000/getContent",
 		"proposeContent": "http://localhost:3000/proposeContent",
 		"getLastProposal": "http://localhost:3000/getLastProposal",
-		"signinAdmin": "http://localhost:3000/signinAdmin"
+		"signinAdmin": "http://localhost:3000/signinAdmin",
+		"getCommunity": "http://localhost:3000/getCommunity"
 	},
 	"external_service": {
 		"ocr": {

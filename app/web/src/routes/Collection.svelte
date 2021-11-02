@@ -20,16 +20,16 @@
 
 	$: term.set(termContentSearchText);
 
-	let isSignedInCheck = false;
+	let view = false;
 
 	onMount(() => init());
 
 	function init() {
-		isSignedInCheck = isSignedIn();
-		if (isSignedInCheck) {
+		view = isSignedIn();
+		if (view) {
 			retrieveContents();
 		} else {
-			replace("/signin");
+			replace("/");
 		}
 	}
 
@@ -48,7 +48,7 @@
 	}
 </script>
 
-{#if isSignedInCheck}
+{#if view}
 	<div class="mb-3 text-center">
 		<BackComp />
 	</div>

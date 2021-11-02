@@ -8,10 +8,10 @@ exports.main = async function main(args) {
 		"not_exists": { "code": "-1", "description": "not exists" },
 		"no_data": { "code": "-2", "description": "no data" }
 	}
-	
+
 	let res = { "status": status.already_exists }
-	
-	let commKeys = await db.keysAsync("comm:*:*:" + args.name)
+
+	let commKeys = await db.keysAsync("comm:*:*:*:" + args.name)
 
 
 	if (!commKeys.length) {
@@ -19,10 +19,19 @@ exports.main = async function main(args) {
 
 		let commId = await db.getAsync("comm_id_seq")
 
-		let key = "comm:" + commId + ":" + args.adminId + ":" + args.name
-		let value = JSON.stringify({ "id": commId, "name": args.name, "watchword": args.watchword })
+		let commNameSplit = args.name.split(" ")
+		let commCode = ""
+		commNameSplit.forEach(val => {
+			commCode = commCode + val.toLowerCase().charAt(0)
+		})
+		commCode = commCode + commId
+
+		let key = "comm:" + commId + ":" + args.adminId + ":" + commCode + ":" + args.name
+		let value = JSON.stringify({ "id": commId, "code": commCode, "name": args.name })
 
 		await db.setAsync(key, value)
+
+		await db.setAsync("comm_auth:" + commId, args.watchword)
 
 		let commCreated = JSON.parse(await db.getAsync(key))
 

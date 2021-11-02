@@ -1,53 +1,74 @@
 <script>
 	import { onMount } from "svelte";
 	import endpoint from "../endpoint.json";
-	import { push } from "svelte-spa-router";
+	import { push, replace } from "svelte-spa-router";
 	import Cookies from "js-cookie";
+	import { isSignedIn } from "../utils";
 
-	let commArr = [];
-	let signinData = {};
+	export let params = {};
 
+	let commId = "";
+	let commCode = "";
 	let commName = "";
+	let watchword = "";
+
+	let view = false;
 
 	onMount(() => init());
 
 	function init() {
-		retrieveCommunities();
-	}
-
-	async function retrieveCommunities() {
 		console.log(
 			"COOKIES: " +
 				Cookies.get("signin-comm-id-133-1") +
+				", " +
+				Cookies.get("signin-comm-code-133-1") +
 				", " +
 				Cookies.get("signin-comm-name-133-1") +
 				", " +
 				Cookies.get("signin-username-133-1")
 		);
 
-		let res = await fetch(endpoint.service.getCommunities);
+		if (!isSignedIn()) {
+			retrieveCommunity();
+		} else {
+			replace("/home");
+		}
+	}
+
+	async function retrieveCommunity() {
+		let res = await fetch(
+			endpoint.service.getCommunity + "?commCode=" + params.commCode
+		);
 		let json = await res.json();
-		console.log("retrieveCommunities, json: " + JSON.stringify(json));
-		commArr = json;
-		if (commArr.length > 0) {
-			signinData.commId = commArr[0].id;
-			commName = commArr[0].name;
+		console.log("retrieveCommunity, json: " + JSON.stringify(json));
+		if (json.status.code == "1") {
+			commId = json.data.id;
+			commCode = json.data.code;
+			commName = json.data.name;
+			view = true;
+		} else {
+			// alert("community non esistente");
+			replace("/");
 		}
 	}
 
 	async function signin() {
-		console.log("signin, signinData: " + JSON.stringify(signinData));
+		let reqData = { commId: commId, watchword: watchword };
+		console.log("signin, reqData: " + JSON.stringify(reqData));
 		let res = await fetch(endpoint.service.signin, {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(signinData),
+			body: JSON.stringify(reqData),
 		});
 		let json = await res.json();
 		console.log("signin, json: " + JSON.stringify(json));
 		if (json.status.code == "1") {
 			const inHalfADay = 0.5;
 
-			Cookies.set("signin-comm-id-133-1", signinData.commId, {
+			Cookies.set("signin-comm-id-133-1", commId, {
+				expires: inHalfADay,
+			});
+			Cookies.set("signin-comm-code-133-1", commCode, {
 				expires: inHalfADay,
 			});
 			Cookies.set("signin-comm-name-133-1", commName, {
@@ -61,12 +82,14 @@
 				"COOKIES: " +
 					Cookies.get("signin-comm-id-133-1") +
 					", " +
+					Cookies.get("signin-comm-code-133-1") +
+					", " +
 					Cookies.get("signin-comm-name-133-1") +
 					", " +
 					Cookies.get("signin-username-133-1")
 			);
 
-			push("/");
+			push("/home");
 		} else {
 			alert("errore");
 			console.log("errore");
@@ -74,11 +97,22 @@
 	}
 </script>
 
-<div class="mb-3">
-	<h5>Accesso</h5>
-</div>
+{#if view}
+	<div class="mb-3">
+		<h5>Accesso</h5>
+	</div>
 
-<div class="mb-3">
+	<div class="mb-3">
+		<div class="card text-white bg-primary mb-3">
+			<div class="card-body">
+				<p class="card-text">
+					<i class="bi bi-people-fill" />
+					{commName}
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="mb-3">
 	<label for="comm-list" class="form-label">Elenco delle Community</label>
 	<div class="list-group" aria-describedby="comm-list-help" id="comm-list">
 		{#if commArr.length}
@@ -98,39 +132,43 @@
 	<div class="form-text" id="comm-list-help">
 		Seleziona la Community in cui vuoi entrare.
 	</div>
-</div>
+</div> -->
 
-<div class="mb-3">
-	<label for="watchword" class="form-label"
-		>Parola d'ordine della Community</label
-	>
-	<input
-		type="text"
-		class="form-control"
-		placeholder="Parola d'ordine"
-		aria-describedby="watchword-help"
-		bind:value={signinData.watchword}
-		id="watchword"
-	/>
-	<div class="form-text" id="watchword-help">
-		Serve per entrare nella community selezionata.
-	</div>
-</div>
-
-<div class="mb-3">
-	<div class="d-grid gap-2">
-		<button type="button" class="btn btn-primary" on:click={() => signin()}
-			>Entra <i class="bi bi-door-open" /></button
+	<div class="mb-3">
+		<label for="watchword" class="form-label"
+			>Parola d'ordine della Community</label
 		>
+		<input
+			type="text"
+			class="form-control"
+			placeholder="Parola d'ordine"
+			aria-describedby="watchword-help"
+			bind:value={watchword}
+			id="watchword"
+		/>
+		<div class="form-text" id="watchword-help">
+			Serve per entrare nella community selezionata.
+		</div>
 	</div>
-</div>
 
-<div class="mb-3">
-	<button
-		type="button"
-		class="btn btn-link btn-sm text-decoration-none"
-		on:click={() => push("/bedrock")}
-	>
-		Fondamento di CommunityApp
-	</button>
-</div>
+	<div class="mb-3">
+		<div class="d-grid gap-2">
+			<button
+				type="button"
+				class="btn btn-primary"
+				on:click={() => signin()}
+				>Entra <i class="bi bi-door-open" /></button
+			>
+		</div>
+	</div>
+
+	<div class="mb-3">
+		<button
+			type="button"
+			class="btn btn-link btn-sm text-decoration-none"
+			on:click={() => push("/bedrock")}
+		>
+			Fondamento di CommunityApp
+		</button>
+	</div>
+{/if}

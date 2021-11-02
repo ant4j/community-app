@@ -8,18 +8,17 @@
 	let collArr = [];
 	let proposal = {};
 
-	let isSignedInCheck = false;
+	let view = false;
 
 	onMount(() => init());
 
 	function init() {
 		removeOldCookies();
-		isSignedInCheck = isSignedIn();
-		if (isSignedInCheck) {
+		if (isSignedIn()) {
 			retrieveCollections();
 			retrieveLastProposal();
 		} else {
-			replace("/signin");
+			replace("/");
 		}
 	}
 
@@ -47,17 +46,20 @@
 		} else {
 			proposal = {};
 		}
+		view = true;
 	}
 
 	function exit() {
+		let commCode = Cookies.get("signin-comm-code-133-1");
 		Cookies.remove("signin-comm-id-133-1");
+		Cookies.remove("signin-comm-code-133-1");
 		Cookies.remove("signin-comm-name-133-1");
 		Cookies.remove("signin-username-133-1");
-		push("/signin");
+		push("/signin/"+commCode);
 	}
 </script>
 
-{#if isSignedInCheck}
+{#if view}
 	<div class="mb-3">
 		<h5><i class="bi bi-house" /> Home</h5>
 	</div>

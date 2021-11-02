@@ -10,7 +10,8 @@
 		"getContent": "/api/comm-api/getContent",
 		"proposeContent": "/api/comm-api/proposeContent",
 		"getLastProposal": "/api/comm-api/getLastProposal",
-		"signinAdmin": "/api/comm-api/signinAdmin"
+		"signinAdmin": "/api/comm-api/signinAdmin",
+		"getCommunity": "/api/comm-api/getCommunity"
 	},
 	"external_service": {
 		"ocr": {

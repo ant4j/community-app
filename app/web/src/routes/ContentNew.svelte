@@ -12,14 +12,14 @@
 
 	let contentToCreate = { collId: params.collId };
 
-	let isSignedInCheck = false;
+	let view = false;
 
 	onMount(() => init());
 
 	function init() {
-		isSignedInCheck = isSignedIn();
-		if (!isSignedInCheck) {
-			replace("/signin");
+		view = isSignedIn();
+		if (!view) {
+			replace("/");
 		}
 	}
 
@@ -65,7 +65,7 @@
 	}
 </script>
 
-{#if isSignedInCheck}
+{#if view}
 	<div class="mb-3 text-center">
 		<BackComp showHomeBtn="true" />
 	</div>

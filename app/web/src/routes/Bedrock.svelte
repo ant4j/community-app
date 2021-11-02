@@ -3,7 +3,7 @@
 </script>
 
 <div class="mb-3 text-center">
-	<BackComp path="/signin" />
+	<BackComp />
 </div>
 
 <div class="mb-3">

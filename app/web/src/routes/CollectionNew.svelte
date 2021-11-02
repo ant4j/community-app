@@ -8,14 +8,14 @@
 
 	let collData = { commId: Cookies.get("signin-comm-id-133-1") };
 
-	let isSignedInCheck = false;
+	let view = false;
 
 	onMount(() => init());
 
 	function init() {
-		isSignedInCheck = isSignedIn();
-		if (!isSignedInCheck) {
-			replace("/signin");
+		view = isSignedIn();
+		if (!view) {
+			replace("/");
 		}
 	}
 
@@ -30,14 +30,14 @@
 		let json = await res.json();
 		console.log("createCollection, json: " + JSON.stringify(json));
 		if (json.status.code == "1") {
-			push("/");
+			push("/home");
 		} else if (json.status.code == "0") {
 			alert("La collection esiste gia'");
 		}
 	}
 </script>
 
-{#if isSignedInCheck}
+{#if view}
 	<div class="mb-3 text-center">
 		<BackComp />
 	</div>

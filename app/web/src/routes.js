@@ -1,5 +1,6 @@
-import Home from "./routes/Home.svelte";
+import Index from "./routes/Index.svelte";
 import Signin from "./routes/Signin.svelte";
+import Home from "./routes/Home.svelte";
 import Collection from "./routes/Collection.svelte";
 import CollectionNew from "./routes/CollectionNew.svelte";
 import Content from "./routes/Content.svelte";
@@ -10,12 +11,13 @@ import Dashboard from "./routes/admin/Dashboard.svelte";
 import NotFound from "./routes/NotFound.svelte";
 
 export default {
-	"/": Home,
-	"/signin": Signin,
+	"/": Index,
+	"/signin/:commCode": Signin,
+	"/home": Home,
 	"/collection/:collId": Collection,
 	"/collection-new": CollectionNew,
-	"/content-new/:collId": ContentNew,
 	"/content/:context/:collId/:contId": Content,
+	"/content-new/:collId": ContentNew,
 	"/bedrock": Bedrock,
 	"/admin": Admin,
 	"/dashboard": Dashboard,

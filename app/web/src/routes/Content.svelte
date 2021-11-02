@@ -11,16 +11,16 @@
 	let title = "";
 	let text = "";
 
-	let isSignedInCheck = false;
+	let view = false;
 
 	onMount(() => init());
 
 	function init() {
-		isSignedInCheck = isSignedIn();
-		if (isSignedInCheck) {
+		view = isSignedIn();
+		if (view) {
 			retrieveContent();
 		} else {
-			replace("/signin");
+			replace("/");
 		}
 	}
 
@@ -59,11 +59,11 @@
 		});
 		let json = await res.json();
 		console.log("proposeContent, json: " + JSON.stringify(json));
-		push("/");
+		push("/home");
 	}
 </script>
 
-{#if isSignedInCheck}
+{#if view}
 	{#if params.context == "1"}
 		<div class="mb-3 text-center">
 			<BackComp />
@@ -98,7 +98,7 @@
 				<button
 					class="btn btn-primary"
 					type="button"
-					on:click={() => push("/")}
+					on:click={() => push("/home")}
 					>Abbiamo finito! <i class="bi bi-alarm" /></button
 				>
 			</div>

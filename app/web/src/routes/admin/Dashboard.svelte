@@ -8,13 +8,13 @@
 	let commArr = [];
 	let commToCreate = {};
 
-	let isSignedInCheck = false;
+	let view = false;
 
 	onMount(() => init());
 
 	function init() {
-		isSignedInCheck = isSignedIn(Mode.ADMIN);
-		if (isSignedInCheck) {
+		view = isSignedIn(Mode.ADMIN);
+		if (view) {
 			retrieveCommunities();
 		} else {
 			replace("/admin");
@@ -51,7 +51,7 @@
 	}
 </script>
 
-{#if isSignedInCheck}
+{#if view}
 	<div class="mb-3">
 		<h5>Area Amministratore</h5>
 	</div>
