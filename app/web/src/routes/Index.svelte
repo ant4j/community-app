@@ -1,4 +1,11 @@
-<div>
-	Qui ci sarà un elenco di tutte le url di tutte le community
+<div class="mb-3">
+	<p>
+		Qui ci sarà un elenco di tutte le community
+	</p>
 </div>
-<div>(Work In Progress)</div>
+
+<div class="mb-3">
+	<p>
+		<img src="images/snorlax.png" class="img-fluid" alt="snorlax" />
+	</p>
+</div>
