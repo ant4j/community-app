@@ -1,8 +1,4 @@
-<div class="mb-3">
-	<p>
-		Qui ci sarà un elenco di tutte le community
-	</p>
-</div>
+<!-- Qui ci sarà un elenco di tutte le community -->
 
 <div class="mb-3">
 	<p>
