@@ -14,6 +14,8 @@
 
 	let view = false;
 
+	let signinErrorModalBinding;
+
 	onMount(() => init());
 
 	function init() {
@@ -91,9 +93,13 @@
 
 			push("/home");
 		} else {
-			alert("errore");
-			console.log("errore");
+			openSigninErrorModal();
 		}
+	}
+
+	function openSigninErrorModal() {
+		var signinErrorModal = new bootstrap.Modal(signinErrorModalBinding, {});
+		signinErrorModal.show();
 	}
 </script>
 
@@ -112,27 +118,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- <div class="mb-3">
-	<label for="comm-list" class="form-label">Elenco delle Community</label>
-	<div class="list-group" aria-describedby="comm-list-help" id="comm-list">
-		{#if commArr.length}
-			{#each commArr as commEl}
-				<button
-					type="button"
-					class="list-group-item list-group-item-action"
-					class:active={signinData.commId === commEl.id}
-					on:click={() => {
-						signinData.commId = commEl.id;
-						commName = commEl.name;
-					}}>{commEl.name}</button
-				>
-			{/each}
-		{/if}
-	</div>
-	<div class="form-text" id="comm-list-help">
-		Seleziona la Community in cui vuoi entrare.
-	</div>
-</div> -->
 
 	<div class="mb-3">
 		<label for="watchword" class="form-label"
@@ -170,5 +155,49 @@
 		>
 			Fondamento di CommunityApp
 		</button>
+	</div>
+
+	<div class="mb-3">
+		<div
+			class="modal fade"
+			tabindex="-1"
+			aria-labelledby="signin-error-modal-label"
+			aria-hidden="true"
+			bind:this={signinErrorModalBinding}
+			id="signin-error-modal"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="signin-error-modal-label">
+							Errore
+						</h5>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						/>
+					</div>
+					<div class="modal-body">
+						<p>Ops! Hai sbagliato la parola d'ordine!</p>
+						<p>
+							<i class="bi bi-lightbulb" />
+							<span class="text-decoration-underline"
+								>Suggerimento:</span
+							> la parola d'ordine deve avere solo caratteri minuscoli.
+						</p>
+						<p>Riprova.</p>
+					</div>
+					<div class="modal-footer">
+						<button
+							type="button"
+							class="btn btn-primary"
+							data-bs-dismiss="modal">Va bene</button
+						>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 {/if}
