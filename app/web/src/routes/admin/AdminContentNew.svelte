@@ -1,9 +1,9 @@
 <script>
-	import endpoint from "../endpoint.json";
+	import endpoint from "../../endpoint.json";
 	import { pop, replace } from "svelte-spa-router";
-	import BackComp from "../components/BackComp.svelte";
+	import BackComp from "../../components/BackComp.svelte";
 	import { onMount } from "svelte";
-	import { isSignedIn } from "../utils";
+	import { isSignedIn, Mode } from "../../utils";
 
 	export let params = {};
 
@@ -17,8 +17,9 @@
 	onMount(() => init());
 
 	function init() {
-		view = isSignedIn();
-		if (!view) {
+		if (isSignedIn(Mode.ADMIN)) {
+			view = true;
+		} else {
 			replace("/");
 		}
 	}

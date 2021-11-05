@@ -13,14 +13,15 @@
 	onMount(() => init());
 
 	function init() {
-		view = isSignedIn(Mode.ADMIN);
-		if (view) {
+		if (isSignedIn(Mode.ADMIN)) {
 			retrieveCommunities();
+			view = true;
 		} else {
 			replace("/admin");
 		}
 	}
 
+	// TODO recuperare solo le communities create da un certo admin con cui si e' acceduti
 	async function retrieveCommunities() {
 		let res = await fetch(endpoint.service.getCommunities);
 		let json = await res.json();
@@ -75,7 +76,7 @@
 						type="button"
 						class="list-group-item list-group-item-action"
 						on:click={() => {
-							alert("WIP");
+							push("/admin-collections/" + commEl.id);
 						}}>{commEl.name}</button
 					>
 				{/each}

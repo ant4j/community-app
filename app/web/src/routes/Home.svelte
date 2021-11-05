@@ -4,8 +4,8 @@
 	import { push, replace } from "svelte-spa-router";
 	import Cookies from "js-cookie";
 	import { isSignedIn, removeOldCookies } from "../utils";
+	import CollListComp from "../components/CollListComp.svelte";
 
-	let collArr = [];
 	let proposal = {};
 
 	let view = false;
@@ -15,21 +15,10 @@
 	function init() {
 		removeOldCookies();
 		if (isSignedIn()) {
-			retrieveCollections();
 			retrieveLastProposal();
 		} else {
 			replace("/");
 		}
-	}
-
-	async function retrieveCollections() {
-		let res = await fetch(
-			endpoint.service.getCollections +
-				"?commId=" +
-				Cookies.get("signin-comm-id-133-1")
-		);
-		let json = await res.json();
-		collArr = json;
 	}
 
 	async function retrieveLastProposal() {
@@ -55,7 +44,7 @@
 		Cookies.remove("signin-comm-code-133-1");
 		Cookies.remove("signin-comm-name-133-1");
 		Cookies.remove("signin-username-133-1");
-		push("/signin/"+commCode);
+		push("/signin/" + commCode);
 	}
 </script>
 
@@ -136,35 +125,24 @@
 	</div>
 
 	<div class="mb-3">
-		<label for="coll-list" class="form-label">Elenco raccolte</label>
-		<div
-			class="list-group"
-			aria-describedby="coll-list-help"
-			id="coll-list"
-		>
-			{#each collArr as collEl}
-				<button
-					type="button"
-					class="list-group-item list-group-item-action"
-					on:click={() => push("/collection/" + collEl.id)}
-					>{collEl.name}</button
-				>
-			{/each}
-		</div>
-		<div class="form-text" id="coll-list-help">
-			Seleziona una Raccolta per visualizzarla.
-		</div>
-	</div>
-
-	<div class="mb-3">
 		<div class="d-grid gap-2">
 			<button
 				class="btn btn-primary"
 				type="button"
-				on:click={() => push("/collection-new")}
-				>Crea una Nuova Raccolta <i class="bi bi-folder-plus" /></button
-			>
+				on:click={() => retrieveLastProposal()}
+				id="update-proposal-btn"
+				>Recupera proposta più recente <i class="bi bi-download" />
+			</button>
 		</div>
+	</div>
+
+	<hr />
+
+	<div class="mb-3">
+		<CollListComp
+			route="/collection/"
+			commId={Cookies.get("signin-comm-id-133-1")}
+		/>
 	</div>
 
 	<div class="mb-3">
@@ -180,3 +158,10 @@
 		</div>
 	</div>
 {/if}
+
+<style>
+	#update-proposal-btn {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+</style>

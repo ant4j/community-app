@@ -1,20 +1,23 @@
 <script>
-	import endpoint from "../endpoint.json";
-	import { push, replace } from "svelte-spa-router";
-	import BackComp from "../components/BackComp.svelte";
+	import endpoint from "../../endpoint.json";
+	import { pop, replace } from "svelte-spa-router";
+	import BackComp from "../../components/BackComp.svelte";
 	import Cookies from "js-cookie";
 	import { onMount } from "svelte";
-	import { isSignedIn } from "../utils";
+	import { isSignedIn, Mode } from "../../utils";
 
-	let collData = { commId: Cookies.get("signin-comm-id-133-1") };
+	export let params = "";
+
+	let collData = { commId: params.commId };
 
 	let view = false;
 
 	onMount(() => init());
 
 	function init() {
-		view = isSignedIn();
-		if (!view) {
+		if (isSignedIn(Mode.ADMIN)) {
+			view = true;
+		} else {
 			replace("/");
 		}
 	}
@@ -30,7 +33,7 @@
 		let json = await res.json();
 		console.log("createCollection, json: " + JSON.stringify(json));
 		if (json.status.code == "1") {
-			push("/home");
+			pop();
 		} else if (json.status.code == "0") {
 			alert("La collection esiste gia'");
 		}

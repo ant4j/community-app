@@ -24,7 +24,7 @@
 				expires: inHalfADay,
 			});
 
-			push("/dashboard");
+			push("/admin-dashboard");
 		} else {
 			alert("errore");
 			console.log("errore");

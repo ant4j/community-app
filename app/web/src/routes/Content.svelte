@@ -3,7 +3,7 @@
 	import endpoint from "../endpoint.json";
 	import BackComp from "../components/BackComp.svelte";
 	import Cookies from "js-cookie";
-	import { push, replace } from "svelte-spa-router";
+	import { pop, push, replace } from "svelte-spa-router";
 	import { isSignedIn } from "../utils";
 
 	export let params = {};
@@ -16,9 +16,9 @@
 	onMount(() => init());
 
 	function init() {
-		view = isSignedIn();
-		if (view) {
+		if (isSignedIn()) {
 			retrieveContent();
+			view = true;
 		} else {
 			replace("/");
 		}
@@ -70,10 +70,7 @@
 		</div>
 		<div class="mb-3 text-center">
 			<div class="card bg-light text-muted participation-msg-card">
-				<div class="card-body">
-					Partecipazione in corso
-					<i class="bi bi-hourglass-split" />
-				</div>
+				<div class="card-body">Partecipazione in corso &#x1F388;</div>
 			</div>
 		</div>
 	{:else}
@@ -98,7 +95,7 @@
 				<button
 					class="btn btn-primary"
 					type="button"
-					on:click={() => push("/home")}
+					on:click={() => pop()}
 					>Abbiamo finito! <i class="bi bi-alarm" /></button
 				>
 			</div>
