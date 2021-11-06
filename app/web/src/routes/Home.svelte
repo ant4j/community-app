@@ -50,22 +50,24 @@
 
 {#if view}
 	<div class="mb-3">
-		<h5><i class="bi bi-house" /> Home</h5>
+		<h5>
+			<i class="bi bi-house" /> Home / 
+			<span class="fw-bolder">
+				{Cookies.get("signin-comm-name-133-1")}
+			</span>
+		</h5>
 	</div>
 
 	<div class="mb-3">
 		<div>
 			<i class="bi bi-emoji-sunglasses" />
-			Benvenuta/o nella community
-			<span class="fw-bolder">
-				{Cookies.get("signin-comm-name-133-1")}
-			</span>.
+			Benvenuta/o in questa community
 		</div>
 		<div>
 			<i class="bi bi-person-circle" /> Il tuo nome utente è
 			<span class="fw-bolder">
 				{Cookies.get("signin-username-133-1")}
-			</span>.
+			</span>
 		</div>
 	</div>
 
