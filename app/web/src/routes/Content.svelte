@@ -3,7 +3,7 @@
 	import endpoint from "../endpoint.json";
 	import BackComp from "../components/BackComp.svelte";
 	import Cookies from "js-cookie";
-	import { pop, push, replace } from "svelte-spa-router";
+	import { push, replace } from "svelte-spa-router";
 	import { isSignedIn } from "../utils";
 
 	export let params = {};
@@ -95,7 +95,7 @@
 				<button
 					class="btn btn-primary"
 					type="button"
-					on:click={() => pop()}
+					on:click={() => push("/balloon")}
 					>Abbiamo finito! <i class="bi bi-alarm" /></button
 				>
 			</div>

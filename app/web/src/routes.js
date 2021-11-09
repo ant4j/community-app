@@ -4,6 +4,7 @@ import Home from "./routes/Home.svelte";
 import Collection from "./routes/Collection.svelte";
 import Content from "./routes/Content.svelte";
 import Bedrock from "./routes/Bedrock.svelte";
+import Balloon from "./routes/Balloon.svelte";
 import Admin from "./routes/admin/Admin.svelte";
 import AdminDashboard from "./routes/admin/AdminDashboard.svelte";
 import AdminCollections from "./routes/admin/AdminCollections.svelte";
@@ -19,6 +20,7 @@ export default {
 	"/collection/:collId": Collection,
 	"/content/:context/:collId/:contId": Content,
 	"/bedrock": Bedrock,
+	"/balloon": Balloon,
 	"/admin": Admin,
 	"/admin-dashboard": AdminDashboard,
 	"/admin-collections/:commId": AdminCollections,

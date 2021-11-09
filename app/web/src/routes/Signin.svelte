@@ -170,7 +170,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="signin-error-modal-label">
-							Errore
+							Accesso non riuscito
 						</h5>
 						<button
 							type="button"
@@ -184,8 +184,9 @@
 						<p>
 							<i class="bi bi-lightbulb" />
 							<span class="text-decoration-underline"
-								>Suggerimento:</span
-							> la parola d'ordine deve avere solo caratteri minuscoli.
+								>Suggerimento</span
+							>: la parola d'ordine deve avere solo caratteri
+							minuscoli.
 						</p>
 						<p>Riprova.</p>
 					</div>
