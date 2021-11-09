@@ -13,11 +13,11 @@ Dammi sapienza e
 riempi il cuore mio
 E avrò timor del Tuo nom
 
-[Purifica il mio cuor
-Appiana i miei sentier
-Rimuovi da me ciò
-Che non appartiene a te] (bis)
-E al Tuo amor."
+ [Purifica il mio cuor
+ Appiana i miei sentier
+ Rimuovi da me ciò
+ Che non appartiene a te] (bis)
+ E al Tuo amor."
 nim kv set "cont:1:3:3. CHE PROFONDO È ILTUO AMOR" "{ \"id\": \"3\", \"title\": \"3. CHE PROFONDO È ILTUO AMOR\" }"
 nim kv set "cont_text:1:3" "Che profondo è il Tuo amor
  Capir mai non potrò
@@ -199,8 +199,10 @@ nim kv set "cont_text:1:17" "[Quelli che sperano
 che sperano in Gesù] (4 volte) 
 [Come le aquile, come le aquile 
 In volo si eleveran.] (bis)
+
 Camminano e non si stancano, 
 corrono e non si affaticano.
+
 [E nuove forze avran 
 E nuove forze avran
 Quelli che sperano 
@@ -244,29 +246,33 @@ E la Sua presenza
 Non potrei vivere più.
 
 E dico: Addio alla morte 
-Addio al peccato 
-Addio a quelle cose che 
-Mi tenevano giù.
+		Addio al peccato 
+		Addio a quelle cose che 
+		Mi tenevano giù.
 
 E dico: Benvenuta alla vita 
-Benvenuta alla gioia 
-Benvenuta alla Sua presenza 
-Ora vivo insieme a Gesù!"
+		Benvenuta alla gioia 
+		Benvenuta alla Sua presenza 
+		Ora vivo insieme a Gesù!"
 nim kv set "cont:1:22:22.  LA PENTECOSTE" "{ \"id\": \"22\", \"title\": \"22.  LA PENTECOSTE\" }"
 nim kv set "cont_text:1:22" "Scenda su di me la Pentecoste
 Arda il Tuo Spirto nel mio cuor,
 Fa che io Ti lodi in altra lingua,
 Vieni e battezzami Signor.
+
 Coro
-Scenderà su di noi 
-La Pentecoste, scenderà
-E i seguaci del Signore 
-La Pentecoste unirà.
+ Scenderà su di noi 
+ La Pentecoste, scenderà
+ E i seguaci del Signore 
+ La Pentecoste unirà.
+
 Spandi il Tuo Spirto su ogni carne,
 Lodi il Tuo nome ogni nazion
 A Te che sei l'Iddio Onnipotente,
 Si pieghi ogni ginocchio ed ogni cuor.
-Coro: Scenderà su di noi....
+
+ Coro: Scenderà su di noi....
+
 Uniti canteremo un nuovo canto,
 Le nostri mani innalzeremo a Te,
 E insieme coi redenti d'ogni lingua
@@ -280,6 +286,7 @@ Spirito di Dio,
 Vieni su di noi,
 Riempi i nostri cuori
 E guidaci al Padre!
+
 Noi siamo i tuoi strumenti,
 Che Tu devi accordare,
 Per formare un armonia che
@@ -290,6 +297,7 @@ Salmeggiare all'Altissimo
 Proclamare la mattina la
 Sua benignità
 E la sera la Sua fedeltà;
+
 2. Al suono del saltèro e dell'arpa
 Io canto giubilando a Te
 [Poiché Tu o Signor
@@ -301,19 +309,22 @@ nim kv set "cont_text:1:25" "Sono qui davanti a Te
 Ai Tuoi piedi, oh Padre mio
 Non so degno, si lo so
 Ma Gesù per me pagò.
-    Vengo a Te nel nome Suo
+
+Vengo a Te nel nome Suo
 Per il sangue ch’Ei versò
 Lavò ogni mio peccato e la vita mi donò.
+
 Coro:
-Padre ascolta questa preghiera
-Perché so che senza Te,
-Nel mio cuore non c’è luce
-Tutto è buio intorno a me.
-Tu che sei l’Onnipotente
-A Te offro il cuore mio
-Perché so che in mano Tua
-Come il sole splenderà.
-    Sono qui davanti a Te
+ Padre ascolta questa preghiera
+ Perché so che senza Te,
+ Nel mio cuore non c’è luce
+ Tutto è buio intorno a me.
+ Tu che sei l’Onnipotente
+ A Te offro il cuore mio
+ Perché so che in mano Tua
+ Come il sole splenderà.
+
+Sono qui davanti a Te
 Ai tuoi piedi, oh Padre mio
 Per la lodare il nome Tuo
 Perché degno sei Signor."
@@ -323,11 +334,12 @@ Uno stendardo per la nazione.
 Che ognuno veda la verità.
 Seguendo la Via che 
 porta al cielo. (bis)
+
 Coro:
-Vogliam veder,
-Vogliam veder,
-Vogliam veder 
-Gesù innalzato (bis)"
+ Vogliam veder,
+ Vogliam veder,
+ Vogliam veder 
+ Gesù innalzato (bis)"
 nim kv set "cont:1:27:27. TI LODERÒ" "{ \"id\": \"27\", \"title\": \"27. TI LODERÒ\" }"
 nim kv set "cont_text:1:27" "Quando per la prima volta 
 T'incontrai, Gesù, 
@@ -341,17 +353,17 @@ Tu stendesti la Tua mano, mi hai toccato,
 Perdonato e lavato fu il mio cuor.
 
 Coro:
-[Ti loderò, Ti loderò, 
-Con gli angeli del cielo 
-Le Tue lodi canterò 
-Solo a Te mio Signor.] (bis)
+ [Ti loderò, Ti loderò, 
+ Con gli angeli del cielo 
+ Le Tue lodi canterò 
+ Solo a Te mio Signor.] (bis)
 
 Cosa posso dirTi ancora mio Signore, 
 Sento la Tua pace dentro me. 
 Mi dai forza, mi sostieni con amore, 
 Tu dai senso alla mia vita, o Signor.
 
-Coro: Ti loderò…"
+ Coro: Ti loderò…"
 nim kv set "cont:1:28:28.  IN TE HO LA VITA" "{ \"id\": \"28\", \"title\": \"28.  IN TE HO LA VITA\" }"
 nim kv set "cont_text:1:28" "[In Te ho la vita, in Te ho la forza
 In Te la speranza, in Te Signor] (bis)
@@ -374,21 +386,25 @@ nim kv set "cont_text:1:30" "1. Fai di me un vaso per Te,
 Un cuore che Ti possa servir. 
 Un vaso per la gloria Tua Signor, 
 Riempilo di Te, che sei il mio Re.
+
 2. Niente c'è in me che può piacerTi mai. 
 Solo Tu puoi fare di me 
 Un vaso per la gloria Tua, Signor, 
 Adatto per servire Te, che sei il Re.
+
 Coro:
-Signore fa’ di me 
-Un vaso nuovo e riempilo di Te.
-Argilla son in mano Tua 
-E sei con me
-Come un saggio formator.
-Un vaso nuovo fa’ di me Signor.
+ Signore fa’ di me 
+ Un vaso nuovo e riempilo di Te.
+ Argilla son in mano Tua 
+ E sei con me
+ Come un saggio formator.
+ Un vaso nuovo fa’ di me Signor.
+
 3. Fai di me un vaso per Te, 
 Un cuore che Ti possa servir. 
 Un vaso per la gloria Tua, Signor, 
 Adatto per servire Te, che sei il Re.
+
 Coro: Signore fa’ di me…"
 nim kv set "cont:1:31:31.  NOI TI LODIAMO" "{ \"id\": \"31\", \"title\": \"31.  NOI TI LODIAMO\" }"
 nim kv set "cont_text:1:31" "Noi ti lodiamo o Dio in questo tempio
@@ -402,11 +418,13 @@ nim kv set "cont_text:1:32" "1. Voi tutti che siete assetati
 Venite alle acque
 E voi che non avete pace
 Venite e l’avrete.
+
 Coro:
-Gesù è morto anche per voi
-Non indurite i vostri cuori più
-Perché il giudizio è su di voi
-Correte a Gesù!
+ Gesù è morto anche per voi
+ Non indurite i vostri cuori più
+ Perché il giudizio è su di voi
+ Correte a Gesù!
+
 2. Dategli i vostri peccati
 La vostra vita cambierà
 E vi farà suoi figliuoli
@@ -422,15 +440,17 @@ Dirigendo i passi miei.
 Padre, guardo un bimbo e vedo Te
 Guardo un fiore e scopro Te
 Alzo gli occhi e ci sei Tu….
+
 Coro:
-…Sempre Tu, sempre qui
-Non è un sogno, ci sei Tu,
-Per le strade tra la gente.
-Ogni istante di più
-Sei nella mente mia, Padre,
-Sei nei pensieri miei
-La mia sola speranza
-È di stare con Te.
+ …Sempre Tu, sempre qui
+ Non è un sogno, ci sei Tu,
+ Per le strade tra la gente.
+ Ogni istante di più
+ Sei nella mente mia, Padre,
+ Sei nei pensieri miei
+ La mia sola speranza
+ È di stare con Te.
+
 Non andrò mai via."
 nim kv set "cont:1:34:34.  CAMMINERÒ" "{ \"id\": \"34\", \"title\": \"34.  CAMMINERÒ\" }"
 nim kv set "cont_text:1:34" "1. Quando ero solo, 
@@ -775,11 +795,14 @@ Mi spinge a lodare Te Signor."
 nim kv set "cont:1:64:64.  CIRCONDAMI" "{ \"id\": \"64\", \"title\": \"64.  CIRCONDAMI\" }"
 nim kv set "cont_text:1:64" "1. [Circondami Signore col Tuo Spirito, 
 Circondami Signore col Tuo Spirito.] (bis)
+
 E lasciami sentire il fuoco del Tuo amor 
 Qui nel mio cuore Oh Dio. 
 E lasciami sentire il fuoco del Tuo amor 
 Qui nel mio cuore Oh Dio.
+
 2. Battezzami Signore... 
+
 3. Riempimi Signore..."
 nim kv set "cont:1:65:65.  GRAZIE A TE" "{ \"id\": \"65\", \"title\": \"65.  GRAZIE A TE\" }"
 nim kv set "cont_text:1:65" "A Te grazie noi rendiam, 
@@ -799,14 +822,18 @@ Dica il povero: \"Son ricco\"!
 Per tutto ciò che hai fatto grazie a Te."
 nim kv set "cont:1:66:66.  TU HAI VITTORIA" "{ \"id\": \"66\", \"title\": \"66.  TU HAI VITTORIA\" }"
 nim kv set "cont_text:1:66" "Coro:
-[Tu hai vittoria, tu hai vittoria, 
-Tu hai vittoria nel nome di Gesù.] (bis)
+ [Tu hai vittoria, tu hai vittoria, 
+ Tu hai vittoria nel nome di Gesù.] (bis)
+
 Il nemico non potrà rubar la tua anima, 
 Perché hai vittoria, perché hai vittoria,
 Perché hai vittoria nel nome di Gesù.
+
 Se vuoi sapere perché son contento, 
 Se vuoi sapere perché canto così:
-[Perché Gesù col Suo sangue mi ha Lavato     e su una nuvola presto 
+
+[Perché Gesù col Suo sangue mi ha 
+Lavato e su una nuvola presto 
 Tornerà per me.] (bis)"
 nim kv set "cont:1:67:67.  APRI I MIEI OCCHI SIGNORE" "{ \"id\": \"67\", \"title\": \"67.  APRI I MIEI OCCHI SIGNORE\" }"
 nim kv set "cont_text:1:67" "[Apri i miei occhi Signore
@@ -1315,12 +1342,15 @@ Case splendenti, su colline di gloria
 Gioiose riunioni su strade d'oro 
 Cori di angeli canteranno lodi 
 Ma Gesù più di tutto splenderà.
+
 1. Oh che gloria mi aspetta la città celeste
 Quando andrò, meraviglie vedrò
 Tante scene mai viste
 Si offriranno ai miei occhi
 Ma Gesù più di tutto splenderà
+
 Coro: Case splendenti…
+
 2. II gran fiume che scorre, visi tutti felici
 Sempre giorno e mai notte sarà.
 Oro, perle ed argento
@@ -1359,19 +1389,20 @@ Canta, canta al Signor
 perché Gesù ti liberò."
 nim kv set "cont:1:109:109.  IL NOME DI DIO" "{ \"id\": \"109\", \"title\": \"109.  IL NOME DI DIO\" }"
 nim kv set "cont_text:1:109" "Il nome di Dio, è una torre. 
-Il giusto vi corre per rifugio trovar				       (bis)
+Il giusto vi corre per rifugio trovar				       
+			                    (bis)
 1. Benedetto sia il Signor. 
 Benedetto sia il Suo nome, 
 Benedetto sia il Signor, il Sovran
-			        (bis)
+			                    (bis)
 2. Gloria al nome del Signor, 
 Gloria al nome del Signor, 
 Gloria al nome del Signor il, Sovran
-			        (bis)
+			                    (bis)
 3. Santo è il nome del Signor,
 Santo è il nome del Signor,
 Santo è il nome del Signor, il Sovran,
-			        (bis)"
+			                    (bis)"
 nim kv set "cont:1:110:110.  NULLA È IMPOSSIBILE" "{ \"id\": \"110\", \"title\": \"110.  NULLA È IMPOSSIBILE\" }"
 nim kv set "cont_text:1:110" "Nulla è impossibile se ti fidi del Signor
 Nulla è impossibile se tu credi a Lui col cuor
@@ -1385,10 +1416,11 @@ nim kv set "cont_text:1:111" "Alla dolce presenza Tua, Signor
 Il nome Tuo santo adoriam, 
 Alla dolce presenza Tua Signor 
 II nome Tuo santo adorian.
-Il Tuo nome Gesù 
-II nome che pari non ha, 
-Il Tuo nome, Gesù 
-Il nome che pari non ha."
+
+ Il Tuo nome Gesù 
+ II nome che pari non ha, 
+ Il Tuo nome, Gesù 
+ Il nome che pari non ha."
 nim kv set "cont:1:112:112.  LODE ALL’AGNEL" "{ \"id\": \"112\", \"title\": \"112.  LODE ALL’AGNEL\" }"
 nim kv set "cont_text:1:112" "1. Lode all’Agnello
 Lode all’Agnello che un
@@ -1607,7 +1639,7 @@ Lodiamo Te, alleluia, alleluia
 Lodiamo Te, per ciò che sei.
 Lodiamo Te, alleluia, alleluia
 Lodiamo Te per ciò che sei.
-                                  (bis tutto)
+                    (bis tutto)
 Dio è buon!"
 nim kv set "cont:1:131:131. TUTTO CIO’" "{ \"id\": \"131\", \"title\": \"131. TUTTO CIO’\" }"
 nim kv set "cont_text:1:131" "Ho conosciuto pianto e duolo
@@ -1757,13 +1789,14 @@ Indossando la nostra armatura.
 Ovunque annunciamo il grande messaggio,
 Dell’amore di Dio in ogni terra….
 
- Coro:
+Coro:
  Vittoria c’è nel figlio di Javhè     
-Trionferemo, Chi resisterà, se Lui     combatterà per noi,
-Per noi.
-Vittoria c’è nel figlio di Javhè trionferemo,
-Chi resisterà, se Lui combatterà per noi,
-Noi vinceremo."
+ Trionferemo, Chi resisterà, se Lui
+ combatterà per noi,
+ Per noi.
+ Vittoria c’è nel figlio di Javhè trionferemo,
+ Chi resisterà, se Lui combatterà per noi,
+ Noi vinceremo."
 nim kv set "cont:1:139:139. SALMO 18" "{ \"id\": \"139\", \"title\": \"139. SALMO 18\" }"
 nim kv set "cont_text:1:139" "Signore io T’amo
 Tu la mia forza Sei
@@ -1805,7 +1838,8 @@ E frutto porterò per Te Signor
 
 Si Tu mi chiami alla Tua presenza
 Guidami oh Dio nei Tuoi sentieri
-Io voglio che tutto ciò che in me dia gloria a Te!
+Io voglio che tutto ciò che in me dia gloria 
+a Te!
 Vinto dal Tuo immenso amore
 Mi dono a Te con tutto il cuore
 Per la chiamata che hai rivolto a me."
@@ -2150,7 +2184,8 @@ Che ha fatto i cieli,
 E che il mondo inter 
 Tiene in mano Sua. 
 
-In questo mondo avremo difficoltà, Ma Tu hai vinto già per noi. 
+In questo mondo avremo difficoltà, Ma Tu 
+hai vinto già per noi. 
 
 Coro: 
 Splendi più del sole su di noi. 
@@ -2177,7 +2212,8 @@ Camminerò con Te ed avrò la pace.
 
 La mia speranza sei, tienimi con Te
 II mio futuro sei, non vorrei di più
-Gesù, adorare Te, parlare con Te, Servire Te è quello che vorrei
+Gesù, adorare Te, parlare con Te, Servire 
+Te è quello che vorrei
 Coro: Spirito Santo…"
 nim kv set "cont:1:163:163. ALLA CROCE" "{ \"id\": \"163\", \"title\": \"163. ALLA CROCE\" }"
 nim kv set "cont_text:1:163" "Tu mi hai cercato oh Dio
@@ -2369,7 +2405,9 @@ In battaglia, in prodigi, Grande in Sion
 E’ della terra il Re
 
 
-Se la tempesta arriverà se il mondo mi odierà il Dio che a vita mi chiamò riposo troverò
+Se la tempesta arriverà se il mondo mi 
+odierà il Dio che a vita mi chiamò riposo 
+troverò
 Per sempre in Lui starò
 Per sempre Eterno Amor!"
 nim kv set "cont:1:173:173. PADRE TU SEI IL RE DEGLI     OCEANI" "{ \"id\": \"173\", \"title\": \"173. PADRE TU SEI IL RE DEGLI     OCEANI\" }"
@@ -2435,15 +2473,18 @@ nim kv set "cont:1:177:177. STUPENDA GRAZIA" "{ \"id\": \"177\", \"title\": \"17
 nim kv set "cont_text:1:177" "Stupenda grazia del Signor L’amor che mi salvò
 Dalla mia morte mi chiamò, io vivo del Suo amor.
 Le mie paure cancellò,per darmi il Suo timor
-Prezioso è il giorno in cui donai la mia fiducia a Lui
+Prezioso è il giorno in cui donai la mia 
+fiducia a Lui
 
 Coro:
-          Le mie catene Egli spezzò
-         Il sangue Suo mi riscattò
-         E come pioggia su di noi
+        Le mie catene Egli spezzò
+        Il sangue Suo mi riscattò
+        E come pioggia su di noi
         Stupenda grazia, Eterno Amor!
 
- Sicura è la promessa Sua la mia speranza è in Lui lo scudo in cui confiderò fin quando vita avrò."
+Sicura è la promessa Sua la mia 
+speranza è in Lui lo scudo in cui confiderò 
+fin quando vita avrò."
 nim kv set "cont:1:178:178. TU SEI SANTO" "{ \"id\": \"178\", \"title\": \"178. TU SEI SANTO\" }"
 nim kv set "cont_text:1:178" "“Tu Sei Santo,Santo
 Nessuno è come te,
@@ -2688,9 +2729,11 @@ Se sei deluso Lui lo sa.
 
 Se tu sei stanco Dio lo sa.
 Se tu hai pianto Dio lo sa.
-Se l’hai cercato Dio lo sa, se stai in pena Dio lo sa.
+Se l’hai cercato Dio lo sa, se stai in pena 
+Dio lo sa.
 Se non riesci Lui lo sa.
-Lo sguardo Suo è sopra di te, lo Spirto Suo è vicino a te
+Lo sguardo Suo è sopra di te, lo Spirto 
+Suo è vicino a te
 Finché tu non comprendi che:
 
 Coro:
@@ -2770,7 +2813,8 @@ la Tua grazia mi basta
 il Tuo amore trabocca dal mio cuore Signor.
 La Tua unzione mi avvolge è per me
 Così dolce, voglio stare con Te.
-Gioia in abbondanza c’è nella Tua presenza, pace a sazietà.
+Gioia in abbondanza c’è nella Tua presenza, 
+pace a sazietà.
 La Tua gloria risplende 
 Mi trasforma e mi cambia
 Voglio stare con te
@@ -2861,8 +2905,9 @@ La mia vita s’incendierà per Te
 E brucerò di un amore intenso per Te."
 nim kv set "cont:1:202:202.  PER SEMPRE" "{ \"id\": \"202\", \"title\": \"202.  PER SEMPRE\" }"
 nim kv set "cont_text:1:202" "Il cielo si squarciò, il sole s’oscurò,
- Il Salvatore era morto. 
- Da quella croce scendeva il sangue Suo.   Portando via tutto il peccato.
+Il Salvatore era morto. 
+Da quella croce scendeva il sangue Suo.
+Portando via tutto il peccato.
 
 Con l’ultimo respiro il cielo si oscurò
 Gesù fu posto nella tomba
@@ -3042,7 +3087,9 @@ Ogni altezza giù cadrà, le catene hai spezzato
 La corona hai vinto Tu
 Sei il vincitor, Sei il vincitor x4
 
-Alla croce era compiuto e Ti hanno seppellito. Ma la tomba non poteva trattenere:il Re dei Re"
+Alla croce era compiuto e Ti hanno 
+seppellito. Ma la tomba non poteva 
+trattenere:il Re dei Re"
 nim kv set "cont:1:211:211. AMO IL SIGNOR" "{ \"id\": \"211\", \"title\": \"211. AMO IL SIGNOR\" }"
 nim kv set "cont_text:1:211" "1. Amo il Signor con tutto il cuor,
 con l’anima, la mente e la forza mia (x2)
@@ -3190,9 +3237,9 @@ Ti lodiam, noi Ti lodiam
  Coro:Amen.."
 nim kv set "cont:1:218:218.GRANDE IO SON" "{ \"id\": \"218\", \"title\": \"218.GRANDE IO SON\" }"
 nim kv set "cont_text:1:218" "Voglio restar, vicino a te
-  Il cielo è reale, la morte non c’è
-  La voce degli angeli voglio sentir
-   E insieme cantare
+Il cielo è reale, la morte non c’è
+La voce degli angeli voglio sentir
+E insieme cantare
 
 Coro:
 Alleluia, Santo Santo
@@ -3210,7 +3257,8 @@ Il male trema e fugge, i monti crollano
 Quando invoco il Santo nome Re di maestà
 Nessuna autorità, nessuna potestà
 Potrà resistere in presenza del
- [Grande Io Son, Grande Io Son, Grande Io Son] x2"
+ [Grande Io Son, Grande Io Son, 
+ Grande Io Son] x2"
 nim kv set "cont:1:219:219. DAVANTI A TE" "{ \"id\": \"219\", \"title\": \"219. DAVANTI A TE\" }"
 nim kv set "cont_text:1:219" "Davanti a Te Signore
 Elevo il cuore e l’anima gioisce in Te
@@ -3229,7 +3277,8 @@ Di amarTi, servirTi, davanti a Te voglio restar!"
 nim kv set "cont:1:220:220. NEL SEGRETO" "{ \"id\": \"220\", \"title\": \"220. NEL SEGRETO\" }"
 nim kv set "cont_text:1:220" "Nel segreto in tranquillità. 
 Nella quiete Tu sei lì, 
-Nel segreto, in quest’ora calma son qui Aspetto Te, per conoscerTi di più. 
+Nel segreto, in quest’ora calma son qui 
+Aspetto Te, per conoscerTi di più. 
 
 Coro:
 Conoscer Te Dio,
@@ -3546,18 +3595,23 @@ Indietro, no, non tornerò
 “Decidi ora di seguir Cristo” x3
 Indietro, no, non tornar più x2"
 nim kv set "cont:1:235:235. POTENTE A SALVAR" "{ \"id\": \"235\", \"title\": \"235. POTENTE A SALVAR\" }"
-nim kv set "cont_text:1:235" "Bramiamo compassione,amore infinito. La grazia è su di me.
-Bramiamo il perdono del nostro Salvatore,Speranza del mondo.
+nim kv set "cont_text:1:235" "Bramiamo compassione,amore 
+infinito. La grazia è su di me.
+Bramiamo il perdono del nostro 
+Salvatore,Speranza del mondo.
 
 Coro:
 Gesù muove le montagne .
-Dio è potente a salvar,è potente a salvar,
+Dio è potente a salvar,è potente a 
+salvar,
 Per sempre Autore di salvezza
 La morte ha vinto per me
 La morte ha vinto per me.
 
-Mi accetti come sono,paure e fallimenti,Senti il mio amor.
-Ti dono la mia vita,per ciò in cui io credo,sì,io mi arrendo.
+Mi accetti come sono,paure e 
+fallimenti, Senti il mio amor.
+Ti dono la mia vita, per ciò in cui io 
+credo, sì, io mi arrendo.
 
 Brilla ancora, tutti lo sapranno
 E cantiamo per il nostro Re, Gesù!
@@ -3699,15 +3753,20 @@ Sei un Padre d’amor
 Vedo i miei sogni per Te
 Sei Tu Gesù in me
 
-Tutte le mie paure spariscono in Te, I miei pesi son Tuoi Tu combatti per me, il Tuo piano Gesù è speciale!
+Tutte le mie paure spariscono in 
+Te, I miei pesi son Tuoi Tu 
+combatti per me, il Tuo piano 
+Gesù è speciale!
 
-Ti dico grazie, ti dico grazie Gesù, Gesù,ti dico grazie, grazie Gesù 
+Ti dico grazie, ti dico grazie Gesù, 
+Gesù,ti dico grazie, grazie Gesù 
 Sei la vita mia
 
 
 La gioia mia è in Te Gesù
 La vita mia è in mano Tua
-Io ho i miei occhi su di Te ed ho Fiducia che Tu Sei con me Gesù!"
+Io ho i miei occhi su di Te ed ho 
+Fiducia che Tu Sei con me Gesù!"
 nim kv set "cont:1:243:243. FILIPPESI" "{ \"id\": \"243\", \"title\": \"243. FILIPPESI\" }"
 nim kv set "cont_text:1:243" "Coro:
 Combatterò insieme a Te
@@ -3716,14 +3775,22 @@ Con il mio sguardo fisso a Te
 Sono arrivato qui per fè!
 Non tornerò indietro mai
 Avanti sempre guarderò
-Quella meta vittoriosa io raggiungerò!
+Quella meta vittoriosa io 
+raggiungerò!
 
-Colui che ha cominciato in me Un’opera buona, la porterà a compimento, la porterà a compimento!
-Colui che ha cominciato in me Un’opera buona, la porterà a compimento fino al giorno di Cristo Gesù!
+Colui che ha cominciato in me 
+Un’opera buona, la porterà a 
+compimento, la porterà a 
+compimento!
+Colui che ha cominciato in me 
+Un’opera buona, la porterà a 
+compimento fino al giorno di Cristo 
+Gesù!
 
 Coro: combatterò…
 
-Quella meta vittoriosa io raggiungerò! x3"
+Quella meta vittoriosa io 
+raggiungerò! x3"
 nim kv set "cont:1:244:244.A VOLTO SCOPERTO" "{ \"id\": \"244\", \"title\": \"244.A VOLTO SCOPERTO\" }"
 nim kv set "cont_text:1:244" "E se il mio spirito forza non ha
 So che il Tuo Spirito lo rafforzerà
@@ -3731,8 +3798,11 @@ E se il mio occhio ha perso la luce
 La Tua presenza lo ravviverà
 
 Coro:
-A volto scoperto io contemplo Te, Gesù, come Te, come Te io sarò
-Come uno specchio, io guardo la gloria Tua, come Te, come Te io sarò!
+A volto scoperto io contemplo Te, 
+Gesù, come Te, come Te io sarò
+Come uno specchio, io guardo la 
+gloria Tua, come Te, come Te io 
+sarò!
 
 E se il mio cuore è freddo ormai
 So che il Tuo Spirito lo riscalderà
@@ -3867,7 +3937,8 @@ Io Sono certo che Tu non mi abbandonerai
 Fermamente spero in Te
 
 Coro:
-Anche se un esercito si accampasse contro me, anche allora io di Te mi fiderei, 
+Anche se un esercito si accampasse contro 
+me, anche allora io di Te mi fiderei, 
 
 Signore guidami nei Tuoi sentieri
 Perché con Te io voglio camminare
@@ -3882,8 +3953,11 @@ Io Sono certo che Tu non mi abbandonerai
 Fermamente spero in Te
 
 Coro:
-Anche se un esercito si accampasse contro me, anche allora io di Te mi fiderei, 
-Perché in ogni giorno Tu, so che mi proteggerai, e per sempre il cuore mio Ti loderà
+Anche se un esercito si accampasse contro 
+me, anche allora io di Te mi fiderei, 
+Perché in ogni giorno Tu, so che mi 
+proteggerai, e per sempre il cuore mio Ti 
+loderà
 
 Tu sei per me, di chi temerò?
 Tu sei il più grande, Tu sei il più forte. X3"
@@ -3982,15 +4056,24 @@ Di spine e di dolor la Tua fronte Signor
 Anch’io stavo lì…
 
 Se fossi stato lì ai piedi della croce
-Avrei udito “Padre perché mi hai abbandonato”?
-Lo devo ammettere avrei anch’io quel dì aspettato il Tuo morire, guardandoTi soffrire….Se fossi stato lì
+Avrei udito “Padre perché mi hai 
+abbandonato”?
+Lo devo ammettere avrei anch’io quel 
+dì aspettato il Tuo morire, guardandoTi 
+soffrire….Se fossi stato lì
 
 Pensando con il cuor anch’io stavo lì
-Gridavo in croce: “il Cristo il Re dei giudei”
-Pensando con il cuor il sangue che hai versato Per il mio peccato lo hai fatto con amor!
-Pensando sempre a Te Tu Sei rimasto lì non hai gridato aiuto ma tutto e compiuto
+Gridavo in croce: “il Cristo il Re dei 
+giudei”
+Pensando con il cuor il sangue che hai 
+versato Per il mio peccato lo hai fatto 
+con amor!
+Pensando sempre a Te Tu Sei rimasto 
+lì non hai gridato aiuto ma tutto è 
+compiuto
 Perchè Sei stato lì hai detto manda me 
-Perdona loro che non sanno quel che fanno
+Perdona loro che non sanno quel che 
+fanno
 Padre perdonali
 Ed anch’io ero lì
 Padre perdonami"
@@ -4026,8 +4109,10 @@ Ogni potenza e maestà appartengono
 A Lui per sempre amen x2
 
 Coro: 
-Celebra il Re, esalta il Re, muovi il cielo adorando Lui.
-Celera il Re, esalta il Re, adora il Suo nome x2"
+Celebra il Re, esalta il Re, muovi il 
+cielo adorando Lui.
+Celera il Re, esalta il Re, adora il Suo 
+nome x2"
 nim kv set "cont:1:257:257. AUDACE AMORE" "{ \"id\": \"257\", \"title\": \"257. AUDACE AMORE\" }"
 nim kv set "cont_text:1:257" "Prima che io nascessi Tu già pensavi a me
 Quanto buono Sei con me!
@@ -4037,7 +4122,8 @@ Quanto buono Sei con me!
 Coro:
 Oh il travolgente, infinito, audace amore Tuo
 Lasci ancora le novantanove per cercare me
-Non l’ho meritato, né guadagnato, ma è così che ami Tu
+Non l’ho meritato, né guadagnato, ma è così 
+che ami Tu
 Oh il travolgente, infinito audace amore Tuo
 
 Ero tuo nemico, ma Tu combattevi per me
@@ -4049,7 +4135,8 @@ Coro:..
 
 Illumini ogni ombra, scali ogni montagna
 Per raggiungermi
-Abbatti ogni barriera, scacci ogni menzogna     per raggiungermi"
+Abbatti ogni barriera, scacci ogni menzogna 
+per raggiungermi"
 nim kv set "cont:1:258:258. CREDO IN TE" "{ \"id\": \"258\", \"title\": \"258. CREDO IN TE\" }"
 nim kv set "cont_text:1:258" "Alzo le mie mani a Te Signore,
 Mio prezioso Gesù, meraviglioso Signor
@@ -4093,13 +4180,16 @@ nim kv set "cont:1:260:260. NON MORIRO’" "{ \"id\": \"260\", \"title\": \"260.
 nim kv set "cont_text:1:260" "Se tutto è difficile e il tuo cuore soffre
 Il mio Dio non fallisce e non fallirà mai;
 Se la notte è cosi grande
-Che ti ha fatto perder la fede Il mio Dio entra in guerra e combatte per te.
+Che ti ha fatto perder la fede Il mio Dio 
+entra in guerra e combatte per te.
 
 Alza i tuoi occhi
 Vedrai di nuovo il sol brillar
 La promessa di Dio è di vincere il mal,
-Alza i tuoi occhi vedrai il soprannatural,
-La promessa di Dio è di vincere il mal Di vincer il mal…
+Alza i tuoi occhi vedrai il 
+soprannatural,
+La promessa di Dio è di vincere il mal 
+Di vincer il mal…
 
 Coro:
 Non morirò perché Dio ha promesso che vincerò,
@@ -4354,14 +4444,20 @@ nim kv set "cont:1:271:271. GRANDI COSE" "{ \"id\": \"271\", \"title\": \"271. G
 nim kv set "cont_text:1:271" "Vieni adoriamo il Re
 Vieni a prostrarti ai Suoi piedi
 Fa grandi cose.
+
 Guarda che ha fatto il Signore
-Guarda che grande è il Suo amore…fa grandi cose.
+Guarda che grande è il Suo amore…
+fa grandi cose.
 Lui fa grandi cose.
+
 Coro:
-La morte hai vinto combatti per noi, Tu spezzi catene e dai libertà
+La morte hai vinto combatti per noi, 
+Tu spezzi catene e dai libertà
 Oh Dio, fai grandi cose.
-Cantiamo con gioia salvati noi siamo, oh Gesù Signore il Tuo nome innalziamo
+Cantiamo con gioia salvati noi siamo, oh 
+Gesù Signore il Tuo nome innalziamo
 Oh Dio, fai grandi cose.
+
 Nelle prove fedele sarai
 la tempesta mia Tu calmerai
 Fai grandi cose.
@@ -4369,6 +4465,7 @@ E so che ancora Tu mi sosterrai
 Le Tue promesse son “sì ed amen”
 Fai grandi cose
 Dio, fai grandi cose
+
 Coro:La morte hai vinto...
 
 Bridge
@@ -4376,15 +4473,18 @@ Alleluia Dio è sul Suo trono
 Alleluia Dio non sarà smosso
 Alleluia Dio Grande Tu sei (x2)
 Grande Tu sei 
+
 Coro:La morte hai vinto..."
 nim kv set "cont:1:272:272. DIO E’ FEDELE" "{ \"id\": \"272\", \"title\": \"272. DIO E’ FEDELE\" }"
 nim kv set "cont_text:1:272" "Quando mi sento solo
 L’incertezza è nel cuor
 E i progetti che ho falliscono.
+
 Poco chiaro il futuro
 E posso solamente aspettar,
 Ma c’è una promessa
 Che mi incoraggia ancor.
+
 Coro: 
 Dio è fedele fino alla fin,
 Provvederà lungo il mio cammin,
@@ -4400,6 +4500,7 @@ Sulla croce acquistò.
 Oh qual gloriosa certezza
 Sapere quanto Egli mi amò
 E poi ricordare ch’ Egli è tutto per me.
+
 Coro: Dio è fedele"
 nim kv set "cont:1:273:273. UNA COSA HO CHIESTO" "{ \"id\": \"273\", \"title\": \"273. UNA COSA HO CHIESTO\" }"
 nim kv set "cont_text:1:273" "“Una cosa ho chiesto al Signor
@@ -4491,7 +4592,8 @@ Che Sei il mio Re!
 
 Coro: 
 Le mie mani alzo a Te in libertà
-Il mio canto si eleva a Te dicendo che Sei il mio Re..
+Il mio canto si eleva a Te dicendo che Sei il 
+mio Re..
 Tu Sei Colui che il cuore mio desidera!"
 nim kv set "cont:1:278:278. SULLE ACQUE" "{ \"id\": \"278\", \"title\": \"278. SULLE ACQUE\" }"
 nim kv set "cont_text:1:278" "Tu mi hai cercato negli abissi
@@ -4556,10 +4658,14 @@ La Stella del mattino"
 nim kv set "cont:1:281:281. IO TI ADORERO’ PER CHI TU SEI" "{ \"id\": \"281\", \"title\": \"281. IO TI ADORERO’ PER CHI TU SEI\" }"
 nim kv set "cont_text:1:281" "Stare qui e pensare a tutto il bene 
 Che mi hai fatto Tu.
-E restar fermo qui, la Tua dolce voce ascoltar!                                                Santo, Giusto, Fedele Sempre Sei             Vero, Amico e mio Redentor 
+E restar fermo qui, la Tua dolce voce 
+ascoltar!
+Santo, Giusto, Fedele Sempre Sei
+Vero, Amico e mio Redentor 
 
 Coro:
-“Io Ti adorerò per Chi Tu Sei”X3 Gesù
+“Io Ti adorerò per Chi Tu Sei”X3 
+Gesù
 
 Al sicuro son, nel Tuo amor
 Che durerà per sempre  x2"

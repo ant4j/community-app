@@ -1,5 +1,6 @@
 <script>
 	import Router from "svelte-spa-router";
+	import { location } from "svelte-spa-router";
 	import routes from "./routes";
 	// import { Styles, Button } from "sveltestrap";
 </script>
@@ -33,7 +34,11 @@
 			<div class="w-75 p-1 app-logo text-center">
 				<h1 class="fw-bolder">CommunityApp</h1>
 				<div class="text-small">
-					Psalm 133 &#8231; It&rsquo;s Good Together!
+					{#if $location.includes("admin")}
+						ADMIN
+					{:else}
+						Psalm 133 &#8231; It&rsquo;s Good Together!
+					{/if}
 				</div>
 			</div>
 		</div>

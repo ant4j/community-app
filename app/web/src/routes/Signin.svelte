@@ -126,7 +126,7 @@
 		<input
 			type="text"
 			class="form-control"
-			placeholder="Parola d'ordine"
+			placeholder="parola d'ordine"
 			aria-describedby="watchword-help"
 			bind:value={watchword}
 			id="watchword"
@@ -166,11 +166,11 @@
 			bind:this={signinErrorModalBinding}
 			id="signin-error-modal"
 		>
-			<div class="modal-dialog">
+			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="signin-error-modal-label">
-							Accesso non riuscito
+							<i class="bi bi-exclamation-diamond" /> Accesso non riuscito
 						</h5>
 						<button
 							type="button"

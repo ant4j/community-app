@@ -17,7 +17,9 @@ exports.main = async function main(args) {
 
 	let value = JSON.stringify({ "username": args.username, "coll_id": args.collId, "cont_id": args.contId })
 
-	db.setAsync(key, value)
+	await db.setAsync(key, value)
+
+	await db.setAsync("last_prop:" + args.commId, propId)
 
 	let res = { "status": status.success }
 

@@ -51,7 +51,7 @@
 {#if view}
 	<div class="mb-3">
 		<h5>
-			<i class="bi bi-house" /> Home / 
+			<i class="bi bi-house" /> Home /
 			<span class="fw-bolder">
 				{Cookies.get("signin-comm-name-133-1")}
 			</span>

@@ -11,9 +11,9 @@ exports.main = async function main(args) {
 
 	let res = { "status": status.not_exists }
 
-	let propId = await db.getAsync("prop_id_seq")
+	let lastPropId = await db.getAsync("last_prop:" + args.commId)
 
-	let key = "prop:" + args.commId + ":" + propId
+	let key = "prop:" + args.commId + ":" + lastPropId
 
 	let lastProposal = JSON.parse(await db.getAsync(key))
 

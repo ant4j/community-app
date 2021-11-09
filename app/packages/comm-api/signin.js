@@ -25,7 +25,7 @@ exports.main = async function main(args) {
 
 			let username = "user" + userId
 
-			db.setAsync("user:" + args.commId + ":" + username, username)
+			await db.setAsync("user:" + args.commId + ":" + username, username)
 
 			res = { "status": status.success, "username": username }
 		}
