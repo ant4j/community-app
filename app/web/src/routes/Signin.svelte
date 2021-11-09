@@ -98,7 +98,7 @@
 	}
 
 	function openSigninErrorModal() {
-		var signinErrorModal = new bootstrap.Modal(signinErrorModalBinding, {});
+		let signinErrorModal = new bootstrap.Modal(signinErrorModalBinding, {});
 		signinErrorModal.show();
 	}
 </script>
@@ -148,16 +148,6 @@
 	</div>
 
 	<div class="mb-3">
-		<button
-			type="button"
-			class="btn btn-link btn-sm text-decoration-none"
-			on:click={() => push("/bedrock")}
-		>
-			Fondamento di CommunityApp
-		</button>
-	</div>
-
-	<div class="mb-3">
 		<div
 			class="modal fade"
 			tabindex="-1"
@@ -200,5 +190,11 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="mb-3 text-center fixed-bottom">
+		<a class="text-decoration-none text-muted text-small" href="#/bedrock"
+			>Fondamento di CommunityApp</a
+		>
 	</div>
 {/if}

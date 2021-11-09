@@ -35,7 +35,7 @@
 				<h1 class="fw-bolder">CommunityApp</h1>
 				<div class="text-small">
 					{#if $location.includes("admin")}
-						ADMIN
+						ADMIN <i class="bi bi-wrench" />
 					{:else}
 						Psalm 133 &#8231; It&rsquo;s Good Together!
 					{/if}
