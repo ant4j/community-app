@@ -101,6 +101,13 @@
 		let signinErrorModal = new bootstrap.Modal(signinErrorModalBinding, {});
 		signinErrorModal.show();
 	}
+
+	let watchwordElement;
+	function handleKeyPress(event) {
+		if (event.keyCode == 13) {
+			watchwordElement.blur();
+		}
+	}
 </script>
 
 {#if view}
@@ -129,6 +136,8 @@
 			placeholder="parola d'ordine"
 			aria-describedby="watchword-help"
 			bind:value={watchword}
+			bind:this={watchwordElement}
+			on:keypress={handleKeyPress}
 			id="watchword"
 		/>
 		<div class="form-text" id="watchword-help">
@@ -145,6 +154,13 @@
 				>Entra <i class="bi bi-door-open" /></button
 			>
 		</div>
+	</div>
+
+	<div class="mb-3 text-center text-small">
+		<a class="text-decoration-none text-muted" href="#/bedrock"
+			>Fondamento di CommunityApp</a
+		>
+		<!-- &#x1F388; -->
 	</div>
 
 	<div class="mb-3">
@@ -184,17 +200,12 @@
 						<button
 							type="button"
 							class="btn btn-primary"
-							data-bs-dismiss="modal">Va bene</button
+							data-bs-dismiss="modal"
+							>Va bene <i class="bi bi-hand-thumbs-up" /></button
 						>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="mb-3 text-center fixed-bottom">
-		<a class="text-decoration-none text-muted text-small" href="#/bedrock"
-			>Fondamento di CommunityApp</a
-		>
 	</div>
 {/if}

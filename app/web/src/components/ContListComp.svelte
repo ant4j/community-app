@@ -33,6 +33,13 @@
 
 		items.set(json.data);
 	}
+
+	let contentSearchElement;
+	function handleKeyPress(event) {
+		if (event.keyCode == 13) {
+			contentSearchElement.blur();
+		}
+	}
 </script>
 
 <label for="content-list" class="form-label">{collectionName}</label>
@@ -42,6 +49,8 @@
 	class="form-control"
 	placeholder="Cerca"
 	bind:value={termContentSearchText}
+	bind:this={contentSearchElement}
+	on:keypress={handleKeyPress}
 	id="content-search"
 />
 

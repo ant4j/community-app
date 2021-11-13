@@ -70,7 +70,21 @@
 		</div>
 		<div class="mb-3 text-center">
 			<div class="card bg-light text-muted participation-msg-card">
-				<div class="card-body">Partecipazione in corso &#x1F388;</div>
+				<div class="card-body">
+					<img
+						src="images/party.png"
+						width="35"
+						height="35"
+						alt="party"
+					/>
+					Partecipazione in corso
+					<img
+						src="images/party.png"
+						width="35"
+						height="35"
+						alt="party"
+					/>
+				</div>
 			</div>
 		</div>
 	{:else}
