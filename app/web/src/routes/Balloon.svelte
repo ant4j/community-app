@@ -3,6 +3,7 @@
 	import BackComp from "../components/BackComp.svelte";
 	import { push, replace } from "svelte-spa-router";
 	import { isSignedIn } from "../utils";
+	import confetti from "canvas-confetti";
 
 	let view = false;
 

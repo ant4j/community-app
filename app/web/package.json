@@ -18,6 +18,7 @@
 	},
 	"dependencies": {
 		"@rollup/plugin-json": "^4.1.0",
+		"canvas-confetti": "^1.4.0",
 		"js-cookie": "^3.0.1",
 		"svelte-spa-router": "^3.0.4"
 	}
