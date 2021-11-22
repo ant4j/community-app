@@ -11,6 +11,11 @@
 	function init() {
 		if (isSignedIn()) {
 			view = true;
+			confetti({
+				particleCount: 100,
+				spread: 50,
+				origin: { y: 0.9 },
+			});
 		} else {
 			replace("/");
 		}
@@ -23,8 +28,11 @@
 	</div>
 
 	<div class="mb-3 text-center">
-		<div>Grazie per la tua partecipazione!</div>
-		<div>Ecco a te un bel palloncino!</div>
+		<h6 class="rainbow rainbow_text_animated">
+			Grazie per la tua partecipazione!
+			<br />
+			Ecco a te un bel palloncino!
+		</h6>
 	</div>
 
 	<div class="mb-3 text-center" style="height:350px">
@@ -43,6 +51,39 @@
 {/if}
 
 <style>
+	.rainbow {
+		text-transform: uppercase;
+		text-decoration: underline;
+		font-family: monospace;
+		letter-spacing: 4px;
+	}
+	.rainbow_text_animated {
+		background: linear-gradient(
+			to right,
+			#6666ff,
+			#0099ff,
+			#00ff00,
+			#ff3399,
+			#6666ff
+		);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		animation: rainbow_animation 6s ease-in-out infinite;
+		background-size: 400% 100%;
+	}
+
+	@keyframes rainbow_animation {
+		0%,
+		100% {
+			background-position: 0 0;
+		}
+
+		50% {
+			background-position: 100% 0;
+		}
+	}
+
 	.balloon {
 		display: inline-block;
 		width: 120px;
@@ -84,7 +125,7 @@
 		display: inline-block;
 		top: 153px;
 		position: absolute;
-		height: 250px;
+		height: 200px;
 		width: 1px;
 		margin: 0 auto;
 		content: "";

@@ -6,11 +6,13 @@
 </script>
 
 <svelte:head>
+	
 	<!-- Bootstrap CSS -->
 	<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
 		rel="stylesheet"
 	/>
+
 	<!-- Bootstrap CSS icons -->
 	<link
 		rel="stylesheet"
@@ -24,6 +26,10 @@
 	<!-- Bootstrap js -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+		
 </svelte:head>
 
 <!-- <Styles /> -->
