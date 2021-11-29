@@ -1,0 +1,27 @@
+Signin.svelte:
+	<!-- bind:value={username} -->
+	<!-- <div class="mb-3">
+		<label for="username" class="form-label">Nome utente</label>
+		<select
+			class="form-select"
+			aria-describedby="username-help"
+			id="username"
+		>
+			<option value="" selected></option>
+			<option value="Cerbiatto">Cerbiatto</option>
+			<option value="Gatto">Gatto</option>
+			<option value="Bumblebee">Bumblebee</option>
+			<option value="Aquila">Aquila</option>
+			<option value="Elefante">Elefante</option>
+			<option value="Delfino">Delfino</option>
+			<option value="Koala">Koala</option>
+			<option value="Coccinella">Coccinella</option>
+			<option value="Pinguino">Pinguino</option>
+			<option value="Tartaruga">Tartaruga</option>
+			<option value="Cigno">Cigno</option>
+			<option value="Giraffa">Giraffa</option>
+		</select>
+		<div class="form-text" id="username-help">Serve per identificarti nella community.</div>
+	</div> -->
+
+	--

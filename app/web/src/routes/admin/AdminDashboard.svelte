@@ -3,7 +3,7 @@
 	import Cookies from "js-cookie";
 	import { push, replace } from "svelte-spa-router";
 	import endpoint from "../../endpoint.json";
-	import { isSignedIn, Mode } from "../../utils";
+	import { isSignedIn, MODE } from "../../utils";
 
 	let commArr = [];
 	let commToCreate = {};
@@ -13,7 +13,7 @@
 	onMount(() => init());
 
 	function init() {
-		if (isSignedIn(Mode.ADMIN)) {
+		if (isSignedIn(MODE.ADMIN)) {
 			retrieveCommunities();
 			view = true;
 		} else {

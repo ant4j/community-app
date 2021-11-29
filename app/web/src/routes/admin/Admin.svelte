@@ -1,7 +1,7 @@
 <script>
 	import endpoint from "../../endpoint.json";
 	import { push } from "svelte-spa-router";
-	import Cookies from "js-cookie";
+	import { isSignedIn, setupCookies, MODE } from "../../utils";
 
 	let credentials = {};
 
@@ -15,14 +15,10 @@
 		let json = await res.json();
 		console.log("signinAdmin, json: " + JSON.stringify(json));
 		if (json.status.code == "1") {
-			const inHalfADay = 0.5;
-
-			Cookies.set("admin-id-133-1", json.adminId, {
-				expires: inHalfADay,
-			});
-			Cookies.set("adnim-username-133-1", credentials.username, {
-				expires: inHalfADay,
-			});
+			setupCookies(
+				{ adminId: json.adminId, username: credentials.username },
+				MODE.ADMIN
+			);
 
 			push("/admin-dashboard");
 		} else {

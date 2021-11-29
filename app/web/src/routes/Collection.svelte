@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from "svelte";
-	import { push, replace } from "svelte-spa-router";
+	import { replace } from "svelte-spa-router";
 	import BackComp from "../components/BackComp.svelte";
 	import ContListComp from "../components/ContListComp.svelte";
 	import { isSignedIn } from "../utils";

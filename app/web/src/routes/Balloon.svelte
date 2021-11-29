@@ -29,7 +29,7 @@
 	</div>
 
 	<div class="mb-3 text-center">
-		<h6 class="rainbow rainbow_text_animated">
+		<h6 class="rainbow rainbow_text_animated text-uppercase">
 			Grazie per la tua partecipazione!
 			<br />
 			Ecco a te un bel palloncino!
@@ -45,7 +45,8 @@
 			<button
 				class="btn btn-primary"
 				type="button"
-				on:click={() => push("/home")}>Grazie!</button
+				on:click={() => push("/home")}
+				>Grazie <i class="bi bi-emoji-smile" /></button
 			>
 		</div>
 	</div>
@@ -53,8 +54,6 @@
 
 <style>
 	.rainbow {
-		text-transform: uppercase;
-		text-decoration: underline;
 		font-family: monospace;
 		letter-spacing: 4px;
 	}

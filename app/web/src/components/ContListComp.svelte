@@ -3,6 +3,7 @@
 	import endpoint from "../endpoint.json";
 	import { push } from "svelte-spa-router";
 	import { writable, derived } from "svelte/store";
+	import { blurOnEnter } from "../directives/inputDirectives";
 
 	export let collId = "";
 
@@ -16,7 +17,7 @@
 		$items.filter((x) => x.title.includes($term))
 	);
 
-	$: term.set(termContentSearchText);
+	$: term.set(termContentSearchText.toUpperCase());
 
 	onMount(() => retrieveContents());
 
@@ -33,24 +34,16 @@
 
 		items.set(json.data);
 	}
-
-	let contentSearchElement;
-	function handleKeyPress(event) {
-		if (event.keyCode == 13) {
-			contentSearchElement.blur();
-		}
-	}
 </script>
 
 <label for="content-list" class="form-label">{collectionName}</label>
 
 <input
 	type="search"
-	class="form-control"
+	class="form-control text-uppercase"
 	placeholder="Cerca"
 	bind:value={termContentSearchText}
-	bind:this={contentSearchElement}
-	on:keypress={handleKeyPress}
+	use:blurOnEnter
 	id="content-search"
 />
 
@@ -76,7 +69,7 @@
 
 <style>
 	.content-list-group {
-		max-height: 360px;
+		max-height: 400px;
 		overflow: scroll;
 		-webkit-overflow-scrolling: touch;
 	}

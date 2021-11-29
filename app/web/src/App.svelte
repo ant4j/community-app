@@ -6,7 +6,6 @@
 </script>
 
 <svelte:head>
-	
 	<!-- Bootstrap CSS -->
 	<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
@@ -26,7 +25,6 @@
 	<!-- Bootstrap js -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
-		
 </svelte:head>
 
 <!-- <Styles /> -->
@@ -38,7 +36,7 @@
 				<h1 class="fw-bolder">CommunityApp</h1>
 				<div class="text-small">
 					{#if $location.includes("admin")}
-						ADMIN <i class="bi bi-wrench" />
+						<span class="text-admin text-uppercase">admin</span>
 					{:else}
 						Psalm 133 &#8231; It&rsquo;s Good Together!
 					{/if}
@@ -64,5 +62,9 @@
 		color: #ffff;
 		background: #0d6efd;
 		border-radius: 6px 40px;
+	}
+
+	.text-admin {
+		letter-spacing: 2px;
 	}
 </style>

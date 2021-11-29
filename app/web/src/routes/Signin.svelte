@@ -3,7 +3,9 @@
 	import endpoint from "../endpoint.json";
 	import { push, replace } from "svelte-spa-router";
 	import Cookies from "js-cookie";
-	import { isSignedIn } from "../utils";
+	import { isSignedIn, setupCookies } from "../utils";
+	import ModalComp from "../components/ModalComp.svelte";
+	import { blurOnEnter } from "../directives/inputDirectives";
 
 	export let params = {};
 
@@ -14,20 +16,20 @@
 
 	let view = false;
 
-	let signinErrorModalBinding;
+	let watchwordComp;
+	let eyeClass = "bi bi-eye-slash";
+
+	let modalComp;
 
 	onMount(() => init());
 
 	function init() {
 		console.log(
-			"COOKIES: " +
-				Cookies.get("signin-comm-id-133-1") +
-				", " +
-				Cookies.get("signin-comm-code-133-1") +
-				", " +
-				Cookies.get("signin-comm-name-133-1") +
-				", " +
-				Cookies.get("signin-username-133-1")
+			`COOKIES: ${Cookies.get("signin-comm-id-133-1")}, ${Cookies.get(
+				"signin-comm-code-133-1"
+			)}, ${Cookies.get("signin-comm-name-133-1")}, ${Cookies.get(
+				"signin-username-133-1"
+			)}`
 		);
 
 		if (!isSignedIn()) {
@@ -55,57 +57,46 @@
 	}
 
 	async function signin() {
-		let reqData = { commId: commId, watchword: watchword };
-		console.log("signin, reqData: " + JSON.stringify(reqData));
-		let res = await fetch(endpoint.service.signin, {
-			method: "post",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(reqData),
-		});
-		let json = await res.json();
-		console.log("signin, json: " + JSON.stringify(json));
-		if (json.status.code == "1") {
-			const inHalfADay = 0.5;
-
-			Cookies.set("signin-comm-id-133-1", commId, {
-				expires: inHalfADay,
-			});
-			Cookies.set("signin-comm-code-133-1", commCode, {
-				expires: inHalfADay,
-			});
-			Cookies.set("signin-comm-name-133-1", commName, {
-				expires: inHalfADay,
-			});
-			Cookies.set("signin-username-133-1", json.username, {
-				expires: inHalfADay,
-			});
-
-			console.log(
-				"COOKIES: " +
-					Cookies.get("signin-comm-id-133-1") +
-					", " +
-					Cookies.get("signin-comm-code-133-1") +
-					", " +
-					Cookies.get("signin-comm-name-133-1") +
-					", " +
-					Cookies.get("signin-username-133-1")
+		if (watchword == "") {
+			modalComp.openModal(
+				"Accesso non riuscito",
+				"Ops! Non hai inserito la parola d'ordine! Riprova."
 			);
-
-			push("/home");
 		} else {
-			openSigninErrorModal();
+			let reqData = { commId: commId, watchword: watchword };
+			console.log("signin, reqData: " + JSON.stringify(reqData));
+			let res = await fetch(endpoint.service.signin, {
+				method: "post",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(reqData),
+			});
+			let json = await res.json();
+			console.log("signin, json: " + JSON.stringify(json));
+			if (json.status.code == "1") {
+				setupCookies({
+					commId: commId,
+					commCode: commCode,
+					commName: commName,
+					username: json.username,
+				});
+				push("/home");
+			} else {
+				modalComp.openModal(
+					"Accesso non riuscito",
+					"Ops! Hai sbagliato la parola d'ordine! Riprova."
+				);
+			}
 		}
 	}
 
-	function openSigninErrorModal() {
-		let signinErrorModal = new bootstrap.Modal(signinErrorModalBinding, {});
-		signinErrorModal.show();
-	}
-
-	let watchwordElement;
-	function handleKeyPress(event) {
-		if (event.keyCode == 13) {
-			watchwordElement.blur();
+	//TODO si puo' trasformare in una direttiva
+	function toggleEye() {
+		if (watchwordComp.type == "password") {
+			watchwordComp.type = "text";
+			eyeClass = "bi bi-eye";
+		} else {
+			watchwordComp.type = "password";
+			eyeClass = "bi bi-eye-slash";
 		}
 	}
 </script>
@@ -130,18 +121,27 @@
 		<label for="watchword" class="form-label"
 			>Parola d'ordine della Community</label
 		>
-		<input
-			type="text"
-			class="form-control"
-			placeholder="parola d'ordine"
-			aria-describedby="watchword-help"
-			bind:value={watchword}
-			bind:this={watchwordElement}
-			on:keypress={handleKeyPress}
-			id="watchword"
-		/>
+		<div class="input-group">
+			<input
+				type="password"
+				class="form-control"
+				placeholder="parola d'ordine"
+				aria-describedby="watchword-help"
+				bind:value={watchword}
+				bind:this={watchwordComp}
+				use:blurOnEnter
+				id="watchword"
+			/>
+			<span
+				class="input-group-text"
+				on:click={() => toggleEye()}
+				id="toggle-eye"
+			>
+				<i class={eyeClass} />
+			</span>
+		</div>
 		<div class="form-text" id="watchword-help">
-			Serve per entrare nella community selezionata.
+			Serve per entrare nella community.
 		</div>
 	</div>
 
@@ -164,48 +164,6 @@
 	</div>
 
 	<div class="mb-3">
-		<div
-			class="modal fade"
-			tabindex="-1"
-			aria-labelledby="signin-error-modal-label"
-			aria-hidden="true"
-			bind:this={signinErrorModalBinding}
-			id="signin-error-modal"
-		>
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="signin-error-modal-label">
-							<i class="bi bi-exclamation-diamond" /> Accesso non riuscito
-						</h5>
-						<button
-							type="button"
-							class="btn-close"
-							data-bs-dismiss="modal"
-							aria-label="Close"
-						/>
-					</div>
-					<div class="modal-body">
-						<p>Ops! Hai sbagliato la parola d'ordine!</p>
-						<p>
-							<i class="bi bi-lightbulb" />
-							<span class="text-decoration-underline"
-								>Suggerimento</span
-							>: la parola d'ordine deve avere solo caratteri
-							minuscoli.
-						</p>
-						<p>Riprova.</p>
-					</div>
-					<div class="modal-footer">
-						<button
-							type="button"
-							class="btn btn-primary"
-							data-bs-dismiss="modal"
-							>Va bene <i class="bi bi-hand-thumbs-up" /></button
-						>
-					</div>
-				</div>
-			</div>
-		</div>
+		<ModalComp icon="bi bi-exclamation-diamond" bind:this={modalComp} />
 	</div>
 {/if}

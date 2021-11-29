@@ -1546,16 +1546,19 @@ nim kv set "cont_text:1:123" "1. Ciò che occhio non ha visto
 E che orecchio non ha udito 
 Ciò che non è mai salito 
 In cuor d'uomo tu vedrai.
+
 2. E queste son le cose, che Dio
 Ha preparato per te che ami Lui, 
 Per te che appartieni a Lui.
-Tu vedrai la risposta arriverà, 
-Il Signore opererà
-Ciò che Lui ha detto lo confermerà
-Tu vedrai, la Sua gloria scendere, 
-La Sua unzione ungere 
-II tuo capo, 
-La tua bocca e le tue mani.
+
+  Tu vedrai la risposta arriverà, 
+  Il Signore opererà
+  Ciò che Lui ha detto lo confermerà
+  Tu vedrai, la Sua gloria scendere, 
+  La Sua unzione ungere 
+  II tuo capo, 
+  La tua bocca e le tue mani.
+
 (Finale)…tu vedrai…"
 nim kv set "cont:1:124:124.  LODE E ONORE" "{ \"id\": \"124\", \"title\": \"124.  LODE E ONORE\" }"
 nim kv set "cont_text:1:124" "Lode e onore, gloria e potenza,

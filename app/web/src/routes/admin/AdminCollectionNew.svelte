@@ -4,7 +4,7 @@
 	import BackComp from "../../components/BackComp.svelte";
 	import Cookies from "js-cookie";
 	import { onMount } from "svelte";
-	import { isSignedIn, Mode } from "../../utils";
+	import { isSignedIn, MODE } from "../../utils";
 
 	export let params = "";
 
@@ -15,7 +15,7 @@
 	onMount(() => init());
 
 	function init() {
-		if (isSignedIn(Mode.ADMIN)) {
+		if (isSignedIn(MODE.ADMIN)) {
 			view = true;
 		} else {
 			replace("/");

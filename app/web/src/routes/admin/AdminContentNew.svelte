@@ -3,7 +3,7 @@
 	import { pop, replace } from "svelte-spa-router";
 	import BackComp from "../../components/BackComp.svelte";
 	import { onMount } from "svelte";
-	import { isSignedIn, Mode } from "../../utils";
+	import { isSignedIn, MODE } from "../../utils";
 
 	export let params = {};
 
@@ -17,7 +17,7 @@
 	onMount(() => init());
 
 	function init() {
-		if (isSignedIn(Mode.ADMIN)) {
+		if (isSignedIn(MODE.ADMIN)) {
 			view = true;
 		} else {
 			replace("/");
@@ -47,6 +47,8 @@
 	}
 
 	async function createContent() {
+		contentToCreate.title = contentToCreate.title.toUpperCase();
+
 		console.log(
 			"createContent, contentToCreate: " + JSON.stringify(contentToCreate)
 		);
@@ -72,7 +74,7 @@
 	</div>
 
 	<div class="mb-3">
-		<h5>Aggiungi un Nuovo Contenuto</h5>
+		<h5>Aggiungi un nuovo contenuto</h5>
 	</div>
 
 	<div class="mb-3">
@@ -107,7 +109,7 @@
 	<div class="mb-3">
 		<input
 			type="text"
-			class="form-control"
+			class="form-control text-uppercase"
 			placeholder="Titolo"
 			bind:value={contentToCreate.title}
 		/>
