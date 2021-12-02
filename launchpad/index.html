@@ -8,7 +8,12 @@
 
 <body>
 	<script>
-		location.replace("https://antoniof-ipp3ffev08i-apigcp.nimbella.io/#/signin/gc1");
+		let url = "https://antoniof-ipp3ffev08i-apigcp.nimbella.io";
+		let queryString = location.search;
+		if(queryString) {
+			url = `${url}/#/signin${queryString}`;
+		}
+		location.replace(url);
 	</script>
 </body>
 

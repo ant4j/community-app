@@ -15,7 +15,7 @@ import NotFound from "./routes/NotFound.svelte";
 
 export default {
 	"/": Index,
-	"/signin/:commCode": Signin,
+	"/signin": Signin,
 	"/home": Home,
 	"/collection/:collId": Collection,
 	"/content/:context/:collId/:contId": Content,

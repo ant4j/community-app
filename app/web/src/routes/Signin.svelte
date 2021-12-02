@@ -2,12 +2,12 @@
 	import { onMount } from "svelte";
 	import endpoint from "../endpoint.json";
 	import { push, replace } from "svelte-spa-router";
+	import { querystring } from "svelte-spa-router";
+	import { parse } from "qs";
 	import Cookies from "js-cookie";
 	import { isSignedIn, setupCookies } from "../utils";
 	import ModalComp from "../components/ModalComp.svelte";
 	import { blurOnEnter } from "../directives/inputDirectives";
-
-	export let params = {};
 
 	let commId = "";
 	let commCode = "";
@@ -39,19 +39,25 @@
 		}
 	}
 
+	//TODO fare i replace da un'altra parte
 	async function retrieveCommunity() {
-		let res = await fetch(
-			endpoint.service.getCommunity + "?commCode=" + params.commCode
-		);
-		let json = await res.json();
-		console.log("retrieveCommunity, json: " + JSON.stringify(json));
-		if (json.status.code == "1") {
-			commId = json.data.id;
-			commCode = json.data.code;
-			commName = json.data.name;
-			view = true;
+		let queryParams = parse($querystring);
+		if (typeof queryParams === "object" && queryParams.hasOwnProperty("c")) {
+			let res = await fetch(
+				endpoint.service.getCommunity + "?commCode=" + queryParams.c
+			);
+			let json = await res.json();
+			console.log("retrieveCommunity, json: " + JSON.stringify(json));
+			if (json.status.code == "1") {
+				commId = json.data.id;
+				commCode = json.data.code;
+				commName = json.data.name;
+				view = true;
+			} else {
+				// alert("community non esistente");
+				replace("/");
+			}
 		} else {
-			// alert("community non esistente");
 			replace("/");
 		}
 	}
