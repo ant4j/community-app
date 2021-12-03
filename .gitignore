@@ -8,5 +8,6 @@ local/comm-api/
 CNAME
 
 deploy-incr.sh
+deploy.sh
 launchpad.sh
 sleep.sh
