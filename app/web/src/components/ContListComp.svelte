@@ -69,7 +69,7 @@
 
 <style>
 	.content-list-group {
-		max-height: 400px;
+		max-height: 380px;
 		overflow: scroll;
 		-webkit-overflow-scrolling: touch;
 	}

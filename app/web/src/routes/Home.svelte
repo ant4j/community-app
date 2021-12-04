@@ -44,7 +44,7 @@
 		Cookies.remove("signin-comm-code-133-1");
 		Cookies.remove("signin-comm-name-133-1");
 		Cookies.remove("signin-username-133-1");
-		push("/signin?c=" + commCode);
+		push("/signin/" + commCode);
 	}
 </script>
 
