@@ -10,5 +10,4 @@ CORS
 
 deploy-incr.sh
 deploy.sh
-launchpad.sh
 sleep.sh
