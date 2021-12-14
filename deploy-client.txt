@@ -1,5 +1,0 @@
-inside the web directory, run:
-
-npm install && npm run build
-
-surge public

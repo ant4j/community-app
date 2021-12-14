@@ -1,4 +1,5 @@
 .nimbella/
+.netlify/
 node_modules/
 build/
 local/comm-api/

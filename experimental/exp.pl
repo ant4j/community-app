@@ -31,7 +31,8 @@ while(<FH>) {
 		
 		if(!$first) {
 			$bodyText =~ s/^\s+|\s+$//g;
-			print("nim kv set ".'"'."cont_text:1".":"."$index".'"'." ".'"'."$bodyText".'"'."\n");
+			print("status = await client.set(".'"'."cont_text:1".":"."$index".'"'.", ".'`'."$bodyText".'`);'."\n");
+			print("console.log(status);"."\n");
 			$index++;
 			$bodyText = "";
 		} else {
@@ -53,7 +54,8 @@ while(<FH>) {
 		}
 		
 		if($titleReady) {			
-			print("nim kv set ".'"'."cont:1:"."$index".":"."$title".'"'." ".'"{ \"id\": \"'."$index".'\", \"title\": \"'."$title".'\" }"'."\n");
+			print("status = await client.set(".'"'."cont:1:"."$index".":"."$title".'"'.", ".'"{ \"id\": \"'."$index".'\", \"title\": \"'."$title".'\" }");'."\n");
+			print("console.log(status);"."\n");
 			$titleReady = 0;
 		}
 		
@@ -66,8 +68,10 @@ while(<FH>) {
 }
 
 $bodyText =~ s/^\s+|\s+$//g;
-print("nim kv set ".'"'."cont_text:1".":"."$index".'"'." ".'"'."$bodyText".'"'."\n");
+print("status = await client.set(".'"'."cont_text:1".":"."$index".'"'.", ".'`'."$bodyText".'`);'."\n");
+print("console.log(status);"."\n");
 
-print("nim kv set ".'"cont_id_seq"'." ".'"'."$index".'"');
+print("status = await client.set(".'"cont_id_seq"'.", ".'"'."$index".'");'."\n");
+print("console.log(status);"."\n");
 
 close(FH);
