@@ -15,7 +15,7 @@ exports.main = async function main(args) {
 
 	let cont = JSON.parse(await db.getAsync(contKeys[0]))
 
-	res = { "title": cont.title, "text": contText }
+	let res = { "title": cont.title, "text": contText }
 
 	console.log("res: " + res)
 

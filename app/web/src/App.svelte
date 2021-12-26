@@ -38,7 +38,7 @@
 					{#if $location.includes("admin")}
 						<span class="text-admin text-uppercase">admin</span>
 					{:else}
-						Psalm 133 &#8231; It&rsquo;s Good Together!
+						Psalm 133 &middot; It&rsquo;s Good Together!
 					{/if}
 				</div>
 			</div>

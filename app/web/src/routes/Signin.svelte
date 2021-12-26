@@ -3,7 +3,8 @@
 	import endpoint from "../endpoint.json";
 	import { push, replace } from "svelte-spa-router";
 	import Cookies from "js-cookie";
-	import { isSignedIn, setupCookies } from "../utils";
+	import httpStatus from "http-status";
+	import { isSignedIn, setupCookies, removeOldCookies } from "../utils";
 	import ModalComp from "../components/ModalComp.svelte";
 	import { blurOnEnter } from "../directives/inputDirectives";
 
@@ -24,14 +25,6 @@
 	onMount(() => init());
 
 	function init() {
-		console.log(
-			`COOKIES: ${Cookies.get("signin-comm-id-133-1")}, ${Cookies.get(
-				"signin-comm-code-133-1"
-			)}, ${Cookies.get("signin-comm-name-133-1")}, ${Cookies.get(
-				"signin-username-133-1"
-			)}`
-		);
-
 		if (!isSignedIn()) {
 			retrieveCommunity();
 		} else {
@@ -42,15 +35,15 @@
 	async function retrieveCommunity() {
 		let res = await fetch(
 			endpoint.service.getCommunity + "?commCode=" + params.commCode
-			);
+		);
+
+		if (res.status == httpStatus.OK) {
 			let json = await res.json();
-			console.log("retrieveCommunity, json: " + JSON.stringify(json));
-			if (json.status.code == "1") {
-				commId = json.data.id;
-				commCode = json.data.code;
-				commName = json.data.name;
-				view = true;
-			} else {
+			commId = json.data.id;
+			commCode = json.data.code;
+			commName = json.data.name;
+			view = true;
+		} else if (res.status == httpStatus.NOT_FOUND) {
 			//TODO fare i replace da un'altra parte
 			replace("/");
 		}
@@ -64,15 +57,14 @@
 			);
 		} else {
 			let reqData = { commId: commId, watchword: watchword };
-			console.log("signin, reqData: " + JSON.stringify(reqData));
 			let res = await fetch(endpoint.service.signin, {
 				method: "post",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(reqData),
 			});
-			let json = await res.json();
-			console.log("signin, json: " + JSON.stringify(json));
-			if (json.status.code == "1") {
+			if (res.status == httpStatus.OK) {
+				let json = await res.json();
+				removeOldCookies();
 				setupCookies({
 					commId: commId,
 					commCode: commCode,
@@ -80,7 +72,7 @@
 					username: json.username,
 				});
 				push("/home");
-			} else {
+			} else if (res.status == httpStatus.UNAUTHORIZED) {
 				modalComp.openModal(
 					"Accesso non riuscito",
 					"Ops! Hai sbagliato la parola d'ordine! Riprova."

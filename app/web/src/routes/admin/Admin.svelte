@@ -1,29 +1,27 @@
 <script>
 	import endpoint from "../../endpoint.json";
+	import httpStatus from "http-status";
 	import { push } from "svelte-spa-router";
 	import { isSignedIn, setupCookies, MODE } from "../../utils";
 
 	let credentials = {};
 
 	async function signinAdmin() {
-		console.log("signinAdmin, credentials: " + JSON.stringify(credentials));
 		let res = await fetch(endpoint.service.signinAdmin, {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(credentials),
 		});
-		let json = await res.json();
-		console.log("signinAdmin, json: " + JSON.stringify(json));
-		if (json.status.code == "1") {
+		if (res.status == httpStatus.OK) {
+			let json = await res.json();
 			setupCookies(
 				{ adminId: json.adminId, username: credentials.username },
 				MODE.ADMIN
 			);
 
 			push("/admin-dashboard");
-		} else {
+		} else if (res.status == httpStatus.UNAUTHORIZED) {
 			alert("errore");
-			console.log("errore");
 		}
 	}
 </script>

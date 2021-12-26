@@ -3,7 +3,8 @@
 	import endpoint from "../endpoint.json";
 	import { push, replace } from "svelte-spa-router";
 	import Cookies from "js-cookie";
-	import { isSignedIn, removeOldCookies } from "../utils";
+	import httpStatus from "http-status";
+	import { isSignedIn } from "../utils";
 	import CollListComp from "../components/CollListComp.svelte";
 
 	let proposal = {};
@@ -13,7 +14,6 @@
 	onMount(() => init());
 
 	function init() {
-		removeOldCookies();
 		if (isSignedIn()) {
 			retrieveLastProposal();
 		} else {
@@ -27,14 +27,12 @@
 				"?commId=" +
 				Cookies.get("signin-comm-id-133-1")
 		);
-		let json = await res.json();
-		console.log("retrieveLastProposal, json: " + JSON.stringify(json));
 
-		if (json.status.code == "1") {
+		if (res.status == httpStatus.OK) {
+			let json = await res.json();
 			proposal = json.data;
-		} else {
-			proposal = {};
 		}
+		
 		view = true;
 	}
 
@@ -51,7 +49,7 @@
 {#if view}
 	<div class="mb-3">
 		<h5>
-			<i class="bi bi-house" /> Home /
+			<i class="bi bi-house" /> Home |
 			<span class="fw-bolder">
 				{Cookies.get("signin-comm-name-133-1")}
 			</span>
@@ -118,9 +116,7 @@
 					<div class="text-muted text-small">&nbsp;</div>
 				</div>
 				<div class="card-body">
-					<p class="card-title text-center">
-						Nessuna proposta
-					</p>
+					<p class="card-title text-center">Nessuna proposta</p>
 				</div>
 			{/if}
 		</div>

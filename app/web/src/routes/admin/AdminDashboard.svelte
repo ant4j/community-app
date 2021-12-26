@@ -3,6 +3,7 @@
 	import Cookies from "js-cookie";
 	import { push, replace } from "svelte-spa-router";
 	import endpoint from "../../endpoint.json";
+	import httpStatus from "http-status";
 	import { isSignedIn, MODE } from "../../utils";
 
 	let commArr = [];
@@ -25,7 +26,6 @@
 	async function retrieveCommunities() {
 		let res = await fetch(endpoint.service.getCommunities);
 		let json = await res.json();
-		console.log("retrieveCommunities, json: " + JSON.stringify(json));
 		commArr = json;
 	}
 
@@ -36,12 +36,10 @@
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(commToCreate),
 		});
-		let json = await res.json();
-		console.log("createCommunity, json: " + JSON.stringify(json));
-		if (json.status.code == "1") {
+		if (res.status == httpStatus.CREATED) {
 			retrieveCommunities();
-		} else {
-			alert("Community gia' esistente");
+		} else if (res.status == httpStatus.CONFLICT) {
+			alert("La community esiste gia'");
 		}
 	}
 

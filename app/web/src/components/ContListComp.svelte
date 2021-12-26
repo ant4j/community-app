@@ -22,13 +22,10 @@
 	onMount(() => retrieveContents());
 
 	async function retrieveContents() {
-		console.log("retrieveContents, collId: " + collId);
 		let res = await fetch(
 			endpoint.service.getContents + "?collId=" + collId
 		);
 		let json = await res.json();
-
-		console.log("retrieveContents, json: " + JSON.stringify(json));
 
 		collectionName = json.collName;
 

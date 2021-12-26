@@ -18,7 +18,6 @@ export function isSignedIn(mode) {
 			}
 			break;
 	}
-	console.log("Utils.isSignedIn=" + isSignedIn);
 	return isSignedIn;
 }
 
@@ -46,23 +45,15 @@ export function setupCookies(cookiesData, mode) {
 			Cookies.set("signin-username-133-1", cookiesData.username, {
 				expires: IN_HALF_A_DAY_EXP,
 			});
-
-			console.log(
-				`COOKIES: ${Cookies.get("signin-comm-id-133-1")}, ${Cookies.get(
-					"signin-comm-code-133-1"
-				)}, ${Cookies.get("signin-comm-name-133-1")}, ${Cookies.get(
-					"signin-username-133-1"
-				)}`
-			);
 			break;
 	}
 }
 
 
-// deletes old invalid cookies until all users are up to date
+// old invalid cookies removal until all users are up to date
 export function removeOldCookies() {
 	console.log(
-		"deletes old invalid cookies until all users are up to date"
+		"old invalid cookies removal until all users are up to date"
 	);
 
 	if (Cookies.get("signin-comm-id")) {

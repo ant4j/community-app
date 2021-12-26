@@ -3,6 +3,7 @@
 	import { pop, replace } from "svelte-spa-router";
 	import BackComp from "../../components/BackComp.svelte";
 	import { onMount } from "svelte";
+	import httpStatus from "http-status";
 	import { isSignedIn, MODE } from "../../utils";
 
 	export let params = {};
@@ -48,22 +49,15 @@
 
 	async function createContent() {
 		contentToCreate.title = contentToCreate.title.toUpperCase();
-
-		console.log(
-			"createContent, contentToCreate: " + JSON.stringify(contentToCreate)
-		);
-
 		let res = await fetch(endpoint.service.addContent, {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(contentToCreate),
 		});
-		let json = await res.json();
-		console.log("createContent, json: " + JSON.stringify(json));
-		if (json.status.code == "1") {
+		if (res.status == httpStatus.CREATED) {
 			pop();
-		} else if (json.status.code == "0") {
-			alert("Il content esiste gia'");
+		} else if (res.status == httpStatus.CONFLICT) {
+			alert("Il contenuto esiste gia'");
 		}
 	}
 </script>

@@ -3,6 +3,7 @@
 	import endpoint from "../endpoint.json";
 	import BackComp from "../components/BackComp.svelte";
 	import Cookies from "js-cookie";
+	import httpStatus from "http-status";
 	import { push, replace } from "svelte-spa-router";
 	import { isSignedIn } from "../utils";
 
@@ -25,12 +26,6 @@
 	}
 
 	async function retrieveContent() {
-		console.log(
-			"retrieveContent, params.collId: " +
-				params.collId +
-				", params.contId: " +
-				params.contId
-		);
 		let res = await fetch(
 			endpoint.service.getContent +
 				"?collId=" +
@@ -51,15 +46,14 @@
 			collId: params.collId,
 			contId: params.contId,
 		});
-		console.log("proposeContent, proposalData: " + proposalData);
 		let res = await fetch(endpoint.service.proposeContent, {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
 			body: proposalData,
 		});
-		let json = await res.json();
-		console.log("proposeContent, json: " + JSON.stringify(json));
-		push("/home");
+		if (res.status == httpStatus.CREATED) {
+			push("/home");
+		}
 	}
 </script>
 

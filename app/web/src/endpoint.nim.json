@@ -1,0 +1,22 @@
+{
+	"service": {
+		"getCommunities": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/getCommunities",
+		"getContents": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/getContents",
+		"signin": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/signin",
+		"addCommunity": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/addCommunity",
+		"addCollection": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/addCollection",
+		"getCollections": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/getCollections",
+		"addContent": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/addContent",
+		"getContent": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/getContent",
+		"proposeContent": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/proposeContent",
+		"getLastProposal": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/getLastProposal",
+		"signinAdmin": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/signinAdmin",
+		"getCommunity": "https://antoniof-ipp3ffev08i-apigcp.nimbella.io/api/comm-api/getCommunity"
+	},
+	"external_service": {
+		"ocr": {
+			"url": "https://api.ocr.space/parse/image",
+			"apikey": "helloworld"
+		}
+	}
+}
