@@ -5,7 +5,7 @@ const dbClient = new Redis(process.env.REDIS_URL);
 dbClient.on('error', (err) => console.log('Redis Client ', err));
 
 exports.handler = async (event, context, callback) => {
-	let params = JSON.parse(event.body);
+	const params = JSON.parse(event.body);
 
 	let key = "comm_auth:" + params.commId;
 
