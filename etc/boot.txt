@@ -1,0 +1,1 @@
+set "admin:1:admin" "{\"id\": \"1\", \"username\": \"admin\", \"password\": \"admin\"}"
