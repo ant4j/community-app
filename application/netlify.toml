@@ -3,4 +3,4 @@
 	command = "cd web && npm install && npm run build"
 
 [functions]
-	directory = "functions/src/"
+	directory = "service/src/functions"
