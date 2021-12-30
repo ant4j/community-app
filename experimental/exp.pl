@@ -54,7 +54,7 @@ while(<FH>) {
 		}
 		
 		if($titleReady) {			
-			print("status = await client.set(".'"'."cont:1:"."$index".":"."$title".'"'.", ".'"{ \"id\": \"'."$index".'\", \"title\": \"'."$title".'\" }");'."\n");
+			print("status = await client.sAdd(".'"'."cont".'"'.", ".'"{ \"id\": \"'."$index".'\", \"coll_id\": \"1\", \"title\": \"'."$title".'\" }");'."\n");
 			print("console.log(status);"."\n");
 			$titleReady = 0;
 		}

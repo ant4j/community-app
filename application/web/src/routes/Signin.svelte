@@ -39,9 +39,9 @@
 
 		if (res.status == httpStatus.OK) {
 			let json = await res.json();
-			commId = json.data.id;
-			commCode = json.data.code;
-			commName = json.data.name;
+			commId = json.id;
+			commCode = json.code;
+			commName = json.name;
 			view = true;
 		} else if (res.status == httpStatus.NOT_FOUND) {
 			//TODO fare i replace da un'altra parte

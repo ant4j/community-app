@@ -1,4 +1,4 @@
-status = await client.set("cont:1:1:1. CHI DIMORA NEL RITIRO DELL'ALTISSIMO", "{ \"id\": \"1\", \"title\": \"1. CHI DIMORA NEL RITIRO DELL'ALTISSIMO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"1\", \"coll_id\": \"1\", \"title\": \"﻿1. CHI DIMORA NEL RITIRO DELL'ALTISSIMO\" }");
 console.log(status);
 status = await client.set("cont_text:1:1", `Chi dimora nel ritiro dell'Altissimo 
 Alberga all'ombra dell'Onnipotente.
@@ -8,7 +8,7 @@ E la mia fortezza.
 [Il mio Dio in cui 
 Confido e confiderò.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:2:2. PURIFICA IL MIO CUOR", "{ \"id\": \"2\", \"title\": \"2. PURIFICA IL MIO CUOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"2\", \"coll_id\": \"1\", \"title\": \"2. PURIFICA IL MIO CUOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:2", `Insegnami le Tue vie Signor 
 Camminerò nella verità 
@@ -22,7 +22,7 @@ E avrò timor del Tuo nom
  Che non appartiene a te] (bis)
  E al Tuo amor.`);
 console.log(status);
-status = await client.set("cont:1:3:3. CHE PROFONDO È IL TUO AMOR", "{ \"id\": \"3\", \"title\": \"3. CHE PROFONDO È IL TUO AMOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"3\", \"coll_id\": \"1\", \"title\": \"3. CHE PROFONDO È IL TUO AMOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:3", `Che profondo è il Tuo amor
  Capir mai non potrò
@@ -48,7 +48,7 @@ II poter del Tuo amor
 Solo posso io dir
 Misero son davanti a Te`);
 console.log(status);
-status = await client.set("cont:1:4:4.  IL TUO NOME INNALZO DIO.", "{ \"id\": \"4\", \"title\": \"4.  IL TUO NOME INNALZO DIO.\" }");
+status = await client.sAdd("cont", "{ \"id\": \"4\", \"coll_id\": \"1\", \"title\": \"4.  IL TUO NOME INNALZO DIO.\" }");
 console.log(status);
 status = await client.set("cont_text:1:4", `Il Tuo nome innalzo, o Dio, 
 Le Tue lodi amo cantare. 
@@ -62,7 +62,7 @@ Ti hanno posto nella tomba,
 Ma risorto ora sei Tu,
 T'amo tanto o mio Gesù.`);
 console.log(status);
-status = await client.set("cont:1:5:5. SPIRITO SANTO DI DIO", "{ \"id\": \"5\", \"title\": \"5. SPIRITO SANTO DI DIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"5\", \"coll_id\": \"1\", \"title\": \"5. SPIRITO SANTO DI DIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:5", `Spirito Santo di Dio, 
 Tu che conosci dei cuori 
@@ -78,7 +78,7 @@ Fa che il seme che Tu
 Hai messo in noi
 Sia frutto per l'eternità.`);
 console.log(status);
-status = await client.set("cont:1:6:6. LA TUA FEDELTÀ È GRANDE", "{ \"id\": \"6\", \"title\": \"6. LA TUA FEDELTÀ È GRANDE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"6\", \"coll_id\": \"1\", \"title\": \"6. LA TUA FEDELTÀ È GRANDE\" }");
 console.log(status);
 status = await client.set("cont_text:1:6", `La tua fedeltà è grande,
 La tua fedeltà è incomparabile,
@@ -86,7 +86,7 @@ Nessuno è come te,
 Benedetto Iddio.
 Grande è la tua fedeltà.`);
 console.log(status);
-status = await client.set("cont:1:7:7. QUALE GLORIA", "{ \"id\": \"7\", \"title\": \"7. QUALE GLORIA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"7\", \"coll_id\": \"1\", \"title\": \"7. QUALE GLORIA\" }");
 console.log(status);
 status = await client.set("cont_text:1:7", `[Quale gloria noi godiamo
 Tua presenza esaltiamo
@@ -95,7 +95,7 @@ Mentre noi Ti lodiam
 La Tua gloria e il Tuo splendor
 Tua presenza nei nostri cuor.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:8:8. GIORNO PER GIORNO", "{ \"id\": \"8\", \"title\": \"8. GIORNO PER GIORNO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"8\", \"coll_id\": \"1\", \"title\": \"8. GIORNO PER GIORNO\" }");
 console.log(status);
 status = await client.set("cont_text:1:8", `Giorno per giorno, Signor, 
 Tu sei fedele con me. 
@@ -114,7 +114,7 @@ Proclamerò il Tuo nome,
 Proclamerò il Tuo regno, 
 E Ti loderò.`);
 console.log(status);
-status = await client.set("cont:1:9:9. TU PUOI NASCERE DI NUOVO", "{ \"id\": \"9\", \"title\": \"9. TU PUOI NASCERE DI NUOVO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"9\", \"coll_id\": \"1\", \"title\": \"9. TU PUOI NASCERE DI NUOVO\" }");
 console.log(status);
 status = await client.set("cont_text:1:9", `1. Tu puoi nascere di nuovo 
 E di nuovo cominciar 
@@ -137,7 +137,7 @@ Fonte dell'eternità
 Di quest’acqua tu puoi ber 
 Fonte della libertà.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:10:10. UN TEMPIO SANTO", "{ \"id\": \"10\", \"title\": \"10. UN TEMPIO SANTO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"10\", \"coll_id\": \"1\", \"title\": \"10. UN TEMPIO SANTO\" }");
 console.log(status);
 status = await client.set("cont_text:1:10", `Signore fammi un
 Tempio Santo
@@ -145,7 +145,7 @@ Puro e vero sol per Te
 Col Tuo aiuto, io voglio esser,
 Un Tempio Santo per Te.`);
 console.log(status);
-status = await client.set("cont:1:11:11. CANTO D’AMORE", "{ \"id\": \"11\", \"title\": \"11. CANTO D’AMORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"11\", \"coll_id\": \"1\", \"title\": \"11. CANTO D’AMORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:11", `1. L'amore che Dio ha per noi
 L'ha mostrato sulla croce 
@@ -160,14 +160,14 @@ Si eleverà dai nostri cuor
 Per ringraziarTi o Dio
 Per la Tua gloria che hai messo in noi.`);
 console.log(status);
-status = await client.set("cont:1:12:12. VOGLIAMO APRIR", "{ \"id\": \"12\", \"title\": \"12. VOGLIAMO APRIR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"12\", \"coll_id\": \"1\", \"title\": \"12. VOGLIAMO APRIR\" }");
 console.log(status);
 status = await client.set("cont_text:1:12", `[Vogliamo aprir i nostri cuori a Dio 
 Lo adoriamo insieme.] (bis) 
 [Se così farem, i cieli si apriran 
 Lo vedremo qui in mezzo a noi.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:13:13. EI MORÌ", "{ \"id\": \"13\", \"title\": \"13. EI MORÌ\" }");
+status = await client.sAdd("cont", "{ \"id\": \"13\", \"coll_id\": \"1\", \"title\": \"13. EI MORÌ\" }");
 console.log(status);
 status = await client.set("cont_text:1:13", `Su ogni potenza, su ogni re,
 Sulla natura e sulla creazion,
@@ -186,7 +186,7 @@ Come una rosa calpestato Ei fu’;
 Morì Gesù, con gran dolor, 
 Pensando a me.`);
 console.log(status);
-status = await client.set("cont:1:14:14. QUANDO L'AVVERSARIO      VERRÀ’", "{ \"id\": \"14\", \"title\": \"14. QUANDO L'AVVERSARIO      VERRÀ’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"14\", \"coll_id\": \"1\", \"title\": \"14. QUANDO L'AVVERSARIO      VERRÀ’\" }");
 console.log(status);
 status = await client.set("cont_text:1:14", `[Quando l'avversario verrà 
 Come una fiumana, 
@@ -197,7 +197,7 @@ II male da te fuggirà.
 Non temer, non temer, non temere, 
 Gesù con te sarà.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:15:15.  DAMMI DA BERE", "{ \"id\": \"15\", \"title\": \"15.  DAMMI DA BERE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"15\", \"coll_id\": \"1\", \"title\": \"15.  DAMMI DA BERE\" }");
 console.log(status);
 status = await client.set("cont_text:1:15", `Dammi da ber la Tua acqua Signor, 
 II mio cuor solo in Te si può dissetar. 
@@ -209,7 +209,7 @@ vieni e saziami di verità.] (bis)
 
 Io voglio ber L'acqua di vita Eterna.`);
 console.log(status);
-status = await client.set("cont:1:16:16. DIO APRIRÀ’ UNA VIA", "{ \"id\": \"16\", \"title\": \"16. DIO APRIRÀ’ UNA VIA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"16\", \"coll_id\": \"1\", \"title\": \"16. DIO APRIRÀ’ UNA VIA\" }");
 console.log(status);
 status = await client.set("cont_text:1:16", `Dio aprirà una via
 Dove sembra non ci sia
@@ -226,7 +226,7 @@ Cielo e terra passeran
 Ma la Sua Parola rimarrà
 Credi in Lui ed Egli opererà.`);
 console.log(status);
-status = await client.set("cont:1:17:17. QUELLI CHE SPERANO", "{ \"id\": \"17\", \"title\": \"17. QUELLI CHE SPERANO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"17\", \"coll_id\": \"1\", \"title\": \"17. QUELLI CHE SPERANO\" }");
 console.log(status);
 status = await client.set("cont_text:1:17", `[Quelli che sperano 
 che sperano in Gesù] (4 volte) 
@@ -241,7 +241,7 @@ E nuove forze avran
 Quelli che sperano 
 Che sperano in Gesù.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:18:18. SONO IL SIGNOR, GUARISCO TE ", "{ \"id\": \"18\", \"title\": \"18. SONO IL SIGNOR, GUARISCO TE \" }");
+status = await client.sAdd("cont", "{ \"id\": \"18\", \"coll_id\": \"1\", \"title\": \"18. SONO IL SIGNOR, GUARISCO TE \" }");
 console.log(status);
 status = await client.set("cont_text:1:18", `Sono il Signor, guarisco te,
 Sono l’Eterno il tuo Dio,
@@ -252,7 +252,7 @@ Tu sei l’Eterno il mio Dio.
 La Tua parola hai mandato per me.
 Tu sei l’Eterno il mio Dio.`);
 console.log(status);
-status = await client.set("cont:1:19:19.  EGLI PUÒ", "{ \"id\": \"19\", \"title\": \"19.  EGLI PUÒ\" }");
+status = await client.sAdd("cont", "{ \"id\": \"19\", \"coll_id\": \"1\", \"title\": \"19.  EGLI PUÒ\" }");
 console.log(status);
 status = await client.set("cont_text:1:19", `Egli può, si che può,
 Può darmi ciò di cui ho bisogno.
@@ -263,7 +263,7 @@ Può andare oltre tutti i miei desir.
 Egli può, si che può,
 Può far di me quel ch'Egli vorrà.`);
 console.log(status);
-status = await client.set("cont:1:20:20.  NON TEMERE ", "{ \"id\": \"20\", \"title\": \"20.  NON TEMERE \" }");
+status = await client.sAdd("cont", "{ \"id\": \"20\", \"coll_id\": \"1\", \"title\": \"20.  NON TEMERE \" }");
 console.log(status);
 status = await client.set("cont_text:1:20", `Non temere, perché son con te,
 Non temere, perché son con te,
@@ -278,7 +278,7 @@ Non sarai mai arso,
 Non sarai sommerso,
 Perché sarò con te.`);
 console.log(status);
-status = await client.set("cont:1:21:21. NON MI DISPIACE", "{ \"id\": \"21\", \"title\": \"21. NON MI DISPIACE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"21\", \"coll_id\": \"1\", \"title\": \"21. NON MI DISPIACE\" }");
 console.log(status);
 status = await client.set("cont_text:1:21", `Non mi dispiace, non me ne pento,
 Ho dato la mia vita a Gesù.
@@ -296,7 +296,7 @@ E dico: Benvenuta alla vita
 		Benvenuta alla Sua presenza 
 		Ora vivo insieme a Gesù!`);
 console.log(status);
-status = await client.set("cont:1:22:22.  LA PENTECOSTE", "{ \"id\": \"22\", \"title\": \"22.  LA PENTECOSTE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"22\", \"coll_id\": \"1\", \"title\": \"22.  LA PENTECOSTE\" }");
 console.log(status);
 status = await client.set("cont_text:1:22", `Scenda su di me la Pentecoste
 Arda il Tuo Spirto nel mio cuor,
@@ -321,7 +321,7 @@ Le nostri mani innalzeremo a Te,
 E insieme coi redenti d'ogni lingua
 II Tuo nome sempre loderem.`);
 console.log(status);
-status = await client.set("cont:1:23:23. SPIRITO DI DIO", "{ \"id\": \"23\", \"title\": \"23. SPIRITO DI DIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"23\", \"coll_id\": \"1\", \"title\": \"23. SPIRITO DI DIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:23", `Spirito di Dio,
 Vieni su di noi,
@@ -337,7 +337,7 @@ Che Tu devi accordare,
 Per formare un armonia che
 Si eleva e diffonde la Tua lode.`);
 console.log(status);
-status = await client.set("cont:1:24:24. SALMO 92", "{ \"id\": \"24\", \"title\": \"24. SALMO 92\" }");
+status = await client.sAdd("cont", "{ \"id\": \"24\", \"coll_id\": \"1\", \"title\": \"24. SALMO 92\" }");
 console.log(status);
 status = await client.set("cont_text:1:24", `1. È buono celebrare il nostro Re
 Salmeggiare all'Altissimo
@@ -352,7 +352,7 @@ Mi rallegri il cuor
 Con le opere
 Grandi che Tu fai.]  (bis)`);
 console.log(status);
-status = await client.set("cont:1:25:25. PREGHIERA", "{ \"id\": \"25\", \"title\": \"25. PREGHIERA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"25\", \"coll_id\": \"1\", \"title\": \"25. PREGHIERA\" }");
 console.log(status);
 status = await client.set("cont_text:1:25", `Sono qui davanti a Te
 Ai Tuoi piedi, oh Padre mio
@@ -378,7 +378,7 @@ Ai tuoi piedi, oh Padre mio
 Per la lodare il nome Tuo
 Perché degno sei Signor.`);
 console.log(status);
-status = await client.set("cont:1:26:26.  VOGLIAM VEDER GESÙ  INNALZATO", "{ \"id\": \"26\", \"title\": \"26.  VOGLIAM VEDER GESÙ  INNALZATO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"26\", \"coll_id\": \"1\", \"title\": \"26.  VOGLIAM VEDER GESÙ  INNALZATO\" }");
 console.log(status);
 status = await client.set("cont_text:1:26", `Vogliam veder Gesù innalzato,
 Uno stendardo per la nazione.
@@ -392,7 +392,7 @@ Coro:
  Vogliam veder 
  Gesù innalzato (bis)`);
 console.log(status);
-status = await client.set("cont:1:27:27. TI LODERÒ", "{ \"id\": \"27\", \"title\": \"27. TI LODERÒ\" }");
+status = await client.sAdd("cont", "{ \"id\": \"27\", \"coll_id\": \"1\", \"title\": \"27. TI LODERÒ\" }");
 console.log(status);
 status = await client.set("cont_text:1:27", `Quando per la prima volta 
 T'incontrai, Gesù, 
@@ -418,7 +418,7 @@ Tu dai senso alla mia vita, o Signor.
 
  Coro: Ti loderò…`);
 console.log(status);
-status = await client.set("cont:1:28:28.  IN TE HO LA VITA", "{ \"id\": \"28\", \"title\": \"28.  IN TE HO LA VITA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"28\", \"coll_id\": \"1\", \"title\": \"28.  IN TE HO LA VITA\" }");
 console.log(status);
 status = await client.set("cont_text:1:28", `[In Te ho la vita, in Te ho la forza
 In Te la speranza, in Te Signor] (bis)
@@ -427,7 +427,7 @@ Con la forza mia lodo Te
 Con la vita mia, con la forza mia
 La mia speranza è solo in Te.`);
 console.log(status);
-status = await client.set("cont:1:29:29.  TU SEI IL RIFUGIO MIO", "{ \"id\": \"29\", \"title\": \"29.  TU SEI IL RIFUGIO MIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"29\", \"coll_id\": \"1\", \"title\": \"29.  TU SEI IL RIFUGIO MIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:29", `Tu sei  il rifugio mio
 Tu riempi sempre il cuor
@@ -439,7 +439,7 @@ Anche se son debole
 La mia forza è nel Signor
 Io confido in Te.`);
 console.log(status);
-status = await client.set("cont:1:30:30.  UN VASO PER TE", "{ \"id\": \"30\", \"title\": \"30.  UN VASO PER TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"30\", \"coll_id\": \"1\", \"title\": \"30.  UN VASO PER TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:30", `1. Fai di me un vaso per Te, 
 Un cuore che Ti possa servir. 
@@ -466,7 +466,7 @@ Adatto per servire Te, che sei il Re.
 
 Coro: Signore fa’ di me…`);
 console.log(status);
-status = await client.set("cont:1:31:31.  NOI TI LODIAMO", "{ \"id\": \"31\", \"title\": \"31.  NOI TI LODIAMO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"31\", \"coll_id\": \"1\", \"title\": \"31.  NOI TI LODIAMO\" }");
 console.log(status);
 status = await client.set("cont_text:1:31", `Noi ti lodiamo o Dio in questo tempio
 Noi t’adoriamo in spirito e verità
@@ -475,7 +475,7 @@ Tu dimori nelle lodi, la Tua presenza
 Noi t’adoriamo in spirito e verità
 In spirito e verità.`);
 console.log(status);
-status = await client.set("cont:1:32:32.  VOI TUTTI CHE SIETE ASSETATI", "{ \"id\": \"32\", \"title\": \"32.  VOI TUTTI CHE SIETE ASSETATI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"32\", \"coll_id\": \"1\", \"title\": \"32.  VOI TUTTI CHE SIETE ASSETATI\" }");
 console.log(status);
 status = await client.set("cont_text:1:32", `1. Voi tutti che siete assetati
 Venite alle acque
@@ -494,7 +494,7 @@ E vi farà suoi figliuoli
 Per l’eternità.
 Coro: Gesù è morto…`);
 console.log(status);
-status = await client.set("cont:1:33:33.  PADRE…..", "{ \"id\": \"33\", \"title\": \"33.  PADRE…..\" }");
+status = await client.sAdd("cont", "{ \"id\": \"33\", \"coll_id\": \"1\", \"title\": \"33.  PADRE…..\" }");
 console.log(status);
 status = await client.set("cont_text:1:33", `Padre, posso dire solo questo
 Quando penso a ciò che fai
@@ -518,7 +518,7 @@ Coro:
 
 Non andrò mai via.`);
 console.log(status);
-status = await client.set("cont:1:34:34.  CAMMINERÒ", "{ \"id\": \"34\", \"title\": \"34.  CAMMINERÒ\" }");
+status = await client.sAdd("cont", "{ \"id\": \"34\", \"coll_id\": \"1\", \"title\": \"34.  CAMMINERÒ\" }");
 console.log(status);
 status = await client.set("cont_text:1:34", `1. Quando ero solo, 
 Solo e stanco nel mondo 
@@ -541,7 +541,7 @@ Che gran tesoro io trovai in quel dì
 Che dissi al Signore così
 Coro: SI, SI, SI,..`);
 console.log(status);
-status = await client.set("cont:1:35:35.  TU CI HAI SCELTI", "{ \"id\": \"35\", \"title\": \"35.  TU CI HAI SCELTI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"35\", \"coll_id\": \"1\", \"title\": \"35.  TU CI HAI SCELTI\" }");
 console.log(status);
 status = await client.set("cont_text:1:35", `Tu ci hai scelti tra le nazioni, 
 Tu ci hai scelti per esser Tuoi, 
@@ -550,7 +550,7 @@ Per dare gloria soltanto a Te.
 [Ricevi gloria, ricevi onore. 
 Adorazione, offriamo a Te.]  (bis)`);
 console.log(status);
-status = await client.set("cont:1:36:36.  SEI SIGNOR PREZIOSO PER ME", "{ \"id\": \"36\", \"title\": \"36.  SEI SIGNOR PREZIOSO PER ME\" }");
+status = await client.sAdd("cont", "{ \"id\": \"36\", \"coll_id\": \"1\", \"title\": \"36.  SEI SIGNOR PREZIOSO PER ME\" }");
 console.log(status);
 status = await client.set("cont_text:1:36", `Sei, Signor, prezioso per me. 
 Sei, Signor, prezioso per me.
@@ -561,7 +561,7 @@ Sei, Signor, benigno per me.
 E Ti amo, sì, Ti amo, 
 Perché Tu primo amasti me.`);
 console.log(status);
-status = await client.set("cont:1:37:37.  LE MANI ALZIAM", "{ \"id\": \"37\", \"title\": \"37.  LE MANI ALZIAM\" }");
+status = await client.sAdd("cont", "{ \"id\": \"37\", \"coll_id\": \"1\", \"title\": \"37.  LE MANI ALZIAM\" }");
 console.log(status);
 status = await client.set("cont_text:1:37", `Le mani alziam al Re che vien
 Al grande Io Son, al Re cantiam
@@ -574,7 +574,7 @@ E vivere per Te Signor.
 Nel nome Tuo la 
 Tua parola porterò.`);
 console.log(status);
-status = await client.set("cont:1:38:38.  GESÙ È IL SIGNOR", "{ \"id\": \"38\", \"title\": \"38.  GESÙ È IL SIGNOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"38\", \"coll_id\": \"1\", \"title\": \"38.  GESÙ È IL SIGNOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:38", `[Gesù è il Signor, Gesù è il Signor 
 Gesù è il Signor, Gesù è il Signor 
@@ -585,7 +585,7 @@ Noi esaltiam la giustizia Sua
 Il nemico della nostra anima 
 Egli è il potente liberator.`);
 console.log(status);
-status = await client.set("cont:1:39:39.  IL NOME TUO È AMORE", "{ \"id\": \"39\", \"title\": \"39.  IL NOME TUO È AMORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"39\", \"coll_id\": \"1\", \"title\": \"39.  IL NOME TUO È AMORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:39", `Tu dimori nelle lodi d’Israel
 La tua insegna su di noi è “Amor”
@@ -605,7 +605,7 @@ Gesù mia salvezza,
 Gesù la mia vita
 Gesù la speranza del mio cuor.`);
 console.log(status);
-status = await client.set("cont:1:40:40.  TI LODERÒ SIGNOR", "{ \"id\": \"40\", \"title\": \"40.  TI LODERÒ SIGNOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"40\", \"coll_id\": \"1\", \"title\": \"40.  TI LODERÒ SIGNOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:40", `1. Ti loderò Signor con la mia vita
 Ti servirò Signor con tutto il cuore 
@@ -623,7 +623,7 @@ Guidami Tu Signore, sempre avanti
 La Tua luce mi dimostra
 II Tuo grande amor per me Gesù.]  (bis)`);
 console.log(status);
-status = await client.set("cont:1:41:41.  NON SONO PIÙ LO STESSO", "{ \"id\": \"41\", \"title\": \"41.  NON SONO PIÙ LO STESSO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"41\", \"coll_id\": \"1\", \"title\": \"41.  NON SONO PIÙ LO STESSO\" }");
 console.log(status);
 status = await client.set("cont_text:1:41", `[Non sono più lo stesso, no, no, no
 Non sono più lo stesso, no, no, no
@@ -644,7 +644,7 @@ Dentro al mio cuor Gesù;
 [Sono felice, così felice 
 Io ho l'amore di Gesù nel cuor.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:42:42.  SIAM DI NUOVO INSIEM", "{ \"id\": \"42\", \"title\": \"42.  SIAM DI NUOVO INSIEM\" }");
+status = await client.sAdd("cont", "{ \"id\": \"42\", \"coll_id\": \"1\", \"title\": \"42.  SIAM DI NUOVO INSIEM\" }");
 console.log(status);
 status = await client.set("cont_text:1:42", `Siam di nuovo insiem
 Per lodare il Signor.
@@ -654,7 +654,7 @@ Qualcosa di nuovo accadrà.
 Siam di nuovo insiem,
 Lodiamo il Signor.`);
 console.log(status);
-status = await client.set("cont:1:43:43. TOCCA IL MIO CUORE", "{ \"id\": \"43\", \"title\": \"43. TOCCA IL MIO CUORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"43\", \"coll_id\": \"1\", \"title\": \"43. TOCCA IL MIO CUORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:43", `Tocca il mio cuore,
 Guariscilo Signor.
@@ -674,7 +674,7 @@ Mi riempie di pace il cuore.
 Tocca il mio cuore
 Col Tuo Santo Spirito.`);
 console.log(status);
-status = await client.set("cont:1:44:44. LODARTI PER LA TUA       GRANDEZZA", "{ \"id\": \"44\", \"title\": \"44. LODARTI PER LA TUA       GRANDEZZA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"44\", \"coll_id\": \"1\", \"title\": \"44. LODARTI PER LA TUA       GRANDEZZA\" }");
 console.log(status);
 status = await client.set("cont_text:1:44", `LodarTi per la Tua grandezza o Dio. 
 Dio d’Israele, Dio di verità
@@ -683,7 +683,7 @@ Perfetto Sei e giuste le Tue vie
 “Un Dio fedele sei, senza ingiustizia
 Buono e grande è il Signor.”`);
 console.log(status);
-status = await client.set("cont:1:45:45.  INSIEME A TE SIAMO    INVINCIBILI", "{ \"id\": \"45\", \"title\": \"45.  INSIEME A TE SIAMO    INVINCIBILI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"45\", \"coll_id\": \"1\", \"title\": \"45.  INSIEME A TE SIAMO    INVINCIBILI\" }");
 console.log(status);
 status = await client.set("cont_text:1:45", `Insieme a Te siamo invincibili 
 Perché Tu hai già sconfitto il male 
@@ -694,7 +694,7 @@ Ci hai dato libertà
 La Tua Parola è forza in noi 
 La terra ora vedrà che...`);
 console.log(status);
-status = await client.set("cont:1:46:46.  IL LEONE DELLA TRIBÙ DI GIUDA", "{ \"id\": \"46\", \"title\": \"46.  IL LEONE DELLA TRIBÙ DI GIUDA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"46\", \"coll_id\": \"1\", \"title\": \"46.  IL LEONE DELLA TRIBÙ DI GIUDA\" }");
 console.log(status);
 status = await client.set("cont_text:1:46", `Egli è il Leon della tribù di Giuda 
 Gesù spezzò ogni legame e ci liberò. 
@@ -703,7 +703,7 @@ La nostra forza è nella debolezza
 Ed una torre in tempo di guerra.
 È la speranza d’Israel.`);
 console.log(status);
-status = await client.set("cont:1:47:47.  VOGLIO LODAR TE", "{ \"id\": \"47\", \"title\": \"47.  VOGLIO LODAR TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"47\", \"coll_id\": \"1\", \"title\": \"47.  VOGLIO LODAR TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:47", `Voglio lodar Te Signor, 
 Alzo le mie man, Ti amo 
@@ -717,7 +717,7 @@ Ed io esalterò il Tuo nome
 Io esalterò il Tuo nome 
 Io esalterò soltanto Te.`);
 console.log(status);
-status = await client.set("cont:1:48:48.   AMA IL SIGNOR", "{ \"id\": \"48\", \"title\": \"48.   AMA IL SIGNOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"48\", \"coll_id\": \"1\", \"title\": \"48.   AMA IL SIGNOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:48", `[Ama il Signor con tutto il cuor.
 Ama il Signor con l'anima.
@@ -731,7 +731,7 @@ Signore voglio, amarTi ancor di più,
 Con tutto il cuor, con l'anima 
 E la mente mia.]  (bis)`);
 console.log(status);
-status = await client.set("cont:1:49:49.  GLORIA A DIO", "{ \"id\": \"49\", \"title\": \"49.  GLORIA A DIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"49\", \"coll_id\": \"1\", \"title\": \"49.  GLORIA A DIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:49", `1. [Gloria a Dio (gloria a Dio) 
 Nell'alto dei cieli (nell'alto dei cieli) 
@@ -751,7 +751,7 @@ Alleluia, Alleluia….
 Sappi che sol Gesù te le dà.]  (bis)
 Alleluia, Alleluia....`);
 console.log(status);
-status = await client.set("cont:1:50:50.  C'È UN FIUME CHE", "{ \"id\": \"50\", \"title\": \"50.  C'È UN FIUME CHE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"50\", \"coll_id\": \"1\", \"title\": \"50.  C'È UN FIUME CHE\" }");
 console.log(status);
 status = await client.set("cont_text:1:50", `C'è un fiume che scorre dentro me 
 Fiume che ogni male guarire può 
@@ -767,7 +767,7 @@ M'ha dato l'acqua viva
 E sete più non ho (ter) 
 M'ha dato l'acqua viva (ter) Il mio Signor.`);
 console.log(status);
-status = await client.set("cont:1:51:51. DAVANTI AL TUO TRONO", "{ \"id\": \"51\", \"title\": \"51. DAVANTI AL TUO TRONO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"51\", \"coll_id\": \"1\", \"title\": \"51. DAVANTI AL TUO TRONO\" }");
 console.log(status);
 status = await client.set("cont_text:1:51", `Davanti al Tuo trono
 Mi presento Signor.
@@ -778,14 +778,14 @@ E del bene mi farai.
 È per questo ch’io Ti chiedo:
 “Accarezza il mio cuor”`);
 console.log(status);
-status = await client.set("cont:1:52:52.  MAGNIFICHIAMO IL SIGNOR", "{ \"id\": \"52\", \"title\": \"52.  MAGNIFICHIAMO IL SIGNOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"52\", \"coll_id\": \"1\", \"title\": \"52.  MAGNIFICHIAMO IL SIGNOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:52", `Magnifichiamo il Signor 
 Diam lode al nostro Redentor
 Magnifichiam l’Altissimo
 Perch’Egli degno è.`);
 console.log(status);
-status = await client.set("cont:1:53:53.  GETTA IL PESO TUO", "{ \"id\": \"53\", \"title\": \"53.  GETTA IL PESO TUO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"53\", \"coll_id\": \"1\", \"title\": \"53.  GETTA IL PESO TUO\" }");
 console.log(status);
 status = await client.set("cont_text:1:53", `Getta il peso tuo sul Signor
 Che ti sostiene
@@ -801,7 +801,7 @@ Che ti sostiene
 Non permetterà che il giusto
 Sia smosso mai.`);
 console.log(status);
-status = await client.set("cont:1:54:54. GRAZIE PER LA SALVEZZA", "{ \"id\": \"54\", \"title\": \"54. GRAZIE PER LA SALVEZZA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"54\", \"coll_id\": \"1\", \"title\": \"54. GRAZIE PER LA SALVEZZA\" }");
 console.log(status);
 status = await client.set("cont_text:1:54", `Grazie per la salvezza 
 Grazie per il Tuo amore 
@@ -818,14 +818,14 @@ Ci prenderai per mano
 Le nostre lacrime asciugherai.
 Per restare uniti a Te, per l’eternità.”`);
 console.log(status);
-status = await client.set("cont:1:55:55.  PADRE AMATO", "{ \"id\": \"55\", \"title\": \"55.  PADRE AMATO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"55\", \"coll_id\": \"1\", \"title\": \"55.  PADRE AMATO\" }");
 console.log(status);
 status = await client.set("cont_text:1:55", `1 1. Padre amato ho bisogno di Te (ter)
    Senza Te nulla son, nulla son.
   2. Gesù caro....
   3. Spirito Santo....`);
 console.log(status);
-status = await client.set("cont:1:56:56.  NESSUNO È COME TE", "{ \"id\": \"56\", \"title\": \"56.  NESSUNO È COME TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"56\", \"coll_id\": \"1\", \"title\": \"56.  NESSUNO È COME TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:56", `Coro:
 [Nessuno è come Te, 
@@ -838,7 +838,7 @@ Fra le Tue braccia mi sento al sicuro.
 Nessuno è come Te.
 Coro: Nessuno è…`);
 console.log(status);
-status = await client.set("cont:1:57:57.  NOSTRO PADRE SEI TU", "{ \"id\": \"57\", \"title\": \"57.  NOSTRO PADRE SEI TU\" }");
+status = await client.sAdd("cont", "{ \"id\": \"57\", \"coll_id\": \"1\", \"title\": \"57.  NOSTRO PADRE SEI TU\" }");
 console.log(status);
 status = await client.set("cont_text:1:57", `Siamo un sol corpo in Gesù
 La stessa speranza, una luce
@@ -852,7 +852,7 @@ Il Tuo regno verrà
 La Tua volontà sarà
 Nostro Padre e Dio sei Tu!`);
 console.log(status);
-status = await client.set("cont:1:58:58.  PER QUEL SANGUE", "{ \"id\": \"58\", \"title\": \"58.  PER QUEL SANGUE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"58\", \"coll_id\": \"1\", \"title\": \"58.  PER QUEL SANGUE\" }");
 console.log(status);
 status = await client.set("cont_text:1:58", `Per quel sangue Signor io vengo a Te 
 Per quel sangue versato per me 
@@ -862,7 +862,7 @@ Per quel sangue son giustificato
 Non ho altro fondamento solo 
 Il sangue di Gesù.`);
 console.log(status);
-status = await client.set("cont:1:59:59.   ADOREREMO", "{ \"id\": \"59\", \"title\": \"59.   ADOREREMO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"59\", \"coll_id\": \"1\", \"title\": \"59.   ADOREREMO\" }");
 console.log(status);
 status = await client.set("cont_text:1:59", `Adoreremo alla presenza Tua 
 Lodi canteremo a Te Signore 
@@ -872,7 +872,7 @@ Coro:
 [Gloria Lode al nome Tuo 
 Tu che regni per l'Eternità.]  (bis)`);
 console.log(status);
-status = await client.set("cont:1:60:60.  ENTRA NEL LUOGO SANTISSIMO", "{ \"id\": \"60\", \"title\": \"60.  ENTRA NEL LUOGO SANTISSIMO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"60\", \"coll_id\": \"1\", \"title\": \"60.  ENTRA NEL LUOGO SANTISSIMO\" }");
 console.log(status);
 status = await client.set("cont_text:1:60", `[Entra nel luogo Santissimo 
 Per il sangue dell'Agnel 
@@ -881,7 +881,7 @@ Al Suo tron adoriam.] (bis)
 Mani sante alziam al Re dei re.
 Loda Gesù, loda Gesù.`);
 console.log(status);
-status = await client.set("cont:1:61:61.  PRESTO MOLTO PRESTO", "{ \"id\": \"61\", \"title\": \"61.  PRESTO MOLTO PRESTO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"61\", \"coll_id\": \"1\", \"title\": \"61.  PRESTO MOLTO PRESTO\" }");
 console.log(status);
 status = await client.set("cont_text:1:61", `[Presto molto presto
 Noi andremo a vedere il Re.] (ter)
@@ -891,7 +891,7 @@ Noi andremo a vedere il Re
 \"Non più morte lì..... 
 Oh Alleluia! Oh Alleluia!`);
 console.log(status);
-status = await client.set("cont:1:62:62.  TU SEI RE", "{ \"id\": \"62\", \"title\": \"62.  TU SEI RE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"62\", \"coll_id\": \"1\", \"title\": \"62.  TU SEI RE\" }");
 console.log(status);
 status = await client.set("cont_text:1:62", `Tu sei Re, Tu sei Re 
 Sei Re Gesù. 
@@ -904,7 +904,7 @@ Rivolte verso il Tuo trono
 Lodando Te!] (bis) 
 Lodando Te!`);
 console.log(status);
-status = await client.set("cont:1:63:63.  LA TUA FEDELTÀ", "{ \"id\": \"63\", \"title\": \"63.  LA TUA FEDELTÀ\" }");
+status = await client.sAdd("cont", "{ \"id\": \"63\", \"coll_id\": \"1\", \"title\": \"63.  LA TUA FEDELTÀ\" }");
 console.log(status);
 status = await client.set("cont_text:1:63", `La Tua fedeltà va al di là
 Di ciò che io posso capir
@@ -918,7 +918,7 @@ Che mi spinge a pregar
 Che mi spinge a cantar 
 Mi spinge a lodare Te Signor.`);
 console.log(status);
-status = await client.set("cont:1:64:64.  CIRCONDAMI", "{ \"id\": \"64\", \"title\": \"64.  CIRCONDAMI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"64\", \"coll_id\": \"1\", \"title\": \"64.  CIRCONDAMI\" }");
 console.log(status);
 status = await client.set("cont_text:1:64", `1. [Circondami Signore col Tuo Spirito, 
 Circondami Signore col Tuo Spirito.] (bis)
@@ -932,7 +932,7 @@ Qui nel mio cuore Oh Dio.
 
 3. Riempimi Signore...`);
 console.log(status);
-status = await client.set("cont:1:65:65.  GRAZIE A TE", "{ \"id\": \"65\", \"title\": \"65.  GRAZIE A TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"65\", \"coll_id\": \"1\", \"title\": \"65.  GRAZIE A TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:65", `A Te grazie noi rendiam, 
 A Te il Santissimo, 
@@ -950,7 +950,7 @@ E si dica il debole: \"Son forte\"!
 Dica il povero: \"Son ricco\"! 
 Per tutto ciò che hai fatto grazie a Te.`);
 console.log(status);
-status = await client.set("cont:1:66:66.  TU HAI VITTORIA", "{ \"id\": \"66\", \"title\": \"66.  TU HAI VITTORIA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"66\", \"coll_id\": \"1\", \"title\": \"66.  TU HAI VITTORIA\" }");
 console.log(status);
 status = await client.set("cont_text:1:66", `Coro:
  [Tu hai vittoria, tu hai vittoria, 
@@ -967,7 +967,7 @@ Se vuoi sapere perché canto così:
 Lavato e su una nuvola presto 
 Tornerà per me.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:67:67.  APRI I MIEI OCCHI SIGNORE", "{ \"id\": \"67\", \"title\": \"67.  APRI I MIEI OCCHI SIGNORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"67\", \"coll_id\": \"1\", \"title\": \"67.  APRI I MIEI OCCHI SIGNORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:67", `[Apri i miei occhi Signore
 Apri i miei occhi Signore
@@ -979,7 +979,7 @@ Versa il Tuo amore su noi
 Mentre cantiamo Santo, Santo
 Santo, Santo, Santo, voglio vederTi.`);
 console.log(status);
-status = await client.set("cont:1:68:68.  SE NON AVESSI TE", "{ \"id\": \"68\", \"title\": \"68.  SE NON AVESSI TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"68\", \"coll_id\": \"1\", \"title\": \"68.  SE NON AVESSI TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:68", `Se non avessi Te, in questo mondo 
 Oh mio Signore dove sarei? 
@@ -994,7 +994,7 @@ Tu solo Tu, speranza del mio cuor.
 Resta con me sempre vicino a me, 
 Cosa farei, Signor, se non avessi Te?`);
 console.log(status);
-status = await client.set("cont:1:69:69.  DAL CIELO SCENDE LA  BENEDIZIONE", "{ \"id\": \"69\", \"title\": \"69.  DAL CIELO SCENDE LA  BENEDIZIONE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"69\", \"coll_id\": \"1\", \"title\": \"69.  DAL CIELO SCENDE LA  BENEDIZIONE\" }");
 console.log(status);
 status = await client.set("cont_text:1:69", `Dal cielo scende la benedizione, 
 Mi riempie il cuore e mi ristora l'anima.
@@ -1012,7 +1012,7 @@ La coppa mia trabocca d'olio santo.
 La mia preghiera giunge a Te Signor, 
 Prostrandomi ai tuoi piedi adorerò.`);
 console.log(status);
-status = await client.set("cont:1:70:70.  TU SEI DEGNO", "{ \"id\": \"70\", \"title\": \"70.  TU SEI DEGNO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"70\", \"coll_id\": \"1\", \"title\": \"70.  TU SEI DEGNO\" }");
 console.log(status);
 status = await client.set("cont_text:1:70", `Tu sei degno,
 Signore Tu sei degno
@@ -1024,7 +1024,7 @@ Ed io ti amo
 [Finché, vita avrò il
 Tuo nome loderò.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:71:71.  MANO NELLA MANO", "{ \"id\": \"71\", \"title\": \"71.  MANO NELLA MANO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"71\", \"coll_id\": \"1\", \"title\": \"71.  MANO NELLA MANO\" }");
 console.log(status);
 status = await client.set("cont_text:1:71", `Coro:
 [Mano nella mano con Lui 
@@ -1044,7 +1044,7 @@ Ogni dì felice con Lui sarai
 Vieni adesso a Lui e canterai
 Insieme a noi.`);
 console.log(status);
-status = await client.set("cont:1:72:72.  MAESTÀ", "{ \"id\": \"72\", \"title\": \"72.  MAESTÀ\" }");
+status = await client.sAdd("cont", "{ \"id\": \"72\", \"coll_id\": \"1\", \"title\": \"72.  MAESTÀ\" }");
 console.log(status);
 status = await client.set("cont_text:1:72", `Maestà, Gloriosa Maestà 
 A Gesù sia la lode, 
@@ -1060,7 +1060,7 @@ Maestà, Divina autorità
 Gesù mori, nel ciel salì, 
 qual Re dei re.`);
 console.log(status);
-status = await client.set("cont:1:73:73.  SANTO, SANTO, SANTO", "{ \"id\": \"73\", \"title\": \"73.  SANTO, SANTO, SANTO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"73\", \"coll_id\": \"1\", \"title\": \"73.  SANTO, SANTO, SANTO\" }");
 console.log(status);
 status = await client.set("cont_text:1:73", `1. Santo, Santo, Santo 
 Egli è l'Onnipotente 
@@ -1079,7 +1079,7 @@ La terra glorifica II Suo nome
 Col cuore glorifico II Suo nome 
 Degno è il Signor.`);
 console.log(status);
-status = await client.set("cont:1:74:74. CHE GRAN GIORNO SARÀ", "{ \"id\": \"74\", \"title\": \"74. CHE GRAN GIORNO SARÀ\" }");
+status = await client.sAdd("cont", "{ \"id\": \"74\", \"coll_id\": \"1\", \"title\": \"74. CHE GRAN GIORNO SARÀ\" }");
 console.log(status);
 status = await client.set("cont_text:1:74", `[Oh che gran giorno sarà
 Il giorno che Gesù tornerà] (bis)
@@ -1093,7 +1093,7 @@ Volerò, quando la tromba suonerà
 La mancanza, del mondo non sentirò
 Della presenza di Dio mi sazierò.`);
 console.log(status);
-status = await client.set("cont:1:75:75.  TU HAI DIPINTO I CIELI", "{ \"id\": \"75\", \"title\": \"75.  TU HAI DIPINTO I CIELI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"75\", \"coll_id\": \"1\", \"title\": \"75.  TU HAI DIPINTO I CIELI\" }");
 console.log(status);
 status = await client.set("cont_text:1:75", `Tu hai dipinto i cieli ed hai fatto il mar 
 O mio Creator per Te la vita ho 
@@ -1115,7 +1115,7 @@ Solo il mio cuor esprimere potrà...
 La lode a Te come un profumo è 
 Adoro Te per quel che sei.`);
 console.log(status);
-status = await client.set("cont:1:76:76.  CAMBIA IL MIO CUOR", "{ \"id\": \"76\", \"title\": \"76.  CAMBIA IL MIO CUOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"76\", \"coll_id\": \"1\", \"title\": \"76.  CAMBIA IL MIO CUOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:76", `[Cambia il mio cuor, col Tuo amor 
 Signor, Cambia il mio cuor, 
@@ -1124,7 +1124,7 @@ Regna Tu in me.] (bis)
 Modella il mio cuor, 
 Questo è il mio desir.`);
 console.log(status);
-status = await client.set("cont:1:77:77.  VENITE A ME", "{ \"id\": \"77\", \"title\": \"77.  VENITE A ME\" }");
+status = await client.sAdd("cont", "{ \"id\": \"77\", \"coll_id\": \"1\", \"title\": \"77.  VENITE A ME\" }");
 console.log(status);
 status = await client.set("cont_text:1:77", `Gesù risolvere può ogni problema. 
 Egli spostare potrà ogni montagna. 
@@ -1142,7 +1142,7 @@ Disse: “ Venite a me se siete stanchi
 Riposo vi darò!
 Coro: Lui da solo…`);
 console.log(status);
-status = await client.set("cont:1:78:78.  IO NON VOGLIO PIÙ", "{ \"id\": \"78\", \"title\": \"78.  IO NON VOGLIO PIÙ\" }");
+status = await client.sAdd("cont", "{ \"id\": \"78\", \"coll_id\": \"1\", \"title\": \"78.  IO NON VOGLIO PIÙ\" }");
 console.log(status);
 status = await client.set("cont_text:1:78", `1. Io non voglio più
 Restar in questo mondo di peccato
@@ -1156,7 +1156,7 @@ E portami con Te al Tuo ritorno
 Vieni, Signor Gesù
 E dammi la corona della vita`);
 console.log(status);
-status = await client.set("cont:1:79:79.  VOGLIO STARE DOVE SEI TU", "{ \"id\": \"79\", \"title\": \"79.  VOGLIO STARE DOVE SEI TU\" }");
+status = await client.sAdd("cont", "{ \"id\": \"79\", \"coll_id\": \"1\", \"title\": \"79.  VOGLIO STARE DOVE SEI TU\" }");
 console.log(status);
 status = await client.set("cont_text:1:79", `Voglio stare dove sei Tu, 
 Sempre nella Tua presenza. 
@@ -1188,7 +1188,7 @@ Dammi un posto presso di Te:
 [Voglio star con Te, 
 Voglio star con Te, Gesù!] (bis)`);
 console.log(status);
-status = await client.set("cont:1:80:80.  VOGLIO LODARE IL SANTO", "{ \"id\": \"80\", \"title\": \"80.  VOGLIO LODARE IL SANTO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"80\", \"coll_id\": \"1\", \"title\": \"80.  VOGLIO LODARE IL SANTO\" }");
 console.log(status);
 status = await client.set("cont_text:1:80", `1. [Voglio lodare il Santo, 
 Agnello di Dio.] (bis) 
@@ -1199,7 +1199,7 @@ Agnello di Dio.
 2. Voglio amare ....
 3. Voglio servire ....`);
 console.log(status);
-status = await client.set("cont:1:81:81. IO TI AMO NELL’AMORE", "{ \"id\": \"81\", \"title\": \"81. IO TI AMO NELL’AMORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"81\", \"coll_id\": \"1\", \"title\": \"81. IO TI AMO NELL’AMORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:81", `1. Io ti amo nell’amore del Signor (bis)
 Perché vedo in te,
@@ -1209,7 +1209,7 @@ Il ti amo nell’amore del Signor!
 3. Io ti servo nell’amore…
 4. Ti saluto nell’amore…`);
 console.log(status);
-status = await client.set("cont:1:82:82.  CON GESÙ", "{ \"id\": \"82\", \"title\": \"82.  CON GESÙ\" }");
+status = await client.sAdd("cont", "{ \"id\": \"82\", \"coll_id\": \"1\", \"title\": \"82.  CON GESÙ\" }");
 console.log(status);
 status = await client.set("cont_text:1:82", `[Con Gesù, con Gesù
 Cammino verso il ciel.
@@ -1224,7 +1224,7 @@ Stando vicino a Lui,
 Sempre vincerò.
 Sì, io vincerò! (ter)`);
 console.log(status);
-status = await client.set("cont:1:83:83.  ALLO SPLENDORE", "{ \"id\": \"83\", \"title\": \"83.  ALLO SPLENDORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"83\", \"coll_id\": \"1\", \"title\": \"83.  ALLO SPLENDORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:83", `[Allo splendore della Tua maestà
 Sui gradini davanti al Tuo tron,
@@ -1234,7 +1234,7 @@ Coro:
 [Tu, o Signor, Sei la fonte di vita. 
 Di Te, noi viviam...] (bis`);
 console.log(status);
-status = await client.set("cont:1:84:84.  MIO GESÙ, SIGNORE", "{ \"id\": \"84\", \"title\": \"84.  MIO GESÙ, SIGNORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"84\", \"coll_id\": \"1\", \"title\": \"84.  MIO GESÙ, SIGNORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:84", `1. Mio Gesù, Signore,
 Nessuno è come Te.
@@ -1255,7 +1255,7 @@ Ho grandi promesse,
 Il Tuo amore è per me.
 Non basta l’eternità per amare Te.`);
 console.log(status);
-status = await client.set("cont:1:85:85.  IDDIO VIVE", "{ \"id\": \"85\", \"title\": \"85.  IDDIO VIVE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"85\", \"coll_id\": \"1\", \"title\": \"85.  IDDIO VIVE\" }");
 console.log(status);
 status = await client.set("cont_text:1:85", `Loderò il mio Signor 
 Solo Lui degno è 
@@ -1264,7 +1264,7 @@ Loderò il mio Signor.
 [Iddio vive, la rocca del mio cuore 
 L'Iddio della mia salvezza Sia esaltato.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:86:86.  C'È UN DIO MOLTO GRANDE", "{ \"id\": \"86\", \"title\": \"86.  C'È UN DIO MOLTO GRANDE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"86\", \"coll_id\": \"1\", \"title\": \"86.  C'È UN DIO MOLTO GRANDE\" }");
 console.log(status);
 status = await client.set("cont_text:1:86", `1. [C'è un Dio molto grande qui 
 Vive dentro di me.] (bis)
@@ -1280,7 +1280,7 @@ Coro:
 [Io lo so, io lo so, 
 regna dentro di me]  (bis)`);
 console.log(status);
-status = await client.set("cont:1:87:87.  VIENI SPIRITO SANTO", "{ \"id\": \"87\", \"title\": \"87.  VIENI SPIRITO SANTO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"87\", \"coll_id\": \"1\", \"title\": \"87.  VIENI SPIRITO SANTO\" }");
 console.log(status);
 status = await client.set("cont_text:1:87", `Vieni Spirito Santo, vieni su di me
 Con la Tua potenza, mi puoi soddisfar
@@ -1288,7 +1288,7 @@ Solo Tu mi puoi sanar
 Dammi forza per maturar
 Vieni Spirito Santo, vieni su di me.`);
 console.log(status);
-status = await client.set("cont:1:88:88.  DALLA NASCITA DEL SOL", "{ \"id\": \"88\", \"title\": \"88.  DALLA NASCITA DEL SOL\" }");
+status = await client.sAdd("cont", "{ \"id\": \"88\", \"coll_id\": \"1\", \"title\": \"88.  DALLA NASCITA DEL SOL\" }");
 console.log(status);
 status = await client.set("cont_text:1:88", `[Dalla nascita del sol
 Fino al suo tramonto vorrò
@@ -1301,7 +1301,7 @@ Glorificate il Creator
 Benedetto è il nome Suo
 Da ora in poi e per l'eternità!`);
 console.log(status);
-status = await client.set("cont:1:89:89. SIAMO QUI PER ADORARTI", "{ \"id\": \"89\", \"title\": \"89. SIAMO QUI PER ADORARTI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"89\", \"coll_id\": \"1\", \"title\": \"89. SIAMO QUI PER ADORARTI\" }");
 console.log(status);
 status = await client.set("cont_text:1:89", `Siamo qui per adorarTi, 
 Nello spirito, insieme. 
@@ -1312,7 +1312,7 @@ E le nostre iniquità
 Le hai gettate in fondo al mare,
 E nella libertà in Te viviam.`);
 console.log(status);
-status = await client.set("cont:1:90:90.  SOLO TU", "{ \"id\": \"90\", \"title\": \"90.  SOLO TU\" }");
+status = await client.sAdd("cont", "{ \"id\": \"90\", \"coll_id\": \"1\", \"title\": \"90.  SOLO TU\" }");
 console.log(status);
 status = await client.set("cont_text:1:90", `T'offrirò la mia lode,
 Canterò un nuovo canto
@@ -1326,7 +1326,7 @@ Solo Tu sai donare la pace,
 Solo Tu avrai cura di noi,
 Solo Tu sei Dio.`);
 console.log(status);
-status = await client.set("cont:1:91:91.  SOLO PER GRAZIA", "{ \"id\": \"91\", \"title\": \"91.  SOLO PER GRAZIA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"91\", \"coll_id\": \"1\", \"title\": \"91.  SOLO PER GRAZIA\" }");
 console.log(status);
 status = await client.set("cont_text:1:91", `Solo per grazia possiamo 
 Venire al Tuo trono, Signor 
@@ -1347,7 +1347,7 @@ Io vengo a Te,
 Perché, Tu mi hai lavato
 Col sangue dell'Agnel!] (bis)`);
 console.log(status);
-status = await client.set("cont:1:92:92.  ALLELUIA, CRISTO VIVE IN ME", "{ \"id\": \"92\", \"title\": \"92.  ALLELUIA, CRISTO VIVE IN ME\" }");
+status = await client.sAdd("cont", "{ \"id\": \"92\", \"coll_id\": \"1\", \"title\": \"92.  ALLELUIA, CRISTO VIVE IN ME\" }");
 console.log(status);
 status = await client.set("cont_text:1:92", `[Alleluia, Cristo vive in me!
 La morte, nella tomba,
@@ -1361,7 +1361,7 @@ L'Agnel di Dio è risorto!
 Egli vive, egli vive!]  (bis)
 Alleluia, Cristo vive in me!`);
 console.log(status);
-status = await client.set("cont:1:93:93.  DI CHI TEMERÒ?", "{ \"id\": \"93\", \"title\": \"93.  DI CHI TEMERÒ?\" }");
+status = await client.sAdd("cont", "{ \"id\": \"93\", \"coll_id\": \"1\", \"title\": \"93.  DI CHI TEMERÒ?\" }");
 console.log(status);
 status = await client.set("cont_text:1:93", `1. Se mi trovassi nella tempesta 
 Alcun male io non temerei 
@@ -1376,7 +1376,7 @@ II Signore dei signori
 Io temerò (io temerò)
 Se in Dio confiderò.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:94:94.  ABBA PADRE", "{ \"id\": \"94\", \"title\": \"94.  ABBA PADRE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"94\", \"coll_id\": \"1\", \"title\": \"94.  ABBA PADRE\" }");
 console.log(status);
 status = await client.set("cont_text:1:94", `Al Signore ci volgiam, 
 Lodiamolo col cuor 
@@ -1391,7 +1391,7 @@ Grida dentro noi
 Forte ora più che mai :
 \"T'amo. Signor!\"...`);
 console.log(status);
-status = await client.set("cont:1:95:95.  GRANDE SEI O MIO SIGNORE", "{ \"id\": \"95\", \"title\": \"95.  GRANDE SEI O MIO SIGNORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"95\", \"coll_id\": \"1\", \"title\": \"95.  GRANDE SEI O MIO SIGNORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:95", `1. Grande sei o mio Signor
 Re in eterno resterai 
@@ -1402,7 +1402,7 @@ Con Te che siedi su nel ciel
 Con Te che hai tutto ai piedi Tuoi 
 Tu sei l'amore. Tu sei Gesù, il Re.`);
 console.log(status);
-status = await client.set("cont:1:96:96.  FA’ DI ME UN TUO SERVITORE", "{ \"id\": \"96\", \"title\": \"96.  FA’ DI ME UN TUO SERVITORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"96\", \"coll_id\": \"1\", \"title\": \"96.  FA’ DI ME UN TUO SERVITORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:96", `1. Fa’ di me un Tuo servitore,
 Mettimi in cuor sogni di lassù;
@@ -1417,7 +1417,7 @@ Per convertir un mondo perso già;
 Il sogno che la Tua forza ha fatto nascere
 Resti vivo e divenga una realtà.`);
 console.log(status);
-status = await client.set("cont:1:97:97.  DEGNO SEI D'ONORE", "{ \"id\": \"97\", \"title\": \"97.  DEGNO SEI D'ONORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"97\", \"coll_id\": \"1\", \"title\": \"97.  DEGNO SEI D'ONORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:97", `[Degno Sei d'onore, T'adoriam Gesù,
 Noi alziam le nostre mani,
@@ -1429,7 +1429,7 @@ Nessun altro è come Te,
 Nessun altro è come Te.] (bis)
 Finale: Grande Sei Tu! (bis)`);
 console.log(status);
-status = await client.set("cont:1:98:98.  IO POSSO OGNI COSA", "{ \"id\": \"98\", \"title\": \"98.  IO POSSO OGNI COSA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"98\", \"coll_id\": \"1\", \"title\": \"98.  IO POSSO OGNI COSA\" }");
 console.log(status);
 status = await client.set("cont_text:1:98", `[Io posso ogni cosa
 In Colui che mi fortifica.] (bis)
@@ -1441,7 +1441,7 @@ Posso fare la volontà
 Del Padre mio che è nei cieli
 E trovare la forza per ogni dì.`);
 console.log(status);
-status = await client.set("cont:1:99:99.  DIO VENGO A TE", "{ \"id\": \"99\", \"title\": \"99.  DIO VENGO A TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"99\", \"coll_id\": \"1\", \"title\": \"99.  DIO VENGO A TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:99", `Dio, vengo a Te, mi 
 presento al Tuo trono così. 
@@ -1458,7 +1458,7 @@ Metti un nuovo canto dentro me.
 Riempimi col Tuo Spirito, 
 Sei Tu la lode del mio cuor.`);
 console.log(status);
-status = await client.set("cont:1:100:100.  CERCALO", "{ \"id\": \"100\", \"title\": \"100.  CERCALO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"100\", \"coll_id\": \"1\", \"title\": \"100.  CERCALO\" }");
 console.log(status);
 status = await client.set("cont_text:1:100", `[CercaLo quando tutto sembra finito 
 CercaLo quando manca il sorriso di 
@@ -1472,7 +1472,7 @@ Cos'è che non va bene oggi in me?
 Dio era con te, con te
 Dio è ora con te (con te).`);
 console.log(status);
-status = await client.set("cont:1:101:101.  GESÙ STA ASCOLTANDO", "{ \"id\": \"101\", \"title\": \"101.  GESÙ STA ASCOLTANDO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"101\", \"coll_id\": \"1\", \"title\": \"101.  GESÙ STA ASCOLTANDO\" }");
 console.log(status);
 status = await client.set("cont_text:1:101", `[Gesù sta ascoltando:
 DiGli ciò che vuoi.] (ter) 
@@ -1499,7 +1499,7 @@ DiGli ciò che vuoi.] (ter)
 Gesù sta ascoltando te.
 Coro: E allora chiamalo..`);
 console.log(status);
-status = await client.set("cont:1:102:102.  NARRANO I CIEL", "{ \"id\": \"102\", \"title\": \"102.  NARRANO I CIEL\" }");
+status = await client.sAdd("cont", "{ \"id\": \"102\", \"coll_id\": \"1\", \"title\": \"102.  NARRANO I CIEL\" }");
 console.log(status);
 status = await client.set("cont_text:1:102", `1. Narrano i ciel la gloria 
 Di Gesù il Signor
@@ -1520,7 +1520,7 @@ Al trono Dell'Agnel
 A Lui ci inginocchiam 
 E solo Lui adoriam.`);
 console.log(status);
-status = await client.set("cont:1:103:103.  OSANNA SU NEI CIELI", "{ \"id\": \"103\", \"title\": \"103.  OSANNA SU NEI CIELI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"103\", \"coll_id\": \"1\", \"title\": \"103.  OSANNA SU NEI CIELI\" }");
 console.log(status);
 status = await client.set("cont_text:1:103", `[Grande è il Signor il 
 Re dell'universo] (ter) 
@@ -1536,7 +1536,7 @@ Nel nome del Signor.
 Lodiamo il Suo nome] (ter)
 Perché grande Egli è.`);
 console.log(status);
-status = await client.set("cont:1:104:104.  VOGLIO ASSOMIGLIARTI  DI PIÙ", "{ \"id\": \"104\", \"title\": \"104.  VOGLIO ASSOMIGLIARTI  DI PIÙ\" }");
+status = await client.sAdd("cont", "{ \"id\": \"104\", \"coll_id\": \"1\", \"title\": \"104.  VOGLIO ASSOMIGLIARTI  DI PIÙ\" }");
 console.log(status);
 status = await client.set("cont_text:1:104", `Voglio assomigliarTi Gesù,
 Voglio assomigliarTi di più,
@@ -1544,7 +1544,7 @@ Voglio essere strumento
  nelle tue mani,
 Voglio assomigliarti di più!`);
 console.log(status);
-status = await client.set("cont:1:105:105.  CASE SPLENDENTI", "{ \"id\": \"105\", \"title\": \"105.  CASE SPLENDENTI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"105\", \"coll_id\": \"1\", \"title\": \"105.  CASE SPLENDENTI\" }");
 console.log(status);
 status = await client.set("cont_text:1:105", `Coro:
 Case splendenti, su colline di gloria
@@ -1566,7 +1566,7 @@ Oro, perle ed argento
 Tutto in buona armonia
 Ma Gesù più di tutto splenderà.`);
 console.log(status);
-status = await client.set("cont:1:106:106.  GESÙ  VIEN, DIMORA IN NOI", "{ \"id\": \"106\", \"title\": \"106.  GESÙ  VIEN, DIMORA IN NOI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"106\", \"coll_id\": \"1\", \"title\": \"106.  GESÙ  VIEN, DIMORA IN NOI\" }");
 console.log(status);
 status = await client.set("cont_text:1:106", `Oh lascia entrare il Re di gloria 
 Col Suo Spirto ed il Suo amor 
@@ -1584,7 +1584,7 @@ E le tue difficoltà
 Nascerai di nuovo in Gesù.
 Gesù, oh Gesù, vieni.....`);
 console.log(status);
-status = await client.set("cont:1:107:107.  DAVANTI AL RE", "{ \"id\": \"107\", \"title\": \"107.  DAVANTI AL RE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"107\", \"coll_id\": \"1\", \"title\": \"107.  DAVANTI AL RE\" }");
 console.log(status);
 status = await client.set("cont_text:1:107", `Davanti al Re, 
 Ci inchiniamo insieme 
@@ -1592,7 +1592,7 @@ Per adorarLo con tutto il cuor,
 Verso di Lui, eleviamo insieme 
 Canti di gloria al Santo Re dei re.`);
 console.log(status);
-status = await client.set("cont:1:108:108.  SORRIDI CHE GESÙ TI AMA", "{ \"id\": \"108\", \"title\": \"108.  SORRIDI CHE GESÙ TI AMA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"108\", \"coll_id\": \"1\", \"title\": \"108.  SORRIDI CHE GESÙ TI AMA\" }");
 console.log(status);
 status = await client.set("cont_text:1:108", `[Sorridi che Gesù ti ama,
 Sorridi che Gesù ti ama
@@ -1603,7 +1603,7 @@ Perché Gesù ti liberò
 Canta, canta al Signor 
 perché Gesù ti liberò.`);
 console.log(status);
-status = await client.set("cont:1:109:109.  IL NOME DI DIO", "{ \"id\": \"109\", \"title\": \"109.  IL NOME DI DIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"109\", \"coll_id\": \"1\", \"title\": \"109.  IL NOME DI DIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:109", `Il nome di Dio, è una torre. 
 Il giusto vi corre per rifugio trovar				       
@@ -1621,7 +1621,7 @@ Santo è il nome del Signor,
 Santo è il nome del Signor, il Sovran,
 			                    (bis)`);
 console.log(status);
-status = await client.set("cont:1:110:110.  NULLA È IMPOSSIBILE", "{ \"id\": \"110\", \"title\": \"110.  NULLA È IMPOSSIBILE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"110\", \"coll_id\": \"1\", \"title\": \"110.  NULLA È IMPOSSIBILE\" }");
 console.log(status);
 status = await client.set("cont_text:1:110", `Nulla è impossibile se ti fidi del Signor
 Nulla è impossibile se tu credi a Lui col cuor
@@ -1631,7 +1631,7 @@ Sulla Parola appoggiati,
 confida nel Signor
 Con Dio è possibile, sì, tutto è possibile per Te!`);
 console.log(status);
-status = await client.set("cont:1:111:111.  ALLA DOLCE PRESENZA TUA", "{ \"id\": \"111\", \"title\": \"111.  ALLA DOLCE PRESENZA TUA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"111\", \"coll_id\": \"1\", \"title\": \"111.  ALLA DOLCE PRESENZA TUA\" }");
 console.log(status);
 status = await client.set("cont_text:1:111", `Alla dolce presenza Tua, Signor 
 Il nome Tuo santo adoriam, 
@@ -1643,7 +1643,7 @@ II nome Tuo santo adorian.
  Il Tuo nome, Gesù 
  Il nome che pari non ha.`);
 console.log(status);
-status = await client.set("cont:1:112:112.  LODE ALL’AGNEL", "{ \"id\": \"112\", \"title\": \"112.  LODE ALL’AGNEL\" }");
+status = await client.sAdd("cont", "{ \"id\": \"112\", \"coll_id\": \"1\", \"title\": \"112.  LODE ALL’AGNEL\" }");
 console.log(status);
 status = await client.set("cont_text:1:112", `1. Lode all’Agnello
 Lode all’Agnello che un
@@ -1662,7 +1662,7 @@ Coro:
 È il Signor è il Signor
 È il Signor`);
 console.log(status);
-status = await client.set("cont:1:113:113.  FAMMI SIGNORE", "{ \"id\": \"113\", \"title\": \"113.  FAMMI SIGNORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"113\", \"coll_id\": \"1\", \"title\": \"113.  FAMMI SIGNORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:113", `Signore fammi un servo fedel 
 Ambasciatore del Santo Evangel 
@@ -1670,7 +1670,7 @@ Questa preghiera mia viene dal cuor
 [Fammi, Signore, Ti prego Signore 
 Un servitore fedel.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:114:114.  QUANDO ASCOLTI  LA VOCE DI DIO", "{ \"id\": \"114\", \"title\": \"114.  QUANDO ASCOLTI  LA VOCE DI DIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"114\", \"coll_id\": \"1\", \"title\": \"114.  QUANDO ASCOLTI  LA VOCE DI DIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:114", `Quando ascolti la voce di Dio,
 Che sta parlando al cuore tuo
@@ -1687,14 +1687,14 @@ Tutta la vita io dono a Te
 Nelle Tue braccia voglio saper 
 Quanto mi ami.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:115:115.  FIUME DI PACE", "{ \"id\": \"115\", \"title\": \"115.  FIUME DI PACE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"115\", \"coll_id\": \"1\", \"title\": \"115.  FIUME DI PACE\" }");
 console.log(status);
 status = await client.set("cont_text:1:115", `Spirito Santo, soffia su noi 
 Un fiume di pace, un mare d'amore. 
 Come una fonte dai la Tua gioia 
 Spirito Santo riempici di Te!`);
 console.log(status);
-status = await client.set("cont:1:116:116.  IO VOGLIO SEMPRE AMAR", "{ \"id\": \"116\", \"title\": \"116.  IO VOGLIO SEMPRE AMAR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"116\", \"coll_id\": \"1\", \"title\": \"116.  IO VOGLIO SEMPRE AMAR\" }");
 console.log(status);
 status = await client.set("cont_text:1:116", `1. Io voglio sempre amar,
 Te solo mio Gesù
@@ -1713,7 +1713,7 @@ E sei Tu solo, che hai dato pace al cuor
 E sei Tu solo che hai dato tutto a me.
 Coro: M’hai dato Te….`);
 console.log(status);
-status = await client.set("cont:1:117:117.  IO SO CHE TU SEI QUI", "{ \"id\": \"117\", \"title\": \"117.  IO SO CHE TU SEI QUI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"117\", \"coll_id\": \"1\", \"title\": \"117.  IO SO CHE TU SEI QUI\" }");
 console.log(status);
 status = await client.set("cont_text:1:117", `[Io so che Tu sei qui
 Sento il Tuo camminar
@@ -1725,7 +1725,7 @@ Con la fede Ti toccherò
 La Tua unzione riceverò, e so
 Che trasformato io sarò.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:118:118.  GESU CRISTO È TANTO GRANDE", "{ \"id\": \"118\", \"title\": \"118.  GESU CRISTO È TANTO GRANDE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"118\", \"coll_id\": \"1\", \"title\": \"118.  GESU CRISTO È TANTO GRANDE\" }");
 console.log(status);
 status = await client.set("cont_text:1:118", `[Gesù Cristo è tanto grande 
 Non c'è un altro come Lui 
@@ -1739,7 +1739,7 @@ Come potrei dimenticarMi di Te.
 [Non ti lascerò, non ti abbandonerò 
 Per sempre con Te resterò.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:119:119.  OH PADRE IN CIELO", "{ \"id\": \"119\", \"title\": \"119.  OH PADRE IN CIELO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"119\", \"coll_id\": \"1\", \"title\": \"119.  OH PADRE IN CIELO\" }");
 console.log(status);
 status = await client.set("cont_text:1:119", `Oh Padre in cielo noi t'amiamo, 
 II nome Tuo innalziamo 
@@ -1751,7 +1751,7 @@ Che è, che era e che sarà,
 Benedetto sia il Signore
 Per sempre regnerà.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:120:120.  TUTTO È POSSIBILE", "{ \"id\": \"120\", \"title\": \"120.  TUTTO È POSSIBILE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"120\", \"coll_id\": \"1\", \"title\": \"120.  TUTTO È POSSIBILE\" }");
 console.log(status);
 status = await client.set("cont_text:1:120", `Tutto è possibile se fede tu  hai
 Tutto è possibile se fede tu hai
@@ -1759,7 +1759,7 @@ Fede muove la mano di Dio
 La Sua parola è vita
 Tutto è possibile se fede tu hai.`);
 console.log(status);
-status = await client.set("cont:1:121:121.  APRI I MIEI OCCHI", "{ \"id\": \"121\", \"title\": \"121.  APRI I MIEI OCCHI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"121\", \"coll_id\": \"1\", \"title\": \"121.  APRI I MIEI OCCHI\" }");
 console.log(status);
 status = await client.set("cont_text:1:121", `Coro 
 [Apri i miei occhi e fammi vedere 
@@ -1777,7 +1777,7 @@ E con gli occhi della fede noi
 La Tua gloria contempliam.
 .`);
 console.log(status);
-status = await client.set("cont:1:122:122. IO AMO IL POPOLO DI DIO", "{ \"id\": \"122\", \"title\": \"122. IO AMO IL POPOLO DI DIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"122\", \"coll_id\": \"1\", \"title\": \"122. IO AMO IL POPOLO DI DIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:122", `Io amo il popolo di Dio
 Così unito d’un sol cuor.
@@ -1785,7 +1785,7 @@ Ho un posto in questa unione anch’io,
 E son felice ormai
 Nella famiglia del Signor!`);
 console.log(status);
-status = await client.set("cont:1:123:123.  CIÒ CHE OCCHIO", "{ \"id\": \"123\", \"title\": \"123.  CIÒ CHE OCCHIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"123\", \"coll_id\": \"1\", \"title\": \"123.  CIÒ CHE OCCHIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:123", `1. Ciò che occhio non ha visto 
 E che orecchio non ha udito 
@@ -1806,7 +1806,7 @@ Per te che appartieni a Lui.
 
 (Finale)…tu vedrai…`);
 console.log(status);
-status = await client.set("cont:1:124:124.  LODE E ONORE", "{ \"id\": \"124\", \"title\": \"124.  LODE E ONORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"124\", \"coll_id\": \"1\", \"title\": \"124.  LODE E ONORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:124", `Lode e onore, gloria e potenza,
 Ricchezza, forza, sapienza.
@@ -1817,7 +1817,7 @@ Coro:
 Tu che siedi alla destra di Dio.] (bis)
 Finale: Sia lode a Te.`);
 console.log(status);
-status = await client.set("cont:1:125:125.  CON LE MANI ALZATE", "{ \"id\": \"125\", \"title\": \"125.  CON LE MANI ALZATE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"125\", \"coll_id\": \"1\", \"title\": \"125.  CON LE MANI ALZATE\" }");
 console.log(status);
 status = await client.set("cont_text:1:125", `Con le mani alzate 
 Con il cuore umiliato Ti amo e 
@@ -1826,7 +1826,7 @@ Ti ringrazio Signore,
 Ti ringrazio Signore Ti amo e 
 Ti adoro Ti ringrazio Signor.`);
 console.log(status);
-status = await client.set("cont:1:126:126.  TU SEI DAVVERO GRANDE", "{ \"id\": \"126\", \"title\": \"126.  TU SEI DAVVERO GRANDE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"126\", \"coll_id\": \"1\", \"title\": \"126.  TU SEI DAVVERO GRANDE\" }");
 console.log(status);
 status = await client.set("cont_text:1:126", `1. [Tu sei davvero grande, 
 O Signore, o Eterno.] (bis) 
@@ -1839,7 +1839,7 @@ Nessuno è pari a Te
 E non c'è un altro Dio fuori di Te. 
 Sei l'Alfa e l'Omega, Re dei re.`);
 console.log(status);
-status = await client.set("cont:1:127:127.  OSANNA ALL'ALTISSIMO", "{ \"id\": \"127\", \"title\": \"127.  OSANNA ALL'ALTISSIMO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"127\", \"coll_id\": \"1\", \"title\": \"127.  OSANNA ALL'ALTISSIMO\" }");
 console.log(status);
 status = await client.set("cont_text:1:127", `1. Osanna, Osanna, Osanna All'altissimo
 Osanna, Osanna, Osanna All'altissimo
@@ -1849,7 +1849,7 @@ Ti esaltiamo Signore Iddio
 Osanna all'Altissimo.
 2. Gloria, gloria, gloria al Re dei re`);
 console.log(status);
-status = await client.set("cont:1:128:128.  AMARE TE", "{ \"id\": \"128\", \"title\": \"128.  AMARE TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"128\", \"coll_id\": \"1\", \"title\": \"128.  AMARE TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:128", `1. La ragione della vita è amare Te 
 AdorarTi e servirTi e lodarTi o Dio. 
@@ -1868,7 +1868,7 @@ Questo è tutto della vita mia
 Altro bene io non troverò 
 Che amare Te servire Te.`);
 console.log(status);
-status = await client.set("cont:1:129:129. SEI MAGNIFICO", "{ \"id\": \"129\", \"title\": \"129. SEI MAGNIFICO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"129\", \"coll_id\": \"1\", \"title\": \"129. SEI MAGNIFICO\" }");
 console.log(status);
 status = await client.set("cont_text:1:129", `Chi è uguale a Te, Tu che le stelle fai brillar
 Tu che calmi i mari in tempesta dentro me.
@@ -1890,7 +1890,7 @@ Coro: Eternamente Sei..
 Nessun altro è come Te, come Te Gesù x2
 Come Te Gesù!`);
 console.log(status);
-status = await client.set("cont:1:130:130. DIO E’ BUONO ", "{ \"id\": \"130\", \"title\": \"130. DIO E’ BUONO \" }");
+status = await client.sAdd("cont", "{ \"id\": \"130\", \"coll_id\": \"1\", \"title\": \"130. DIO E’ BUONO \" }");
 console.log(status);
 status = await client.set("cont_text:1:130", `Dio è buono e la Sua grazia 
 Dura in eterno. (bis)
@@ -1904,7 +1904,7 @@ Lodiamo Te per ciò che sei.
                     (bis tutto)
 Dio è buon!`);
 console.log(status);
-status = await client.set("cont:1:131:131. TUTTO CIO’", "{ \"id\": \"131\", \"title\": \"131. TUTTO CIO’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"131\", \"coll_id\": \"1\", \"title\": \"131. TUTTO CIO’\" }");
 console.log(status);
 status = await client.set("cont_text:1:131", `Ho conosciuto pianto e duolo
 Il mio domani incerto e solo
@@ -1933,7 +1933,7 @@ Non saprei quel che la fede in Dio può far.
 
 Coro: Tutto ciò…`);
 console.log(status);
-status = await client.set("cont:1:132:132. IO SO I PIANI", "{ \"id\": \"132\", \"title\": \"132. IO SO I PIANI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"132\", \"coll_id\": \"1\", \"title\": \"132. IO SO I PIANI\" }");
 console.log(status);
 status = await client.set("cont_text:1:132", `Coro:
 “ Io so i piani che ho per te
@@ -1950,7 +1950,7 @@ Fede nel mio nome,
 Per ogni tua vittoria che avrai.
 Coro: Io so i piani…`);
 console.log(status);
-status = await client.set("cont:1:133:133. NON TEMERE", "{ \"id\": \"133\", \"title\": \"133. NON TEMERE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"133\", \"coll_id\": \"1\", \"title\": \"133. NON TEMERE\" }");
 console.log(status);
 status = await client.set("cont_text:1:133", `Se un giorno il male ti travolgerà
 Se la tempesta ti sorprenderà
@@ -1976,7 +1976,7 @@ Nel Mio alto rifugio ti nasconderò
 Ti coprirò con le Mie ali d'amore
 Nella tempesta con te sarò`);
 console.log(status);
-status = await client.set("cont:1:134:134. STA PREGANDO PER TE", "{ \"id\": \"134\", \"title\": \"134. STA PREGANDO PER TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"134\", \"coll_id\": \"1\", \"title\": \"134. STA PREGANDO PER TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:134", `Quando ti senti debole
 E più forza tu non hai
@@ -2002,7 +2002,7 @@ Il Suo occhio ti sta seguendo
 La Sua mano ti sta portando 
 Sta pregando per te Gesù`);
 console.log(status);
-status = await client.set("cont:1:135:135. ALL’ALBA IO TI CERCHERO’", "{ \"id\": \"135\", \"title\": \"135. ALL’ALBA IO TI CERCHERO’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"135\", \"coll_id\": \"1\", \"title\": \"135. ALL’ALBA IO TI CERCHERO’\" }");
 console.log(status);
 status = await client.set("cont_text:1:135", `All’alba io Ti cercherò ,
 e nella notte io cercherò Te.
@@ -2016,7 +2016,7 @@ Perchè la Tua destra
 Mi ha sostenuto,
 La Tua destra mi ha sostenuto.`);
 console.log(status);
-status = await client.set("cont:1:136:136. CONSOLATORE", "{ \"id\": \"136\", \"title\": \"136. CONSOLATORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"136\", \"coll_id\": \"1\", \"title\": \"136. CONSOLATORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:136", `Spirito Santo vieni in quest'ora
 Fammi pregare con tutto il cuore e adorare
@@ -2035,7 +2035,7 @@ Spirito Santo vieni in quest'ora
 Fammi pregare con tutto il cuore e adorare
 Abba Padre, Padre d'amore, T'amo Signor`);
 console.log(status);
-status = await client.set("cont:1:137:137. QUANDO IO GRIDERO’", "{ \"id\": \"137\", \"title\": \"137. QUANDO IO GRIDERO’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"137\", \"coll_id\": \"1\", \"title\": \"137. QUANDO IO GRIDERO’\" }");
 console.log(status);
 status = await client.set("cont_text:1:137", `Quando io griderò
 E adorerò il Signore
@@ -2056,7 +2056,7 @@ E innalzerò il mio Dio
 Tutti insieme fuggiranno
 Ed io la vittoria avrò`);
 console.log(status);
-status = await client.set("cont:1:138:138. NON TEMETE E NON VI      SMARRITE", "{ \"id\": \"138\", \"title\": \"138. NON TEMETE E NON VI      SMARRITE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"138\", \"coll_id\": \"1\", \"title\": \"138. NON TEMETE E NON VI      SMARRITE\" }");
 console.log(status);
 status = await client.set("cont_text:1:138", `Non temete e non vi smarrite,
 Non venga meno il vostro cuor.
@@ -2076,7 +2076,7 @@ Coro:
  Chi resisterà, se Lui combatterà per noi,
  Noi vinceremo.`);
 console.log(status);
-status = await client.set("cont:1:139:139. SALMO 18", "{ \"id\": \"139\", \"title\": \"139. SALMO 18\" }");
+status = await client.sAdd("cont", "{ \"id\": \"139\", \"coll_id\": \"1\", \"title\": \"139. SALMO 18\" }");
 console.log(status);
 status = await client.set("cont_text:1:139", `Signore io T’amo
 Tu la mia forza Sei
@@ -2097,7 +2097,7 @@ Gridai al mio Dio, udì la mia voce
 Distese la Sua mano dall’alto mi afferrò
 Mi trasse fuori al largo ed Ei mi liberò!`);
 console.log(status);
-status = await client.set("cont:1:140:140. LA MIA VITA", "{ \"id\": \"140\", \"title\": \"140. LA MIA VITA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"140\", \"coll_id\": \"1\", \"title\": \"140. LA MIA VITA\" }");
 console.log(status);
 status = await client.set("cont_text:1:140", `Oh mio Signore, mio Redentore
 Si io lo so è nelle Tue mani
@@ -2126,7 +2126,7 @@ Vinto dal Tuo immenso amore
 Mi dono a Te con tutto il cuore
 Per la chiamata che hai rivolto a me.`);
 console.log(status);
-status = await client.set("cont:1:141:141. STRINGIMI, O SIGNOR", "{ \"id\": \"141\", \"title\": \"141. STRINGIMI, O SIGNOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"141\", \"coll_id\": \"1\", \"title\": \"141. STRINGIMI, O SIGNOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:141", `Stringimi, o Signor,
 E non lasciarmi mai.
@@ -2142,7 +2142,7 @@ Coro
   “Io voglio Te; di Te ho un gran bisogno.
 Io voglio Te; si vieni e vivi in me.” (bis)`);
 console.log(status);
-status = await client.set("cont:1:142:142. SONO QUI A LODARTI", "{ \"id\": \"142\", \"title\": \"142. SONO QUI A LODARTI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"142\", \"coll_id\": \"1\", \"title\": \"142. SONO QUI A LODARTI\" }");
 console.log(status);
 status = await client.set("cont_text:1:142", `Luce del mondo, nel buio del cuore
 Vieni ed illuminami.
@@ -2164,7 +2164,7 @@ Coro: Sono qui a lodarTi…
  Non so quanto è costato a Te
 Morire in croce lì per me(x2)`);
 console.log(status);
-status = await client.set("cont:1:143:143. ALZO LE MANI", "{ \"id\": \"143\", \"title\": \"143. ALZO LE MANI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"143\", \"coll_id\": \"1\", \"title\": \"143. ALZO LE MANI\" }");
 console.log(status);
 status = await client.set("cont_text:1:143", `Alzo le mani,anche se non ho forze.
 Alzo le mani,anche se ho mille Problemi.
@@ -2180,7 +2180,7 @@ Tutto a Cristo è possibile,
 Tutto questo è possibile
 Quando apro il mio cuore!`);
 console.log(status);
-status = await client.set("cont:1:144:144.GESU’ E’ IL RE", "{ \"id\": \"144\", \"title\": \"144.GESU’ E’ IL RE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"144\", \"coll_id\": \"1\", \"title\": \"144.GESU’ E’ IL RE\" }");
 console.log(status);
 status = await client.set("cont_text:1:144", `Gesù è il Re(ter)
 E noi siamo suoi(ter)
@@ -2190,7 +2190,7 @@ La Sua grande potenza
 I popoli vedranno 
 “La gloria del Signor “x2`);
 console.log(status);
-status = await client.set("cont:1:145:145. E RESTANDO ALLA PRESENZA", "{ \"id\": \"145\", \"title\": \"145. E RESTANDO ALLA PRESENZA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"145\", \"coll_id\": \"1\", \"title\": \"145. E RESTANDO ALLA PRESENZA\" }");
 console.log(status);
 status = await client.set("cont_text:1:145", `E restando alla presenza della deità
 Contemplando la bellezza della santità.
@@ -2211,7 +2211,7 @@ E sempre voglio star ad adorar
 E contemplar la santità,
 Adoro Te Signor,io adoro Te.`);
 console.log(status);
-status = await client.set("cont:1:146:146. PASSERO’ QUEL FIUME", "{ \"id\": \"146\", \"title\": \"146. PASSERO’ QUEL FIUME\" }");
+status = await client.sAdd("cont", "{ \"id\": \"146\", \"coll_id\": \"1\", \"title\": \"146. PASSERO’ QUEL FIUME\" }");
 console.log(status);
 status = await client.set("cont_text:1:146", `Vieni Signore con il Tuo favor,
 Vieni con la Tua maestà,
@@ -2236,7 +2236,7 @@ Io Ti seguirò mio Gesù.
 
 Coro:E passerò…`);
 console.log(status);
-status = await client.set("cont:1:147:147. AI PIEDI DELLA CROCE", "{ \"id\": \"147\", \"title\": \"147. AI PIEDI DELLA CROCE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"147\", \"coll_id\": \"1\", \"title\": \"147. AI PIEDI DELLA CROCE\" }");
 console.log(status);
 status = await client.set("cont_text:1:147", `Ai piedi della croce io starò
 Contemplando la grandezza del Tuo amore
@@ -2253,7 +2253,7 @@ Morto per me, al posto mio, risuscitò
 Ritornerà, la Sua chiesa rapirà
 Saremo con Lui per l’eternità.`);
 console.log(status);
-status = await client.set("cont:1:148:148. MIRA LA BELLEZZA DEL SIGNOR", "{ \"id\": \"148\", \"title\": \"148. MIRA LA BELLEZZA DEL SIGNOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"148\", \"coll_id\": \"1\", \"title\": \"148. MIRA LA BELLEZZA DEL SIGNOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:148", `Mira la bellezza del Signor,
 Le meraviglie della grazia Sua.
@@ -2275,7 +2275,7 @@ La tomba è vuota il corpo Suo non c’è
 Perché cerchi il vivo tra i morti?
 Gesù vive e non si trova qui.`);
 console.log(status);
-status = await client.set("cont:1:149:149. SOTTO L’OMBRA DELLE ALI TUE", "{ \"id\": \"149\", \"title\": \"149. SOTTO L’OMBRA DELLE ALI TUE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"149\", \"coll_id\": \"1\", \"title\": \"149. SOTTO L’OMBRA DELLE ALI TUE\" }");
 console.log(status);
 status = await client.set("cont_text:1:149", `Sotto l’ombra delle ali Tue viviam sicuri.
 Alla Tua presenza noi darem:
@@ -2293,7 +2293,7 @@ Come una colomba ci leviam:
 
 “Santo, Santo, Santo Sei Signor”`);
 console.log(status);
-status = await client.set("cont:1:150:150. MI RIALZERAI", "{ \"id\": \"150\", \"title\": \"150. MI RIALZERAI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"150\", \"coll_id\": \"1\", \"title\": \"150. MI RIALZERAI\" }");
 console.log(status);
 status = await client.set("cont_text:1:150", `Se dentro me ho perso la speranza
 E sento che certezze più non ho
@@ -2305,7 +2305,7 @@ Mi rialzerai, con Te ce la farò
 Sarai con me nel buio della notte
 Mi rialzerai e in alto volerò.`);
 console.log(status);
-status = await client.set("cont:1:151:151. RITORNO A TE", "{ \"id\": \"151\", \"title\": \"151. RITORNO A TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"151\", \"coll_id\": \"1\", \"title\": \"151. RITORNO A TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:151", `Ritorno a te,
 Alla tua presenza
@@ -2323,7 +2323,7 @@ Per darti il mio cuore.
 Tu sei la mia vita 
 Tu sei la mia forza, Signor`);
 console.log(status);
-status = await client.set("cont:1:152:152. A TE MIO DIO", "{ \"id\": \"152\", \"title\": \"152. A TE MIO DIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"152\", \"coll_id\": \"1\", \"title\": \"152. A TE MIO DIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:152", `A te mio Dio,affido me stesso,
 Con ciò che sono,per Te Signor
@@ -2346,7 +2346,7 @@ Coro:Io credo in Te…x2
 Io Ti adoro,e Ti adorerò..
 Io Ti adoro,e Ti adorerò..`);
 console.log(status);
-status = await client.set("cont:1:153:153. E’ GRANDE IL SIGNOR", "{ \"id\": \"153\", \"title\": \"153. E’ GRANDE IL SIGNOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"153\", \"coll_id\": \"1\", \"title\": \"153. E’ GRANDE IL SIGNOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:153", `Splendente è il nostro Re
 Grande in maestà,gioiamo tutti in Lui
@@ -2364,7 +2364,7 @@ Inizio e fine Egli è,inizio e fine Egli è.
 L’Iddio trino,Padre Figlio e Spirito
 Leone ed Agnel,Leone ed Agnel.`);
 console.log(status);
-status = await client.set("cont:1:154:154. LASCIA SCORRERE", "{ \"id\": \"154\", \"title\": \"154. LASCIA SCORRERE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"154\", \"coll_id\": \"1\", \"title\": \"154. LASCIA SCORRERE\" }");
 console.log(status);
 status = await client.set("cont_text:1:154", `Lascia scorrere, come fiumi dentro me
 La presenza Tua Gesù.
@@ -2376,7 +2376,7 @@ Coro
    Soffia ancor su me,
    Lo Spirito Tuo Signor`);
 console.log(status);
-status = await client.set("cont:1:155:155. LA NOSTRA GENERAZIONE", "{ \"id\": \"155\", \"title\": \"155. LA NOSTRA GENERAZIONE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"155\", \"coll_id\": \"1\", \"title\": \"155. LA NOSTRA GENERAZIONE\" }");
 console.log(status);
 status = await client.set("cont_text:1:155", `La nostra generazione vedrà
 Il compimento dell’opera Tua.
@@ -2397,7 +2397,7 @@ Coro: No, non ti lasciamo andar..
 
 “Dal cielo Signore dal cielo”x4`);
 console.log(status);
-status = await client.set("cont:1:156:156. REGNA E GOVERNA SIGNOR", "{ \"id\": \"156\", \"title\": \"156. REGNA E GOVERNA SIGNOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"156\", \"coll_id\": \"1\", \"title\": \"156. REGNA E GOVERNA SIGNOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:156", `Tu oh Dio 
 Sei l’eccelso e regni su noi
@@ -2405,7 +2405,7 @@ Con potenza ed amore Tu
 Sei la mia giustizia
 Regna e governa Signor. (x3)`);
 console.log(status);
-status = await client.set("cont:1:157:157. SIGNORE VENGO A TE", "{ \"id\": \"157\", \"title\": \"157. SIGNORE VENGO A TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"157\", \"coll_id\": \"1\", \"title\": \"157. SIGNORE VENGO A TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:157", `Signore vengo a Te,
 Rinnova e cambia il mio cuor,
@@ -2432,7 +2432,7 @@ Col potente Tuo amore.
 
 Coro:Stringimi…`);
 console.log(status);
-status = await client.set("cont:1:158:158. VOGLIO MIRAR LA TUA    BELLEZZA", "{ \"id\": \"158\", \"title\": \"158. VOGLIO MIRAR LA TUA    BELLEZZA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"158\", \"coll_id\": \"1\", \"title\": \"158. VOGLIO MIRAR LA TUA    BELLEZZA\" }");
 console.log(status);
 status = await client.set("cont_text:1:158", `Dio mi apro a Te,
 Mi dono a Te, Gesù
@@ -2450,7 +2450,7 @@ E contemplar la Tua maestà
 Apri i miei occhi Gesù Cristo
 Mostra la gloria e la Tua bontà`);
 console.log(status);
-status = await client.set("cont:1:159:159. SÌ, E’PROPRIO OGGI IL GIORNO", "{ \"id\": \"159\", \"title\": \"159. SÌ, E’PROPRIO OGGI IL GIORNO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"159\", \"coll_id\": \"1\", \"title\": \"159. SÌ, E’PROPRIO OGGI IL GIORNO\" }");
 console.log(status);
 status = await client.set("cont_text:1:159", `Sì,è proprio oggi il giorno
 Sì,per adorare il tuo Signor
@@ -2472,7 +2472,7 @@ Sì,per adorare il tuo Signor
 Sì,dai a Lui tutto il cuore
 Sì,così come sei adora il tuo Dio`);
 console.log(status);
-status = await client.set("cont:1:160:160. ACCLAMATE IL SIGNOR", "{ \"id\": \"160\", \"title\": \"160. ACCLAMATE IL SIGNOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"160\", \"coll_id\": \"1\", \"title\": \"160. ACCLAMATE IL SIGNOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:160", `La terra è piena della misericordia
 Del Signor
@@ -2498,7 +2498,7 @@ Coro:  Acclamate il Signor…
  Finale
 [ cantate un cantico nuovo]`);
 console.log(status);
-status = await client.set("cont:1:161:161. SPLENDI ", "{ \"id\": \"161\", \"title\": \"161. SPLENDI \" }");
+status = await client.sAdd("cont", "{ \"id\": \"161\", \"coll_id\": \"1\", \"title\": \"161. SPLENDI \" }");
 console.log(status);
 status = await client.set("cont_text:1:161", `Perché mai dovrei aver paura. 
 Spaventarmi e poi 
@@ -2517,7 +2517,7 @@ Grande più del cielo è il Tuo amor.
 Tu sai darci luce e forza per poi 
 Seguire Te.`);
 console.log(status);
-status = await client.set("cont:1:162:162. LA VITA MIA", "{ \"id\": \"162\", \"title\": \"162. LA VITA MIA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"162\", \"coll_id\": \"1\", \"title\": \"162. LA VITA MIA\" }");
 console.log(status);
 status = await client.set("cont_text:1:162", `La vita mia per Te spendere vorrei
  II tempo mio a Te dare io vorrei
@@ -2542,7 +2542,7 @@ Gesù, adorare Te, parlare con Te, Servire
 Te è quello che vorrei
 Coro: Spirito Santo…`);
 console.log(status);
-status = await client.set("cont:1:163:163. ALLA CROCE", "{ \"id\": \"163\", \"title\": \"163. ALLA CROCE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"163\", \"coll_id\": \"1\", \"title\": \"163. ALLA CROCE\" }");
 console.log(status);
 status = await client.set("cont_text:1:163", `Tu mi hai cercato oh Dio
  Sapevi la via
@@ -2584,7 +2584,7 @@ Coro..(x2)
 
 Finale: hai tolto il velo…(x3)`);
 console.log(status);
-status = await client.set("cont:1:164:164. ETERNO DIO", "{ \"id\": \"164\", \"title\": \"164. ETERNO DIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"164\", \"coll_id\": \"1\", \"title\": \"164. ETERNO DIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:164", `Sono forte se spero nel Signore
 Se spero nel Signore
@@ -2598,7 +2598,7 @@ Non cambi mai, Tu Sei da sempre.
 Se cado mi rialzerai, Tu mi difenderai
 In alto volerò, lassù con Te.`);
 console.log(status);
-status = await client.set("cont:1:165:165. INDESCRIVIBILE", "{ \"id\": \"165\", \"title\": \"165. INDESCRIVIBILE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"165\", \"coll_id\": \"1\", \"title\": \"165. INDESCRIVIBILE\" }");
 console.log(status);
 status = await client.set("cont_text:1:165", `Dalle altezze del cielo agli abissi del mare
 Il creato rivela la Tua maestà.
@@ -2625,7 +2625,7 @@ Coro: Ineffabile..
 
 Finale: Straordinario Sei Dio!`);
 console.log(status);
-status = await client.set("cont:1:166:166. SIAMO UN MOMENTO ", "{ \"id\": \"166\", \"title\": \"166. SIAMO UN MOMENTO \" }");
+status = await client.sAdd("cont", "{ \"id\": \"166\", \"coll_id\": \"1\", \"title\": \"166. SIAMO UN MOMENTO \" }");
 console.log(status);
 status = await client.set("cont_text:1:166", `Siamo un momento,Tu Sei per sempre,
 Tu Sei il Signore,Dio d’ogni età.
@@ -2645,7 +2645,7 @@ Ci prostreremo e T’adorerem.
 
 Coro:Santo,Santo…x2`);
 console.log(status);
-status = await client.set("cont:1:167:167. OSANNA", "{ \"id\": \"167\", \"title\": \"167. OSANNA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"167\", \"coll_id\": \"1\", \"title\": \"167. OSANNA\" }");
 console.log(status);
 status = await client.set("cont_text:1:167", `Gesù è il Re di gloria che viene sulle nuvole
 Gli angeli lo lodano.
@@ -2670,7 +2670,7 @@ Apri gli occhi miei che io veda il Re
 Tutto ciò ch’è in me è tuo per sempre
 Coro..`);
 console.log(status);
-status = await client.set("cont:1:168:168. PIU’ AMORE", "{ \"id\": \"168\", \"title\": \"168. PIU’ AMORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"168\", \"coll_id\": \"1\", \"title\": \"168. PIU’ AMORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:168", `“Più amore, più forza
  Più di Te dentro me” (x2)
@@ -2679,7 +2679,7 @@ status = await client.set("cont_text:1:168", `“Più amore, più forza
  Io Ti adorerò con tutta la forza
 Perché sei il Signor, Tu Sei il Signor.`);
 console.log(status);
-status = await client.set("cont:1:169:169. TI BENEDIRÒ", "{ \"id\": \"169\", \"title\": \"169. TI BENEDIRÒ\" }");
+status = await client.sAdd("cont", "{ \"id\": \"169\", \"coll_id\": \"1\", \"title\": \"169. TI BENEDIRÒ\" }");
 console.log(status);
 status = await client.set("cont_text:1:169", `Ti benedirò nella terra che mi darai
 Dove un fiume di abbondanza c’è
@@ -2712,7 +2712,7 @@ Coro: Benedetto..
 Quando mi darai o se mi toglierai
 Per sempre canterò e Ti benedirò (x2)`);
 console.log(status);
-status = await client.set("cont:1:170:170. SE IL MIO POPOLO", "{ \"id\": \"170\", \"title\": \"170. SE IL MIO POPOLO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"170\", \"coll_id\": \"1\", \"title\": \"170. SE IL MIO POPOLO\" }");
 console.log(status);
 status = await client.set("cont_text:1:170", `Se il mio popolo
 Sul quale è invocato il mio nome
@@ -2727,7 +2727,7 @@ E perdonerò il suo peccato
 E guarirò il suo paese
 Io lo farò, io lo farò`);
 console.log(status);
-status = await client.set("cont:1:171:171. DAVANTI A TE VOGLIO RESTAR", "{ \"id\": \"171\", \"title\": \"171. DAVANTI A TE VOGLIO RESTAR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"171\", \"coll_id\": \"1\", \"title\": \"171. DAVANTI A TE VOGLIO RESTAR\" }");
 console.log(status);
 status = await client.set("cont_text:1:171", `Davanti a Te io voglio restar
 Davanti a Te io voglio lodare
@@ -2735,7 +2735,7 @@ Davanti a Te io voglio lodare
 Non ho altro bene per me che adorare Te
 Stare davanti a TeE' tutto per me`);
 console.log(status);
-status = await client.set("cont:1:172:172. LODINO GLI ANGELI", "{ \"id\": \"172\", \"title\": \"172. LODINO GLI ANGELI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"172\", \"coll_id\": \"1\", \"title\": \"172. LODINO GLI ANGELI\" }");
 console.log(status);
 status = await client.set("cont_text:1:172", `Lodino gli angeli, lodino i ciel
 Ogni creatura celeste lassù
@@ -2757,7 +2757,7 @@ troverò
 Per sempre in Lui starò
 Per sempre Eterno Amor!`);
 console.log(status);
-status = await client.set("cont:1:173:173. PADRE TU SEI IL RE DEGLI     OCEANI", "{ \"id\": \"173\", \"title\": \"173. PADRE TU SEI IL RE DEGLI     OCEANI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"173\", \"coll_id\": \"1\", \"title\": \"173. PADRE TU SEI IL RE DEGLI     OCEANI\" }");
 console.log(status);
 status = await client.set("cont_text:1:173", `Nascondimi sotto le ali Tue,
 Coprimi con la Tua potente man.
@@ -2771,7 +2771,7 @@ In pace starò con Te oh Dio.
 L’anima mia riposa solo in Te
 Nel Tuo poter,ho fede e tranquillità.`);
 console.log(status);
-status = await client.set("cont:1:174:174. DESIDERO", "{ \"id\": \"174\", \"title\": \"174. DESIDERO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"174\", \"coll_id\": \"1\", \"title\": \"174. DESIDERO\" }");
 console.log(status);
 status = await client.set("cont_text:1:174", `Coro:
 Desidero adorarti,
@@ -2783,7 +2783,7 @@ Quando penso al Tuo sangue per me
 Io non riesco a trattenere 
 il mio canto per Te.`);
 console.log(status);
-status = await client.set("cont:1:175:175. MERAVIGLIOSO SEI ", "{ \"id\": \"175\", \"title\": \"175. MERAVIGLIOSO SEI \" }");
+status = await client.sAdd("cont", "{ \"id\": \"175\", \"coll_id\": \"1\", \"title\": \"175. MERAVIGLIOSO SEI \" }");
 console.log(status);
 status = await client.set("cont_text:1:175", `Meraviglioso sei
 Chi è pari a Te, Gesù?
@@ -2803,7 +2803,7 @@ Nel mio cuor. (Coro)
 
  [Io non desidero che Te] x4`);
 console.log(status);
-status = await client.set("cont:1:176:176. SONO QUI, MAESTÀ ", "{ \"id\": \"176\", \"title\": \"176. SONO QUI, MAESTÀ \" }");
+status = await client.sAdd("cont", "{ \"id\": \"176\", \"coll_id\": \"1\", \"title\": \"176. SONO QUI, MAESTÀ \" }");
 console.log(status);
 status = await client.set("cont_text:1:176", `Sono qui 
 Umilmente vengo a Te
@@ -2824,7 +2824,7 @@ la Tua mano scenda su di me.
  Rinnovami col Tuo grande amor
  nella Tua presenza Maestà.`);
 console.log(status);
-status = await client.set("cont:1:177:177. STUPENDA GRAZIA", "{ \"id\": \"177\", \"title\": \"177. STUPENDA GRAZIA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"177\", \"coll_id\": \"1\", \"title\": \"177. STUPENDA GRAZIA\" }");
 console.log(status);
 status = await client.set("cont_text:1:177", `Stupenda grazia del Signor L’amor che mi salvò
 Dalla mia morte mi chiamò, io vivo del Suo amor.
@@ -2842,7 +2842,7 @@ Sicura è la promessa Sua la mia
 speranza è in Lui lo scudo in cui confiderò 
 fin quando vita avrò.`);
 console.log(status);
-status = await client.set("cont:1:178:178. TU SEI SANTO", "{ \"id\": \"178\", \"title\": \"178. TU SEI SANTO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"178\", \"coll_id\": \"1\", \"title\": \"178. TU SEI SANTO\" }");
 console.log(status);
 status = await client.set("cont_text:1:178", `“Tu Sei Santo,Santo
 Nessuno è come te,
@@ -2854,7 +2854,7 @@ Sempre Ti onorerò
 Davanti al trono io mi prostrerò,
 Perché appartengo a Te.”(bis)`);
 console.log(status);
-status = await client.set("cont:1:179:179. QUANDO VENGO A TE", "{ \"id\": \"179\", \"title\": \"179. QUANDO VENGO A TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"179\", \"coll_id\": \"1\", \"title\": \"179. QUANDO VENGO A TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:179", `Quando vengo a Te solo e semplice
 Siamo solo noi.
@@ -2882,7 +2882,7 @@ Tu guardi dentro al mio cuor.
 
 Coro:torno alla vera….`);
 console.log(status);
-status = await client.set("cont:1:180:180. DEGNO E’ L’AGNEL", "{ \"id\": \"180\", \"title\": \"180. DEGNO E’ L’AGNEL\" }");
+status = await client.sAdd("cont", "{ \"id\": \"180\", \"coll_id\": \"1\", \"title\": \"180. DEGNO E’ L’AGNEL\" }");
 console.log(status);
 status = await client.set("cont_text:1:180", `Grazie per la croce,
 Grazie per la gloria,oh Re.
@@ -2906,7 +2906,7 @@ La gloria Tua sarà.
 Oh Dio voglio adorare Te…
 Degno è l’Agnel,degno è l’Agnel.`);
 console.log(status);
-status = await client.set("cont:1:181:181. IO TI LODERO’ MIO BUON GESU’", "{ \"id\": \"181\", \"title\": \"181. IO TI LODERO’ MIO BUON GESU’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"181\", \"coll_id\": \"1\", \"title\": \"181. IO TI LODERO’ MIO BUON GESU’\" }");
 console.log(status);
 status = await client.set("cont_text:1:181", `Sei Tu l’unica ragione 
 Dell’adorazione o Gesù.
@@ -2920,7 +2920,7 @@ Col mio canto Ti loderò.
 “Io Ti loderò,Ti glorificherò
   T’innalzerò mio buon Ges`);
 console.log(status);
-status = await client.set("cont:1:182:182. IO TI DONO IL MIO CUORE", "{ \"id\": \"182\", \"title\": \"182. IO TI DONO IL MIO CUORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"182\", \"coll_id\": \"1\", \"title\": \"182. IO TI DONO IL MIO CUORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:182", `Questo è ciò che voglio lodare Te
 Con tutto il mio cuore Ti adorerò
@@ -2940,7 +2940,7 @@ Con tutto il mio cuore Ti adorerò
 Tutto ciò che ho lo offro a Te
 Quel che cerco io Sei solo Tu`);
 console.log(status);
-status = await client.set("cont:1:183:183. NOI PREDICHIAMO CRISTO", "{ \"id\": \"183\", \"title\": \"183. NOI PREDICHIAMO CRISTO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"183\", \"coll_id\": \"1\", \"title\": \"183. NOI PREDICHIAMO CRISTO\" }");
 console.log(status);
 status = await client.set("cont_text:1:183", `Noi predichiamo Cristo, potenza di Dio
 Noi predichiamo Cristo, figliuol di Dio
@@ -2954,7 +2954,7 @@ Alla gloria del Padre….Amen!
 Alla gloria del Padre….Amen!  
 Amen!`);
 console.log(status);
-status = await client.set("cont:1:184:184. LA TUA MAESTA’", "{ \"id\": \"184\", \"title\": \"184. LA TUA MAESTA’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"184\", \"coll_id\": \"1\", \"title\": \"184. LA TUA MAESTA’\" }");
 console.log(status);
 status = await client.set("cont_text:1:184", `Oh Signor, quanto grande è
 La Tua maestà. (bis)
@@ -2968,7 +2968,7 @@ Al Tuo trono Signor e la terra loda Te!
 Io adoro Te, io adoro Te
 Noi lodiamo Te, noi lodiamo Te!`);
 console.log(status);
-status = await client.set("cont:1:185:185. GLORIA ED ONORE", "{ \"id\": \"185\", \"title\": \"185. GLORIA ED ONORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"185\", \"coll_id\": \"1\", \"title\": \"185. GLORIA ED ONORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:185", `Gloria ed onore,forza e potenza
 Diamo al nostro Signor.
@@ -2994,7 +2994,7 @@ Che il Suo regno mai fine avrà
 Oh nostro Signor!
 Coro: I cieli dichiaran…`);
 console.log(status);
-status = await client.set("cont:1:186:186. ASCOLTACI SIGNOR", "{ \"id\": \"186\", \"title\": \"186. ASCOLTACI SIGNOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"186\", \"coll_id\": \"1\", \"title\": \"186. ASCOLTACI SIGNOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:186", `Ascoltaci Signor,
 guarisci i nostri cuor,
@@ -3012,7 +3012,7 @@ dal cielo rispondi, manda il Tuo Spirto,
 riempici ancora,
 questa generazione si offre a Te`);
 console.log(status);
-status = await client.set("cont:1:187:187. SONO QUI PERCHE’", "{ \"id\": \"187\", \"title\": \"187. SONO QUI PERCHE’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"187\", \"coll_id\": \"1\", \"title\": \"187. SONO QUI PERCHE’\" }");
 console.log(status);
 status = await client.set("cont_text:1:187", `Sono qui perché sento dentro me,
 Il desiderio di adorare Te.
@@ -3035,7 +3035,7 @@ Perché Sei in me.
 M’inchino qui davanti a Te
 Perché Sei Re.`);
 console.log(status);
-status = await client.set("cont:1:188:188. TUA MAESTÀ ", "{ \"id\": \"188\", \"title\": \"188. TUA MAESTÀ \" }");
+status = await client.sAdd("cont", "{ \"id\": \"188\", \"coll_id\": \"1\", \"title\": \"188. TUA MAESTÀ \" }");
 console.log(status);
 status = await client.set("cont_text:1:188", `Re dei re, Maestà,
 Dio del ciel, vivente in me
@@ -3057,7 +3057,7 @@ Tutto di me grida lode a Te.
 
  Coro: Tua Maestà..`);
 console.log(status);
-status = await client.set("cont:1:189:189. PREZIOSO DIO", "{ \"id\": \"189\", \"title\": \"189. PREZIOSO DIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"189\", \"coll_id\": \"1\", \"title\": \"189. PREZIOSO DIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:189", `Prezioso Dio,
 non ho altro nome più caro.
@@ -3074,7 +3074,7 @@ Ma per la Tua grazia son qui
  Ma per la Tua grazia son qui
 Prezioso Dio! 2`);
 console.log(status);
-status = await client.set("cont:1:190:190. GRANDE E’ IL SIGNORE", "{ \"id\": \"190\", \"title\": \"190. GRANDE E’ IL SIGNORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"190\", \"coll_id\": \"1\", \"title\": \"190. GRANDE E’ IL SIGNORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:190", `Grande è il Signore,
 Egli è degno d’ogni lode.
@@ -3094,7 +3094,7 @@ Ed ora confidiamo nel Tuo amor,
 Perché soltanto Tu,oh Eterno
 Regni in terra e in cielo Sei Re.`);
 console.log(status);
-status = await client.set("cont:1:191:191. IL SIGNOR E’ IN MEZZO A NOI", "{ \"id\": \"191\", \"title\": \"191. IL SIGNOR E’ IN MEZZO A NOI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"191\", \"coll_id\": \"1\", \"title\": \"191. IL SIGNOR E’ IN MEZZO A NOI\" }");
 console.log(status);
 status = await client.set("cont_text:1:191", `Il Signor è in mezzo a noi
 Il Signor è in mezzo a noi
@@ -3102,7 +3102,7 @@ Per guarire, per liberare
 Per rompere ogni forza del male
 Per guarire, per liberare la mia anima!`);
 console.log(status);
-status = await client.set("cont:1:192:192. DIO LO SA", "{ \"id\": \"192\", \"title\": \"192. DIO LO SA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"192\", \"coll_id\": \"1\", \"title\": \"192. DIO LO SA\" }");
 console.log(status);
 status = await client.set("cont_text:1:192", `Se tu sei freddo Dio lo sa
 Se tu sei in dubbio Dio lo sa
@@ -3135,7 +3135,7 @@ E manterrà la Sua Parola!
 Se tu sei freddo Dio lo sa
 Se tu sei in dubbio Dio lo sa.`);
 console.log(status);
-status = await client.set("cont:1:193:193. ADORERO’", "{ \"id\": \"193\", \"title\": \"193. ADORERO’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"193\", \"coll_id\": \"1\", \"title\": \"193. ADORERO’\" }");
 console.log(status);
 status = await client.set("cont_text:1:193", `Adorerò con tutto il mio cuor
 Loderò con la forza che ho
@@ -3153,7 +3153,7 @@ Servirò Te, tutto Ti do
 Al Tuo trono gli occhi alzerò
 Solo in Te io confiderò`);
 console.log(status);
-status = await client.set("cont:1:194:194. ROCCIA ETERNA", "{ \"id\": \"194\", \"title\": \"194. ROCCIA ETERNA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"194\", \"coll_id\": \"1\", \"title\": \"194. ROCCIA ETERNA\" }");
 console.log(status);
 status = await client.set("cont_text:1:194", `Coro:
  Roccia eterna, Sei fedele Signor,
@@ -3174,7 +3174,7 @@ Coro: Roccia eterna…
 
 “Sempre e solo in Te confiderò” ter`);
 console.log(status);
-status = await client.set("cont:1:195:195. MI CONSACRO A TE", "{ \"id\": \"195\", \"title\": \"195. MI CONSACRO A TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"195\", \"coll_id\": \"1\", \"title\": \"195. MI CONSACRO A TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:195", `Vengo a Te Gesù, per adorar,
 Per arrendere il mio cuor.
@@ -3193,7 +3193,7 @@ E per quello che hai fatto
 In croce Tu per me
 Io mi consacro a Te.`);
 console.log(status);
-status = await client.set("cont:1:196:196.  LA TUA GRAZIA MI BASTA", "{ \"id\": \"196\", \"title\": \"196.  LA TUA GRAZIA MI BASTA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"196\", \"coll_id\": \"1\", \"title\": \"196.  LA TUA GRAZIA MI BASTA\" }");
 console.log(status);
 status = await client.set("cont_text:1:196", `Non potrò mai ricambiare
 Quello che hai fatto Tu per me
@@ -3221,7 +3221,7 @@ Coro:..la Tua grazia mi basta
 
 Voglio stare con te`);
 console.log(status);
-status = await client.set("cont:1:197:197.ALZA I TUOI OCCHI", "{ \"id\": \"197\", \"title\": \"197.ALZA I TUOI OCCHI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"197\", \"coll_id\": \"1\", \"title\": \"197.ALZA I TUOI OCCHI\" }");
 console.log(status);
 status = await client.set("cont_text:1:197", `Alza i tuoi occhi e guarda
 Il raccolto è in fila
@@ -3241,7 +3241,7 @@ No! Non c’è altro nome
 Dato al mondo
 Gesù Cristo è il Signor`);
 console.log(status);
-status = await client.set("cont:1:198:198. REGNA DIO", "{ \"id\": \"198\", \"title\": \"198. REGNA DIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"198\", \"coll_id\": \"1\", \"title\": \"198. REGNA DIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:198", `Santo,Santo, Santo
 Il creato Ti adora
@@ -3251,7 +3251,7 @@ Regna Dio, Regna Dio
 Santo Sei, Signor nel cielo
 Regna Dio, Regna Dio nei nostri cuor`);
 console.log(status);
-status = await client.set("cont:1:199:199. HO FAME DI TE", "{ \"id\": \"199\", \"title\": \"199. HO FAME DI TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"199\", \"coll_id\": \"1\", \"title\": \"199. HO FAME DI TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:199", `C’è un desiderio nel mio cuor
     Di vedere la Tua gloria
@@ -3278,7 +3278,7 @@ Coro:
     ho fame di Te, non voglio più vivere
     senza vedere la Tua gloria.`);
 console.log(status);
-status = await client.set("cont:1:200:200. LA TUA BONTA’", "{ \"id\": \"200\", \"title\": \"200. LA TUA BONTA’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"200\", \"coll_id\": \"1\", \"title\": \"200. LA TUA BONTA’\" }");
 console.log(status);
 status = await client.set("cont_text:1:200", `“La Tua bontà val più della vita” x2
 Le mie labbra Ti loderanno
@@ -3286,7 +3286,7 @@ Eleverò le mie mani verso di Te.
 Le mie labbra Ti loderanno 
 Eleverò le mie mani verso di Te!`);
 console.log(status);
-status = await client.set("cont:1:201:201. LEONE DELLA TRIBU’ DI GIUDA", "{ \"id\": \"201\", \"title\": \"201. LEONE DELLA TRIBU’ DI GIUDA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"201\", \"coll_id\": \"1\", \"title\": \"201. LEONE DELLA TRIBU’ DI GIUDA\" }");
 console.log(status);
 status = await client.set("cont_text:1:201", `Leone della Tribù di Giuda,
 hai aperto una porta per me 
@@ -3308,7 +3308,7 @@ Adorerò, baciando i piedi Tuoi.
 La mia vita s’incendierà per Te
 E brucerò di un amore intenso per Te.`);
 console.log(status);
-status = await client.set("cont:1:202:202.  PER SEMPRE", "{ \"id\": \"202\", \"title\": \"202.  PER SEMPRE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"202\", \"coll_id\": \"1\", \"title\": \"202.  PER SEMPRE\" }");
 console.log(status);
 status = await client.set("cont_text:1:202", `Il cielo si squarciò, il sole s’oscurò,
 Il Salvatore era morto. 
@@ -3331,7 +3331,7 @@ Coro
  Per sempre, risorto ora sei,
  Ora Tu sei.`);
 console.log(status);
-status = await client.set("cont:1:203:203. GESÙ MESSIA", "{ \"id\": \"203\", \"title\": \"203. GESÙ MESSIA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"203\", \"coll_id\": \"1\", \"title\": \"203. GESÙ MESSIA\" }");
 console.log(status);
 status = await client.set("cont_text:1:203", `Lui diventò
 Peccato per 
@@ -3360,7 +3360,7 @@ Sei la Luce del mondo
 La Gloria è per Te.
                      Coro: Gesù Messia..`);
 console.log(status);
-status = await client.set("cont:1:204:204. AMASTI ME", "{ \"id\": \"204\", \"title\": \"204. AMASTI ME\" }");
+status = await client.sAdd("cont", "{ \"id\": \"204\", \"coll_id\": \"1\", \"title\": \"204. AMASTI ME\" }");
 console.log(status);
 status = await client.set("cont_text:1:204", `“Vedesti me quando nessun mi notò,
   Amasti me quando nessun mi amò” X2
@@ -3374,7 +3374,7 @@ Perchè tu amasti me!
 “Ti amo più della vita” x3
   Oh Dio!`);
 console.log(status);
-status = await client.set("cont:1:205:205. PRIMO AMORE", "{ \"id\": \"205\", \"title\": \"205. PRIMO AMORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"205\", \"coll_id\": \"1\", \"title\": \"205. PRIMO AMORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:205", `Non riuscivo a credere che
 Sei venuto proprio verso di me
@@ -3399,7 +3399,7 @@ io sento il Tuo amore in me
 Ti prego stringimi ancora
 per sempre sarai il mio primo amore Gesù.`);
 console.log(status);
-status = await client.set("cont:1:206:206. ALLELUIA PER CIO’ CHE FAI", "{ \"id\": \"206\", \"title\": \"206. ALLELUIA PER CIO’ CHE FAI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"206\", \"coll_id\": \"1\", \"title\": \"206. ALLELUIA PER CIO’ CHE FAI\" }");
 console.log(status);
 status = await client.set("cont_text:1:206", `Creatore, Signore,
 Mi hai salvato e Ti loderò
@@ -3417,7 +3417,7 @@ Alleluia per ciò che fai
 Alleluia per ciò che dai 
 Alleluia per Chi Tu Sei!`);
 console.log(status);
-status = await client.set("cont:1:207:207. FAI PIOVERE SU DI ME", "{ \"id\": \"207\", \"title\": \"207. FAI PIOVERE SU DI ME\" }");
+status = await client.sAdd("cont", "{ \"id\": \"207\", \"coll_id\": \"1\", \"title\": \"207. FAI PIOVERE SU DI ME\" }");
 console.log(status);
 status = await client.set("cont_text:1:207", `Fai piovere su di me,
 apri la porta del cielo.
@@ -3428,7 +3428,7 @@ apri la porta del cielo.
 voglio aver, voglio sentir
 il Tuo amor avvolgere”X2`);
 console.log(status);
-status = await client.set("cont:1:208:208.GESU’ AL CENTRO", "{ \"id\": \"208\", \"title\": \"208.GESU’ AL CENTRO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"208\", \"coll_id\": \"1\", \"title\": \"208.GESU’ AL CENTRO\" }");
 console.log(status);
 status = await client.set("cont_text:1:208", `“Gesù al centro d’ogni cosa Sei
 Gesù al centro d’ogni cosa Sei
@@ -3463,7 +3463,7 @@ Gesù al centro della chiesa mia
 Tutti s’inginocchieran
 Il Tuo nom confesseranno un giorno: “Gesù”x8`);
 console.log(status);
-status = await client.set("cont:1:209:209. CELEBRIAM GESU’", "{ \"id\": \"209\", \"title\": \"209. CELEBRIAM GESU’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"209\", \"coll_id\": \"1\", \"title\": \"209. CELEBRIAM GESU’\" }");
 console.log(status);
 status = await client.set("cont_text:1:209", `“Celebriam Gesù, celebriam!
   Celebriam Gesù, celebriam! “ (bis)
@@ -3475,7 +3475,7 @@ E’ risorto, è risorto!
 “ Venite celebriam (x3)
   Perché risorto è il Signor! “`);
 console.log(status);
-status = await client.set("cont:1:210:210. CORONA DI VITTORIA", "{ \"id\": \"210\", \"title\": \"210. CORONA DI VITTORIA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"210\", \"coll_id\": \"1\", \"title\": \"210. CORONA DI VITTORIA\" }");
 console.log(status);
 status = await client.set("cont_text:1:210", `Tu combatti al nostro fianco
 Insieme agli angeli del cielo 
@@ -3513,7 +3513,7 @@ Alla croce era compiuto e Ti hanno
 seppellito. Ma la tomba non poteva 
 trattenere:il Re dei Re`);
 console.log(status);
-status = await client.set("cont:1:211:211. AMO IL SIGNOR", "{ \"id\": \"211\", \"title\": \"211. AMO IL SIGNOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"211\", \"coll_id\": \"1\", \"title\": \"211. AMO IL SIGNOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:211", `1. Amo il Signor con tutto il cuor,
 con l’anima, la mente e la forza mia (x2)
@@ -3531,7 +3531,7 @@ con l’anima, la mente e la forza tua (x2)
 
 Ponte: Amerò te, servirò Tè, Loderò il Signor (bis)`);
 console.log(status);
-status = await client.set("cont:1:212:212. MANDA PIOGGIA ANCOR", "{ \"id\": \"212\", \"title\": \"212. MANDA PIOGGIA ANCOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"212\", \"coll_id\": \"1\", \"title\": \"212. MANDA PIOGGIA ANCOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:212", `Siamo il tuo popolo Signor,
 mentre noi preghiamo ci umiliam,
@@ -3550,7 +3550,7 @@ sia fresca su di noi.
 Santo, Santo spirito, scenda il fuoco Tuo
 La Tua unzione sia fresca su di noi (x2)`);
 console.log(status);
-status = await client.set("cont:1:213:213. E ALLORA LODA", "{ \"id\": \"213\", \"title\": \"213. E ALLORA LODA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"213\", \"coll_id\": \"1\", \"title\": \"213. E ALLORA LODA\" }");
 console.log(status);
 status = await client.set("cont_text:1:213", `Dio non rifiuta la preghiera
 La preghiera ti da' forza,
@@ -3587,7 +3587,7 @@ Quando Egli stende la Sua mano
 Allora vincerai
 Coro…`);
 console.log(status);
-status = await client.set("cont:1:214:214. MARI APRIRAI", "{ \"id\": \"214\", \"title\": \"214. MARI APRIRAI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"214\", \"coll_id\": \"1\", \"title\": \"214. MARI APRIRAI\" }");
 console.log(status);
 status = await client.set("cont_text:1:214", `Quando è freddo il mio cuor lo riscalda
 Il Tuo amor
@@ -3619,7 +3619,7 @@ Coro:Mari aprirai
 
 “Fai in me la Tua volontà” x2`);
 console.log(status);
-status = await client.set("cont:1:215:215. GUIDAMI SPIRITO SANTO", "{ \"id\": \"215\", \"title\": \"215. GUIDAMI SPIRITO SANTO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"215\", \"coll_id\": \"1\", \"title\": \"215. GUIDAMI SPIRITO SANTO\" }");
 console.log(status);
 status = await client.set("cont_text:1:215", `Guidami Spirito Santo
 Inondami riempi il mio cuor.
@@ -3632,7 +3632,7 @@ Senza Te non vivo più
 Nel mio cuor ho bisogno di Te
 Vieni e prendimi per man`);
 console.log(status);
-status = await client.set("cont:1:216:216. GESÙ VIVE IN ME", "{ \"id\": \"216\", \"title\": \"216. GESÙ VIVE IN ME\" }");
+status = await client.sAdd("cont", "{ \"id\": \"216\", \"coll_id\": \"1\", \"title\": \"216. GESÙ VIVE IN ME\" }");
 console.log(status);
 status = await client.set("cont_text:1:216", `Io so che venne per me
 Che i miei peccati pagò,
@@ -3653,7 +3653,7 @@ Mi porti in alto insieme a Te
 E vedo il regno Tuo.
 (Coro)`);
 console.log(status);
-status = await client.set("cont:1:217:217.AMEN", "{ \"id\": \"217\", \"title\": \"217.AMEN\" }");
+status = await client.sAdd("cont", "{ \"id\": \"217\", \"coll_id\": \"1\", \"title\": \"217.AMEN\" }");
 console.log(status);
 status = await client.set("cont_text:1:217", `“Amen, Amen, Amen,
 Amen, Amen” bis
@@ -3672,7 +3672,7 @@ Oh mio eterno Re
 Ti lodiam, noi Ti lodiam
  Coro:Amen..`);
 console.log(status);
-status = await client.set("cont:1:218:218.GRANDE IO SON", "{ \"id\": \"218\", \"title\": \"218.GRANDE IO SON\" }");
+status = await client.sAdd("cont", "{ \"id\": \"218\", \"coll_id\": \"1\", \"title\": \"218.GRANDE IO SON\" }");
 console.log(status);
 status = await client.set("cont_text:1:218", `Voglio restar, vicino a te
 Il cielo è reale, la morte non c’è
@@ -3698,7 +3698,7 @@ Potrà resistere in presenza del
  [Grande Io Son, Grande Io Son, 
  Grande Io Son] x2`);
 console.log(status);
-status = await client.set("cont:1:219:219. DAVANTI A TE", "{ \"id\": \"219\", \"title\": \"219. DAVANTI A TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"219\", \"coll_id\": \"1\", \"title\": \"219. DAVANTI A TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:219", `Davanti a Te Signore
 Elevo il cuore e l’anima gioisce in Te
@@ -3715,7 +3715,7 @@ La parte più profonda di me
 E cresce il bisogno di donare a Te la vita,
 Di amarTi, servirTi, davanti a Te voglio restar!`);
 console.log(status);
-status = await client.set("cont:1:220:220. NEL SEGRETO", "{ \"id\": \"220\", \"title\": \"220. NEL SEGRETO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"220\", \"coll_id\": \"1\", \"title\": \"220. NEL SEGRETO\" }");
 console.log(status);
 status = await client.set("cont_text:1:220", `Nel segreto in tranquillità. 
 Nella quiete Tu sei lì, 
@@ -3736,7 +3736,7 @@ Vado avanti spazzo ogni ostacolo via
 Sul mio sentier, 
 per conoscerTi di più.`);
 console.log(status);
-status = await client.set("cont:1:221:221. DIO D’ALLEANZA", "{ \"id\": \"221\", \"title\": \"221. DIO D’ALLEANZA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"221\", \"coll_id\": \"1\", \"title\": \"221. DIO D’ALLEANZA\" }");
 console.log(status);
 status = await client.set("cont_text:1:221", `So che i Tuoi occhi
 Sono attenti e sono sempre su me
@@ -3760,7 +3760,7 @@ La mia speranza è in Lui
 Nel grande Io sono.
 I miei occhi vedran l’impossibile succedere!`);
 console.log(status);
-status = await client.set("cont:1:222:222. SANTO E’ IL SIGNOR", "{ \"id\": \"222\", \"title\": \"222. SANTO E’ IL SIGNOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"222\", \"coll_id\": \"1\", \"title\": \"222. SANTO E’ IL SIGNOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:222", `Cantiamo insieme al Re, ci inchiniamo 
 Adoriamo Gesù, siamo forti in Lui, eccelso e 
@@ -3778,7 +3778,7 @@ A noi” x3
 Ed insieme cantiam, ed insieme cantiam:
 coro: Santo è il Signor..`);
 console.log(status);
-status = await client.set("cont:1:223:223. GESU’ REGNI PER ME", "{ \"id\": \"223\", \"title\": \"223. GESU’ REGNI PER ME\" }");
+status = await client.sAdd("cont", "{ \"id\": \"223\", \"coll_id\": \"1\", \"title\": \"223. GESU’ REGNI PER ME\" }");
 console.log(status);
 status = await client.set("cont_text:1:223", `Quando intorno a me s’alza la tempesta
 Sei con me
@@ -3803,7 +3803,7 @@ Solo in Te il mio cuor trova forza e la speranza
 
 Per Te canterò!`);
 console.log(status);
-status = await client.set("cont:1:224:224. TU STAI CHIAMANDO", "{ \"id\": \"224\", \"title\": \"224. TU STAI CHIAMANDO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"224\", \"coll_id\": \"1\", \"title\": \"224. TU STAI CHIAMANDO\" }");
 console.log(status);
 status = await client.set("cont_text:1:224", `Spirito Santo, il Tuo fuoco brucia in noi
 Stiamo vivendo per fare ciò che vuoi
@@ -3833,7 +3833,7 @@ Mi stai chiamando a Te Signor
 “ci stai chiamando” x3
 A Te Signor`);
 console.log(status);
-status = await client.set("cont:1:225:225. IL NOSTRO DIO E’ GRANDE", "{ \"id\": \"225\", \"title\": \"225. IL NOSTRO DIO E’ GRANDE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"225\", \"coll_id\": \"1\", \"title\": \"225. IL NOSTRO DIO E’ GRANDE\" }");
 console.log(status);
 status = await client.set("cont_text:1:225", `L’acqua in vino cambiò 
 Gli occhi del cielo Egli aprì,
@@ -3855,7 +3855,7 @@ Coro: Dio è grande..
 “Se Dio sarà per noi, chi mai ci fermerà?
 Se Dio sarà con noi, chi sarà contro noi?” x2`);
 console.log(status);
-status = await client.set("cont:1:226:226. RISUSCITAMI", "{ \"id\": \"226\", \"title\": \"226. RISUSCITAMI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"226\", \"coll_id\": \"1\", \"title\": \"226. RISUSCITAMI\" }");
 console.log(status);
 status = await client.set("cont_text:1:226", `Maestro, io ho bisogno di un miracolo
 Trasforma la mia vita ed il mio stato
@@ -3884,7 +3884,7 @@ Tu mi chiami a vivere con potenza insieme a Te!
 
 Coro: Rimuovi la mia pietra…`);
 console.log(status);
-status = await client.set("cont:1:227:227. TU SEI LA FORZA", "{ \"id\": \"227\", \"title\": \"227. TU SEI LA FORZA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"227\", \"coll_id\": \"1\", \"title\": \"227. TU SEI LA FORZA\" }");
 console.log(status);
 status = await client.set("cont_text:1:227", `Proprio quando sono qui con te
 Tu vinci per me le mie battaglie.
@@ -3909,7 +3909,7 @@ chi sarà contro di me
 Se tu Gesù sarai con me
 Io vincerò comunque`);
 console.log(status);
-status = await client.set("cont:1:228:228. PIU’ CHE VINCITORI SIAMO IN TE", "{ \"id\": \"228\", \"title\": \"228. PIU’ CHE VINCITORI SIAMO IN TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"228\", \"coll_id\": \"1\", \"title\": \"228. PIU’ CHE VINCITORI SIAMO IN TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:228", `Anche se forza più non ho
 Io la Tua voce ascolterò
@@ -3941,7 +3941,7 @@ Più potente del mio cuor
 Più splendente di un tesor
 In Te io ho vittoria`);
 console.log(status);
-status = await client.set("cont:1:229:229. CANTO DELL’APOCALISSE", "{ \"id\": \"229\", \"title\": \"229. CANTO DELL’APOCALISSE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"229\", \"coll_id\": \"1\", \"title\": \"229. CANTO DELL’APOCALISSE\" }");
 console.log(status);
 status = await client.set("cont_text:1:229", `Degno è l’Agnello santificato
 Santo, santo è il Signor.
@@ -3968,7 +3968,7 @@ Pieno di gloria, splendente gloria
 Gesù Sei la potenza, soffio ed acqua viva
 Quanto grande e immenso Sei!`);
 console.log(status);
-status = await client.set("cont:1:230:230.  LA PRESENZA DI DIO", "{ \"id\": \"230\", \"title\": \"230.  LA PRESENZA DI DIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"230\", \"coll_id\": \"1\", \"title\": \"230.  LA PRESENZA DI DIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:230", `[La presenza di Dio è qui, 
 Io la sento in me.] (bis) 
@@ -3977,7 +3977,7 @@ La Sua forza mi sostien
 [La presenza di Dio è qui, 
 Io la sento in me.] (bis)`);
 console.log(status);
-status = await client.set("cont:1:231:231. SALMO 46", "{ \"id\": \"231\", \"title\": \"231. SALMO 46\" }");
+status = await client.sAdd("cont", "{ \"id\": \"231\", \"coll_id\": \"1\", \"title\": \"231. SALMO 46\" }");
 console.log(status);
 status = await client.set("cont_text:1:231", `Dio è per noi un rifugio ed una forza
 Un aiuto sempre pronto nelle distrette
@@ -4007,7 +4007,7 @@ Per guerre, le nazioni
 E la terra si strugge nel suo seno
 Dio è con noi`);
 console.log(status);
-status = await client.set("cont:1:232:232. VENIAMO A BENEDIRE", "{ \"id\": \"232\", \"title\": \"232. VENIAMO A BENEDIRE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"232\", \"coll_id\": \"1\", \"title\": \"232. VENIAMO A BENEDIRE\" }");
 console.log(status);
 status = await client.set("cont_text:1:232", `Per grazia siamo qui, davanti a Te Signor
 Per cercare il volto Tuo, per arrenderci al Tuo amore!
@@ -4029,7 +4029,7 @@ E vogliamo dirTi grazie per tutto ciò che hai fatto in noi
 
 Coro: veniamo a benedire…`);
 console.log(status);
-status = await client.set("cont:1:233:233. RINUNCIO A ME STESSO", "{ \"id\": \"233\", \"title\": \"233. RINUNCIO A ME STESSO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"233\", \"coll_id\": \"1\", \"title\": \"233. RINUNCIO A ME STESSO\" }");
 console.log(status);
 status = await client.set("cont_text:1:233", `Rinuncio a me stesso e a ciò che sono
 Rinuncio a me stesso e a ciò che ho
@@ -4046,7 +4046,7 @@ Lascio la mia vita nelle mani Tue
 Voglio consacrare la mia vita a Te
 Non son io che vivo ma Cristo che vive  in me!`);
 console.log(status);
-status = await client.set("cont:1:234:234. IO HO DECISO", "{ \"id\": \"234\", \"title\": \"234. IO HO DECISO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"234\", \"coll_id\": \"1\", \"title\": \"234. IO HO DECISO\" }");
 console.log(status);
 status = await client.set("cont_text:1:234", `“Io ho deciso di seguir Cristo” x3
 Indietro, no, non tornerò x2
@@ -4065,7 +4065,7 @@ Indietro, no, non tornerò
 “Decidi ora di seguir Cristo” x3
 Indietro, no, non tornar più x2`);
 console.log(status);
-status = await client.set("cont:1:235:235. POTENTE A SALVAR", "{ \"id\": \"235\", \"title\": \"235. POTENTE A SALVAR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"235\", \"coll_id\": \"1\", \"title\": \"235. POTENTE A SALVAR\" }");
 console.log(status);
 status = await client.set("cont_text:1:235", `Bramiamo compassione,amore 
 infinito. La grazia è su di me.
@@ -4089,7 +4089,7 @@ Brilla ancora, tutti lo sapranno
 E cantiamo per il nostro Re, Gesù!
 X2`);
 console.log(status);
-status = await client.set("cont:1:236:236. E CORRERO’ DA TE", "{ \"id\": \"236\", \"title\": \"236. E CORRERO’ DA TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"236\", \"coll_id\": \"1\", \"title\": \"236. E CORRERO’ DA TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:236", `Mi guardi e mi conosci
 Ti chini su di me
@@ -4118,7 +4118,7 @@ Mi accoglierai fra le braccia
 Mi accoglierai fra le braccia
 Mi accoglierai fra le braccia del tuo amor`);
 console.log(status);
-status = await client.set("cont:1:237:237. CHE AMICO IO TROVAI", "{ \"id\": \"237\", \"title\": \"237. CHE AMICO IO TROVAI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"237\", \"coll_id\": \"1\", \"title\": \"237. CHE AMICO IO TROVAI\" }");
 console.log(status);
 status = await client.set("cont_text:1:237", `Che amico io trovai
 Vicin più di un fratello
@@ -4133,7 +4133,7 @@ Fedel più di una madre
 Che scioglie il mio cuor
 E tutto dietro lascia`);
 console.log(status);
-status = await client.set("cont:1:238:238. SORGI E RISPLENDI", "{ \"id\": \"238\", \"title\": \"238. SORGI E RISPLENDI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"238\", \"coll_id\": \"1\", \"title\": \"238. SORGI E RISPLENDI\" }");
 console.log(status);
 status = await client.set("cont_text:1:238", `Coro:
 “Sorgi, risplendi, sorgi, risplendi
@@ -4165,7 +4165,7 @@ Il Signor affretterà le cose
 A Suo tempo
 In questo tempo`);
 console.log(status);
-status = await client.set("cont:1:239:239. ACCENDI UNA LUCE", "{ \"id\": \"239\", \"title\": \"239. ACCENDI UNA LUCE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"239\", \"coll_id\": \"1\", \"title\": \"239. ACCENDI UNA LUCE\" }");
 console.log(status);
 status = await client.set("cont_text:1:239", `Accendi una luce, 
 Lasciala brillar
@@ -4177,7 +4177,7 @@ Non puoi non parlar
 Dove c’è necessità
 Accendi una luce nell’oscurità!`);
 console.log(status);
-status = await client.set("cont:1:240:240. MI AMERAI PER SEMPRE", "{ \"id\": \"240\", \"title\": \"240. MI AMERAI PER SEMPRE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"240\", \"coll_id\": \"1\", \"title\": \"240. MI AMERAI PER SEMPRE\" }");
 console.log(status);
 status = await client.set("cont_text:1:240", `Chi ci separerà?
 Anche se io scappo via
@@ -4209,7 +4209,7 @@ Coro: Tu Sei lo stesso..
 
 Mi amerai per sempre!`);
 console.log(status);
-status = await client.set("cont:1:241:241. FAI UN MIRACOLO IN ME", "{ \"id\": \"241\", \"title\": \"241. FAI UN MIRACOLO IN ME\" }");
+status = await client.sAdd("cont", "{ \"id\": \"241\", \"coll_id\": \"1\", \"title\": \"241. FAI UN MIRACOLO IN ME\" }");
 console.log(status);
 status = await client.set("cont_text:1:241", `Come Zaccheo io voglio salir
 Più in alto che io potrò
@@ -4232,7 +4232,7 @@ Sei tu Signore il mio primo amor
 
 Fai un miracolo in me!!`);
 console.log(status);
-status = await client.set("cont:1:242:242. TI DICO GRAZIE", "{ \"id\": \"242\", \"title\": \"242. TI DICO GRAZIE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"242\", \"coll_id\": \"1\", \"title\": \"242. TI DICO GRAZIE\" }");
 console.log(status);
 status = await client.set("cont_text:1:242", `Vedo la mia vita con Te,
 Sei un Padre d’amor
@@ -4254,7 +4254,7 @@ La vita mia è in mano Tua
 Io ho i miei occhi su di Te ed ho 
 Fiducia che Tu Sei con me Gesù!`);
 console.log(status);
-status = await client.set("cont:1:243:243. FILIPPESI", "{ \"id\": \"243\", \"title\": \"243. FILIPPESI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"243\", \"coll_id\": \"1\", \"title\": \"243. FILIPPESI\" }");
 console.log(status);
 status = await client.set("cont_text:1:243", `Coro:
 Combatterò insieme a Te
@@ -4280,7 +4280,7 @@ Coro: combatterò…
 Quella meta vittoriosa io 
 raggiungerò! x3`);
 console.log(status);
-status = await client.set("cont:1:244:244.A VOLTO SCOPERTO", "{ \"id\": \"244\", \"title\": \"244.A VOLTO SCOPERTO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"244\", \"coll_id\": \"1\", \"title\": \"244.A VOLTO SCOPERTO\" }");
 console.log(status);
 status = await client.set("cont_text:1:244", `E se il mio spirito forza non ha
 So che il Tuo Spirito lo rafforzerà
@@ -4308,7 +4308,7 @@ Coro: A volto scoperto….
 
 Come Te, come Te io sarò x2`);
 console.log(status);
-status = await client.set("cont:1:245:245. RIFUGIO ", "{ \"id\": \"245\", \"title\": \"245. RIFUGIO \" }");
+status = await client.sAdd("cont", "{ \"id\": \"245\", \"coll_id\": \"1\", \"title\": \"245. RIFUGIO \" }");
 console.log(status);
 status = await client.set("cont_text:1:245", `Grida forte chi è contro di me
 Ma io paura non ho
@@ -4344,7 +4344,7 @@ Coro:Tu sarai con me…
 Grida forte chi è contro di me
 Ma io paura non ho!`);
 console.log(status);
-status = await client.set("cont:1:246:246. CHE MAGNIFICO NOME E’", "{ \"id\": \"246\", \"title\": \"246. CHE MAGNIFICO NOME E’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"246\", \"coll_id\": \"1\", \"title\": \"246. CHE MAGNIFICO NOME E’\" }");
 console.log(status);
 status = await client.set("cont_text:1:246", `Tu eri il Verbo nel principio 
 uno in Dio, l'Altissimo. 
@@ -4390,7 +4390,7 @@ Gesù il Tuo nome
 Che infallibile nome è 
 Gesù il tuo nome!`);
 console.log(status);
-status = await client.set("cont:1:247:247. IL MIO REDENTORE VIVE", "{ \"id\": \"247\", \"title\": \"247. IL MIO REDENTORE VIVE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"247\", \"coll_id\": \"1\", \"title\": \"247. IL MIO REDENTORE VIVE\" }");
 console.log(status);
 status = await client.set("cont_text:1:247", `Nell’angoscia dell’anima mia
 Io ho gridato a Te
@@ -4420,7 +4420,7 @@ E onorare il Suo nome
 E se succederà qualcosa che io non comprenderò 
 Tra le braccia Sue io mi arrenderò`);
 console.log(status);
-status = await client.set("cont:1:248:248. SALMO 27", "{ \"id\": \"248\", \"title\": \"248. SALMO 27\" }");
+status = await client.sAdd("cont", "{ \"id\": \"248\", \"coll_id\": \"1\", \"title\": \"248. SALMO 27\" }");
 console.log(status);
 status = await client.set("cont_text:1:248", `Come un bambino guarda suo padre
 Io guardo fisso il mio Maestro 
@@ -4460,7 +4460,7 @@ loderà
 Tu sei per me, di chi temerò?
 Tu sei il più grande, Tu sei il più forte. X3`);
 console.log(status);
-status = await client.set("cont:1:249:249. COME ARGILLA", "{ \"id\": \"249\", \"title\": \"249. COME ARGILLA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"249\", \"coll_id\": \"1\", \"title\": \"249. COME ARGILLA\" }");
 console.log(status);
 status = await client.set("cont_text:1:249", `Come argilla nelle mani Tue, Signor
 Mi trasformi e mi cambi col Tuo amor
@@ -4473,7 +4473,7 @@ Sei il padrone della vita mia
 Il mio cuore lo sa già
 Io starò con te tutta l'eternità`);
 console.log(status);
-status = await client.set("cont:1:250:250. NATO DI NUOVO", "{ \"id\": \"250\", \"title\": \"250. NATO DI NUOVO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"250\", \"coll_id\": \"1\", \"title\": \"250. NATO DI NUOVO\" }");
 console.log(status);
 status = await client.set("cont_text:1:250", `Può sembrare strano quel che sto per dir.
 Ma la verità, voglio raccontar
@@ -4492,7 +4492,7 @@ con fè: Nato di nuovo son, potrai
 affermar, Redento son per l’opera del 
 Golgota. E son felice ognor quaggiù.`);
 console.log(status);
-status = await client.set("cont:1:251:251. VOGLIO CONOSCERTI", "{ \"id\": \"251\", \"title\": \"251. VOGLIO CONOSCERTI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"251\", \"coll_id\": \"1\", \"title\": \"251. VOGLIO CONOSCERTI\" }");
 console.log(status);
 status = await client.set("cont_text:1:251", `Voglio conoscerTi ogni giorno sempre 
 più. Entrare in Tua presenza e 
@@ -4506,7 +4506,7 @@ A Colui che regnerà per sempre
 Santo, Santo, Santo, Santo
 Santo Sei Signor`);
 console.log(status);
-status = await client.set("cont:1:252:252. QUELLO CHE DIO DICE DI ME", "{ \"id\": \"252\", \"title\": \"252. QUELLO CHE DIO DICE DI ME\" }");
+status = await client.sAdd("cont", "{ \"id\": \"252\", \"coll_id\": \"1\", \"title\": \"252. QUELLO CHE DIO DICE DI ME\" }");
 console.log(status);
 status = await client.set("cont_text:1:252", `Chi son’io perché il grande Dio
 Mi accolga a Sé
@@ -4535,7 +4535,7 @@ Che Dio dice di me” x2
 Che Dio dice di me!
 Coro..`);
 console.log(status);
-status = await client.set("cont:1:253:253. PIU’ DI TE", "{ \"id\": \"253\", \"title\": \"253. PIU’ DI TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"253\", \"coll_id\": \"1\", \"title\": \"253. PIU’ DI TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:253", `Coro:
 Più di Te, bisogno ho Signor
@@ -4551,7 +4551,7 @@ Ogni momento io
 Voglio star con Te
 Perché al passato io non guardo più`);
 console.log(status);
-status = await client.set("cont:1:254:254. SE FOSSI STATO LI’", "{ \"id\": \"254\", \"title\": \"254. SE FOSSI STATO LI’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"254\", \"coll_id\": \"1\", \"title\": \"254. SE FOSSI STATO LI’\" }");
 console.log(status);
 status = await client.set("cont_text:1:254", `Se fossi stato lì tra quella folla che
 La tua morte chiamò che Ti perseguitò
@@ -4588,7 +4588,7 @@ Padre perdonali
 Ed anch’io ero lì
 Padre perdonami`);
 console.log(status);
-status = await client.set("cont:1:255:255. GLORIA ALL’AGNELLO", "{ \"id\": \"255\", \"title\": \"255. GLORIA ALL’AGNELLO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"255\", \"coll_id\": \"1\", \"title\": \"255. GLORIA ALL’AGNELLO\" }");
 console.log(status);
 status = await client.set("cont_text:1:255", `Crocifisso sei stato, oh Gesù
 Per la mia ribellion
@@ -4615,7 +4615,7 @@ Bridge:
 {Degno, Solo Tu sei degno
 Solo Tu sei degno Solo Tu sei il Re}×3`);
 console.log(status);
-status = await client.set("cont:1:256:256. CELEBRA IL RE", "{ \"id\": \"256\", \"title\": \"256. CELEBRA IL RE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"256\", \"coll_id\": \"1\", \"title\": \"256. CELEBRA IL RE\" }");
 console.log(status);
 status = await client.set("cont_text:1:256", `La gioia del Signore è la mia forza
 A Lui tutto l’onore e la gloria
@@ -4628,7 +4628,7 @@ cielo adorando Lui.
 Celera il Re, esalta il Re, adora il Suo 
 nome x2`);
 console.log(status);
-status = await client.set("cont:1:257:257. AUDACE AMORE", "{ \"id\": \"257\", \"title\": \"257. AUDACE AMORE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"257\", \"coll_id\": \"1\", \"title\": \"257. AUDACE AMORE\" }");
 console.log(status);
 status = await client.set("cont_text:1:257", `Prima che io nascessi Tu già pensavi a me
 Quanto buono Sei con me!
@@ -4654,7 +4654,7 @@ Per raggiungermi
 Abbatti ogni barriera, scacci ogni menzogna 
 per raggiungermi`);
 console.log(status);
-status = await client.set("cont:1:258:258. CREDO IN TE", "{ \"id\": \"258\", \"title\": \"258. CREDO IN TE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"258\", \"coll_id\": \"1\", \"title\": \"258. CREDO IN TE\" }");
 console.log(status);
 status = await client.set("cont_text:1:258", `Alzo le mie mani a Te Signore,
 Mio prezioso Gesù, meraviglioso Signor
@@ -4667,7 +4667,7 @@ Per me, per me
 Ricevi tutta la gloria, ricevi tutto l’onore,
 prezioso figlio di Dio!`);
 console.log(status);
-status = await client.set("cont:1:259:259. NEL NOME DI GESU’", "{ \"id\": \"259\", \"title\": \"259. NEL NOME DI GESU’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"259\", \"coll_id\": \"1\", \"title\": \"259. NEL NOME DI GESU’\" }");
 console.log(status);
 status = await client.set("cont_text:1:259", `Dio per noi combatte, accanto a noi sarà
 Un giorno Lui ha vinto, si ha vinto già
@@ -4697,7 +4697,7 @@ Satana è sconfitto
 Nel nome di Gesù
 La chiesa griderà, griderà x4`);
 console.log(status);
-status = await client.set("cont:1:260:260. NON MORIRO’", "{ \"id\": \"260\", \"title\": \"260. NON MORIRO’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"260\", \"coll_id\": \"1\", \"title\": \"260. NON MORIRO’\" }");
 console.log(status);
 status = await client.set("cont_text:1:260", `Se tutto è difficile e il tuo cuore soffre
 Il mio Dio non fallisce e non fallirà mai;
@@ -4722,7 +4722,7 @@ Alza i tuoi occhi
 Vedrai di nuovo il sol brillar
 La promessa di Dio è di vincere il mal,`);
 console.log(status);
-status = await client.set("cont:1:261:261. C’E’ UN AMOR", "{ \"id\": \"261\", \"title\": \"261. C’E’ UN AMOR\" }");
+status = await client.sAdd("cont", "{ \"id\": \"261\", \"coll_id\": \"1\", \"title\": \"261. C’E’ UN AMOR\" }");
 console.log(status);
 status = await client.set("cont_text:1:261", `C’è un amor quanto un oceano
 Una pioggia di bontà
@@ -4751,7 +4751,7 @@ Amore vero, amor profondo
 Amor più grande, amore immenso
 Amor leale, amore intenso`);
 console.log(status);
-status = await client.set("cont:1:262:262. QUESTA E’ LA GRAZIA TUA", "{ \"id\": \"262\", \"title\": \"262. QUESTA E’ LA GRAZIA TUA\" }");
+status = await client.sAdd("cont", "{ \"id\": \"262\", \"coll_id\": \"1\", \"title\": \"262. QUESTA E’ LA GRAZIA TUA\" }");
 console.log(status);
 status = await client.set("cont_text:1:262", `Chi vince il buio ed il peccato
 Il cui amor è così grande
@@ -4784,7 +4784,7 @@ Degno è l’Agnel di Dio
 Degno è Colui che ha vinto la morte x2
 Degno, degno, degno Sei!`);
 console.log(status);
-status = await client.set("cont:1:263:263. FINCHE’ VOCE AVRO’", "{ \"id\": \"263\", \"title\": \"263. FINCHE’ VOCE AVRO’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"263\", \"coll_id\": \"1\", \"title\": \"263. FINCHE’ VOCE AVRO’\" }");
 console.log(status);
 status = await client.set("cont_text:1:263", `Non c'è altro re a cui sarò fedele
 Non c'è altro nome più alto del Suo
@@ -4816,7 +4816,7 @@ Mi alzerò da terra e ancora canterò
  
 Coro: Alzerò le mani…`);
 console.log(status);
-status = await client.set("cont:1:264:264. OH VIENI E VEDRAI", "{ \"id\": \"264\", \"title\": \"264. OH VIENI E VEDRAI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"264\", \"coll_id\": \"1\", \"title\": \"264. OH VIENI E VEDRAI\" }");
 console.log(status);
 status = await client.set("cont_text:1:264", `Oh vieni e vedrai che il Signor è buon
 Oh vieni e vedrai che il Signor è buon 
@@ -4840,7 +4840,7 @@ Le mani a Te alzerò
 Mi prostrerò davanti a Te
 Noi griderem, noi grideremo solo a Te!`);
 console.log(status);
-status = await client.set("cont:1:265:265. GRIDANO I CIEL", "{ \"id\": \"265\", \"title\": \"265. GRIDANO I CIEL\" }");
+status = await client.sAdd("cont", "{ \"id\": \"265\", \"coll_id\": \"1\", \"title\": \"265. GRIDANO I CIEL\" }");
 console.log(status);
 status = await client.set("cont_text:1:265", `Io mi arrendo a Te, Signor, mio Dio
 Ti do tutto ciò che ho
@@ -4858,7 +4858,7 @@ E se solo resterò, sarai con me
 
 Coro:….`);
 console.log(status);
-status = await client.set("cont:1:266:266. TU MI GUARISCI", "{ \"id\": \"266\", \"title\": \"266. TU MI GUARISCI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"266\", \"coll_id\": \"1\", \"title\": \"266. TU MI GUARISCI\" }");
 console.log(status);
 status = await client.set("cont_text:1:266", `Mi stringi a te oh Dio
 Con Te ansie non ho
@@ -4880,7 +4880,7 @@ Niente è impossibile
 Niente è impossibile per Te
 Vivo nelle mani Tue x2`);
 console.log(status);
-status = await client.set("cont:1:267:267. RE GLORIOSO", "{ \"id\": \"267\", \"title\": \"267. RE GLORIOSO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"267\", \"coll_id\": \"1\", \"title\": \"267. RE GLORIOSO\" }");
 console.log(status);
 status = await client.set("cont_text:1:267", `Ogni stella su nel ciel
 Tu già conosci
@@ -4902,7 +4902,7 @@ Che non c’è alcuno pari a Te
 Il Tuo amore accoglie noi
 Nella bellezza della Tua maestà`);
 console.log(status);
-status = await client.set("cont:1:268:268. IL GIGANTE CADRA’", "{ \"id\": \"268\", \"title\": \"268. IL GIGANTE CADRA’\" }");
+status = await client.sAdd("cont", "{ \"id\": \"268\", \"coll_id\": \"1\", \"title\": \"268. IL GIGANTE CADRA’\" }");
 console.log(status);
 status = await client.set("cont_text:1:268", `Il traguardo vedo già
 Ci saranno prove ma
@@ -4938,7 +4938,7 @@ Hai vinto Tu, son libero,
 Per sempre regni Gesù
 X2`);
 console.log(status);
-status = await client.set("cont:1:269:269. DIO E’ DIO", "{ \"id\": \"269\", \"title\": \"269. DIO E’ DIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"269\", \"coll_id\": \"1\", \"title\": \"269. DIO E’ DIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:269", `La mia fede non è fondata
 Su ciò che fai per me Signor
@@ -4961,7 +4961,7 @@ Ma se non va bene rimane il mio Dio
 Ma Lo adoro per Chi Lui è
 Accada quel che accada sempre Dio sarà” x2`);
 console.log(status);
-status = await client.set("cont:1:270:270. GESU’ E’ IL RE DEI RE", "{ \"id\": \"270\", \"title\": \"270. GESU’ E’ IL RE DEI RE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"270\", \"coll_id\": \"1\", \"title\": \"270. GESU’ E’ IL RE DEI RE\" }");
 console.log(status);
 status = await client.set("cont_text:1:270", `O porte alzate il capo
 E il Re di gloria entrerà
@@ -4983,7 +4983,7 @@ Gesù è il Redentore che ci salverà
 Egli è il Re dei re sopra la terra
 Gesù è il Re dei re!`);
 console.log(status);
-status = await client.set("cont:1:271:271. GRANDI COSE", "{ \"id\": \"271\", \"title\": \"271. GRANDI COSE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"271\", \"coll_id\": \"1\", \"title\": \"271. GRANDI COSE\" }");
 console.log(status);
 status = await client.set("cont_text:1:271", `Vieni adoriamo il Re
 Vieni a prostrarti ai Suoi piedi
@@ -5020,7 +5020,7 @@ Grande Tu sei
 
 Coro:La morte hai vinto...`);
 console.log(status);
-status = await client.set("cont:1:272:272. DIO E’ FEDELE", "{ \"id\": \"272\", \"title\": \"272. DIO E’ FEDELE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"272\", \"coll_id\": \"1\", \"title\": \"272. DIO E’ FEDELE\" }");
 console.log(status);
 status = await client.set("cont_text:1:272", `Quando mi sento solo
 L’incertezza è nel cuor
@@ -5049,7 +5049,7 @@ E poi ricordare ch’ Egli è tutto per me.
 
 Coro: Dio è fedele`);
 console.log(status);
-status = await client.set("cont:1:273:273. UNA COSA HO CHIESTO", "{ \"id\": \"273\", \"title\": \"273. UNA COSA HO CHIESTO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"273\", \"coll_id\": \"1\", \"title\": \"273. UNA COSA HO CHIESTO\" }");
 console.log(status);
 status = await client.set("cont_text:1:273", `“Una cosa ho chiesto al Signor
 E la cercherò, e la cercherò
@@ -5063,7 +5063,7 @@ Coro:
 Signor, la Tua presenza
 Mi sostiene” x2`);
 console.log(status);
-status = await client.set("cont:1:274:274. LA BENEDIZIONE", "{ \"id\": \"274\", \"title\": \"274. LA BENEDIZIONE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"274\", \"coll_id\": \"1\", \"title\": \"274. LA BENEDIZIONE\" }");
 console.log(status);
 status = await client.set("cont_text:1:274", `Dio ti protegga, ti benedica
 Che risplenda il Suo volto
@@ -5090,7 +5090,7 @@ Nel tuo pianto, nella gioia
  
 È per te Lui, è per te Lui`);
 console.log(status);
-status = await client.set("cont:1:275:275. GESU’ FIGLIO DI DIO", "{ \"id\": \"275\", \"title\": \"275. GESU’ FIGLIO DI DIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"275\", \"coll_id\": \"1\", \"title\": \"275. GESU’ FIGLIO DI DIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:275", `Gesù Tu Sei il Figlio di Dio
 Il Giusto che venne a morir
@@ -5108,7 +5108,7 @@ con sapienza forza e autorità
 
 Gesù Figlio di Dio Tu Sei!`);
 console.log(status);
-status = await client.set("cont:1:276:276. MILLE RAGIONI", "{ \"id\": \"276\", \"title\": \"276. MILLE RAGIONI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"276\", \"coll_id\": \"1\", \"title\": \"276. MILLE RAGIONI\" }");
 console.log(status);
 status = await client.set("cont_text:1:276", `Coro:
 Benedici il Signor anima mia
@@ -5137,7 +5137,7 @@ Per mille anni e per l'eternità
 Coro: Benedici il Signor..
 Finale: Per sempre Ti adorerò X3`);
 console.log(status);
-status = await client.set("cont:1:277:277. IL MIO DESIDERIO", "{ \"id\": \"277\", \"title\": \"277. IL MIO DESIDERIO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"277\", \"coll_id\": \"1\", \"title\": \"277. IL MIO DESIDERIO\" }");
 console.log(status);
 status = await client.set("cont_text:1:277", `Il mio desiderio è di star con Te
 Come Davide, cantare lodi a Te.
@@ -5152,7 +5152,7 @@ Il mio canto si eleva a Te dicendo che Sei il
 mio Re..
 Tu Sei Colui che il cuore mio desidera!`);
 console.log(status);
-status = await client.set("cont:1:278:278. SULLE ACQUE", "{ \"id\": \"278\", \"title\": \"278. SULLE ACQUE\" }");
+status = await client.sAdd("cont", "{ \"id\": \"278\", \"coll_id\": \"1\", \"title\": \"278. SULLE ACQUE\" }");
 console.log(status);
 status = await client.set("cont_text:1:278", `Tu mi hai cercato negli abissi
 Quando valor non era in me
@@ -5177,7 +5177,7 @@ Io potrò camminare
 La mia vita splenderà alla Tua presenza
 Dove forza e potenza trovo in Te, oh Salvatore`);
 console.log(status);
-status = await client.set("cont:1:279:279. RINNOVAMI", "{ \"id\": \"279\", \"title\": \"279. RINNOVAMI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"279\", \"coll_id\": \"1\", \"title\": \"279. RINNOVAMI\" }");
 console.log(status);
 status = await client.set("cont_text:1:279", `Rinnovami Signor Gesù
 Io desidero cambiar
@@ -5189,7 +5189,7 @@ Deve essere trasformato Signor
 Perché tutto quel che c’è dentro il mio cuor
 Ha bisogno più di te`);
 console.log(status);
-status = await client.set("cont:1:280:280. FESTA NEL DESERTO", "{ \"id\": \"280\", \"title\": \"280. FESTA NEL DESERTO\" }");
+status = await client.sAdd("cont", "{ \"id\": \"280\", \"coll_id\": \"1\", \"title\": \"280. FESTA NEL DESERTO\" }");
 console.log(status);
 status = await client.set("cont_text:1:280", `Di giorno ricevo ciò di cui ho bisogno
 Il pane dal Cielo
@@ -5218,7 +5218,7 @@ Fiorirà, il deserto fiorirà
 Tu sei il mio Dio ieri, oggi e per sempre
 La Stella del mattino`);
 console.log(status);
-status = await client.set("cont:1:281:281. IO TI ADORERO’ PER CHI TU SEI", "{ \"id\": \"281\", \"title\": \"281. IO TI ADORERO’ PER CHI TU SEI\" }");
+status = await client.sAdd("cont", "{ \"id\": \"281\", \"coll_id\": \"1\", \"title\": \"281. IO TI ADORERO’ PER CHI TU SEI\" }");
 console.log(status);
 status = await client.set("cont_text:1:281", `Stare qui e pensare a tutto il bene 
 Che mi hai fatto Tu.
