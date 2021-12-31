@@ -9,7 +9,7 @@ exports.handler = async (event, context, callback) => {
 		body: "Authentication not authorized"
 	};
 
-	let admin = await adminRepository.findAdmin(params.username, params.password);
+	let admin = await adminRepository.retrieveAdmin(params.username, params.password);
 
 	if (admin != undefined) {
 		res = {

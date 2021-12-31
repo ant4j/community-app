@@ -9,7 +9,7 @@ exports.handler = async (event, context, callback) => {
 		body: "Content already exist"
 	};
 
-	let cont = await contentRepository.findContent(undefined, params.title);
+	let cont = await contentRepository.retrieveContent(undefined, params.title);
 
 	if(cont == undefined) {
 		let contId = await contentRepository.detachContentId();

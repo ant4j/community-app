@@ -24,14 +24,14 @@
 
 	// TODO recuperare solo le communities create da un certo admin con cui si e' acceduti
 	async function retrieveCommunities() {
-		let res = await fetch(endpoint.service.getCommunities);
+		let res = await fetch(endpoint.service.retrieveCommunities);
 		let json = await res.json();
 		commArr = json;
 	}
 
 	async function createCommunity() {
 		commToCreate.adminId = Cookies.get("admin-id-133-1");
-		let res = await fetch(endpoint.service.addCommunity, {
+		let res = await fetch(endpoint.service.createCommunity, {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(commToCreate),

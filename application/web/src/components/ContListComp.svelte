@@ -23,7 +23,7 @@
 
 	async function retrieveContents() {
 		let res = await fetch(
-			endpoint.service.getContents + "?collId=" + collId
+			endpoint.service.retrieveContents + "?collId=" + collId
 		);
 		let json = await res.json();
 

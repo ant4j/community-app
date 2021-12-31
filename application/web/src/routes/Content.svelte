@@ -27,7 +27,7 @@
 
 	async function retrieveContent() {
 		let res = await fetch(
-			endpoint.service.getContent +
+			endpoint.service.retrieveContent +
 				"?collId=" +
 				params.collId +
 				"&contId=" +

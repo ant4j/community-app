@@ -5,11 +5,11 @@ exports.handler = async (event, context, callback) => {
 	const params = JSON.parse(event.body);
 	
 	let res = {
-		statusCode: httpStatus.CONFICT,
+		statusCode: httpStatus.CONFLICT,
 		body: "Collection already exist"
 	};
 
-	let coll = await collectionRepository.findCollection(undefined, params.name);
+	let coll = await collectionRepository.retrieveCollection(undefined, params.name);
 
 	if(coll == undefined) {
 		let collId = await collectionRepository.detachCollectionId();

@@ -8,15 +8,15 @@ exports.handler = async (event, context, callback) => {
 
 	let data = {};
 
-	let lastPropId = await proposalRepository.findLastProposalId(parseInt(params.commId));
+	let lastPropId = await proposalRepository.retrieveLastProposalId(parseInt(params.commId));
 
-	let lastProposal = await proposalRepository.findProposal(parseInt(lastPropId), parseInt(params.commId));
+	let lastProposal = await proposalRepository.retrieveProposal(parseInt(lastPropId), parseInt(params.commId));
 
 	if (lastProposal != undefined) {
 
-		let content = await contentRepository.findContent(parseInt(lastProposal.cont_id), undefined);
+		let content = await contentRepository.retrieveContent(parseInt(lastProposal.cont_id), undefined);
 
-		let collection = await collectionRepository.findCollection(parseInt(lastProposal.coll_id), undefined);
+		let collection = await collectionRepository.retrieveCollection(parseInt(lastProposal.coll_id), undefined);
 
 		data = {
 			"username": lastProposal.username,

@@ -23,7 +23,7 @@
 
 	async function retrieveLastProposal() {
 		let res = await fetch(
-			endpoint.service.getLastProposal +
+			endpoint.service.retrieveLastProposal +
 				"?commId=" +
 				Cookies.get("signin-comm-id-133-1")
 		);

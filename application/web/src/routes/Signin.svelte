@@ -34,7 +34,7 @@
 
 	async function retrieveCommunity() {
 		let res = await fetch(
-			endpoint.service.getCommunity + "?commCode=" + params.commCode
+			endpoint.service.retrieveCommunity + "?commCode=" + params.commCode
 		);
 
 		if (res.status == httpStatus.OK) {

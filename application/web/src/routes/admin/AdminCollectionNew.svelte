@@ -24,7 +24,7 @@
 	}
 
 	async function createCollection() {
-		let res = await fetch(endpoint.service.addCollection, {
+		let res = await fetch(endpoint.service.createCollection, {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(collData),

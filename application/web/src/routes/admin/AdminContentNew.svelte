@@ -49,7 +49,7 @@
 
 	async function createContent() {
 		contentToCreate.title = contentToCreate.title.toUpperCase();
-		let res = await fetch(endpoint.service.addContent, {
+		let res = await fetch(endpoint.service.createContent, {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(contentToCreate),

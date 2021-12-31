@@ -9,7 +9,7 @@ exports.handler = async (event, context, callback) => {
 		body: "Community already exist"
 	};
 
-	let comm = await communityRepository.findCommunity(undefined, params.name);
+	let comm = await communityRepository.retrieveCommunity(undefined, params.name);
 
 	if (comm == undefined) {
 		let commId = await communityRepository.detachCommunityId();

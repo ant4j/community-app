@@ -4,9 +4,9 @@ const httpStatus = require("http-status");
 exports.handler = async (event, context, callback) => {
 	const params = event.queryStringParameters;
 	
-	let contText = await contentRepository.findContentText(parseInt(params.contId), parseInt(params.collId));
+	let contText = await contentRepository.retrieveContentText(parseInt(params.contId), parseInt(params.collId));
 	
-	let cont = await contentRepository.findContent(parseInt(params.contId), undefined);
+	let cont = await contentRepository.retrieveContent(parseInt(params.contId), undefined);
 
 	return {
 		statusCode: httpStatus.OK,

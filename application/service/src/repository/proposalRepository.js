@@ -28,7 +28,7 @@ module.exports.detachProposalId = async () => {
 	return res.value.seq_value;
 };
 
-module.exports.findProposal = async (id, commId) => {
+module.exports.retrieveProposal = async (id, commId) => {
 	let filter = { id: id, comm_id: commId };
 
 	await client.connect();
@@ -40,7 +40,7 @@ module.exports.findProposal = async (id, commId) => {
 	return res;
 };
 
-module.exports.findLastProposalId = async (commId) => {
+module.exports.retrieveLastProposalId = async (commId) => {
 	await client.connect();
 	const res = await client.db("pool").collection("last_prop").findOne(
 		{ comm_id: commId }

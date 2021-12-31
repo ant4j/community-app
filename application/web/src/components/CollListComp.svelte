@@ -12,7 +12,7 @@
 
 	async function retrieveCollections() {
 		let res = await fetch(
-			endpoint.service.getCollections + "?commId=" + commId
+			endpoint.service.retrieveCollections + "?commId=" + commId
 		);
 		let json = await res.json();
 		collArr = json;

@@ -1,17 +1,17 @@
 {
 	"service": {
-		"getCommunities": "/.netlify/functions/getCommunities",
-		"getContents": "/.netlify/functions/getContents",
-		"signin": "/.netlify/functions/signin",
-		"addCommunity": "/.netlify/functions/addCommunity",
-		"addCollection": "/.netlify/functions/addCollection",
-		"getCollections": "/.netlify/functions/getCollections",
-		"addContent": "/.netlify/functions/addContent",
-		"getContent": "/.netlify/functions/getContent",
+		"createCollection": "/.netlify/functions/createCollection",
+		"createCommunity": "/.netlify/functions/createCommunity",
+		"createContent": "/.netlify/functions/createContent",
 		"proposeContent": "/.netlify/functions/proposeContent",
-		"getLastProposal": "/.netlify/functions/getLastProposal",
-		"signinAdmin": "/.netlify/functions/signinAdmin",
-		"getCommunity": "/.netlify/functions/getCommunity"
+		"retrieveCollections": "/.netlify/functions/retrieveCollections",
+		"retrieveCommunities": "/.netlify/functions/retrieveCommunities",
+		"retrieveCommunity": "/.netlify/functions/retrieveCommunity",
+		"retrieveContent": "/.netlify/functions/retrieveContent",
+		"retrieveContents": "/.netlify/functions/retrieveContents",
+		"retrieveLastProposal": "/.netlify/functions/retrieveLastProposal",
+		"signin": "/.netlify/functions/signin",
+		"signinAdmin": "/.netlify/functions/signinAdmin"
 	},
 	"external_service": {
 		"ocr": {
