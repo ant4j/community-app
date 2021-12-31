@@ -14,7 +14,7 @@ exports.handler = async (event, context, callback) => {
 	if(cont == undefined) {
 		let contId = await contentRepository.detachContentId();
 
-		await contentRepository.createContent(contId, params.collId, params.title, params.text);
+		await contentRepository.createContent(parseInt(contId), parseInt(params.collId), params.title, params.text);
 	
 		res = {
 			statusCode: httpStatus.CREATED,

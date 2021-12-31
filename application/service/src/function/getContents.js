@@ -5,9 +5,9 @@ const httpStatus = require("http-status");
 exports.handler = async (event, context, callback) => {
 	const params = event.queryStringParameters;
 
-	let coll = await collectionRepository.findCollection(params.collId, undefined);
+	let coll = await collectionRepository.findCollection(parseInt(params.collId), undefined);
 
-	let conts = await contentRepository.findContents();
+	let conts = await contentRepository.findContents(parseInt(params.collId));
 
 	return {
 		statusCode: httpStatus.OK,

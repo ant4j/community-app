@@ -10,9 +10,9 @@ exports.handler = async (event, context, callback) => {
 		body: "Authentication not authorized"
 	};
 
-	let watchword = await communityRepository.findAuthentication(params.commId);
+	let comm_auth = await communityRepository.findAuthentication(parseInt(params.commId));
 
-	if(watchword != undefined && params.watchword == watchword) {
+	if (comm_auth.watchword != undefined && params.watchword == comm_auth.watchword) {
 		let userId = await userRepository.detachUserId();
 		let username = "user" + userId;
 		res = {

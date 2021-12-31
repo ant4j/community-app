@@ -9,6 +9,7 @@
   "license": "ISC",
   "dependencies": {
     "http-status": "^1.5.0",
-    "ioredis": "^4.28.2"
+    "ioredis": "^4.28.2",
+    "mongodb": "^4.2.2"
   }
 }

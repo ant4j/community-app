@@ -20,7 +20,7 @@ exports.handler = async (event, context, callback) => {
 		});
 		commCode = commCode + commId;
 
-		await communityRepository.createCommunity(commId, params.adminId, commCode, params.name, params.watchword);
+		await communityRepository.createCommunity(parseInt(commId), parseInt(params.adminId), commCode, params.name, params.watchword);
 
 		res = {
 			statusCode: httpStatus.CREATED,

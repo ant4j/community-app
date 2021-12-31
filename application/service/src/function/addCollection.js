@@ -14,7 +14,7 @@ exports.handler = async (event, context, callback) => {
 	if(coll == undefined) {
 		let collId = await collectionRepository.detachCollectionId();
 
-		await collectionRepository.createCollection(collId, params.commId, params.name, params.type);
+		await collectionRepository.createCollection(parseInt(collId), parseInt(params.commId), params.name, parseInt(params.type));
 
 		res = {
 			statusCode: httpStatus.CREATED,

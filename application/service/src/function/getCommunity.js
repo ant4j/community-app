@@ -9,7 +9,7 @@ exports.handler = async (event, context, callback) => {
 		body: "Community not found"
 	};
 
-	let comm = await communityRepository.findCommunity(params.commCode, undefined);
+	let comm = await communityRepository.findCommunity(parseInt(params.commCode), undefined);
 
 	if(comm) {
 		res = {

@@ -31,8 +31,8 @@ while(<FH>) {
 		
 		if(!$first) {
 			$bodyText =~ s/^\s+|\s+$//g;
-			print("status = await client.set(".'"'."cont_text:1".":"."$index".'"'.", ".'`'."$bodyText".'`);'."\n");
-			print("console.log(status);"."\n");
+			print("await client.db(\"pool\").collection(\"cont_text\").insertOne({cont_id:$index,coll_id:1,text:`$bodyText`});\n");
+			print("console.log(\"OK\");\n");
 			$index++;
 			$bodyText = "";
 		} else {
@@ -54,8 +54,8 @@ while(<FH>) {
 		}
 		
 		if($titleReady) {			
-			print("status = await client.sAdd(".'"'."cont".'"'.", ".'"{ \"id\": \"'."$index".'\", \"coll_id\": \"1\", \"title\": \"'."$title".'\" }");'."\n");
-			print("console.log(status);"."\n");
+			print("await client.db(\"pool\").collection(\"cont\").insertOne({id:$index,coll_id:1,title:\"$title\"});\n");
+			print("console.log(\"OK\");\n");
 			$titleReady = 0;
 		}
 		
@@ -68,10 +68,10 @@ while(<FH>) {
 }
 
 $bodyText =~ s/^\s+|\s+$//g;
-print("status = await client.set(".'"'."cont_text:1".":"."$index".'"'.", ".'`'."$bodyText".'`);'."\n");
-print("console.log(status);"."\n");
+print("await client.db(\"pool\").collection(\"cont_text\").insertOne({cont_id:$index,coll_id:1,text:`$bodyText`});\n");
+print("console.log(\"OK\");\n");
 
-print("status = await client.set(".'"cont_id_seq"'.", ".'"'."$index".'");'."\n");
-print("console.log(status);"."\n");
+print("await client.db(\"pool\").collection(\"sequence\").insertOne({id:\"cont_id_seq\",seq_value:$index});\n");
+print("console.log(\"OK\");\n");
 
 close(FH);
