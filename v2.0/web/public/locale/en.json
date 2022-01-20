@@ -1,0 +1,11 @@
+{
+	"access": "Access",
+	"watchword": "watchword",
+	"enter": "Enter",
+	"community-app-bedrock": "CommunityApp bedrock",
+	"watchword-label": "Community watchword",
+	"watchword-help-msg": "It is needed to enter the community.",
+	"access-failed": "Access failed",
+	"watchword-forgot": "Ops! You have forgotten to enter the watchword! Try again.",
+	"okay": "Okay"
+}

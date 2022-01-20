@@ -1,0 +1,14 @@
+.nimbella/
+.netlify/
+node_modules/
+build/
+local/comm-api/
+
+.DS_Store
+
+CNAME
+CORS
+
+deploy-incr.sh
+deploy.sh
+sleep.sh
