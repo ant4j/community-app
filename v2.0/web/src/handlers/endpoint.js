@@ -10,10 +10,10 @@ function buildCommunityGet(communityCode) {
 	return `${fullUrl}${communityCode}`;
 }
 
-function buildAuthPost() {
+function buildAuthenticationPost() {
 	let fullUrl = buildFullUrl(config.endpoint.cmm_srv.baseUrl,
-		config.endpoint.cmm_srv.path.auth);
+		config.endpoint.cmm_srv.path.authentication);
 	return fullUrl;
 }
 
-export const endpoint = { buildCommunityGet, buildAuthPost };
+export const endpoint = { buildCommunityGet, buildAuthenticationPost };

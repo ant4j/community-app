@@ -58,7 +58,7 @@
 			communityId: model.communityId,
 			watchword: model.watchword,
 		};
-		let res = await fetch(endpoint.buildAuthPost(), {
+		let res = await fetch(endpoint.buildAuthenticationPost(), {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: jsonReq,
