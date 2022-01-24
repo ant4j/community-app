@@ -1,4 +1,4 @@
-package app.community.community.infrastructure.jpa.entity;
+package app.community.self.persistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,19 +6,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "COMMUNITY_AUTHENTICATION")
+@Table(name = "community_authentication")
 public class CommunityAuthenticationEntity {
-	
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
 	private Long communityId;
-    
-    @Column
+
+	@Column
 	private String watchword;
+
+	@Version
+	private Long version;
 }

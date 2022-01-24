@@ -7,9 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "app.community.community.application.adapter, app.community.community.infrastructure.jpa.adapter, app.community.community.infrastructure.controller")
-@EnableJpaRepositories("app.community.community.infrastructure.jpa.repository")
-@EntityScan("app.community.community.infrastructure.jpa.entity")
+@ComponentScan(basePackages = "app.community.self.controller, app.community.self.handler")
+@EnableJpaRepositories("app.community.self.persistence")
+@EntityScan("app.community.self.persistence.model")
 public class Application {
 
 	public static void main(String[] args) {

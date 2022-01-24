@@ -1,4 +1,4 @@
-package app.community.community.domain.model;
+package app.community.self.controller.model;
 
 import lombok.Data;
 

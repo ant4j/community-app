@@ -1,11 +1,11 @@
-package app.community.community.infrastructure.jpa.repository;
+package app.community.self.persistence;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import app.community.community.infrastructure.jpa.entity.CommunityEntity;
+import app.community.self.persistence.model.CommunityEntity;
 
 @Repository
 public interface CommunityRepository extends JpaRepository<CommunityEntity, Long> {

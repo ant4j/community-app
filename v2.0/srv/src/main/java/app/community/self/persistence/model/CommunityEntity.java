@@ -1,4 +1,4 @@
-package app.community.community.infrastructure.jpa.entity;
+package app.community.self.persistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,23 +12,23 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "COMMUNITY")
+@Table(name = "community")
 public class CommunityEntity {
-	
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
 	private Long id;
-    
-    @Column
+
+	@Column
 	private Long adminId;
-	
-    @Column
+
+	@Column
 	private String code;
-	
-    @Column
+
+	@Column
 	private String name;
-    
-    @Version
-    private Long version;
+
+	@Version
+	private Long version;
 }

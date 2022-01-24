@@ -1,9 +1,9 @@
-package app.community.community.infrastructure.jpa.repository;
+package app.community.self.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import app.community.community.infrastructure.jpa.entity.CommunityAuthenticationEntity;
+import app.community.self.persistence.model.CommunityAuthenticationEntity;
 
 @Repository
 public interface CommunityAuthenticationRepository extends JpaRepository<CommunityAuthenticationEntity, Long> {

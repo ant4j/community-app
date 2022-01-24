@@ -1,14 +1,14 @@
-package app.community.community.infrastructure.jpa.adapter.mapper;
+package app.community.self.handler.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import app.community.community.domain.model.CommunityAuthenticationTO;
-import app.community.community.infrastructure.jpa.entity.CommunityAuthenticationEntity;
+import app.community.self.controller.model.CommunityAuthenticationTO;
+import app.community.self.persistence.model.CommunityAuthenticationEntity;
 
 @Mapper
 public interface CommunityAuthenticationMapper {
 	public static final CommunityAuthenticationMapper INSTANCE = Mappers.getMapper(CommunityAuthenticationMapper.class);
 	public CommunityAuthenticationEntity toEntity(CommunityAuthenticationTO communityAuthenticationTO);
-	public CommunityAuthenticationTO toModel(CommunityAuthenticationEntity communityAuthenticationEntity);
+	public CommunityAuthenticationTO toTO(CommunityAuthenticationEntity communityAuthenticationEntity);
 }
