@@ -1,52 +1,55 @@
 import Cookies from "js-cookie";
-
-const halfDayExpiration = 0.5;
+import config from "../config.json";
 
 const userCommunityId = "user-community-id",
 	userCommunityCode = "user-community-code",
 	userCommunityName = "user-community-name",
 	userUsername = "user-username";
 
-const adminAdminId = "admin-admin-id",
-	adminUsername = "admin-username";
-
 function setupUserCookies(data) {
 	Cookies.set(userCommunityId,
 		data.communityId,
 		{ secure: true },
-		{ expires: halfDayExpiration }
+		{ expires: config.signin_cookies_expiration }
 	);
 	Cookies.set(userCommunityCode,
 		data.communityCode,
 		{ secure: true },
-		{ expires: halfDayExpiration }
+		{ expires: config.signin_cookies_expiration }
 	);
 	Cookies.set(userCommunityName,
 		data.communityName,
 		{ secure: true },
-		{ expires: halfDayExpiration }
+		{ expires: config.signin_cookies_expiration }
 	);
 	Cookies.set(userUsername,
 		data.username,
 		{ secure: true },
-		{ expires: halfDayExpiration }
+		{ expires: config.signin_cookies_expiration }
 	);
 }
 
-function isUserCookiesSetup() {
+function areUserCookiesSetup() {
 	if (Cookies.get(userUsername) !== undefined) {
 		return true;
 	}
 	return false;
 }
 
-function getUserCookies() {
-	return {
-		userCommunityId: Cookies.get(userCommunityId),
-		userCommunityCode: Cookies.get(userCommunityCode),
-		userCommunityName: Cookies.get(userCommunityName),
-		userUsername: Cookies.get(userUsername)
-	};
+function getUserCommunityIdCookie() {
+	return Cookies.get(userCommunityId);
+}
+
+function getUserCommunityCodeCookie() {
+	return Cookies.get(userCommunityCode);
+}
+
+function getUserCommunityNameCookie() {
+	return Cookies.get(userCommunityName);
+}
+
+function getUserUsernameCookie() {
+	return Cookies.get(userUsername);
 }
 
 function removeUserCookies() {
@@ -71,48 +74,13 @@ function removeOldCookies() {
 	}
 }
 
-function setupAdminCookies(data) {
-	Cookies.set(adminAdminId,
-		data.adminId,
-		{ secure: true },
-		{ expires: halfDayExpiration }
-	);
-	Cookies.set(adminUsername,
-		data.username,
-		{ secure: true },
-		{ expires: halfDayExpiration }
-	);
-}
-
-function isAdminCookiesSetup() {
-	if (Cookies.get(adminUsername) !== undefined) {
-		return true;
-	}
-	return false;
-}
-
-function getAdminCookies() {
-	return {
-		adminAdminId: Cookies.get(adminAdminId),
-		adminUsername: Cookies.get(adminUsername),
-	};
-}
-function removeAdminCookies() {
-	Cookies.remove(adminAdminId, { secure: true });
-	Cookies.remove(adminUsername, { secure: true });
-}
-
 export const userCookies = {
 	setupUserCookies,
-	isUserCookiesSetup,
-	getUserCookies,
+	areUserCookiesSetup,
+	getUserCommunityIdCookie,
+	getUserCommunityCodeCookie,
+	getUserCommunityNameCookie,
+	getUserUsernameCookie,
 	removeUserCookies,
 	removeOldCookies
-};
-
-export const adminCookies = {
-	setupAdminCookies,
-	isAdminCookiesSetup,
-	getAdminCookies,
-	removeAdminCookies
 };

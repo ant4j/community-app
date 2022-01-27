@@ -5,5 +5,6 @@ import NotFound from "./routes/NotFound.svelte";
 export default {
 	"/signin/:communityCode": Signin,
 	"/home": Home,
+	"/NotFound": NotFound,
 	"*": NotFound
 };

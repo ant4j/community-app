@@ -3,7 +3,7 @@
 	import { push, replace } from "svelte-spa-router";
 	import httpStatus from "http-status";
 
-	import { userCookies } from "../../handlers/cookies";
+	import { userCookies } from "../../handlers/userCookies";
 	import { endpoint } from "../../handlers/endpoint";
 	import { t } from "../../handlers/i18n";
 	
@@ -28,7 +28,7 @@
 	onMount(() => init());
 
 	function init() {
-		if (!userCookies.isUserCookiesSetup()) {
+		if (!userCookies.areUserCookiesSetup()) {
 			getCommunity();
 		} else {
 			replace("/home");

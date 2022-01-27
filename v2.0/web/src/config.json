@@ -8,5 +8,6 @@
 			}
 		}
 	},
-	"default_locale": "it"
+	"default_locale": "it",
+	"signin_cookies_expiration": 0.5
 }
