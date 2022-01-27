@@ -18,9 +18,6 @@ public class UserCounterEntity {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-	private Long id;
-    
-	@Column
 	private Long counter;
 	
     @Version

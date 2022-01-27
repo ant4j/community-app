@@ -1,5 +1,6 @@
 package app.community.self.controller;
 
+import app.community.self.controller.model.CommunityDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,35 +14,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import app.community.self.controller.model.CommunityAuthenticationTO;
-import app.community.self.controller.model.CommunityCodeTO;
-import app.community.self.controller.model.CommunityTO;
-import app.community.self.controller.model.UsernameTO;
+import app.community.self.controller.model.CommunityAuthenticationDTO;
+import app.community.self.controller.model.CommunityParamDTO;
+import app.community.self.controller.model.UsernameDTO;
 import app.community.self.handler.CommunityHandler;
 
-//TODO sistemare cross origin
+//TODO sistemare cross origin, leggendo da file di properties tramite @Value la property corretta nel rispettivo profilo develop, test o prod
 @CrossOrigin
 @RestController
 @RequestMapping("/api/v1")
 public class CommunityController {
-	private Logger log = LoggerFactory.getLogger(CommunityController.class);
+	private static final Logger LOG = LoggerFactory.getLogger(CommunityController.class);
 
 	@Autowired
 	private CommunityHandler communityHandler;
 
 	@GetMapping("/community/{code}")
-	public @ResponseBody ResponseEntity<CommunityTO> getCommunity(CommunityCodeTO communityCodeTO) {
-		log.info("CommunityController, getCommunity, /community/{}", communityCodeTO.getCode());
-		CommunityTO communityTO = communityHandler.getCommunity(communityCodeTO);
-		return new ResponseEntity<CommunityTO>(communityTO, HttpStatus.OK);
+	public @ResponseBody ResponseEntity<CommunityDTO> getCommunity(CommunityParamDTO communityParamDTO) {
+		LOG.info("CommunityController, getCommunity, /community/{}", communityParamDTO.getCode());
+		CommunityDTO communityDTO = communityHandler.getCommunity(communityParamDTO);
+		return new ResponseEntity<CommunityDTO>(communityDTO, HttpStatus.OK);
 	}
 
 	@PostMapping("/community/authentication")
-	public @ResponseBody ResponseEntity<UsernameTO> authenticate(
-			@RequestBody CommunityAuthenticationTO communityAuthenticationTO) {
-		log.info("CommunityController, authenticate, /community/authentication");
-		UsernameTO usernameTO = communityHandler.authenticate(communityAuthenticationTO);
-		return new ResponseEntity<UsernameTO>(usernameTO, HttpStatus.OK);
+	public @ResponseBody ResponseEntity<UsernameDTO> authenticate(
+			@RequestBody CommunityAuthenticationDTO communityAuthenticationDTO) {
+		LOG.info("CommunityController, authenticate, /community/authentication");
+		UsernameDTO usernameDTO = communityHandler.authenticate(communityAuthenticationDTO);
+		return new ResponseEntity<UsernameDTO>(usernameDTO, HttpStatus.OK);
 	}
 
 }

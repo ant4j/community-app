@@ -1,0 +1,10 @@
+Community
+	GET /api/v1/community/{code}
+	POST /api/v1/community/authentication
+
+Collection
+	GET /api/v1/collections/{communityId}
+
+Content
+    GET /api/v1/contents/{collectionId}
+    GET /api/v1/content/text/{contentId}/{collectionId}

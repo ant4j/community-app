@@ -1,4 +1,4 @@
-package app.community.self.persistence;
+package app.community.self.persistence.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

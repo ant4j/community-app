@@ -1,20 +1,23 @@
 package app.community.self.handler;
 
 import java.util.Optional;
+
+import app.community.self.controller.model.CommunityAuthenticationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import app.community.self.controller.model.CommunityAuthenticationTO;
-import app.community.self.controller.model.CommunityCodeTO;
-import app.community.self.controller.model.CommunityTO;
-import app.community.self.controller.model.UsernameTO;
+import app.community.self.controller.model.CommunityParamDTO;
+import app.community.self.controller.model.CommunityDTO;
+import app.community.self.controller.model.UsernameDTO;
+import app.community.self.handler.exception.NotFoundCommunityException;
+import app.community.self.handler.exception.UnauthorizedCommunityException;
 import app.community.self.handler.mapper.CommunityMapper;
-import app.community.self.persistence.CommunityAuthenticationRepository;
-import app.community.self.persistence.CommunityRepository;
-import app.community.self.persistence.UserCounterRepository;
 import app.community.self.persistence.model.CommunityAuthenticationEntity;
 import app.community.self.persistence.model.CommunityEntity;
+import app.community.self.persistence.repository.CommunityAuthenticationRepository;
+import app.community.self.persistence.repository.CommunityRepository;
+import app.community.self.persistence.repository.UserCounterRepository;
 
 @Service
 public class CommunityHandler {
@@ -28,29 +31,29 @@ public class CommunityHandler {
 	@Autowired
 	private UserCounterRepository userCounterRepository;
 
-	public CommunityTO getCommunity(CommunityCodeTO communityCodeTO) {
-		Optional<CommunityEntity> optionalResult = communityRepository.findByCode(communityCodeTO.getCode());
+	public CommunityDTO getCommunity(CommunityParamDTO communityParamDTO) {
+		Optional<CommunityEntity> optionalResult = communityRepository.findByCode(communityParamDTO.getCode());
 		if (!optionalResult.isPresent()) {
-			throw new RuntimeException("NOT FOUND");// TODO sistemare eccezione
+			throw new NotFoundCommunityException("Community not found");
 		}
 		CommunityMapper mapper = CommunityMapper.INSTANCE;
-		return mapper.toTO(optionalResult.get());
+		return mapper.toDTO(optionalResult.get());
 	}
 
 	@Transactional
-	public UsernameTO authenticate(CommunityAuthenticationTO communityAuthenticationTO) {
+	public UsernameDTO authenticate(CommunityAuthenticationDTO communityAuthenticationDTO) {
 		Optional<CommunityAuthenticationEntity> optionalResult = communityAuthenticationRepository
-				.findById(communityAuthenticationTO.getCommunityId());
+				.findById(communityAuthenticationDTO.getCommunityId());
 		if (!optionalResult.isPresent()) {
-			throw new RuntimeException("NOT FOUND");// TODO sistemare eccezione
+			throw new NotFoundCommunityException("Community authentication not found");
 		}
-		if (communityAuthenticationTO.getWatchword().equals(optionalResult.get().getWatchword())) {
+		if (communityAuthenticationDTO.getWatchword().equals(optionalResult.get().getWatchword())) {
 			Long counter = userCounterRepository.detachCounter();
-			UsernameTO usernameTO = new UsernameTO();
-			usernameTO.setUsername("user".concat(counter.toString()));
-			return usernameTO;
+			UsernameDTO usernameDTO = new UsernameDTO();
+			usernameDTO.setUsername("user".concat(counter.toString()));
+			return usernameDTO;
 		} else {
-			throw new RuntimeException("UNAUTHORIZED");// TODO sistemare eccezione
+			throw new UnauthorizedCommunityException("Unauthorized");
 		}
 	}
 

@@ -1,4 +1,4 @@
-package app.community.self.persistence;
+package app.community.self.persistence.repository;
 
 import java.util.Optional;
 

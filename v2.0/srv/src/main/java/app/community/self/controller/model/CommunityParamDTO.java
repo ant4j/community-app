@@ -3,9 +3,6 @@ package app.community.self.controller.model;
 import lombok.Data;
 
 @Data
-public class CommunityTO {
-	private Long id;
-	private Long adminId;
+public class CommunityParamDTO {
 	private String code;
-	private String name;
 }

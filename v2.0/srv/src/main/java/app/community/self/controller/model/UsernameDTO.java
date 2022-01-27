@@ -3,6 +3,6 @@ package app.community.self.controller.model;
 import lombok.Data;
 
 @Data
-public class UsernameTO {
+public class UsernameDTO {
 	private String username;
 }
