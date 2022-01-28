@@ -1,5 +1,6 @@
-package app.community.self.controller;
+package app.community.content.controller;
 
+import app.community.content.handler.exception.ConflictContentException;
 import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,36 +10,25 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import app.community.self.handler.exception.NotFoundCommunityException;
-import app.community.self.handler.exception.UnauthorizedCommunityException;
-
 import java.util.Date;
 
-@ControllerAdvice(basePackages = "app.community.self.controller")
-public class CommunityExceptionHandler extends ResponseEntityExceptionHandler {
-    private static final Logger LOG = LoggerFactory.getLogger(CommunityExceptionHandler.class);
+@ControllerAdvice(basePackages = "app.community.content.controller")
+public class ContentExceptionHandler extends ResponseEntityExceptionHandler {
+    private static final Logger LOG = LoggerFactory.getLogger(ContentExceptionHandler.class);
 
-    @ExceptionHandler(NotFoundCommunityException.class)
-    public ResponseEntity<ErrorResponse> handleNotFoundException(NotFoundCommunityException e) {
+    @ExceptionHandler(ConflictContentException.class)
+    public ResponseEntity<ErrorResponse> handleConflictContentException(ConflictContentException e) {
         LOG.error(e.getMessage());
         ErrorResponse errorResponse = prepareErrorResponse(
-                HttpStatus.NOT_FOUND.value(),
-                HttpStatus.NOT_FOUND.getReasonPhrase(),
+                HttpStatus.CONFLICT.value(),
+                HttpStatus.CONFLICT.getReasonPhrase(),
                 e.getMessage()
         );
-        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(errorResponse, HttpStatus.CONFLICT);
     }
 
-    @ExceptionHandler(UnauthorizedCommunityException.class)
-    public ResponseEntity<ErrorResponse> handleUnauthorizedException(UnauthorizedCommunityException e) {
-        LOG.error(e.getMessage());
-        ErrorResponse errorResponse = prepareErrorResponse(
-                HttpStatus.UNAUTHORIZED.value(),
-                HttpStatus.UNAUTHORIZED.getReasonPhrase(),
-                e.getMessage()
-        );
-        return new ResponseEntity<>(errorResponse, HttpStatus.UNAUTHORIZED);
-    }
+	// ObjectOptimisticLockingFailureException //TODO da gestire, nel caso si modifica la risorsa (content) gia' esistente in contemporanea (update)
+	// DataIntegrityViolationException //TODO da gestire, nel caso non esiste ancora la risorsa (content) (insert)
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleException(Exception e) {

@@ -20,4 +20,7 @@ public interface ContentRepository extends JpaRepository<ContentEntity, Long> {
     @Query(value = "SELECT c.name FROM collection c WHERE c.id = :collectionId", nativeQuery = true)
     public String getCollectionNameByCollectionId(@Param("collectionId") Long collectionId);
 
+    @Query(value = "SELECT c.type FROM collection c WHERE c.id = :collectionId", nativeQuery = true)
+    public Integer getCollectionTypeByCollectionId(@Param("collectionId") Long collectionId);
+
 }

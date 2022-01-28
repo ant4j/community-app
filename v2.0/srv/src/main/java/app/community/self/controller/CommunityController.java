@@ -1,5 +1,6 @@
 package app.community.self.controller;
 
+import app.community.self.controller.model.CommunityAuthenticationParamDTO;
 import app.community.self.controller.model.CommunityDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import app.community.self.controller.model.CommunityAuthenticationDTO;
 import app.community.self.controller.model.CommunityParamDTO;
 import app.community.self.controller.model.UsernameDTO;
 import app.community.self.handler.CommunityHandler;
@@ -38,9 +38,9 @@ public class CommunityController {
 
 	@PostMapping("/community/authentication")
 	public @ResponseBody ResponseEntity<UsernameDTO> authenticate(
-			@RequestBody CommunityAuthenticationDTO communityAuthenticationDTO) {
+			@RequestBody CommunityAuthenticationParamDTO communityAuthenticationParamDTO) {
 		LOG.info("CommunityController, authenticate, /community/authentication");
-		UsernameDTO usernameDTO = communityHandler.authenticate(communityAuthenticationDTO);
+		UsernameDTO usernameDTO = communityHandler.authenticate(communityAuthenticationParamDTO);
 		return new ResponseEntity<UsernameDTO>(usernameDTO, HttpStatus.OK);
 	}
 

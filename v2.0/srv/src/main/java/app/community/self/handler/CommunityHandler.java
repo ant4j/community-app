@@ -2,7 +2,7 @@ package app.community.self.handler;
 
 import java.util.Optional;
 
-import app.community.self.controller.model.CommunityAuthenticationDTO;
+import app.community.self.controller.model.CommunityAuthenticationParamDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,39 +22,41 @@ import app.community.self.persistence.repository.UserCounterRepository;
 @Service
 public class CommunityHandler {
 
-	@Autowired
-	private CommunityRepository communityRepository;
+    @Autowired
+    private CommunityRepository communityRepository;
 
-	@Autowired
-	private CommunityAuthenticationRepository communityAuthenticationRepository;
+    @Autowired
+    private CommunityAuthenticationRepository communityAuthenticationRepository;
 
-	@Autowired
-	private UserCounterRepository userCounterRepository;
+    @Autowired
+    private UserCounterRepository userCounterRepository;
 
-	public CommunityDTO getCommunity(CommunityParamDTO communityParamDTO) {
-		Optional<CommunityEntity> optionalResult = communityRepository.findByCode(communityParamDTO.getCode());
-		if (!optionalResult.isPresent()) {
-			throw new NotFoundCommunityException("Community not found");
-		}
-		CommunityMapper mapper = CommunityMapper.INSTANCE;
-		return mapper.toDTO(optionalResult.get());
-	}
+    public CommunityDTO getCommunity(CommunityParamDTO communityParamDTO) {
+        Optional<CommunityEntity> optionalResult = communityRepository.findByCode(communityParamDTO.getCode());
+        if (!optionalResult.isPresent()) {
+            //TODO migliorare exception message
+            throw new NotFoundCommunityException("Community not found");
+        }
+        CommunityMapper mapper = CommunityMapper.INSTANCE;
+        return mapper.toDTO(optionalResult.get());
+    }
 
-	@Transactional
-	public UsernameDTO authenticate(CommunityAuthenticationDTO communityAuthenticationDTO) {
-		Optional<CommunityAuthenticationEntity> optionalResult = communityAuthenticationRepository
-				.findById(communityAuthenticationDTO.getCommunityId());
-		if (!optionalResult.isPresent()) {
-			throw new NotFoundCommunityException("Community authentication not found");
-		}
-		if (communityAuthenticationDTO.getWatchword().equals(optionalResult.get().getWatchword())) {
-			Long counter = userCounterRepository.detachCounter();
-			UsernameDTO usernameDTO = new UsernameDTO();
-			usernameDTO.setUsername("user".concat(counter.toString()));
-			return usernameDTO;
-		} else {
-			throw new UnauthorizedCommunityException("Unauthorized");
-		}
-	}
+    @Transactional
+    public UsernameDTO authenticate(CommunityAuthenticationParamDTO communityAuthenticationParamDTO) {
+        Optional<CommunityAuthenticationEntity> optionalResult = communityAuthenticationRepository.findById(communityAuthenticationParamDTO.getCommunityId());
+        if (!optionalResult.isPresent()) {
+            //TODO migliorare exception message
+            throw new NotFoundCommunityException("Community authentication not found");
+        }
+        if (communityAuthenticationParamDTO.getWatchword().equals(optionalResult.get().getWatchword())) {
+            Long counter = userCounterRepository.detachCounter();
+            UsernameDTO usernameDTO = new UsernameDTO();
+            usernameDTO.setUsername("user".concat(counter.toString()));
+            return usernameDTO;
+        } else {
+            //TODO migliorare exception message
+            throw new UnauthorizedCommunityException("Unauthorized");
+        }
+    }
 
 }
