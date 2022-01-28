@@ -1,5 +1,5 @@
-import Signin from "./routes/user/Signin.svelte";
-import Home from "./routes/user/Home.svelte";
+import Signin from "./routes/Signin.svelte";
+import Home from "./routes/Home.svelte";
 import NotFound from "./routes/NotFound.svelte";
 
 export default {

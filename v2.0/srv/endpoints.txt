@@ -8,3 +8,5 @@ Collection
 Content
     GET /api/v1/contents/{collectionId}
     GET /api/v1/content/text/{contentId}/{collectionId}
+	POST /api/v1/content/proposal
+	GET /api/v1/content/proposal/{communityId}

@@ -1,7 +1,7 @@
 <script>
 	import { push } from "svelte-spa-router";
 
-	import { userCookies } from "../../handlers/userCookies";
+	import { userCookies } from "../handlers/userCookies";
 
 	function exit() {
 		let communityCode = userCookies.getUserCommunityCodeCookie();

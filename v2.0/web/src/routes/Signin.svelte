@@ -3,13 +3,13 @@
 	import { push, replace } from "svelte-spa-router";
 	import httpStatus from "http-status";
 
-	import { userCookies } from "../../handlers/userCookies";
-	import { endpoint } from "../../handlers/endpoint";
-	import { t } from "../../handlers/i18n";
+	import { userCookies } from "../handlers/userCookies";
+	import { endpoint } from "../handlers/endpoint";
+	import { t } from "../handlers/i18n";
 	
-	import PasswordField from "../../components/PasswordField.svelte";
-	import ErrorModal from "../../components/ErrorModal.svelte";
-	import LocaleSwitch from "../../components/LocaleSwitch.svelte";
+	import PasswordField from "../components/PasswordField.svelte";
+	import ErrorModal from "../components/ErrorModal.svelte";
+	import LocaleSwitch from "../components/LocaleSwitch.svelte";
 
 	export let params = { communityCode: "" };
 
