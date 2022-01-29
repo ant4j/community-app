@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import config from "../config.json";
+import appconfig from "../appconfig.json";
 
 const adminAdminId = "admin-admin-id",
 	adminUsername = "admin-username";
@@ -8,12 +8,12 @@ function setupAdminCookies(data) {
 	Cookies.set(adminAdminId,
 		data.adminId,
 		{ secure: true },
-		{ expires: config.signin_cookies_expiration }
+		{ expires: appconfig.signin_cookies_expiration }
 	);
 	Cookies.set(adminUsername,
 		data.username,
 		{ secure: true },
-		{ expires: config.signin_cookies_expiration }
+		{ expires: appconfig.signin_cookies_expiration }
 	);
 }
 

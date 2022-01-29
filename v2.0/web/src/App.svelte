@@ -3,9 +3,9 @@
 	import routes from "./routes";
 
 	import { setupI18n } from "./handlers/i18n";
-	import config from "./config.json";
+	import appconfig from "./appconfig.json";
 
-	const localeLoading = setupI18n({ withLocale: config.default_locale });
+	const localeLoading = setupI18n({ withLocale: appconfig.default_locale });
 </script>
 
 <main>

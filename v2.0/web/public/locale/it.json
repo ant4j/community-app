@@ -6,6 +6,9 @@
 	"watchword-label": "Parola d'ordine della Community",
 	"watchword-help-msg": "Serve per entrare nella community.",
 	"access-failed": "Accesso non riuscito",
+	"watchword-wrong": "Ops! Hai sbagliato la parola d'ordine! Riprova.",
 	"watchword-forgot": "Ops! Non hai inserito la parola d'ordine! Riprova.",
+	"internal-error": "Errore interno",
+	"internal-error-msg": "Si è verificato un problema. Riprova.",
 	"okay": "Va bene"
 }

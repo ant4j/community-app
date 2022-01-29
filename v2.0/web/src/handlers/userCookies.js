@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import config from "../config.json";
+import appconfig from "../appconfig.json";
 
 const userCommunityId = "user-community-id",
 	userCommunityCode = "user-community-code",
@@ -10,22 +10,22 @@ function setupUserCookies(data) {
 	Cookies.set(userCommunityId,
 		data.communityId,
 		{ secure: true },
-		{ expires: config.signin_cookies_expiration }
+		{ expires: appconfig.signin_cookies_expiration }
 	);
 	Cookies.set(userCommunityCode,
 		data.communityCode,
 		{ secure: true },
-		{ expires: config.signin_cookies_expiration }
+		{ expires: appconfig.signin_cookies_expiration }
 	);
 	Cookies.set(userCommunityName,
 		data.communityName,
 		{ secure: true },
-		{ expires: config.signin_cookies_expiration }
+		{ expires: appconfig.signin_cookies_expiration }
 	);
 	Cookies.set(userUsername,
 		data.username,
 		{ secure: true },
-		{ expires: config.signin_cookies_expiration }
+		{ expires: appconfig.signin_cookies_expiration }
 	);
 }
 

@@ -6,7 +6,7 @@
 	import { userCookies } from "../handlers/userCookies";
 	import { endpoint } from "../handlers/endpoint";
 	import { t } from "../handlers/i18n";
-	
+
 	import PasswordField from "../components/PasswordField.svelte";
 	import ErrorModal from "../components/ErrorModal.svelte";
 	import LocaleSwitch from "../components/LocaleSwitch.svelte";
@@ -43,9 +43,9 @@
 			model.communityName = jsonRes.name;
 			view.display = true;
 		} else if (res.status == httpStatus.NOT_FOUND) {
-			replace("/");
+			replace("/not-found");
 		} else {
-			replace("/");
+			replace("/not-found");
 		}
 	}
 
@@ -61,7 +61,7 @@
 		let res = await fetch(endpoint.buildAuthenticationPost(), {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: jsonReq,
+			body: JSON.stringify(jsonReq),
 		});
 		if (res.status == httpStatus.OK) {
 			let jsonRes = await res.json();
@@ -75,13 +75,13 @@
 			push("/home");
 		} else if (res.status == httpStatus.UNAUTHORIZED) {
 			view.errorModal.show(
-				$t("access-failed"),
-				"Ops! Hai sbagliato la parola d'ordine! Riprova."
+				$t("access-failed"), 
+				$t("watchword-wrong")
 			);
 		} else {
 			view.errorModal.show(
-				"Errore interno",
-				"Si è verificato un problema. Riprova."
+				$t("internal-error"), 
+				$t("internal-error-msg")
 			);
 		}
 	}
