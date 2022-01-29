@@ -87,8 +87,9 @@ public class ContentHandler {
             Integer collectionType = contentRepository.getCollectionTypeByCollectionId(contentEntity.getCollectionId());
             ProposalMapper mapper = ProposalMapper.INSTANCE;
             ProposalDTO proposalDTO = mapper.toDTO(proposalEntity);
-            proposalDTO.setContentTitle(contentEntity.getTitle());
+			proposalDTO.setCollectionId(contentEntity.getCollectionId());
             proposalDTO.setCollectionType(collectionType);
+            proposalDTO.setContentTitle(contentEntity.getTitle());
             proposalDTO.setIsPresent(true);
             return proposalDTO;
         }

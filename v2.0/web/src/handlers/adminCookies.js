@@ -8,12 +8,12 @@ function setupAdminCookies(data) {
 	Cookies.set(adminAdminId,
 		data.adminId,
 		{ secure: true },
-		{ expires: appconfig.signin_cookies_expiration }
+		{ expires: appconfig.signinCookiesExpiration }
 	);
 	Cookies.set(adminUsername,
 		data.username,
 		{ secure: true },
-		{ expires: appconfig.signin_cookies_expiration }
+		{ expires: appconfig.signinCookiesExpiration }
 	);
 }
 

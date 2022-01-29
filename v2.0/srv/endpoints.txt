@@ -1,12 +1,12 @@
 Community
-	GET /api/v1/community/{code}
+	GET  /api/v1/community/{code}
 	POST /api/v1/community/authentication
-
+		 
 Collection
-	GET /api/v1/collections/{communityId}
-
-Content
-    GET /api/v1/contents/{collectionId}
-    GET /api/v1/content/text/{contentId}/{collectionId}
+	GET  /api/v1/collections/{communityId}
+		 
+Content  
+    GET  /api/v1/contents/{collectionId}
+    GET  /api/v1/content/text/{contentId}/{collectionId}
 	POST /api/v1/content/proposal
-	GET /api/v1/content/proposal/{communityId}
+	GET  /api/v1/content/proposal/{communityId}

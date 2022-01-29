@@ -2,10 +2,10 @@
 	import Router from "svelte-spa-router";
 	import routes from "./routes";
 
-	import { setupI18n } from "./handlers/i18n";
 	import appconfig from "./appconfig.json";
+	import { setupI18n } from "./handlers/i18n";
 
-	const localeLoading = setupI18n({ withLocale: appconfig.default_locale });
+	const localeLoading = setupI18n({ withLocale: appconfig.defaultLocale });
 </script>
 
 <main>

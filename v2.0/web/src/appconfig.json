@@ -1,13 +1,29 @@
 {
+
 	"endpoint": {
-		"cmm_srv": {
+		"cmmSrv": {
 			"baseUrl": "http://localhost:8090",
 			"path": {
-				"community": "/api/v1/community/",
-				"authentication": "/api/v1/community/authentication"
+				"community": "/api/v1/community",
+				"authentication": "/api/v1/community/authentication",
+				"proposal": "/api/v1/content/proposal",
+				"collections": "/api/v1/collections"
 			}
 		}
 	},
-	"default_locale": "it",
-	"signin_cookies_expiration": 0.5
+
+	"collectionType": {
+		"lyrics": 0,
+		"reading": 1
+	},
+
+	"contentContext": {
+		"viewing": 0,
+		"participation": 1
+	},
+
+	"signinCookiesExpiration": 0.5,
+
+	"defaultLocale": "it"
+	
 }

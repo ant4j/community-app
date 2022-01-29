@@ -10,22 +10,22 @@ function setupUserCookies(data) {
 	Cookies.set(userCommunityId,
 		data.communityId,
 		{ secure: true },
-		{ expires: appconfig.signin_cookies_expiration }
+		{ expires: appconfig.signinCookiesExpiration }
 	);
 	Cookies.set(userCommunityCode,
 		data.communityCode,
 		{ secure: true },
-		{ expires: appconfig.signin_cookies_expiration }
+		{ expires: appconfig.signinCookiesExpiration }
 	);
 	Cookies.set(userCommunityName,
 		data.communityName,
 		{ secure: true },
-		{ expires: appconfig.signin_cookies_expiration }
+		{ expires: appconfig.signinCookiesExpiration }
 	);
 	Cookies.set(userUsername,
 		data.username,
 		{ secure: true },
-		{ expires: appconfig.signin_cookies_expiration }
+		{ expires: appconfig.signinCookiesExpiration }
 	);
 }
 

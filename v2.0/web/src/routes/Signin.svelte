@@ -3,8 +3,8 @@
 	import { push, replace } from "svelte-spa-router";
 	import httpStatus from "http-status";
 
+	import appconfig from "../appconfig.json";
 	import { userCookies } from "../handlers/userCookies";
-	import { endpoint } from "../handlers/endpoint";
 	import { t } from "../handlers/i18n";
 
 	import PasswordField from "../components/PasswordField.svelte";
@@ -36,7 +36,10 @@
 	}
 
 	async function getCommunity() {
-		let res = await fetch(endpoint.buildCommunityGet(model.communityCode));
+		let baseUrl = appconfig.endpoint.cmmSrv.baseUrl;
+		let path = appconfig.endpoint.cmmSrv.path.community;
+		let endpoint = `${baseUrl}${path}/${model.communityCode}`;
+		let res = await fetch(endpoint);
 		if (res.status == httpStatus.OK) {
 			let jsonRes = await res.json();
 			model.communityId = jsonRes.id;
@@ -58,7 +61,10 @@
 			communityId: model.communityId,
 			watchword: model.watchword,
 		};
-		let res = await fetch(endpoint.buildAuthenticationPost(), {
+		let baseUrl = appconfig.endpoint.cmmSrv.baseUrl;
+		let path = appconfig.endpoint.cmmSrv.path.authentication;
+		let endpoint = `${baseUrl}${path}`;
+		let res = await fetch(endpoint, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(jsonReq),
@@ -74,13 +80,10 @@
 			});
 			push("/home");
 		} else if (res.status == httpStatus.UNAUTHORIZED) {
-			view.errorModal.show(
-				$t("access-failed"), 
-				$t("watchword-wrong")
-			);
+			view.errorModal.show($t("access-failed"), $t("watchword-wrong"));
 		} else {
 			view.errorModal.show(
-				$t("internal-error"), 
+				$t("internal-error"),
 				$t("internal-error-msg")
 			);
 		}

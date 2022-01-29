@@ -1,7 +1,55 @@
 <script>
-	import { push } from "svelte-spa-router";
+	import { onMount } from "svelte";
+	import { push, replace } from "svelte-spa-router";
+	import httpStatus from "http-status";
 
+	import appconfig from "../appconfig.json";
 	import { userCookies } from "../handlers/userCookies";
+	import { timestampBuilder } from "../handlers/timestampBuilder";
+
+	import CollectionList from "../components/CollectionList.svelte";
+
+	let view = {
+		display: false,
+	};
+
+	let model = {
+		proposal: { isPresent: false },
+	};
+
+	onMount(() => init());
+
+	function init() {
+		if (userCookies.areUserCookiesSetup()) {
+			getProposal();
+		} else {
+			//TODO da rivedere
+			replace("/");
+		}
+	}
+
+	async function getProposal() {
+		let baseUrl = appconfig.endpoint.cmmSrv.baseUrl;
+		let path = appconfig.endpoint.cmmSrv.path.proposal;
+		let endpoint = `${baseUrl}${path}/${userCookies.getUserCommunityIdCookie()}`;
+		let res = await fetch(endpoint);
+		if (res.status == httpStatus.OK) {
+			let jsonRes = await res.json();
+			model.proposal = jsonRes;
+		}
+		view.display = true;
+	}
+
+	function isLyricsCollectionType() {
+		return model.proposal.collectionType == appconfig.collectionType.lyrics;
+	}
+
+	function participate() {
+		let context = appconfig.contentContext.participation,
+			collectionId = model.proposal.collectionId,
+			contentId = model.proposal.contentId;
+		push(`/content/${context}/${collectionId}/${contentId}`);
+	}
 
 	function exit() {
 		let communityCode = userCookies.getUserCommunityCodeCookie();
@@ -10,12 +58,118 @@
 	}
 </script>
 
-<div class="mb-3">
-	<div class="btn-group" role="group">
-		<button
-			type="button"
-			class="btn btn-outline-primary"
-			on:click={() => exit()}>Esci</button
-		>
+{#if view.display}
+	<div class="mb-3">
+		<h5>
+			<i class="bi bi-house" /> Home &middot;
+			<span class="fw-bolder">
+				{userCookies.getUserCommunityNameCookie()}
+			</span>
+		</h5>
 	</div>
-</div>
+
+	<div class="mb-3">
+		<div>
+			<i class="bi bi-emoji-sunglasses" />
+			Benvenuta/o in questa community
+		</div>
+		<div>
+			<i class="bi bi-person-circle" /> Il tuo nome utente è
+			<span class="fw-bolder">
+				{userCookies.getUserUsernameCookie()}
+			</span>
+		</div>
+	</div>
+
+	<div class="mb-3">
+		<div class="card">
+			{#if model.proposal.isPresent}
+				<div class="card-header">
+					Proposta del momento
+					<div class="text-muted text-small">
+						Ultimo aggiornamento: {timestampBuilder.buildTimestamp(
+							model.proposal.timestamp
+						)}
+					</div>
+				</div>
+				<div class="card-body">
+					<p class="card-title">
+						<span class="fw-bolder">{model.proposal.username}</span>
+						propone:
+					</p>
+					<p class="card-text text-center fs-5">
+						<i class="bi bi-megaphone" />
+						&laquo;
+						{#if isLyricsCollectionType()}
+							Cantiamo
+						{:else}
+							Leggiamo
+						{/if}
+						<span class="fst-italic">
+							{model.proposal.contentTitle}
+						</span> ! &raquo;
+					</p>
+					<div class="d-grid gap-2">
+						<button
+							class="btn btn-primary"
+							type="button"
+							on:click={() => participate()}
+						>
+							Partecipa
+							<i class="bi bi-emoji-laughing" />
+						</button>
+					</div>
+				</div>
+			{:else}
+				<div class="card-header">
+					Proposta del momento
+					<div class="text-muted text-small">&nbsp;</div>
+				</div>
+				<div class="card-body">
+					<p class="card-title text-center">Nessuna proposta</p>
+				</div>
+			{/if}
+		</div>
+	</div>
+
+	<div class="mb-3">
+		<div class="d-grid gap-2">
+			<button
+				id="retrieve-latest-proposal-btn"
+				class="btn btn-primary"
+				type="button"
+				on:click={() => getProposal()}
+			>
+				Recupera proposta più recente <i class="bi bi-download" />
+			</button>
+		</div>
+	</div>
+
+	<hr />
+
+	<div class="mb-3">
+		<CollectionList
+			route="/collection/"
+			communityId={userCookies.getUserCommunityIdCookie()}
+		/>
+	</div>
+
+	<div class="mb-3">
+		<div class="btn-group" role="group">
+			<button
+				type="button"
+				class="btn btn-outline-primary"
+				on:click={() => exit()}
+			>
+				Esci
+			</button>
+		</div>
+	</div>
+{/if}
+
+<style>
+	#retrieve-latest-proposal-btn {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+</style>
