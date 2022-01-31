@@ -28,8 +28,9 @@ public class ProposalEntity {
     @Column
     private String username;
 
-    @Column
-    private Date timestamp;
+	@Column(columnDefinition="DATETIME")
+	@Temporal(TemporalType.TIMESTAMP)
+    private Date proposedOn;
 
     @Version
     private Long version;

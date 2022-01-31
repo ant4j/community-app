@@ -3,9 +3,9 @@
 	import routes from "./routes";
 
 	import appconfig from "./appconfig.json";
-	import { setupI18n } from "./handlers/i18n";
+	import { i18n } from "./handlers/i18n";
 
-	const localeLoading = setupI18n({ withLocale: appconfig.defaultLocale });
+	const i18nSetup = i18n.setup({ withLocale: appconfig.defaultLocale });
 </script>
 
 <main>
@@ -14,11 +14,11 @@
 			<div class="w-75 p-1 app-logo text-center">
 				<h1 class="fw-bolder">CommunityApp</h1>
 				<div id="slogan" class="text-small">
-					Psalm 133 &middot; It&rsquo;s Good Together!
+					It&rsquo;s Good Together
 				</div>
 			</div>
 		</div>
-		{#await localeLoading}
+		{#await i18nSetup}
 			<div class="d-flex justify-content-center">
 				<div class="spinner-border text-primary" role="status">
 					<span class="visually-hidden">Loading...</span>

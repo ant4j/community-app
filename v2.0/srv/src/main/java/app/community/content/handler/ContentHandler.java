@@ -64,13 +64,13 @@ public class ContentHandler {
             } else {
                 proposalEntity.setContentId(proposalParamDTO.getContentId());
                 proposalEntity.setUsername(proposalParamDTO.getUsername());
-                proposalEntity.setTimestamp(new Date());
+                proposalEntity.setProposedOn(new Date());
                 proposalRepository.save(proposalEntity);
             }
         } else {
             ProposalMapper mapper = ProposalMapper.INSTANCE;
             ProposalEntity proposalEntity = mapper.toEntity(proposalParamDTO);
-            proposalEntity.setTimestamp(new Date());
+            proposalEntity.setProposedOn(new Date());
             proposalRepository.save(proposalEntity);
         }
     }

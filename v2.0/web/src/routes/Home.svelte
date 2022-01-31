@@ -2,10 +2,10 @@
 	import { onMount } from "svelte";
 	import { push, replace } from "svelte-spa-router";
 	import httpStatus from "http-status";
+	import moment from "moment";
 
 	import appconfig from "../appconfig.json";
 	import { userCookies } from "../handlers/userCookies";
-	import { timestampBuilder } from "../handlers/timestampBuilder";
 
 	import CollectionList from "../components/CollectionList.svelte";
 
@@ -40,7 +40,7 @@
 		view.display = true;
 	}
 
-	function isLyricsCollectionType() {
+	function isLyrics() {
 		return model.proposal.collectionType == appconfig.collectionType.lyrics;
 	}
 
@@ -87,9 +87,11 @@
 				<div class="card-header">
 					Proposta del momento
 					<div class="text-muted text-small">
-						Ultimo aggiornamento: {timestampBuilder.buildTimestamp(
-							model.proposal.timestamp
-						)}
+						Ultimo aggiornamento:
+						{moment(
+							model.proposal.proposedOn,
+							"YYYY-MM-DDTHH:mm:ss.SSSZ"
+						).format("LLL")}
 					</div>
 				</div>
 				<div class="card-body">
@@ -100,7 +102,7 @@
 					<p class="card-text text-center fs-5">
 						<i class="bi bi-megaphone" />
 						&laquo;
-						{#if isLyricsCollectionType()}
+						{#if isLyrics()}
 							Cantiamo
 						{:else}
 							Leggiamo

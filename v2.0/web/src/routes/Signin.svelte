@@ -5,7 +5,7 @@
 
 	import appconfig from "../appconfig.json";
 	import { userCookies } from "../handlers/userCookies";
-	import { t } from "../handlers/i18n";
+	import { t } from "svelte-i18n";
 
 	import PasswordField from "../components/PasswordField.svelte";
 	import ErrorModal from "../components/ErrorModal.svelte";
@@ -126,13 +126,6 @@
 				{$t("enter")} <i class="bi bi-door-open" />
 			</button>
 		</div>
-	</div>
-
-	<div class="mb-3 text-center text-small">
-		<a class="text-decoration-none text-muted" href="#/bedrock">
-			{$t("community-app-bedrock")}
-		</a>
-		<!-- &#x1F388; -->
 	</div>
 
 	<div class="mb-3 text-center text-small">

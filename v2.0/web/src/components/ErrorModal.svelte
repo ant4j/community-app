@@ -1,5 +1,5 @@
 <script>
-	import { t } from "../handlers/i18n";
+	import { t } from "svelte-i18n";
 
 	let title = "",
 		message = "";

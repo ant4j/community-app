@@ -2,7 +2,6 @@
 	"access": "Access",
 	"watchword": "watchword",
 	"enter": "Enter",
-	"community-app-bedrock": "CommunityApp bedrock",
 	"watchword-label": "Community watchword",
 	"watchword-help-msg": "It's needed to enter the community.",
 	"access-failed": "Access failed",

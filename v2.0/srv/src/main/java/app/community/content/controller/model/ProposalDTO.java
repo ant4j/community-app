@@ -13,6 +13,6 @@ public class ProposalDTO {
     private Long contentId;
     private String contentTitle;
     private String username;
-    private Date timestamp;
+    private Date proposedOn;
     private Boolean isPresent = false;
 }
