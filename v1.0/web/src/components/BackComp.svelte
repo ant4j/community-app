@@ -18,8 +18,10 @@
 		type="button"
 		class="btn btn-link text-decoration-none"
 		on:click={() => goBack()}
-		><i class="bi bi-arrow-left-short" /> indietro</button
 	>
+		<i class="bi bi-arrow-left-short" /> indietro
+	</button>
+
 	{#if showHomeBtn}
 		<button
 			type="button"

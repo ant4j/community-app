@@ -74,6 +74,8 @@ function removeOldCookies() {
 	}
 }
 
+//TODO provare a fare export default userCookies = {
+
 export const userCookies = {
 	setupUserCookies,
 	areUserCookiesSetup,

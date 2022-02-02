@@ -7,7 +7,9 @@
 				"community": "/api/v1/community",
 				"authentication": "/api/v1/community/authentication",
 				"proposal": "/api/v1/content/proposal",
-				"collections": "/api/v1/collections"
+				"collections": "/api/v1/collections",
+				"contents": "/api/v1/contents",
+				"contentText": "/api/v1/content/text"
 			}
 		}
 	},

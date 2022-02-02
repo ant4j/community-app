@@ -44,7 +44,7 @@ public class ContentController {
         //TODO migliorare log
         LOG.info("proposeContent");
         contentHandler.proposeContent(proposalParamDTO);
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        return new ResponseEntity<Void>(HttpStatus.CREATED);
     }
 
     //TODO fare un ParamDTO dedicato

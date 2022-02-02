@@ -59,7 +59,7 @@
 
 {#if view}
 	{#if params.context == "1"}
-		<div class="mb-3 text-center">
+		<div class="mb-3 text-start">
 			<BackComp />
 		</div>
 		<div class="mb-3 text-center">
@@ -82,7 +82,7 @@
 			</div>
 		</div>
 	{:else}
-		<div class="mb-3 text-center">
+		<div class="mb-3 text-start">
 			<BackComp showHomeBtn="true" />
 		</div>
 	{/if}

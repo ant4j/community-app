@@ -2,7 +2,7 @@
 	import BackComp from "../components/BackComp.svelte";
 </script>
 
-<div class="mb-3 text-center">
+<div class="mb-3 text-start">
 	<BackComp />
 </div>
 

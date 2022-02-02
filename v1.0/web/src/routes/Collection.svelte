@@ -21,7 +21,7 @@
 </script>
 
 {#if view}
-	<div class="mb-3 text-center">
+	<div class="mb-3 text-start">
 		<BackComp />
 	</div>
 

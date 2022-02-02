@@ -1,17 +1,23 @@
 <script>
 	import { onMount } from "svelte";
-	import BackComp from "../components/BackComp.svelte";
 	import { push, replace } from "svelte-spa-router";
-	import { isSignedIn } from "../utils";
-	import confetti from "canvas-confetti";
 
-	let view = false;
+	import { userCookies } from "../handlers/userCookies";
+
+	import confetti from "canvas-confetti";
+	
+	import BackButton from "../components/BackButton.svelte";
+	import HomeButton from "../components/HomeButton.svelte";
+
+	let view = {
+		display: false,
+	};
 
 	onMount(() => init());
 
 	function init() {
-		if (isSignedIn()) {
-			view = true;
+		if (userCookies.areUserCookiesSetup()) {
+			view.display = true;
 			confetti({
 				particleCount: 100,
 				spread: 50,
@@ -23,9 +29,10 @@
 	}
 </script>
 
-{#if view}
+{#if view.display}
 	<div class="mb-3 text-start">
-		<BackComp showHomeBtn="true" />
+		<BackButton />
+		<HomeButton />
 	</div>
 
 	<div class="mb-3 text-center">
@@ -46,8 +53,9 @@
 				class="btn btn-primary"
 				type="button"
 				on:click={() => push("/home")}
-				>Grazie <i class="bi bi-emoji-smile" /></button
 			>
+				Grazie <i class="bi bi-emoji-smile" />
+			</button>
 		</div>
 	</div>
 {/if}
