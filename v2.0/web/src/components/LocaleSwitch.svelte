@@ -1,5 +1,5 @@
 <script>
-	import { i18n } from "../handlers/i18n";
+	import i18n from "../handlers/i18n";
 </script>
 
 <button

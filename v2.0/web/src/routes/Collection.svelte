@@ -2,7 +2,7 @@
 	import { onMount } from "svelte";
 	import { replace } from "svelte-spa-router";
 
-	import { userCookies } from "../handlers/userCookies";
+	import appCookies from "../handlers/appCookies";
 
 	import BackButton from "../components/BackButton.svelte";
 	import ContentList from "../components/ContentList.svelte";
@@ -16,7 +16,7 @@
 	onMount(() => init());
 
 	function init() {
-		if (userCookies.areUserCookiesSetup()) {
+		if (appCookies.areCookiesSetup()) {
 			view.display = true;
 		} else {
 			replace("/");

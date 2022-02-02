@@ -2,7 +2,7 @@
 	import { onMount } from "svelte";
 	import { push, replace } from "svelte-spa-router";
 
-	import { userCookies } from "../handlers/userCookies";
+	import appCookies from "../handlers/appCookies";
 
 	import confetti from "canvas-confetti";
 	
@@ -16,7 +16,7 @@
 	onMount(() => init());
 
 	function init() {
-		if (userCookies.areUserCookiesSetup()) {
+		if (appCookies.areCookiesSetup()) {
 			view.display = true;
 			confetti({
 				particleCount: 100,

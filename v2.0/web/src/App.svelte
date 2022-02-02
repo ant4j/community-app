@@ -3,7 +3,7 @@
 	import routes from "./routes";
 
 	import appconfig from "./appconfig.json";
-	import { i18n } from "./handlers/i18n";
+	import i18n from "./handlers/i18n";
 
 	const i18nSetup = i18n.setup({ withLocale: appconfig.defaultLocale });
 </script>

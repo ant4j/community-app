@@ -37,10 +37,12 @@ function removeAdminCookies() {
 	Cookies.remove(adminUsername, { secure: true });
 }
 
-export const adminCookies = {
+const adminCookies = {
 	setupAdminCookies,
 	areAdminCookiesSetup,
 	getAdminAdminIdCookie,
 	getAdminUsernameCookie,
 	removeAdminCookies
 };
+
+export default adminCookies;

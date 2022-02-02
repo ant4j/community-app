@@ -5,7 +5,7 @@
 	import moment from "moment";
 
 	import appconfig from "../appconfig.json";
-	import { userCookies } from "../handlers/userCookies";
+	import appCookies from "../handlers/appCookies";
 
 	import CollectionList from "../components/CollectionList.svelte";
 
@@ -20,7 +20,7 @@
 	onMount(() => init());
 
 	function init() {
-		if (userCookies.areUserCookiesSetup()) {
+		if (appCookies.areCookiesSetup()) {
 			getProposal();
 		} else {
 			//TODO da rivedere
@@ -31,7 +31,7 @@
 	async function getProposal() {
 		let baseUrl = appconfig.endpoint.cmmSrv.baseUrl;
 		let path = appconfig.endpoint.cmmSrv.path.proposal;
-		let endpoint = `${baseUrl}${path}/${userCookies.getUserCommunityIdCookie()}`;
+		let endpoint = `${baseUrl}${path}/${appCookies.getCommunityIdCookie()}`;
 		let res = await fetch(endpoint);
 		if (res.status == httpStatus.OK) {
 			let jsonRes = await res.json();
@@ -52,8 +52,8 @@
 	}
 
 	function exit() {
-		let communityCode = userCookies.getUserCommunityCodeCookie();
-		userCookies.removeUserCookies();
+		let communityCode = appCookies.getCommunityCodeCookie();
+		appCookies.removeCookies();
 		push(`/signin/${communityCode}`);
 	}
 </script>
@@ -63,7 +63,7 @@
 		<h5>
 			<i class="bi bi-house" /> Home &middot;
 			<span class="fw-bolder">
-				{userCookies.getUserCommunityNameCookie()}
+				{appCookies.getCommunityNameCookie()}
 			</span>
 		</h5>
 	</div>
@@ -76,7 +76,7 @@
 		<div>
 			<i class="bi bi-person-circle" /> Il tuo nome utente è
 			<span class="fw-bolder">
-				{userCookies.getUserUsernameCookie()}
+				{appCookies.getUsernameCookie()}
 			</span>
 		</div>
 	</div>
@@ -152,7 +152,7 @@
 	<div class="mb-3">
 		<CollectionList
 			route="/collection/"
-			communityId={userCookies.getUserCommunityIdCookie()}
+			communityId={appCookies.getCommunityIdCookie()}
 		/>
 	</div>
 

@@ -4,7 +4,7 @@
 	import httpStatus from "http-status";
 
 	import appconfig from "../appconfig.json";
-	import { userCookies } from "../handlers/userCookies";
+	import appCookies from "../handlers/appCookies";
 	import { t } from "svelte-i18n";
 
 	import PasswordField from "../components/PasswordField.svelte";
@@ -28,7 +28,7 @@
 	onMount(() => init());
 
 	function init() {
-		if (!userCookies.areUserCookiesSetup()) {
+		if (!appCookies.areCookiesSetup()) {
 			getCommunity();
 		} else {
 			replace("/home");
@@ -71,8 +71,8 @@
 		});
 		if (res.status == httpStatus.OK) {
 			let jsonRes = await res.json();
-			userCookies.removeOldCookies();
-			userCookies.setupUserCookies({
+			appCookies.removeOldCookies();
+			appCookies.setupCookies({
 				communityId: model.communityId,
 				communityCode: model.communityCode,
 				communityName: model.communityName,
@@ -128,9 +128,9 @@
 		</div>
 	</div>
 
-	<div class="mb-3 text-center text-small">
+	<!-- <div class="mb-3 text-center text-small">
 		<LocaleSwitch />
-	</div>
+	</div> -->
 
 	<div class="mb-3">
 		<ErrorModal bind:this={view.errorModal} />

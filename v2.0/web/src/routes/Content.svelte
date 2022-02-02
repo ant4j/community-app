@@ -4,7 +4,7 @@
 	import httpStatus from "http-status";
 
 	import appconfig from "../appconfig.json";
-	import { userCookies } from "../handlers/userCookies";
+	import appCookies from "../handlers/appCookies";
 
 	import BackButton from "../components/BackButton.svelte";
 	import HomeButton from "../components/HomeButton.svelte";
@@ -23,7 +23,7 @@
 	onMount(() => init());
 
 	function init() {
-		if (userCookies.areUserCookiesSetup()) {
+		if (appCookies.areCookiesSetup()) {
 			getContent();
 			view.display = true;
 		} else {
@@ -44,9 +44,9 @@
 
 	async function proposeContent() {
 		let jsonReq = {
-			communityId: userCookies.getUserCommunityIdCookie(),
+			communityId: appCookies.getCommunityIdCookie(),
 			contentId: params.contentId,
-			username: userCookies.getUserUsernameCookie(),
+			username: appCookies.getUsernameCookie(),
 		};
 		let baseUrl = appconfig.endpoint.cmmSrv.baseUrl;
 		let path = appconfig.endpoint.cmmSrv.path.proposal;

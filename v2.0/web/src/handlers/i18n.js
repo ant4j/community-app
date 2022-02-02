@@ -22,4 +22,6 @@ async function setup({ withLocale: _locale } = { withLocale: "en" }) {
 	moment.locale(appconfig.defaultLocale);
 }
 
-export const i18n = { setup };
+const i18n = { setup };
+
+export default i18n;
