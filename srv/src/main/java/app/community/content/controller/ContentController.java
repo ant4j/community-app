@@ -23,36 +23,31 @@ public class ContentController {
     @GetMapping("/contents/{collectionId}")
     public @ResponseBody
     ResponseEntity<ContentListDTO> getContents(ContentParamDTO contentParamDTO) {
-        //TODO migliorare log
-        LOG.info("getContents");
+    	LOG.info("ContentController, getContents, /contents/{}", contentParamDTO.getCollectionId());
         ContentListDTO contentListDTO = contentHandler.getContents(contentParamDTO);
         return new ResponseEntity<ContentListDTO>(contentListDTO, HttpStatus.OK);
     }
 
-    @GetMapping("/content/text/{contentId}/{collectionId}")
+    @GetMapping("/content/text/{contentId}")
     public @ResponseBody
     ResponseEntity<ContentTextDTO> getContentText(ContentTextParamDTO contentTextParamDTO) {
-        //TODO migliorare log
-        LOG.info("getContent");
+        LOG.info("ContentController, getContentText, /content/text/{}", contentTextParamDTO.getContentId());
         ContentTextDTO contentTextDTO = contentHandler.getContentText(contentTextParamDTO);
         return new ResponseEntity<ContentTextDTO>(contentTextDTO, HttpStatus.OK);
     }
 
     @PostMapping("/content/proposal")
     public @ResponseBody
-    ResponseEntity<Void> proposeContent(@RequestBody ProposalParamDTO proposalParamDTO) {
-        //TODO migliorare log
-        LOG.info("proposeContent");
-        contentHandler.proposeContent(proposalParamDTO);
+    ResponseEntity<Void> proposeContent(@RequestBody ProposalBodyDTO proposalBodyDTO) {
+        LOG.info("ContentController, proposeContent, /content/proposal");
+        contentHandler.proposeContent(proposalBodyDTO);
         return new ResponseEntity<Void>(HttpStatus.CREATED);
     }
 
-    //TODO fare un ParamDTO dedicato
     @GetMapping("/content/proposal/{communityId}")
     public @ResponseBody
     ResponseEntity<ProposalDTO> getProposal(ProposalParamDTO proposalParamDTO) {
-        //TODO migliorare log
-        LOG.info("getProposal");
+        LOG.info("ContentController, getProposal, /content/proposal/{}", proposalParamDTO.getCommunityId());
         ProposalDTO proposalDTO = contentHandler.getProposal(proposalParamDTO);
         return new ResponseEntity<ProposalDTO>(proposalDTO, HttpStatus.OK);
     }

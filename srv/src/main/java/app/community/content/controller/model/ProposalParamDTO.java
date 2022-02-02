@@ -4,7 +4,5 @@ import lombok.Data;
 
 @Data
 public class ProposalParamDTO {
-    private Long communityId;
-    private Long contentId;
-    private String username;
+	private Long communityId;
 }

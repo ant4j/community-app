@@ -55,35 +55,32 @@ public class ContentHandler {
     }
 
     @Transactional
-    public void proposeContent(ProposalParamDTO proposalParamDTO) {
-        Optional<ProposalEntity> optionalResult = proposalRepository.findByCommunityId(proposalParamDTO.getCommunityId());
+    public void proposeContent(ProposalBodyDTO proposalBodyDTO) {
+        Optional<ProposalEntity> optionalResult = proposalRepository.findByCommunityId(proposalBodyDTO.getCommunityId());
         if (optionalResult.isPresent()) {
             ProposalEntity proposalEntity = optionalResult.get();
-            if (proposalParamDTO.getContentId().equals(proposalEntity.getContentId())) {
+            if (proposalBodyDTO.getContentId().equals(proposalEntity.getContentId())) {
                 throw new ConflictContentException("Content already proposed");
             } else {
-                proposalEntity.setContentId(proposalParamDTO.getContentId());
-                proposalEntity.setUsername(proposalParamDTO.getUsername());
+                proposalEntity.setContentId(proposalBodyDTO.getContentId());
+                proposalEntity.setUsername(proposalBodyDTO.getUsername());
                 proposalEntity.setProposedOn(new Date());
                 proposalRepository.save(proposalEntity);
             }
         } else {
             ProposalMapper mapper = ProposalMapper.INSTANCE;
-            ProposalEntity proposalEntity = mapper.toEntity(proposalParamDTO);
+            ProposalEntity proposalEntity = mapper.toEntity(proposalBodyDTO);
             proposalEntity.setProposedOn(new Date());
             proposalRepository.save(proposalEntity);
         }
     }
 
     public ProposalDTO getProposal(ProposalParamDTO proposalParamDTO) {
-        //recuperare proposal
         Optional<ProposalEntity> optionalResult = proposalRepository.findByCommunityId(proposalParamDTO.getCommunityId());
         if (optionalResult.isPresent()) {
             ProposalEntity proposalEntity = optionalResult.get();
-            //recuperare content
             //TODO fare il controllo if(optional.isPresent())
             ContentEntity contentEntity = contentRepository.findById(proposalEntity.getContentId()).get();
-            //recuperare collection
             Integer collectionType = contentRepository.getCollectionTypeByCollectionId(contentEntity.getCollectionId());
             ProposalMapper mapper = ProposalMapper.INSTANCE;
             ProposalDTO proposalDTO = mapper.toDTO(proposalEntity);

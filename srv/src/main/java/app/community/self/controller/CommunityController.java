@@ -1,6 +1,6 @@
 package app.community.self.controller;
 
-import app.community.self.controller.model.CommunityAuthenticationParamDTO;
+import app.community.self.controller.model.CommunityAuthenticationBodyDTO;
 import app.community.self.controller.model.CommunityDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,9 +38,9 @@ public class CommunityController {
 
 	@PostMapping("/community/authentication")
 	public @ResponseBody ResponseEntity<UsernameDTO> authenticate(
-			@RequestBody CommunityAuthenticationParamDTO communityAuthenticationParamDTO) {
+			@RequestBody CommunityAuthenticationBodyDTO communityAuthenticationBodyDTO) {
 		LOG.info("CommunityController, authenticate, /community/authentication");
-		UsernameDTO usernameDTO = communityHandler.authenticate(communityAuthenticationParamDTO);
+		UsernameDTO usernameDTO = communityHandler.authenticate(communityAuthenticationBodyDTO);
 		return new ResponseEntity<UsernameDTO>(usernameDTO, HttpStatus.OK);
 	}
 

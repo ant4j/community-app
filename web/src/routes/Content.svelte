@@ -34,7 +34,7 @@
 	async function getContent() {
 		let baseUrl = appconfig.endpoint.cmmSrv.baseUrl;
 		let path = appconfig.endpoint.cmmSrv.path.contentText;
-		let endpoint = `${baseUrl}${path}/${params.contentId}/${params.collectionId}`;
+		let endpoint = `${baseUrl}${path}/${params.contentId}`;
 		let res = await fetch(endpoint);
 		let json = await res.json();
 		//TODO fare controllo se lo status e' OK
