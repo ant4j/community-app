@@ -1,6 +1,0 @@
-[build]
-	publish = "web/public/"
-	command = "cd web && npm install && npm run build"
-
-[functions]
-	directory = "service/src/function"
