@@ -8,6 +8,7 @@
 
 	import BackButton from "../components/BackButton.svelte";
 	import HomeButton from "../components/HomeButton.svelte";
+	import ErrorModal from "../components/ErrorModal.svelte";
 
 	export let params = {
 		context: appconfig.contentContext.viewing,
@@ -16,6 +17,7 @@
 
 	let view = {
 		display: false,
+		errorModal: undefined,
 	};
 
 	let model = {
@@ -55,12 +57,22 @@
 		let path = appconfig.endpoint.cmmSrv.path.proposal;
 		let endpoint = `${baseUrl}${path}`;
 		let res = await fetch(endpoint, {
-			method: "POST",
+			method: "PUT",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(jsonBody),
 		});
-		if (res.status == httpStatus.CREATED) {
+		if (res.status == httpStatus.OK) {
 			push("/home");
+		} else if (res.status == httpStatus.CONFLICT) {
+			view.errorModal.show(
+				"Attenzione",
+				"Ops! E' stato già proposto! Prova a proporre qualcosa di diverso."
+			);
+		} else {
+			view.errorModal.show(
+				"Errore interno",
+				"Si è verificato un problema. Riprova."
+			);
 		}
 	}
 </script>
@@ -131,6 +143,10 @@
 			</div>
 		</div>
 	{/if}
+
+	<div class="mb-3">
+		<ErrorModal bind:this={view.errorModal} />
+	</div>
 {/if}
 
 <style>

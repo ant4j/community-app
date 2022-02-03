@@ -36,12 +36,12 @@ public class ContentController {
         return new ResponseEntity<ContentTextDTO>(contentTextDTO, HttpStatus.OK);
     }
 
-    @PostMapping("/content/proposal")
+    @PutMapping("/content/proposal")
     public @ResponseBody
     ResponseEntity<Void> proposeContent(@RequestBody ProposalBodyDTO proposalBodyDTO) {
         LOG.info("ContentController, proposeContent, /content/proposal");
         contentHandler.proposeContent(proposalBodyDTO);
-        return new ResponseEntity<Void>(HttpStatus.CREATED);
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
     @GetMapping("/content/proposal/{communityId}")

@@ -10,6 +10,7 @@ import app.community.content.persistence.repository.ContentRepository;
 import app.community.content.persistence.repository.ProposalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 
@@ -58,7 +59,8 @@ public class ContentHandler {
 	}
 
 	@Transactional
-	@Retryable(value = { DataIntegrityViolationException.class }, maxAttempts = 6)
+	@Retryable(value = { ObjectOptimisticLockingFailureException.class,
+			DataIntegrityViolationException.class }, maxAttempts = 2)
 	public void proposeContent(ProposalBodyDTO proposalBodyDTO) {
 		Optional<ProposalEntity> optionalResult = proposalRepository
 				.findByCommunityId(proposalBodyDTO.getCommunityId());
@@ -71,7 +73,6 @@ public class ContentHandler {
 				proposalEntity.setUsername(proposalBodyDTO.getUsername());
 				proposalEntity.setProposedOn(new Date());
 				proposalRepository.save(proposalEntity);
-				//TODO ritornare status code 200 e non 201 nel caso dell'update
 			}
 		} else {
 			ProposalMapper mapper = ProposalMapper.INSTANCE;
