@@ -1,11 +1,10 @@
 <script>
 	import { onMount } from "svelte";
 	import { push, replace } from "svelte-spa-router";
-
-	import appCookies from "../handlers/appCookies";
-
 	import confetti from "canvas-confetti";
-	
+
+	import cookies from "../handlers/cookies";
+
 	import BackButton from "../components/BackButton.svelte";
 	import HomeButton from "../components/HomeButton.svelte";
 
@@ -16,7 +15,7 @@
 	onMount(() => init());
 
 	function init() {
-		if (appCookies.areCookiesSetup()) {
+		if (cookies.areCookiesSetup()) {
 			view.display = true;
 			confetti({
 				particleCount: 100,

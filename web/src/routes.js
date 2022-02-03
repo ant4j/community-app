@@ -9,7 +9,7 @@ export default {
 	"/signin/:communityCode": Signin,
 	"/home": Home,
 	"/collection/:collectionId": Collection,
-	"/content/:context/:collectionId/:contentId": Content,
+	"/content/:context/:contentId": Content,
 	"/balloon": Balloon,
 	"/not-found": NotFound,
 	"*": NotFound

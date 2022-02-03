@@ -4,14 +4,16 @@
 	import httpStatus from "http-status";
 
 	import appconfig from "../appconfig.json";
-	import appCookies from "../handlers/appCookies";
+	import cookies from "../handlers/cookies";
 	import { t } from "svelte-i18n";
 
 	import PasswordField from "../components/PasswordField.svelte";
 	import ErrorModal from "../components/ErrorModal.svelte";
-	import LocaleSwitch from "../components/LocaleSwitch.svelte";
+	// import LocaleSwitch from "../components/LocaleSwitch.svelte";
 
-	export let params = { communityCode: "" };
+	export let params = {
+		communityCode: "",
+	};
 
 	let view = {
 		display: false,
@@ -28,7 +30,7 @@
 	onMount(() => init());
 
 	function init() {
-		if (!appCookies.areCookiesSetup()) {
+		if (!cookies.areCookiesSetup()) {
 			getCommunity();
 		} else {
 			replace("/home");
@@ -57,7 +59,7 @@
 			view.errorModal.show($t("access-failed"), $t("watchword-forgot"));
 			return;
 		}
-		let jsonReq = {
+		let jsonBody = {
 			communityId: model.communityId,
 			watchword: model.watchword,
 		};
@@ -67,12 +69,12 @@
 		let res = await fetch(endpoint, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(jsonReq),
+			body: JSON.stringify(jsonBody),
 		});
 		if (res.status == httpStatus.OK) {
 			let jsonRes = await res.json();
-			appCookies.removeOldCookies();
-			appCookies.setupCookies({
+			cookies.removeOldCookies();
+			cookies.setupCookies({
 				communityId: model.communityId,
 				communityCode: model.communityCode,
 				communityName: model.communityName,

@@ -5,7 +5,7 @@
 	import moment from "moment";
 
 	import appconfig from "../appconfig.json";
-	import appCookies from "../handlers/appCookies";
+	import cookies from "../handlers/cookies";
 
 	import CollectionList from "../components/CollectionList.svelte";
 
@@ -20,10 +20,9 @@
 	onMount(() => init());
 
 	function init() {
-		if (appCookies.areCookiesSetup()) {
+		if (cookies.areCookiesSetup()) {
 			getProposal();
 		} else {
-			//TODO da rivedere
 			replace("/");
 		}
 	}
@@ -31,7 +30,7 @@
 	async function getProposal() {
 		let baseUrl = appconfig.endpoint.cmmSrv.baseUrl;
 		let path = appconfig.endpoint.cmmSrv.path.proposal;
-		let endpoint = `${baseUrl}${path}/${appCookies.getCommunityIdCookie()}`;
+		let endpoint = `${baseUrl}${path}/${cookies.getCommunityIdCookie()}`;
 		let res = await fetch(endpoint);
 		if (res.status == httpStatus.OK) {
 			let jsonRes = await res.json();
@@ -48,12 +47,12 @@
 		let context = appconfig.contentContext.participation,
 			collectionId = model.proposal.collectionId,
 			contentId = model.proposal.contentId;
-		push(`/content/${context}/${collectionId}/${contentId}`);
+		push(`/content/${context}/${contentId}`);
 	}
 
 	function exit() {
-		let communityCode = appCookies.getCommunityCodeCookie();
-		appCookies.removeCookies();
+		let communityCode = cookies.getCommunityCodeCookie();
+		cookies.removeCookies();
 		push(`/signin/${communityCode}`);
 	}
 </script>
@@ -63,7 +62,7 @@
 		<h5>
 			<i class="bi bi-house" /> Home &middot;
 			<span class="fw-bolder">
-				{appCookies.getCommunityNameCookie()}
+				{cookies.getCommunityNameCookie()}
 			</span>
 		</h5>
 	</div>
@@ -76,7 +75,7 @@
 		<div>
 			<i class="bi bi-person-circle" /> Il tuo nome utente è
 			<span class="fw-bolder">
-				{appCookies.getUsernameCookie()}
+				{cookies.getUsernameCookie()}
 			</span>
 		</div>
 	</div>
@@ -152,7 +151,7 @@
 	<div class="mb-3">
 		<CollectionList
 			route="/collection/"
-			communityId={appCookies.getCommunityIdCookie()}
+			communityId={cookies.getCommunityIdCookie()}
 		/>
 	</div>
 

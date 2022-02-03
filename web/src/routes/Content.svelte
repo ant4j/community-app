@@ -4,12 +4,15 @@
 	import httpStatus from "http-status";
 
 	import appconfig from "../appconfig.json";
-	import appCookies from "../handlers/appCookies";
+	import cookies from "../handlers/cookies";
 
 	import BackButton from "../components/BackButton.svelte";
 	import HomeButton from "../components/HomeButton.svelte";
 
-	export let params = {};
+	export let params = {
+		context: appconfig.contentContext.viewing,
+		contentId: 0,
+	};
 
 	let view = {
 		display: false,
@@ -23,7 +26,7 @@
 	onMount(() => init());
 
 	function init() {
-		if (appCookies.areCookiesSetup()) {
+		if (cookies.areCookiesSetup()) {
 			getContent();
 			view.display = true;
 		} else {
@@ -43,10 +46,10 @@
 	}
 
 	async function proposeContent() {
-		let jsonReq = {
-			communityId: appCookies.getCommunityIdCookie(),
+		let jsonBody = {
+			communityId: cookies.getCommunityIdCookie(),
 			contentId: params.contentId,
-			username: appCookies.getUsernameCookie(),
+			username: cookies.getUsernameCookie(),
 		};
 		let baseUrl = appconfig.endpoint.cmmSrv.baseUrl;
 		let path = appconfig.endpoint.cmmSrv.path.proposal;
@@ -54,7 +57,7 @@
 		let res = await fetch(endpoint, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(jsonReq),
+			body: JSON.stringify(jsonBody),
 		});
 		if (res.status == httpStatus.CREATED) {
 			push("/home");

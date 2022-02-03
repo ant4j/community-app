@@ -76,7 +76,7 @@ function removeOldCookies() {
 	}
 }
 
-const appCookies = {
+const cookies = {
 	setupCookies,
 	areCookiesSetup,
 	getCommunityIdCookie,
@@ -87,4 +87,4 @@ const appCookies = {
 	removeOldCookies
 };
 
-export default appCookies;
+export default cookies;

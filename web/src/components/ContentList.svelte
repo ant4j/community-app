@@ -53,7 +53,7 @@
 			class="list-group-item list-group-item-action"
 			on:click={() =>
 				push(
-					`/content/${appconfig.viewing}/${collectionId}/${item.id}`
+					`/content/${appconfig.viewing}/${item.id}`
 				)}
 		>
 			{item.title}

@@ -2,12 +2,14 @@
 	import { onMount } from "svelte";
 	import { replace } from "svelte-spa-router";
 
-	import appCookies from "../handlers/appCookies";
+	import cookies from "../handlers/cookies";
 
 	import BackButton from "../components/BackButton.svelte";
 	import ContentList from "../components/ContentList.svelte";
 
-	export let params = {};
+	export let params = {
+		collectionId: 0,
+	};
 
 	let view = {
 		display: false,
@@ -16,7 +18,7 @@
 	onMount(() => init());
 
 	function init() {
-		if (appCookies.areCookiesSetup()) {
+		if (cookies.areCookiesSetup()) {
 			view.display = true;
 		} else {
 			replace("/");
@@ -25,7 +27,6 @@
 </script>
 
 {#if view.display}
-<!-- TODO sostituire in tutti i BackButton text-center con text-start -->
 	<div class="mb-3 text-start">
 		<BackButton />
 	</div>

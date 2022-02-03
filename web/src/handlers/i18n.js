@@ -1,9 +1,8 @@
 import { dictionary, locale } from "svelte-i18n";
-
-import appconfig from "../appconfig.json";
-
 import moment from "moment";
 import "moment/locale/it";
+
+import appconfig from "../appconfig.json";
 
 const MESSAGE_FILE_URL_TEMPLATE = "/locale/{locale}.json";
 
