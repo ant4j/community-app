@@ -1,4 +1,0 @@
-db.admin.insertOne({id:1,username:"admin",password:"admin"})
-
-
-rocky-citadel-59660
