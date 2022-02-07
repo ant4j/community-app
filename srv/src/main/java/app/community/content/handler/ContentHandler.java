@@ -9,15 +9,10 @@ import app.community.content.persistence.model.ProposalEntity;
 import app.community.content.persistence.repository.ContentRepository;
 import app.community.content.persistence.repository.ProposalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.orm.ObjectOptimisticLockingFailureException;
-import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 
 import app.community.content.handler.mapper.ContentTextMapper;
 import app.community.content.persistence.repository.ContentTextRepository;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -58,33 +53,23 @@ public class ContentHandler {
 		return contentTextDTO;
 	}
 
-	@Transactional
-	@Retryable(value = { ObjectOptimisticLockingFailureException.class,
-			DataIntegrityViolationException.class }, maxAttempts = 2)
 	public void proposeContent(ProposalBodyDTO proposalBodyDTO) {
-		Optional<ProposalEntity> optionalResult = proposalRepository
-				.findByCommunityId(proposalBodyDTO.getCommunityId());
+		Optional<ProposalEntity> optionalResult = proposalRepository.findLastProposal(proposalBodyDTO.getCommunityId());
 		if (optionalResult.isPresent()) {
 			ProposalEntity proposalEntity = optionalResult.get();
 			if (proposalBodyDTO.getContentId().equals(proposalEntity.getContentId())) {
 				throw new ConflictContentException("Content already proposed");
-			} else {
-				proposalEntity.setContentId(proposalBodyDTO.getContentId());
-				proposalEntity.setUsername(proposalBodyDTO.getUsername());
-				proposalEntity.setProposedOn(new Date());
-				proposalRepository.save(proposalEntity);
 			}
-		} else {
-			ProposalMapper mapper = ProposalMapper.INSTANCE;
-			ProposalEntity proposalEntity = mapper.toEntity(proposalBodyDTO);
-			proposalEntity.setProposedOn(new Date());
-			proposalRepository.save(proposalEntity);
 		}
+		ProposalMapper mapper = ProposalMapper.INSTANCE;
+		ProposalEntity proposalEntity = mapper.toEntity(proposalBodyDTO);
+		proposalEntity.setProposedOn(new Date());
+		proposalRepository.save(proposalEntity);
 	}
 
-	public ProposalDTO getProposal(ProposalParamDTO proposalParamDTO) {
+	public ProposalDTO getLastProposal(ProposalParamDTO proposalParamDTO) {
 		Optional<ProposalEntity> optionalResult = proposalRepository
-				.findByCommunityId(proposalParamDTO.getCommunityId());
+				.findLastProposal(proposalParamDTO.getCommunityId());
 		if (optionalResult.isPresent()) {
 			ProposalEntity proposalEntity = optionalResult.get();
 			// TODO fare il controllo if(optional.isPresent())

@@ -25,7 +25,9 @@
 		let baseUrl = appconfig.endpoint.cmmSrv.baseUrl;
 		let path = appconfig.endpoint.cmmSrv.path.contents;
 		let endpoint = `${baseUrl}${path}/${collectionId}`;
-		let res = await fetch(endpoint);
+		let res = await fetch(endpoint, {
+			method: "GET",
+		});
 		let json = await res.json();
 		//TODO fare controllo se lo status e' OK
 		collectionName = json.collectionName;

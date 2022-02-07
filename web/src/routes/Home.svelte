@@ -21,17 +21,19 @@
 
 	function init() {
 		if (cookies.areCookiesSetup()) {
-			getProposal();
+			getLastProposal();
 		} else {
 			replace("/");
 		}
 	}
 
-	async function getProposal() {
+	async function getLastProposal() {
 		let baseUrl = appconfig.endpoint.cmmSrv.baseUrl;
-		let path = appconfig.endpoint.cmmSrv.path.proposal;
+		let path = appconfig.endpoint.cmmSrv.path.lastProposal;
 		let endpoint = `${baseUrl}${path}/${cookies.getCommunityIdCookie()}`;
-		let res = await fetch(endpoint);
+		let res = await fetch(endpoint, {
+			method: "GET",
+		});
 		if (res.status == httpStatus.OK) {
 			let jsonRes = await res.json();
 			model.proposal = jsonRes;
@@ -139,7 +141,7 @@
 				id="retrieve-latest-proposal-btn"
 				class="btn btn-primary"
 				type="button"
-				on:click={() => getProposal()}
+				on:click={() => getLastProposal()}
 			>
 				Recupera proposta più recente <i class="bi bi-download" />
 			</button>

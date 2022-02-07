@@ -15,40 +15,36 @@ import app.community.content.handler.ContentHandler;
 @RestController
 @RequestMapping("/api/v1")
 public class ContentController {
-    private static final Logger LOG = LoggerFactory.getLogger(ContentController.class);
+	private static final Logger LOG = LoggerFactory.getLogger(ContentController.class);
 
-    @Autowired
-    private ContentHandler contentHandler;
+	@Autowired
+	private ContentHandler contentHandler;
 
-    @GetMapping("/contents/{collectionId}")
-    public @ResponseBody
-    ResponseEntity<ContentListDTO> getContents(ContentParamDTO contentParamDTO) {
-    	LOG.info("ContentController, getContents, /contents/{}", contentParamDTO.getCollectionId());
-        ContentListDTO contentListDTO = contentHandler.getContents(contentParamDTO);
-        return new ResponseEntity<ContentListDTO>(contentListDTO, HttpStatus.OK);
-    }
+	@GetMapping("/contents/{collectionId}")
+	public @ResponseBody ResponseEntity<ContentListDTO> getContents(ContentParamDTO contentParamDTO) {
+		LOG.info("ContentController, getContents, /contents/{}", contentParamDTO.getCollectionId());
+		ContentListDTO contentListDTO = contentHandler.getContents(contentParamDTO);
+		return new ResponseEntity<ContentListDTO>(contentListDTO, HttpStatus.OK);
+	}
 
-    @GetMapping("/content/text/{contentId}")
-    public @ResponseBody
-    ResponseEntity<ContentTextDTO> getContentText(ContentTextParamDTO contentTextParamDTO) {
-        LOG.info("ContentController, getContentText, /content/text/{}", contentTextParamDTO.getContentId());
-        ContentTextDTO contentTextDTO = contentHandler.getContentText(contentTextParamDTO);
-        return new ResponseEntity<ContentTextDTO>(contentTextDTO, HttpStatus.OK);
-    }
+	@GetMapping("/content/text/{contentId}")
+	public @ResponseBody ResponseEntity<ContentTextDTO> getContentText(ContentTextParamDTO contentTextParamDTO) {
+		LOG.info("ContentController, getContentText, /content/text/{}", contentTextParamDTO.getContentId());
+		ContentTextDTO contentTextDTO = contentHandler.getContentText(contentTextParamDTO);
+		return new ResponseEntity<ContentTextDTO>(contentTextDTO, HttpStatus.OK);
+	}
 
-    @PutMapping("/content/proposal")
-    public @ResponseBody
-    ResponseEntity<Void> proposeContent(@RequestBody ProposalBodyDTO proposalBodyDTO) {
-        LOG.info("ContentController, proposeContent, /content/proposal");
-        contentHandler.proposeContent(proposalBodyDTO);
-        return new ResponseEntity<Void>(HttpStatus.OK);
-    }
+	@PostMapping("/content/proposal")
+	public @ResponseBody ResponseEntity<Void> proposeContent(@RequestBody ProposalBodyDTO proposalBodyDTO) {
+		LOG.info("ContentController, proposeContent, /content/proposal");
+		contentHandler.proposeContent(proposalBodyDTO);
+		return new ResponseEntity<Void>(HttpStatus.OK);
+	}
 
-    @GetMapping("/content/proposal/{communityId}")
-    public @ResponseBody
-    ResponseEntity<ProposalDTO> getProposal(ProposalParamDTO proposalParamDTO) {
-        LOG.info("ContentController, getProposal, /content/proposal/{}", proposalParamDTO.getCommunityId());
-        ProposalDTO proposalDTO = contentHandler.getProposal(proposalParamDTO);
-        return new ResponseEntity<ProposalDTO>(proposalDTO, HttpStatus.OK);
-    }
+	@GetMapping("/content/proposal/last/{communityId}")
+	public @ResponseBody ResponseEntity<ProposalDTO> getLastProposal(ProposalParamDTO proposalParamDTO) {
+		LOG.info("ContentController, getLastProposal, /content/proposal/{}", proposalParamDTO.getCommunityId());
+		ProposalDTO proposalDTO = contentHandler.getLastProposal(proposalParamDTO);
+		return new ResponseEntity<ProposalDTO>(proposalDTO, HttpStatus.OK);
+	}
 }

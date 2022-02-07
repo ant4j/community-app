@@ -15,7 +15,9 @@
 		let baseUrl = appconfig.endpoint.cmmSrv.baseUrl;
 		let path = appconfig.endpoint.cmmSrv.path.collections;
 		let endpoint = `${baseUrl}${path}/${communityId}`;
-		let res = await fetch(endpoint);
+		let res = await fetch(endpoint, {
+			method: "GET",
+		});
 		let jsonRes = await res.json();
 		//TODO fare controllo se lo status e' OK
 		collectionList = jsonRes.collectionList;

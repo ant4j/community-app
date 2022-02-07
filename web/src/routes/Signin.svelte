@@ -41,7 +41,9 @@
 		let baseUrl = appconfig.endpoint.cmmSrv.baseUrl;
 		let path = appconfig.endpoint.cmmSrv.path.community;
 		let endpoint = `${baseUrl}${path}/${model.communityCode}`;
-		let res = await fetch(endpoint);
+		let res = await fetch(endpoint, {
+			method: "GET",
+		});
 		if (res.status == httpStatus.OK) {
 			let jsonRes = await res.json();
 			model.communityId = jsonRes.id;

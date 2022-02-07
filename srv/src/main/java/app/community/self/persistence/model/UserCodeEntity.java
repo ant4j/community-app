@@ -12,14 +12,18 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "user_counter")
-public class UserCounterEntity {
-    
+@Table(name = "user_code")
+public class UserCodeEntity {
+
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-	private Long counter;
+	private Long id;
+	
+	@Column
+	private String code;
 	
     @Version
-    private Long version;
+    private Long version; 
+	
 }

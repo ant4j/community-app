@@ -40,7 +40,9 @@
 		let baseUrl = appconfig.endpoint.cmmSrv.baseUrl;
 		let path = appconfig.endpoint.cmmSrv.path.contentText;
 		let endpoint = `${baseUrl}${path}/${params.contentId}`;
-		let res = await fetch(endpoint);
+		let res = await fetch(endpoint, {
+			method: "GET",
+		});
 		let json = await res.json();
 		//TODO fare controllo se lo status e' OK
 		model.title = json.contentTitle;
@@ -57,7 +59,7 @@
 		let path = appconfig.endpoint.cmmSrv.path.proposal;
 		let endpoint = `${baseUrl}${path}`;
 		let res = await fetch(endpoint, {
-			method: "PUT",
+			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(jsonBody),
 		});
