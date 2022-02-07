@@ -1,4 +1,4 @@
-package app.community.self.handler.mapper;
+package app.community.self.service.mapper;
 
 import app.community.self.controller.model.CommunityDTO;
 import org.mapstruct.Mapper;

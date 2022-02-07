@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import app.community.collection.controller.model.CollectionListDTO;
 import app.community.collection.controller.model.CommunityParamDTO;
-import app.community.collection.handler.CollectionHandler;
+import app.community.collection.service.CollectionService;
 
 //TODO sistemare cross origin
 @CrossOrigin
@@ -23,13 +23,13 @@ public class CollectionController {
     private static final Logger LOG = LoggerFactory.getLogger(CollectionController.class);
 
     @Autowired
-    private CollectionHandler collectionHandler;
+    private CollectionService collectionService;
 
     @GetMapping("/collections/{communityId}")
     public @ResponseBody
     ResponseEntity<CollectionListDTO> getCollections(CommunityParamDTO communityParamDTO) {
         LOG.info("CollectionController, getCollections, /collection/{}", communityParamDTO.getCommunityId());
-        CollectionListDTO collectionListDTO = collectionHandler.getCollections(communityParamDTO);
+        CollectionListDTO collectionListDTO = collectionService.getCollections(communityParamDTO);
         return new ResponseEntity<CollectionListDTO>(collectionListDTO, HttpStatus.OK);
     }
 

@@ -1,4 +1,4 @@
-package app.community.collection.handler.mapper;
+package app.community.collection.service.mapper;
 
 import java.util.List;
 

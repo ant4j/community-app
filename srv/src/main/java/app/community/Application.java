@@ -11,11 +11,11 @@ import org.springframework.retry.annotation.EnableRetry;
 @SpringBootApplication
 @ComponentScan(basePackages = { 
 		"app.community.self.controller", 
-		"app.community.self.handler",
+		"app.community.self.service",
 		"app.community.collection.controller", 
-		"app.community.collection.handler", 
+		"app.community.collection.service", 
 		"app.community.content.controller", 
-		"app.community.content.handler" 
+		"app.community.content.service" 
 })
 @EnableJpaRepositories(basePackages = { 
 		"app.community.self.persistence.repository", 

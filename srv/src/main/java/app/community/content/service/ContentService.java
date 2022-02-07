@@ -1,24 +1,25 @@
-package app.community.content.handler;
+package app.community.content.service;
 
 import app.community.content.controller.model.*;
-import app.community.content.handler.exception.ConflictContentException;
-import app.community.content.handler.mapper.ContentMapper;
-import app.community.content.handler.mapper.ProposalMapper;
 import app.community.content.persistence.model.ContentEntity;
 import app.community.content.persistence.model.ProposalEntity;
 import app.community.content.persistence.repository.ContentRepository;
 import app.community.content.persistence.repository.ProposalRepository;
+import app.community.content.service.exception.ConflictContentException;
+import app.community.content.service.mapper.ContentMapper;
+import app.community.content.service.mapper.ContentTextMapper;
+import app.community.content.service.mapper.ProposalMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import app.community.content.handler.mapper.ContentTextMapper;
 import app.community.content.persistence.repository.ContentTextRepository;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ContentHandler {
+public class ContentService {
 
 	@Autowired
 	private ContentRepository contentRepository;

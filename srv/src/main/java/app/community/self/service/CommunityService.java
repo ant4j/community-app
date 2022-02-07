@@ -1,4 +1,4 @@
-package app.community.self.handler;
+package app.community.self.service;
 
 import java.util.Optional;
 
@@ -9,9 +9,6 @@ import org.springframework.stereotype.Service;
 import app.community.self.controller.model.CommunityParamDTO;
 import app.community.self.controller.model.CommunityDTO;
 import app.community.self.controller.model.UsernameDTO;
-import app.community.self.handler.exception.NotFoundCommunityException;
-import app.community.self.handler.exception.UnauthorizedCommunityException;
-import app.community.self.handler.mapper.CommunityMapper;
 import app.community.self.persistence.model.CommunityAuthenticationEntity;
 import app.community.self.persistence.model.CommunityEntity;
 import app.community.self.persistence.model.UserCodeEntity;
@@ -19,9 +16,13 @@ import app.community.self.persistence.repository.CommunityAuthenticationReposito
 import app.community.self.persistence.repository.CommunityRepository;
 import app.community.self.persistence.repository.UserCodeRepository;
 import app.community.self.persistence.repository.UserPoolRepository;
+import app.community.self.service.exception.NotFoundCommunityException;
+import app.community.self.service.exception.UnauthorizedCommunityException;
+import app.community.self.service.handler.UsernameHandler;
+import app.community.self.service.mapper.CommunityMapper;
 
 @Service
-public class CommunityHandler {
+public class CommunityService {
 
     @Autowired
     private CommunityRepository communityRepository;
@@ -36,7 +37,7 @@ public class CommunityHandler {
     private UserCodeRepository userCodeRepository;    
     
     @Autowired
-    private UsernameBuilder usernameBuilder;
+    private UsernameHandler usernameHandler;
 
     public CommunityDTO getCommunity(CommunityParamDTO communityParamDTO) {
         Optional<CommunityEntity> optionalResult = communityRepository.findByCode(communityParamDTO.getCode());
@@ -56,7 +57,7 @@ public class CommunityHandler {
             Long counter = userPoolRepository.detachUserCodeId();
             //TODO controllo optional.isPresent(), altrimenti sono finiti i code
             Optional<UserCodeEntity> optionalResult2 = userCodeRepository.findById(counter);
-            return usernameBuilder.build(optionalResult2.get().getCode());
+            return usernameHandler.buildUsername(optionalResult2.get().getCode());
         } else {
             throw new UnauthorizedCommunityException("Unauthorized");
         }

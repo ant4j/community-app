@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import app.community.self.controller.model.CommunityParamDTO;
 import app.community.self.controller.model.UsernameDTO;
-import app.community.self.handler.CommunityHandler;
+import app.community.self.service.CommunityService;
 
 //TODO sistemare cross origin, leggendo da file di properties tramite @Value la property corretta nel rispettivo profilo develop, test o prod
 @CrossOrigin
@@ -27,12 +27,12 @@ public class CommunityController {
 	private static final Logger LOG = LoggerFactory.getLogger(CommunityController.class);
 
 	@Autowired
-	private CommunityHandler communityHandler;
+	private CommunityService communityService;
 
 	@GetMapping("/community/{code}")
 	public @ResponseBody ResponseEntity<CommunityDTO> getCommunity(CommunityParamDTO communityParamDTO) {
 		LOG.info("CommunityController, getCommunity, /community/{}", communityParamDTO.getCode());
-		CommunityDTO communityDTO = communityHandler.getCommunity(communityParamDTO);
+		CommunityDTO communityDTO = communityService.getCommunity(communityParamDTO);
 		return new ResponseEntity<CommunityDTO>(communityDTO, HttpStatus.OK);
 	}
 
@@ -40,7 +40,7 @@ public class CommunityController {
 	public @ResponseBody ResponseEntity<UsernameDTO> authenticate(
 			@RequestBody CommunityAuthenticationBodyDTO communityAuthenticationBodyDTO) {
 		LOG.info("CommunityController, authenticate, /community/authentication");
-		UsernameDTO usernameDTO = communityHandler.authenticate(communityAuthenticationBodyDTO);
+		UsernameDTO usernameDTO = communityService.authenticate(communityAuthenticationBodyDTO);
 		return new ResponseEntity<UsernameDTO>(usernameDTO, HttpStatus.OK);
 	}
 

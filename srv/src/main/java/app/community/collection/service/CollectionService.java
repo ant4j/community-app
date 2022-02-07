@@ -1,4 +1,4 @@
-package app.community.collection.handler;
+package app.community.collection.service;
 
 import java.util.List;
 
@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 
 import app.community.collection.controller.model.CollectionListDTO;
 import app.community.collection.controller.model.CommunityParamDTO;
-import app.community.collection.handler.mapper.CollectionMapper;
 import app.community.collection.persistence.model.CollectionEntity;
 import app.community.collection.persistence.repository.CollectionRepository;
+import app.community.collection.service.mapper.CollectionMapper;
 
 @Service
-public class CollectionHandler {
+public class CollectionService {
 	
 	@Autowired
 	private CollectionRepository collectionRepository;

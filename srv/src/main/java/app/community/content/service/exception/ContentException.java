@@ -1,4 +1,4 @@
-package app.community.content.handler.exception;
+package app.community.content.service.exception;
 
 public class ContentException extends RuntimeException {
 	private static final long serialVersionUID = 1L;

@@ -1,4 +1,4 @@
-package app.community.self.handler.exception;
+package app.community.self.service.exception;
 
 public class UnauthorizedCommunityException extends CommunityException {
 	private static final long serialVersionUID = 1L;

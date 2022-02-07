@@ -1,4 +1,4 @@
-package app.community.content.handler.mapper;
+package app.community.content.service.mapper;
 
 import app.community.content.controller.model.ContentDTO;
 import app.community.content.persistence.model.ContentEntity;
