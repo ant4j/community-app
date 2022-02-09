@@ -12,7 +12,7 @@ import java.util.Optional;
 @Repository
 public interface ProposalRepository extends JpaRepository<ProposalEntity, Long> {
 	
-	@Query(value = "SELECT p1.* FROM proposal p1 WHERE p1.community_id = :communityId AND p1.id = (SELECT MAX(p2.id) FROM proposal p2 WHERE p2.community_id = :communityId)", nativeQuery = true)
+	@Query(value = "SELECT p1 FROM ProposalEntity p1 WHERE p1.communityId = :communityId AND p1.id = (SELECT MAX(p2.id) FROM ProposalEntity p2 WHERE p2.communityId = :communityId)")
 	public Optional<ProposalEntity> findLastProposal(@Param("communityId") Long communityId);
 
 }

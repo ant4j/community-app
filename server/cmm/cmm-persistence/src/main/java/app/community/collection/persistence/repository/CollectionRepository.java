@@ -14,10 +14,10 @@ public interface CollectionRepository extends JpaRepository<CollectionEntity, Lo
 
 	public List<CollectionEntity> findAllByCommunityId(Long communityId);
 	
-    @Query(value = "SELECT c.name FROM collection c WHERE c.id = :collectionId", nativeQuery = true)
+    @Query(value = "SELECT c.name FROM CollectionEntity c WHERE c.id = :collectionId")
     public String getCollectionNameByCollectionId(@Param("collectionId") Long collectionId);
 
-    @Query(value = "SELECT c.type FROM collection c WHERE c.id = :collectionId", nativeQuery = true)
+    @Query(value = "SELECT c.type FROM CollectionEntity c WHERE c.id = :collectionId")
     public Integer getCollectionTypeByCollectionId(@Param("collectionId") Long collectionId);
     
 }
