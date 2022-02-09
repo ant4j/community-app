@@ -8,22 +8,22 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan(basePackages = { 
-		"app.community.self.controller", 
-		"app.community.self.service",
-		"app.community.collection.controller", 
-		"app.community.collection.service", 
-		"app.community.content.controller", 
-		"app.community.content.service" 
+		"app.community.application.self.controller", 
+		"app.community.business.self.service",
+		"app.community.application.collection.controller", 
+		"app.community.business.collection.service", 
+		"app.community.application.content.controller", 
+		"app.community.business.content.service" 
 })
 @EnableJpaRepositories(basePackages = { 
-		"app.community.self.persistence.repository", 
-		"app.community.collection.persistence.repository", 
-		"app.community.content.persistence.repository" 
+		"app.community.persistence.self.repository", 
+		"app.community.persistence.collection.repository", 
+		"app.community.persistence.content.repository" 
 })
 @EntityScan(basePackages = { 
-		"app.community.self.persistence.model", 
-		"app.community.collection.persistence.model", 
-		"app.community.content.persistence.model" 
+		"app.community.persistence.self.model", 
+		"app.community.persistence.collection.model", 
+		"app.community.persistence.content.model" 
 })
 public class CmmApplication {
 	

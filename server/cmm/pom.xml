@@ -25,8 +25,8 @@
 	
 	<modules>
 		<module>cmm-boot</module>
-		<module>cmm-controller</module>
-		<module>cmm-service</module>
+		<module>cmm-application</module>
+		<module>cmm-business</module>
 		<module>cmm-persistence</module>
 	</modules>
 </project>
