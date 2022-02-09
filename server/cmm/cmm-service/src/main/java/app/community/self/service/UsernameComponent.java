@@ -1,11 +1,11 @@
-package app.community.self.service.handler;
+package app.community.self.service;
 
 import org.springframework.stereotype.Component;
 
 import app.community.self.service.model.UsernameDTO;
 
 @Component
-public class UsernameHandler {
+public class UsernameComponent {
 	
 	private static final String USERNAME_ROOT = "user";
 	

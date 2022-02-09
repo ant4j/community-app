@@ -24,7 +24,7 @@ public class ContentService {
 
 	@Autowired
 	private ContentRepository contentRepository;
-	
+
 	@Autowired
 	private CollectionRepository collectionRepository;
 
@@ -79,7 +79,8 @@ public class ContentService {
 			ProposalEntity proposalEntity = optionalResult.get();
 			// TODO fare il controllo if(optional.isPresent())
 			ContentEntity contentEntity = contentRepository.findById(proposalEntity.getContentId()).get();
-			Integer collectionType = collectionRepository.getCollectionTypeByCollectionId(contentEntity.getCollectionId());
+			Integer collectionType = collectionRepository
+					.getCollectionTypeByCollectionId(contentEntity.getCollectionId());
 			ProposalMapper mapper = ProposalMapper.INSTANCE;
 			ProposalDTO proposalDTO = mapper.toDTO(proposalEntity);
 			proposalDTO.setCollectionId(contentEntity.getCollectionId());

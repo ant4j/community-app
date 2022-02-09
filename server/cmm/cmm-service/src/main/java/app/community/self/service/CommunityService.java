@@ -15,7 +15,6 @@ import app.community.self.persistence.repository.UserCodeRepository;
 import app.community.self.persistence.repository.UserPoolRepository;
 import app.community.self.service.exception.NotFoundCommunityException;
 import app.community.self.service.exception.UnauthorizedCommunityException;
-import app.community.self.service.handler.UsernameHandler;
 import app.community.self.service.mapper.CommunityMapper;
 import app.community.self.service.model.CommunityAuthenticationBodyDTO;
 import app.community.self.service.model.CommunityDTO;
@@ -38,7 +37,7 @@ public class CommunityService {
     private UserCodeRepository userCodeRepository;    
     
     @Autowired
-    private UsernameHandler usernameHandler;
+    private UsernameComponent usernameComponent;
 
     public CommunityDTO getCommunity(CommunityParamDTO communityParamDTO) {
         Optional<CommunityEntity> optionalResult = communityRepository.findByCode(communityParamDTO.getCode());
@@ -58,7 +57,7 @@ public class CommunityService {
             Long userCodeId = userPoolRepository.save(new UserPoolEntity()).getUserCodeId();
             //TODO controllo optional.isPresent(), altrimenti sono finiti i code
             UserCodeEntity userCodeEntity = userCodeRepository.findById(userCodeId).get();
-            return usernameHandler.buildUsername(userCodeEntity.getCode());
+            return usernameComponent.buildUsername(userCodeEntity.getCode());
         } else {
             throw new UnauthorizedCommunityException("Unauthorized");
         }

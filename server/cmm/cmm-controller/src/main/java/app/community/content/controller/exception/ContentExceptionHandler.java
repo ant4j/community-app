@@ -1,6 +1,5 @@
-package app.community.content.controller.handler;
+package app.community.content.controller.exception;
 
-import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -10,8 +9,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import app.community.content.service.exception.ConflictContentException;
-
-import java.util.Date;
+import app.community.common.util.ErrorResponse;
+import static app.community.common.util.ErrorResponse.prepareErrorResponse;
 
 @ControllerAdvice(basePackages = "app.community.content.controller")
 public class ContentExceptionHandler extends ResponseEntityExceptionHandler {
@@ -34,20 +33,4 @@ public class ContentExceptionHandler extends ResponseEntityExceptionHandler {
 		return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
-	private ErrorResponse prepareErrorResponse(Integer status, String error, String message) {
-		ErrorResponse errorResponse = new ErrorResponse();
-		errorResponse.setStatus(status);
-		errorResponse.setError(error);
-		errorResponse.setMessage(message);
-		// "path": "/api/v1/content/text/44/1"
-		return errorResponse;
-	}
-
-	@Data
-	class ErrorResponse {
-		private Date timestamp = new Date();
-		private Integer status;
-		private String error;
-		private String message;
-	}
 }
