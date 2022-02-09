@@ -1,4 +1,4 @@
-package app.community.common.util;
+package app.community.common.controller.exception;
 
 import java.util.Date;
 

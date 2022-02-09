@@ -1,4 +1,6 @@
-package app.community.content.controller.exception;
+package app.community.common.controller.exception;
+
+import static app.community.common.controller.exception.ErrorResponse.prepareErrorResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,8 +11,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import app.community.content.service.exception.ConflictContentException;
-import app.community.common.util.ErrorResponse;
-import static app.community.common.util.ErrorResponse.prepareErrorResponse;
 
 @ControllerAdvice(basePackages = "app.community.content.controller")
 public class ContentExceptionHandler extends ResponseEntityExceptionHandler {

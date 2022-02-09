@@ -1,4 +1,6 @@
-package app.community.self.controller.exception;
+package app.community.common.controller.exception;
+
+import static app.community.common.controller.exception.ErrorResponse.prepareErrorResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,8 +12,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import app.community.self.service.exception.NotFoundCommunityException;
 import app.community.self.service.exception.UnauthorizedCommunityException;
-import app.community.common.util.ErrorResponse;
-import static app.community.common.util.ErrorResponse.prepareErrorResponse;
 
 @ControllerAdvice(basePackages = "app.community.self.controller")
 public class CommunityExceptionHandler extends ResponseEntityExceptionHandler {
