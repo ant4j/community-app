@@ -10,6 +10,9 @@ import app.community.persistence.collection.model.CollectionEntity;
 
 @Mapper
 public interface CollectionMapper {
+	
 	public static final CollectionMapper INSTANCE = Mappers.getMapper(CollectionMapper.class);
+	
 	public List<CollectionDTO> toDTO(List<CollectionEntity> entityList);
+
 }

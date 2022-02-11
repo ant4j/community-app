@@ -10,6 +10,9 @@ import java.util.List;
 
 @Mapper
 public interface ContentMapper {
+	
     public static final ContentMapper INSTANCE = Mappers.getMapper(ContentMapper.class);
+    
     public List<ContentDTO> toDTO(List<ContentEntity> entityList);
+
 }

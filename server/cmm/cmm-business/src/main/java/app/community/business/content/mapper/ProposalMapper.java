@@ -9,8 +9,13 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface ProposalMapper {
+	
     public static final ProposalMapper INSTANCE = Mappers.getMapper(ProposalMapper.class);
+    
     public ProposalEntity toEntity(ProposalDTO proposalDTO);
+    
     public ProposalDTO toDTO(ProposalEntity proposalEntity);
+    
     public ProposalEntity toEntity(ProposalBodyDTO proposalParamDTO);
+
 }

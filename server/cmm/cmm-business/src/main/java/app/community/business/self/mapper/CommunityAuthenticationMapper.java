@@ -8,7 +8,11 @@ import app.community.persistence.self.model.CommunityAuthenticationEntity;
 
 @Mapper
 public interface CommunityAuthenticationMapper {
+	
 	public static final CommunityAuthenticationMapper INSTANCE = Mappers.getMapper(CommunityAuthenticationMapper.class);
+	
 	public CommunityAuthenticationEntity toEntity(CommunityAuthenticationBodyDTO communityAuthenticationDTO);
+	
 	public CommunityAuthenticationBodyDTO toDTO(CommunityAuthenticationEntity communityAuthenticationEntity);
+
 }
