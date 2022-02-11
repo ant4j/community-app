@@ -13,14 +13,14 @@ import app.community.persistence.collection.repository.CollectionRepository;
 
 @Service
 public class CollectionService {
-	
+
 	@Autowired
 	private CollectionRepository collectionRepository;
-	
+
 	public CollectionListModel getCollections(Long communityId) {
 		List<CollectionEntity> entityList = collectionRepository.findAllByCommunityId(communityId);
 		CollectionListModel collectionListModel = new CollectionListModel();
-		if(entityList.isEmpty()) {
+		if (entityList.isEmpty()) {
 			collectionListModel.setCollectionList(List.of());
 		} else {
 			CollectionMapper mapper = CollectionMapper.INSTANCE;

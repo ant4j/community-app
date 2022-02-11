@@ -52,14 +52,14 @@ public class ContentService {
 	public ContentTextModel getContentText(Long contentId) {
 		String contentTitle = contentRepository.getTitleById(contentId);
 		ContentTextMapper mapper = ContentTextMapper.INSTANCE;
-		ContentTextModel contentTextModel = mapper
-				.toModel(contentTextRepository.findById(contentId).get());
+		ContentTextModel contentTextModel = mapper.toModel(contentTextRepository.findById(contentId).get());
 		contentTextModel.setContentTitle(contentTitle);
 		return contentTextModel;
 	}
 
 	public void proposeContent(ProposalParamModel proposalParamModel) {
-		Optional<ProposalEntity> optionalResult = proposalRepository.findLastProposal(proposalParamModel.getCommunityId());
+		Optional<ProposalEntity> optionalResult = proposalRepository
+				.findLastProposal(proposalParamModel.getCommunityId());
 		if (optionalResult.isPresent()) {
 			ProposalEntity proposalEntity = optionalResult.get();
 			if (proposalParamModel.getContentId().equals(proposalEntity.getContentId())) {
@@ -73,11 +73,10 @@ public class ContentService {
 	}
 
 	public ProposalModel getLastProposal(Long communityId) {
-		Optional<ProposalEntity> optionalResult = proposalRepository
-				.findLastProposal(communityId);
+		Optional<ProposalEntity> optionalResult = proposalRepository.findLastProposal(communityId);
 		if (optionalResult.isPresent()) {
-			ProposalEntity proposalEntity = optionalResult.get();
 			// TODO fare il controllo if(optional.isPresent())
+			ProposalEntity proposalEntity = optionalResult.get();
 			ContentEntity contentEntity = contentRepository.findById(proposalEntity.getContentId()).get();
 			Integer collectionType = collectionRepository
 					.getCollectionTypeByCollectionId(contentEntity.getCollectionId());
