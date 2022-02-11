@@ -8,10 +8,9 @@ import org.springframework.stereotype.Service;
 import app.community.business.self.exception.NotFoundCommunityException;
 import app.community.business.self.exception.UnauthorizedCommunityException;
 import app.community.business.self.mapper.CommunityMapper;
-import app.community.business.self.model.CommunityAuthenticationBodyDTO;
-import app.community.business.self.model.CommunityDTO;
-import app.community.business.self.model.CommunityParamDTO;
-import app.community.business.self.model.UsernameDTO;
+import app.community.domain.self.model.CommunityAuthenticationParamModel;
+import app.community.domain.self.model.CommunityModel;
+import app.community.domain.self.model.UsernameModel;
 import app.community.persistence.self.model.CommunityAuthenticationEntity;
 import app.community.persistence.self.model.CommunityEntity;
 import app.community.persistence.self.model.UserCodeEntity;
@@ -39,21 +38,21 @@ public class CommunityService {
     @Autowired
     private UsernameComponent usernameComponent;
 
-    public CommunityDTO getCommunity(CommunityParamDTO communityParamDTO) {
-        Optional<CommunityEntity> optionalResult = communityRepository.findByCode(communityParamDTO.getCode());
+    public CommunityModel getCommunity(String code) {
+        Optional<CommunityEntity> optionalResult = communityRepository.findByCode(code);
         if (!optionalResult.isPresent()) {
             throw new NotFoundCommunityException("Community not found");
         }
         CommunityMapper mapper = CommunityMapper.INSTANCE;
-        return mapper.toDTO(optionalResult.get());
+        return mapper.toModel(optionalResult.get());
     }
 
-    public UsernameDTO authenticate(CommunityAuthenticationBodyDTO communityAuthenticationBodyDTO) {
-        Optional<CommunityAuthenticationEntity> optionalResult = communityAuthenticationRepository.findById(communityAuthenticationBodyDTO.getCommunityId());
+    public UsernameModel authenticate(CommunityAuthenticationParamModel communityAuthenticationParamModel) {
+        Optional<CommunityAuthenticationEntity> optionalResult = communityAuthenticationRepository.findById(communityAuthenticationParamModel.getCommunityId());
         if (!optionalResult.isPresent()) {
             throw new NotFoundCommunityException("Community authentication not found");
         }
-        if (communityAuthenticationBodyDTO.getWatchword().equals(optionalResult.get().getWatchword())) {
+        if (communityAuthenticationParamModel.getWatchword().equals(optionalResult.get().getWatchword())) {
             Long userCodeId = userPoolRepository.save(new UserPoolEntity()).getUserCodeId();
             //TODO controllo optional.isPresent(), altrimenti sono finiti i code
             UserCodeEntity userCodeEntity = userCodeRepository.findById(userCodeId).get();

@@ -6,9 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import app.community.business.collection.mapper.CollectionMapper;
-import app.community.business.collection.model.CollectionDTO;
-import app.community.business.collection.model.CollectionListDTO;
-import app.community.business.collection.model.CommunityParamDTO;
+import app.community.domain.collection.model.CollectionModel;
+import app.community.domain.collection.model.CollectionListModel;
 import app.community.persistence.collection.model.CollectionEntity;
 import app.community.persistence.collection.repository.CollectionRepository;
 
@@ -18,16 +17,16 @@ public class CollectionService {
 	@Autowired
 	private CollectionRepository collectionRepository;
 	
-	public CollectionListDTO getCollections(CommunityParamDTO communityParamDTO) {
-		List<CollectionEntity> entityList = collectionRepository.findAllByCommunityId(communityParamDTO.getCommunityId());
-		CollectionListDTO collectionListDTO = new CollectionListDTO();
+	public CollectionListModel getCollections(Long communityId) {
+		List<CollectionEntity> entityList = collectionRepository.findAllByCommunityId(communityId);
+		CollectionListModel collectionListModel = new CollectionListModel();
 		if(entityList.isEmpty()) {
-			collectionListDTO.setCollectionList(List.of());
+			collectionListModel.setCollectionList(List.of());
 		} else {
 			CollectionMapper mapper = CollectionMapper.INSTANCE;
-			List<CollectionDTO> collectionList = mapper.toDTO(entityList);
-			collectionListDTO.setCollectionList(collectionList);
+			List<CollectionModel> collectionList = mapper.toModel(entityList);
+			collectionListModel.setCollectionList(collectionList);
 		}
-		return collectionListDTO;
+		return collectionListModel;
 	}
 }

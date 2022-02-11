@@ -1,7 +1,7 @@
 package app.community.business.content.mapper;
 
-import app.community.business.content.model.ProposalBodyDTO;
-import app.community.business.content.model.ProposalDTO;
+import app.community.domain.content.model.ProposalModel;
+import app.community.domain.content.model.ProposalParamModel;
 import app.community.persistence.content.model.ProposalEntity;
 
 import org.mapstruct.Mapper;
@@ -12,10 +12,10 @@ public interface ProposalMapper {
 	
     public static final ProposalMapper INSTANCE = Mappers.getMapper(ProposalMapper.class);
     
-    public ProposalEntity toEntity(ProposalDTO proposalDTO);
+    public ProposalEntity toEntity(ProposalModel proposalModel);
     
-    public ProposalDTO toDTO(ProposalEntity proposalEntity);
+    public ProposalModel toModel(ProposalEntity proposalEntity);
     
-    public ProposalEntity toEntity(ProposalBodyDTO proposalParamDTO);
+    public ProposalEntity toEntity(ProposalParamModel proposalParamModel);
 
 }
