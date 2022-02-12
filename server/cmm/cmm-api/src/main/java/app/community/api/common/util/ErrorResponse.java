@@ -1,4 +1,4 @@
-package app.community.presentation.common.util;
+package app.community.api.common.util;
 
 import java.util.Date;
 

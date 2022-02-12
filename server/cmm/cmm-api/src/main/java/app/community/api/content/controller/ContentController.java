@@ -1,4 +1,4 @@
-package app.community.presentation.content.controller;
+package app.community.api.content.controller;
 
 import app.community.business.content.service.ContentService;
 import app.community.domain.content.model.*;

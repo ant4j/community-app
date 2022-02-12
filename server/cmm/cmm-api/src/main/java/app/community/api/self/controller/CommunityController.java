@@ -1,4 +1,4 @@
-package app.community.presentation.self.controller;
+package app.community.api.self.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

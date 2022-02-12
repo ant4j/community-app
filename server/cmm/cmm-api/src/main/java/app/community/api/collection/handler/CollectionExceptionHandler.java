@@ -1,6 +1,6 @@
-package app.community.presentation.collection.handler;
+package app.community.api.collection.handler;
 
-import static app.community.presentation.common.util.ErrorResponse.prepareErrorResponse;
+import static app.community.api.common.util.ErrorResponse.prepareErrorResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import app.community.presentation.common.util.ErrorResponse;
+import app.community.api.common.util.ErrorResponse;
 
 @ControllerAdvice(basePackages = "app.community.application.collection.controller")
 public class CollectionExceptionHandler extends ResponseEntityExceptionHandler {

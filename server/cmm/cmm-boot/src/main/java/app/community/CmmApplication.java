@@ -8,11 +8,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan(basePackages = { 
-		"app.community.application.self.controller", 
+		"app.community.api.self.controller", 
 		"app.community.business.self.service",
-		"app.community.application.collection.controller", 
+		"app.community.api.collection.controller", 
 		"app.community.business.collection.service", 
-		"app.community.application.content.controller", 
+		"app.community.api.content.controller", 
 		"app.community.business.content.service" 
 })
 @EnableJpaRepositories(basePackages = { 
