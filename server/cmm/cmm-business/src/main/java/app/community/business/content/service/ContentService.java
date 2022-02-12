@@ -7,6 +7,7 @@ import app.community.business.content.mapper.ProposalMapper;
 import app.community.domain.content.model.*;
 import app.community.persistence.collection.repository.CollectionRepository;
 import app.community.persistence.content.model.ContentEntity;
+import app.community.persistence.content.model.ContentTextEntity;
 import app.community.persistence.content.model.ProposalEntity;
 import app.community.persistence.content.repository.ContentRepository;
 import app.community.persistence.content.repository.ContentTextRepository;
@@ -35,15 +36,15 @@ public class ContentService {
 	private ProposalRepository proposalRepository;
 
 	public ContentListModel getContents(Long collectionId) {
-		List<ContentEntity> entityList = contentRepository.findAllByCollectionId(collectionId);
+		List<ContentEntity> contentEntityList = contentRepository.findAllByCollectionId(collectionId);
 		String collectionName = collectionRepository.getCollectionNameByCollectionId(collectionId);
 		ContentListModel contentListModel = new ContentListModel();
 		contentListModel.setCollectionName(collectionName);
-		if (entityList.isEmpty()) {
+		if (contentEntityList.isEmpty()) {
 			contentListModel.setContentList(List.of());
 		} else {
 			ContentMapper mapper = ContentMapper.INSTANCE;
-			List<ContentModel> contentList = mapper.toModel(entityList);
+			List<ContentModel> contentList = mapper.toModel(contentEntityList);
 			contentListModel.setContentList(contentList);
 		}
 		return contentListModel;
@@ -51,8 +52,10 @@ public class ContentService {
 
 	public ContentTextModel getContentText(Long contentId) {
 		String contentTitle = contentRepository.getTitleById(contentId);
+		// TODO fare il controllo if(optional.isPresent())
+		ContentTextEntity contentTextEntity = contentTextRepository.findById(contentId).get();
 		ContentTextMapper mapper = ContentTextMapper.INSTANCE;
-		ContentTextModel contentTextModel = mapper.toModel(contentTextRepository.findById(contentId).get());
+		ContentTextModel contentTextModel = mapper.toModel(contentTextEntity);
 		contentTextModel.setContentTitle(contentTitle);
 		return contentTextModel;
 	}
@@ -77,6 +80,7 @@ public class ContentService {
 		if (optionalResult.isPresent()) {
 			// TODO fare il controllo if(optional.isPresent())
 			ProposalEntity proposalEntity = optionalResult.get();
+			// TODO fare il controllo if(optional.isPresent())
 			ContentEntity contentEntity = contentRepository.findById(proposalEntity.getContentId()).get();
 			Integer collectionType = collectionRepository
 					.getCollectionTypeByCollectionId(contentEntity.getCollectionId());
