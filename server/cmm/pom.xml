@@ -25,9 +25,8 @@
 	
 	<modules>
 		<module>cmm-boot</module>
-		<module>cmm-api</module>
+		<module>cmm-restapi</module>
 		<module>cmm-business</module>
-		<module>cmm-domain</module>
 		<module>cmm-persistence</module>
 	</modules>
 </project>

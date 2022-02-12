@@ -14,7 +14,9 @@ public interface ContentRepository extends JpaRepository<ContentEntity, Long> {
 
     public List<ContentEntity> findAllByCollectionId(Long collectionId);
 
-    @Query(value = "SELECT c.title FROM ContentEntity c WHERE c.id = :id")
+    @Query(value = "SELECT c.title "
+    			 + "FROM ContentEntity c "
+    			 + "WHERE c.id = :id")
     public String getTitleById(@Param("id") Long id);
 
 }

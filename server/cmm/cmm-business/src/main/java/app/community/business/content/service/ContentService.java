@@ -4,7 +4,7 @@ import app.community.business.content.exception.ConflictContentException;
 import app.community.business.content.mapper.ContentMapper;
 import app.community.business.content.mapper.ContentTextMapper;
 import app.community.business.content.mapper.ProposalMapper;
-import app.community.domain.content.model.*;
+import app.community.business.content.model.*;
 import app.community.persistence.collection.repository.CollectionRepository;
 import app.community.persistence.content.model.ContentEntity;
 import app.community.persistence.content.model.ContentTextEntity;
@@ -35,47 +35,48 @@ public class ContentService {
 	@Autowired
 	private ProposalRepository proposalRepository;
 
-	public ContentListModel getContents(Long collectionId) {
+	public ContentListDTO getContents(Long collectionId) {
 		List<ContentEntity> contentEntityList = contentRepository.findAllByCollectionId(collectionId);
 		String collectionName = collectionRepository.getCollectionNameByCollectionId(collectionId);
-		ContentListModel contentListModel = new ContentListModel();
-		contentListModel.setCollectionName(collectionName);
+		ContentListDTO contentListDTO = new ContentListDTO();
+		contentListDTO.setCollectionName(collectionName);
 		if (contentEntityList.isEmpty()) {
-			contentListModel.setContentList(List.of());
+			contentListDTO.setContentList(List.of());
 		} else {
 			ContentMapper mapper = ContentMapper.INSTANCE;
-			List<ContentModel> contentList = mapper.toModel(contentEntityList);
-			contentListModel.setContentList(contentList);
+			List<ContentDTO> contentList = mapper.toDTO(contentEntityList);
+			contentListDTO.setContentList(contentList);
 		}
-		return contentListModel;
+		return contentListDTO;
 	}
 
-	public ContentTextModel getContentText(Long contentId) {
+	public ContentTextDTO getContentText(Long contentId) {
 		String contentTitle = contentRepository.getTitleById(contentId);
 		// TODO fare il controllo if(optional.isPresent())
 		ContentTextEntity contentTextEntity = contentTextRepository.findById(contentId).get();
 		ContentTextMapper mapper = ContentTextMapper.INSTANCE;
-		ContentTextModel contentTextModel = mapper.toModel(contentTextEntity);
-		contentTextModel.setContentTitle(contentTitle);
-		return contentTextModel;
+		ContentTextDTO contentTextDTO = mapper.toDTO(contentTextEntity);
+		contentTextDTO.setContentTitle(contentTitle);
+		return contentTextDTO;
 	}
 
-	public void proposeContent(ProposalParamModel proposalParamModel) {
+	public void proposeContent(ProposalParamDTO proposalParamDTO) {
 		Optional<ProposalEntity> optionalResult = proposalRepository
-				.findLastProposal(proposalParamModel.getCommunityId());
+				.findLastProposal(proposalParamDTO.getCommunityId());
 		if (optionalResult.isPresent()) {
 			ProposalEntity proposalEntity = optionalResult.get();
-			if (proposalParamModel.getContentId().equals(proposalEntity.getContentId())) {
+			if (proposalParamDTO.getContentId().equals(proposalEntity.getContentId())) {
+				//TODO censire il messaggio d'errore centralmente in una classe
 				throw new ConflictContentException("Content already proposed");
 			}
 		}
 		ProposalMapper mapper = ProposalMapper.INSTANCE;
-		ProposalEntity proposalEntity = mapper.toEntity(proposalParamModel);
+		ProposalEntity proposalEntity = mapper.toEntity(proposalParamDTO);
 		proposalEntity.setProposedOn(new Date());
 		proposalRepository.save(proposalEntity);
 	}
 
-	public ProposalModel getLastProposal(Long communityId) {
+	public ProposalDTO getLastProposal(Long communityId) {
 		Optional<ProposalEntity> optionalResult = proposalRepository.findLastProposal(communityId);
 		if (optionalResult.isPresent()) {
 			// TODO fare il controllo if(optional.isPresent())
@@ -85,13 +86,13 @@ public class ContentService {
 			Integer collectionType = collectionRepository
 					.getCollectionTypeByCollectionId(contentEntity.getCollectionId());
 			ProposalMapper mapper = ProposalMapper.INSTANCE;
-			ProposalModel proposalModel = mapper.toModel(proposalEntity);
-			proposalModel.setCollectionId(contentEntity.getCollectionId());
-			proposalModel.setCollectionType(collectionType);
-			proposalModel.setContentTitle(contentEntity.getTitle());
-			proposalModel.setIsPresent(true);
-			return proposalModel;
+			ProposalDTO proposalDTO = mapper.toDTO(proposalEntity);
+			proposalDTO.setCollectionId(contentEntity.getCollectionId());
+			proposalDTO.setCollectionType(collectionType);
+			proposalDTO.setContentTitle(contentEntity.getTitle());
+			proposalDTO.setIsPresent(true);
+			return proposalDTO;
 		}
-		return new ProposalModel();
+		return new ProposalDTO();
 	}
 }

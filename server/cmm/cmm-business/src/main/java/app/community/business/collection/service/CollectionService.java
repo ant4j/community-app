@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import app.community.business.collection.mapper.CollectionMapper;
-import app.community.domain.collection.model.CollectionModel;
-import app.community.domain.collection.model.CollectionListModel;
+import app.community.business.collection.model.CollectionListDTO;
+import app.community.business.collection.model.CollectionDTO;
 import app.community.persistence.collection.model.CollectionEntity;
 import app.community.persistence.collection.repository.CollectionRepository;
 
@@ -17,16 +17,16 @@ public class CollectionService {
 	@Autowired
 	private CollectionRepository collectionRepository;
 
-	public CollectionListModel getCollections(Long communityId) {
+	public CollectionListDTO getCollections(Long communityId) {
 		List<CollectionEntity> entityList = collectionRepository.findAllByCommunityId(communityId);
-		CollectionListModel collectionListModel = new CollectionListModel();
+		CollectionListDTO collectionListDTO = new CollectionListDTO();
 		if (entityList.isEmpty()) {
-			collectionListModel.setCollectionList(List.of());
+			collectionListDTO.setCollectionList(List.of());
 		} else {
 			CollectionMapper mapper = CollectionMapper.INSTANCE;
-			List<CollectionModel> collectionList = mapper.toModel(entityList);
-			collectionListModel.setCollectionList(collectionList);
+			List<CollectionDTO> collectionList = mapper.toDTO(entityList);
+			collectionListDTO.setCollectionList(collectionList);
 		}
-		return collectionListModel;
+		return collectionListDTO;
 	}
 }

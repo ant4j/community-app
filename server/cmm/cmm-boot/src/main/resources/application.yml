@@ -7,18 +7,18 @@ spring:
     activate:
       on-profile: develop
   jpa:
-    show_sql: true
+    show-sql: true
   datasource:
-    url: jdbc:mysql://user1:user1@localhost:3306/cmm
-    initialize: false
+    url: jdbc:mysql://localhost:3306/cmm
+    username: user1
+    password: user1
 ---
 spring:
   config:
     activate:
       on-profile: test
   jpa:
-    show_sql: false
-    database: H2
+    show-sql: true
   datasource:
     url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE;IGNORECASE=TRUE
     initialize: false

@@ -18,18 +18,6 @@
 
 		<dependency>
 			<groupId>app.community</groupId>
-			<artifactId>cmm-domain</artifactId>
-			<version>${project.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>*</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>app.community</groupId>
 			<artifactId>cmm-persistence</artifactId>
 			<version>${project.version}</version>
 		</dependency>
