@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -30,7 +30,7 @@ public class ProposalEntity {
 
 	@Column(columnDefinition="DATETIME")
 	@Temporal(TemporalType.TIMESTAMP)
-    private Date proposedOn;
+    private LocalDateTime proposedOn;
 
     @Version
     private Long version;
