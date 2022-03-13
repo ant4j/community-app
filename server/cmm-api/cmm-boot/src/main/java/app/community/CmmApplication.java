@@ -13,6 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 		"app.community.web.self.controller",
 		"app.community.web.collection.controller",
 		"app.community.web.content.controller",
+		"app.community.web.common.exception",
 		
 		"app.community.business.self.service",
 		"app.community.business.collection.service",
@@ -24,9 +25,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 		"app.community.persistence.content.repository"
 })
 @EntityScan(basePackages = { 
-		"app.community.model.self.entity",
-		"app.community.model.collection.entity",
-		"app.community.model.content.entity"
+		"app.community.persistence.self.model",
+		"app.community.persistence.collection.model",
+		"app.community.persistence.content.model"
 })
 public class CmmApplication {
 	

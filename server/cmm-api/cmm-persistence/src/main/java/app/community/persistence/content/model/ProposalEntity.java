@@ -29,7 +29,7 @@ public class ProposalEntity {
     private String username;
 
 	@Column(columnDefinition="DATETIME")
-	@Temporal(TemporalType.TIMESTAMP)
+//	@Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime proposedOn;
 
     @Version

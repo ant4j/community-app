@@ -14,7 +14,7 @@
 			<div class="w-75 p-1 app-logo text-center">
 				<h1 class="fw-bolder">CommunityApp</h1>
 				<div id="slogan" class="text-small">
-					It&rsquo;s Good Together
+					Psalm 133 &middot; It&rsquo;s Good Together
 				</div>
 			</div>
 		</div>

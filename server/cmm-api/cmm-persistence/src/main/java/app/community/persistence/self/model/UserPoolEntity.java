@@ -1,4 +1,4 @@
-package app.community.persistence.community.model;
+package app.community.persistence.self.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,17 +12,14 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "community_auth")
-public class CommunityAuthEntity {
-
+@Table(name = "user_pool")
+public class UserPoolEntity {
+    
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column
-	private Long communityId;
-
-	@Column
-	private String watchword;
-
-	@Version
-	private Long version;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+	private Long userCodeId;
+	
+    @Version
+    private Long version;
 }

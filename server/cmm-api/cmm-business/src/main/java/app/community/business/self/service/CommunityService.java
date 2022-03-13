@@ -12,10 +12,10 @@ import app.community.business.common.exception.UnauthorizedException;
 import app.community.business.self.model.CommunityAuthParamModel;
 import app.community.business.self.model.CommunityModel;
 import app.community.business.self.model.UsernameModel;
-import app.community.persistence.community.model.CommunityAuthEntity;
-import app.community.persistence.community.model.CommunityEntity;
-import app.community.persistence.community.repository.CommunityAuthRepository;
-import app.community.persistence.community.repository.CommunityRepository;
+import app.community.persistence.self.model.CommunityAuthEntity;
+import app.community.persistence.self.model.CommunityEntity;
+import app.community.persistence.self.repository.CommunityAuthRepository;
+import app.community.persistence.self.repository.CommunityRepository;
 
 @Service
 public class CommunityService {

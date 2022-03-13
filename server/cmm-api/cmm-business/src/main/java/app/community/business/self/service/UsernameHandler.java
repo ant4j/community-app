@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import app.community.business.self.model.UsernameModel;
-import app.community.persistence.community.model.UserCodeEntity;
-import app.community.persistence.community.model.UserPoolEntity;
-import app.community.persistence.community.repository.UserCodeRepository;
-import app.community.persistence.community.repository.UserPoolRepository;
+import app.community.persistence.self.model.UserCodeEntity;
+import app.community.persistence.self.model.UserPoolEntity;
+import app.community.persistence.self.repository.UserCodeRepository;
+import app.community.persistence.self.repository.UserPoolRepository;
 
 @Component
 public class UsernameHandler {
