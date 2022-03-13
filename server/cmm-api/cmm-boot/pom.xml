@@ -3,23 +3,32 @@
 
 	<parent>
 		<groupId>app.community</groupId>
-		<artifactId>cmm</artifactId>
+		<artifactId>cmm-api</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>cmm-business</artifactId>
+	<artifactId>cmm-boot</artifactId>
 
 	<dependencies>
+		<!-- <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency> -->
+
 		<dependency>
-			<groupId>org.modelmapper</groupId>
-			<artifactId>modelmapper</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-		
-				<dependency>
 			<groupId>app.community</groupId>
-			<artifactId>cmm-persistence</artifactId>
+			<artifactId>cmm-web</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
