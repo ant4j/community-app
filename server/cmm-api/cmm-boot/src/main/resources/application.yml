@@ -1,6 +1,18 @@
-spring.profiles.active: develop
+spring.profiles.active: prod
 server:
-  port: 8090
+  port: ${PORT}
+  #port: 8090
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  jpa:
+    show-sql: true
+  datasource:
+    url: ${DS_URL}
+    username: ${DS_USERNAME}
+    password: ${DS_PASSWORD}
 ---
 spring:
   config:
