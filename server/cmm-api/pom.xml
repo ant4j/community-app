@@ -21,7 +21,7 @@
 	
 	<modules>
 		<module>cmm-boot</module>
-		<module>cmm-web</module>
+		<module>cmm-endpoint</module>
 		<module>cmm-business</module>
 		<module>cmm-persistence</module>
 	</modules>

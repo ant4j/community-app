@@ -18,17 +18,18 @@ import app.community.business.collection.service.CollectionService;
 //TODO sistemare cross origin
 @CrossOrigin
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/v1")
 public class CollectionController {
 	private static final Logger LOG = LoggerFactory.getLogger(CollectionController.class);
 
 	@Autowired
-	private CollectionService collectionService; 
+	private CollectionService collectionService;
 
-	@GetMapping("/collections/{communityId}")
-	public @ResponseBody ResponseEntity<CollectionListModel> getCollections(@PathVariable Long communityId) {
-		LOG.info("CollectionController, getCollections, /collection/{}", communityId);
-		CollectionListModel collectionListModel = collectionService.getCollections(communityId);
+	@GetMapping("/communities/{id}/collections")
+	public @ResponseBody ResponseEntity<CollectionListModel> getCollectionsByCommunityId(
+			@PathVariable("id") Long communityId) {
+		LOG.info("CollectionController, getCollectionsByCommunityId, /communities/{}/collections", communityId);
+		CollectionListModel collectionListModel = collectionService.getCollectionsByCommunityId(communityId);
 		return new ResponseEntity<CollectionListModel>(collectionListModel, HttpStatus.OK);
 	}
 

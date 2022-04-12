@@ -12,8 +12,9 @@ import lombok.Data;
 
 @Data
 @Entity
+//TODO cambiare nome tabella in user
 @Table(name = "user_code")
-public class UserCodeEntity {
+public class UserEntity {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

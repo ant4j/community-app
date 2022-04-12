@@ -2,31 +2,27 @@ import Cookies from "js-cookie";
 import appconfig from "../appconfig.json";
 
 const cookieName = {
-	communityId: "community-id",
-	communityCode: "community-code",
-	communityName: "community-name",
-	username: "username"
+	communityId: "community-id-2",
+	communityCode: "community-code-2",
+	communityName: "community-name-2",
+	username: "username-2"
 }
 
 function setupCookies(data) {
 	Cookies.set(cookieName.communityId,
 		data.communityId,
-		{ secure: true },
 		{ expires: appconfig.signinCookiesExpiration }
 	);
 	Cookies.set(cookieName.communityCode,
 		data.communityCode,
-		{ secure: true },
 		{ expires: appconfig.signinCookiesExpiration }
 	);
 	Cookies.set(cookieName.communityName,
 		data.communityName,
-		{ secure: true },
 		{ expires: appconfig.signinCookiesExpiration }
 	);
 	Cookies.set(cookieName.username,
 		data.username,
-		{ secure: true },
 		{ expires: appconfig.signinCookiesExpiration }
 	);
 }
@@ -55,10 +51,10 @@ function getUsernameCookie() {
 }
 
 function removeCookies() {
-	Cookies.remove(cookieName.communityId, { secure: true });
-	Cookies.remove(cookieName.communityCode, { secure: true });
-	Cookies.remove(cookieName.communityName, { secure: true });
-	Cookies.remove(cookieName.username, { secure: true });
+	Cookies.remove(cookieName.communityId);
+	Cookies.remove(cookieName.communityCode);
+	Cookies.remove(cookieName.communityName);
+	Cookies.remove(cookieName.username);
 }
 
 function removeOldCookies() {
@@ -73,6 +69,18 @@ function removeOldCookies() {
 	}
 	if (Cookies.get("signin-username")) {
 		Cookies.remove("signin-username");
+	}
+	if (Cookies.get("community-id")) {
+		Cookies.remove("community-id");
+	}
+	if (Cookies.get("community-code")) {
+		Cookies.remove("community-code");
+	}
+	if (Cookies.get("community-name")) {
+		Cookies.remove("community-name");
+	}
+	if (Cookies.get("username")) {
+		Cookies.remove("username");
 	}
 }
 

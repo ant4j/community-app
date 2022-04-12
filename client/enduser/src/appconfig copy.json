@@ -1,0 +1,32 @@
+{
+
+	"endpoint": {
+		"cmm-api": {
+			"baseUrl": "https://apicmm.herokuapp.com",
+			"path": {
+				"community": "/v1/communities",
+				"authentication": "/v1/user/authentication",
+				"collections": "/v1/communities/{id}/collections", [TODO SISTEMARE NELLA CHIAMATA COL REPLACE]
+				"contents": "/v1/collections/{id}/contents", [TODO SISTEMARE NELLA CHIAMATA COL REPLACE]
+				"contentText": "/v1/contents/{id}/text", [TODO SISTEMARE NELLA CHIAMATA COL REPLACE]
+				"proposal": "/v1/proposals",
+				"lastProposal": "/v1/communities/{id}/proposal" [TODO SISTEMARE NELLA CHIAMATA COL REPLACE]
+			}
+		}
+	},
+
+	"collectionType": {
+		"lyrics": 0,
+		"reading": 1
+	},
+
+	"contentContext": {
+		"viewing": 0,
+		"participation": 1
+	},
+
+	"signinCookiesExpiration": 0.5,
+
+	"defaultLocale": "it"
+	
+}

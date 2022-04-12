@@ -13,7 +13,7 @@ import app.community.business.common.exception.ConflictException;
 import app.community.business.common.exception.ErrorMessage;
 import app.community.business.content.model.ContentModel;
 import app.community.business.content.model.ContentListModel;
-import app.community.business.content.model.ContentTextAndTitleModel;
+import app.community.business.content.model.ContentTextModel;
 import app.community.business.content.model.LastProposalModel;
 import app.community.business.content.model.ProposalParamModel;
 import app.community.persistence.collection.repository.CollectionRepository;
@@ -42,7 +42,7 @@ public class ContentService {
 	@Autowired
 	private ModelMapper mapper;
 	
-	public ContentListModel getContents( Long collectionId) {
+	public ContentListModel getContentsByCollectionId( Long collectionId) {
 		List<ContentEntity> contentEntityList = contentRepository.findAllByCollectionId(collectionId);
 		String collectionName = collectionRepository.getCollectionNameByCollectionId(collectionId);
 		ContentListModel contentListModel = new ContentListModel();
@@ -54,13 +54,13 @@ public class ContentService {
 		return contentListModel;
 	}
 
-	public ContentTextAndTitleModel getContentText( Long contentId) {
+	public ContentTextModel getContentText( Long contentId) {
 		String contentTitle = contentRepository.getTitleById(contentId);
 		// TODO fare il controllo if(optional.isPresent())
 		ContentTextEntity contentTextEntity = contentTextRepository.findById(contentId).get();
-		ContentTextAndTitleModel contentTextAndTitleModel = mapper.map(contentTextEntity, ContentTextAndTitleModel.class);
-		contentTextAndTitleModel.setContentTitle(contentTitle);
-		return contentTextAndTitleModel;
+		ContentTextModel contentTextModel = mapper.map(contentTextEntity, ContentTextModel.class);
+		contentTextModel.setContentTitle(contentTitle);
+		return contentTextModel;
 	}
 
 	public void proposeContent( ProposalParamModel proposalParamModel) {

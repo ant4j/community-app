@@ -16,32 +16,37 @@ import org.springframework.web.bind.annotation.RestController;
 
 import app.community.business.self.model.CommunityAuthParamModel;
 import app.community.business.self.model.CommunityModel;
-import app.community.business.self.model.UsernameModel;
+import app.community.business.self.model.UserModel;
 import app.community.business.self.service.CommunityService;
+import app.community.business.self.service.UserService;
 
 //TODO sistemare cross origin, leggendo da file di properties tramite @Value la property corretta nel rispettivo profilo develop, test o prod
 @CrossOrigin
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/v1")
 public class CommunityController {
 	private static final Logger LOG = LoggerFactory.getLogger(CommunityController.class);
 
 	@Autowired
 	private CommunityService communityService;
 	
-	@GetMapping("/community/{code}")
-	public @ResponseBody ResponseEntity<CommunityModel> getCommunity(@PathVariable String code) {
-		LOG.info("CommunityController, getCommunity, /community/{}", code);
-		CommunityModel communityModel = communityService.getCommunity(code);
+	@Autowired
+	private UserService userService;
+
+	@GetMapping("/communities/{code}")
+	public @ResponseBody ResponseEntity<CommunityModel> getCommunityByCode(@PathVariable("code") String code) {
+		LOG.info("CommunityController, getCommunityByCode, /communities/{}", code);
+		CommunityModel communityModel = communityService.getCommunityByCode(code);
 		return new ResponseEntity<CommunityModel>(communityModel, HttpStatus.OK);
 	}
 
-	@PostMapping("/community/authentication")
-	public @ResponseBody ResponseEntity<UsernameModel> authenticate(
+	@PostMapping("/communities/{id}/signin")
+	public @ResponseBody ResponseEntity<UserModel> signin(@PathVariable("id") Long communityId,
 			@RequestBody CommunityAuthParamModel communityAuthParamModel) {
-		LOG.info("CommunityController, authenticate, /community/authentication");
-		UsernameModel usernameModel = communityService.authenticate(communityAuthParamModel);
-		return new ResponseEntity<UsernameModel>(usernameModel, HttpStatus.OK);
+		LOG.info("CommunityController, signin, /communities/{}/signin", communityId);
+		communityService.checkAuthentication(communityId, communityAuthParamModel);
+		UserModel userModel = userService.detach();
+		return new ResponseEntity<UserModel>(userModel, HttpStatus.OK);
 	}
 
 }

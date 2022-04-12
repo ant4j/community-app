@@ -11,7 +11,6 @@ import app.community.business.common.exception.NotFoundException;
 import app.community.business.common.exception.UnauthorizedException;
 import app.community.business.self.model.CommunityAuthParamModel;
 import app.community.business.self.model.CommunityModel;
-import app.community.business.self.model.UsernameModel;
 import app.community.persistence.self.model.CommunityAuthEntity;
 import app.community.persistence.self.model.CommunityEntity;
 import app.community.persistence.self.repository.CommunityAuthRepository;
@@ -27,12 +26,9 @@ public class CommunityService {
 	private CommunityAuthRepository communityAuthRepository;
 
 	@Autowired
-	private UsernameHandler usernameHandler;
-
-	@Autowired
 	private ModelMapper mapper;
 
-	public CommunityModel getCommunity(String code) {
+	public CommunityModel getCommunityByCode(String code) {
 		Optional<CommunityEntity> optionalResult = communityRepository.findByCode(code);
 		if (!optionalResult.isPresent()) {
 			throw new NotFoundException(ErrorMessage.COMMUNITY_NOT_FOUND_MSG);
@@ -41,17 +37,15 @@ public class CommunityService {
 		return communityModel;
 	}
 
-	public UsernameModel authenticate(CommunityAuthParamModel communityAuthParamModel) {
+	public void checkAuthentication(Long communityId, CommunityAuthParamModel communityAuthParamModel) {
 		Optional<CommunityAuthEntity> optionalResult = communityAuthRepository
-				.findById(communityAuthParamModel.getCommunityId());
+				.findById(communityId);
 		if (!optionalResult.isPresent()) {
 			throw new NotFoundException(ErrorMessage.COMMUNITY_AUTHENTICATION_NOT_FOUND_MSG);
 		}
 		if (!communityAuthParamModel.getWatchword().equals(optionalResult.get().getWatchword())) {
 			throw new UnauthorizedException(ErrorMessage.UNAUTHORIZED_MSG);
 		}
-		UsernameModel usernameModel = usernameHandler.detachUsername();
-		return usernameModel;
 	}
 
 }

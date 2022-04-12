@@ -18,12 +18,14 @@
 
 		<dependency>
 			<groupId>app.community</groupId>
-			<artifactId>cmm-web</artifactId>
+			<artifactId>cmm-endpoint</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 
 	<build>
+		<finalName>cmm-api-${project.version}</finalName>
+	
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

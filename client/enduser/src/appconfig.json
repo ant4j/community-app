@@ -2,7 +2,7 @@
 
 	"endpoint": {
 		"cmmSrv": {
-			"baseUrl": "http://localhost:8090",
+			"baseUrl": "https://api-cmm.herokuapp.com",
 			"path": {
 				"community": "/api/v1/community",
 				"authentication": "/api/v1/community/authentication",

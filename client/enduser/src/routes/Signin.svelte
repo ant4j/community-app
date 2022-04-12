@@ -30,6 +30,7 @@
 	onMount(() => init());
 
 	function init() {
+		cookies.removeOldCookies();
 		if (!cookies.areCookiesSetup()) {
 			getCommunity();
 		} else {
@@ -75,7 +76,6 @@
 		});
 		if (res.status == httpStatus.OK) {
 			let jsonRes = await res.json();
-			cookies.removeOldCookies();
 			cookies.setupCookies({
 				communityId: model.communityId,
 				communityCode: model.communityCode,

@@ -21,7 +21,7 @@ public class CollectionService {
 	@Autowired
 	private ModelMapper mapper;
 	
-	public CollectionListModel getCollections(Long communityId) {
+	public CollectionListModel getCollectionsByCommunityId(Long communityId) {
 		List<CollectionEntity> entityList = collectionRepository.findAllByCommunityId(communityId);
 		CollectionListModel collectionListModel = new CollectionListModel();
 		List<CollectionModel> collectionList = entityList.stream()
